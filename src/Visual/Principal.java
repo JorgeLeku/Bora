@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -43,15 +45,36 @@ import javax.swing.SwingUtilities;
 			
 		
 			panelEMenu.setBackground(Color.black);
-			p1b1 = new JButton ("Comer en restaurante");
 			
-			p1b2 = new JButton ("Llevar");
-			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
-			p1b1.setIcon(imagenp1b1);
-			p1b1.setBounds(93, 185, 400, 350);
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
-			p1b2.setIcon(imagenp1b2);
+			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
+			p1b1 = new JButton (imagenp1b1);
+			CrearBoton(p1b1);
+			p1b2 = new JButton (imagenp1b2);
+			CrearBoton(p1b2);
+			p1b1.setBounds(93, 185, 400, 350);
 			p1b2.setBounds(566, 185, 400, 350);
+			
+			p1b1.addActionListener(new ActionListener () {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelPedido, panelEMenu);
+				}
+						
+			});
+			
+			p1b2.addActionListener(new ActionListener () {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelPedido, panelEMenu);
+				}
+				
+			});
+			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
 			
@@ -65,6 +88,18 @@ import javax.swing.SwingUtilities;
 			
 			frame.getContentPane().add(panelPedido);
 			frame.getContentPane().add(panelEMenu);
+		}
+		public void CrearBoton (JButton g) {
+			
+			g.setOpaque(false);	
+			g.setContentAreaFilled(false);	
+			g.setBorderPainted(false);
+		}
+		public void CambiarPanel (JPanel g, JPanel h) {
+			g.setVisible(false);
+			g.setEnabled(false);
+			h.setVisible(true);
+			h.setEnabled(true);
 		}
 		public static void main(String[] args) {
 			SwingUtilities.invokeLater(new Runnable () {
