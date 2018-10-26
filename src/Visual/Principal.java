@@ -33,7 +33,7 @@ import javax.swing.SwingUtilities;
 			JPanel panelEMenu = new JPanel ();
 			
 			JFrame frame = new JFrame ();
-			//prueba de conexion oe
+			//prueba de conexion je
 			panelPedido.setLayout(null);
 			panelPedido.setVisible(true);
 			panelPedido.setEnabled(true);
