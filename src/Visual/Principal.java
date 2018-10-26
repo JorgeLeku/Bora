@@ -1,4 +1,4 @@
-package Visual;
+package Bora.src.Visual;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
