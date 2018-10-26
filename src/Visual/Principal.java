@@ -33,7 +33,7 @@ import javax.swing.SwingUtilities;
 			JPanel panelEMenu = new JPanel ();
 			
 			JFrame frame = new JFrame ();
-			//prueba de conexion je
+			
 			panelPedido.setLayout(null);
 			panelPedido.setVisible(true);
 			panelPedido.setEnabled(true);
@@ -76,8 +76,8 @@ import javax.swing.SwingUtilities;
 			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
-			
-			//frame.setIconImage(imagenIcono.getImage());
+			ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("Captura de pantalla (43).png"));
+			frame.setIconImage(imagenIcono.getImage());
 			frame.setBounds(350, 300, 1080, 720);
 			frame.setVisible(true);
 			frame.setTitle("Insertar nombre");
