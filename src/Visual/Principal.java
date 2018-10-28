@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 	
 
 	public class Principal extends JFrame{
-		JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4;
+		JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2;
 		public Principal (){
 			ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("fondo.jpg"));
 
@@ -31,7 +31,7 @@ import javax.swing.SwingUtilities;
 			    }
 			};
 			
-			JPanel panelEMenu = new JPanel (){
+			JPanel panelECarta = new JPanel (){
 				public void paintComponent(Graphics g) {
 			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 			        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -81,48 +81,78 @@ import javax.swing.SwingUtilities;
 			    }
 			};
 			
+			JPanel panelEMenu = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+
+			JPanel panelReserva = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
 			JFrame frame = new JFrame ();
 			
 			
 			CrearPanel(panelPostre);
 			CrearPanel(panelSPlato);
 			CrearPanel(panelPPlato);
-			CrearPanel(panelEMenu);
+			CrearPanel(panelECarta);
 			CrearPanel(panelPedido);
 			CrearPanel(panelCartaMenu);
+			CrearPanel(panelEMenu);
+			CrearPanel(panelReserva);
 			
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
 			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
 			ImageIcon imagenp2b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b1.jpg"));
 			ImageIcon imagenp2b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b3.jpg"));
 			ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b2.jpg"));
-			
+			ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b1.jpg"));
+			ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b2.jpg"));
+		
 			
 			p1b1 = new JButton (imagenp1b1);
 			p1b2 = new JButton (imagenp1b2);
 			p2b1 = new JButton (imagenp2b1);
 			p2b2 = new JButton (imagenp2b2);
 			p2b3 = new JButton (imagenp2b3);
-			
+			p3b1 = new JButton (imagenp3b1);
+			p3b2 = new JButton (imagenp3b2); 
 			
 			CrearBoton(p1b1);
 			CrearBoton(p1b2);
 			CrearBoton(p2b1);
 			CrearBoton(p2b2);
 			CrearBoton(p2b3);
+			CrearBoton(p3b1);
+			CrearBoton(p3b2);
 			
 			p1b1.setBounds(93, 185, 400, 350);
 			p1b2.setBounds(566, 185, 400, 350);
 			p2b1.setBounds(93, 205, 400, 125);
 			p2b2.setBounds(293, 380, 400, 125);
 			p2b3.setBounds(566, 205, 400, 125);
+			p3b1.setBounds(93, 185, 400, 350);
+			p3b2.setBounds(566, 185, 400, 350);
+			
 			
 			p1b1.addActionListener(new ActionListener () {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//Base de datos
-					CambiarPanel(panelPedido, panelEMenu);
+					CambiarPanel(panelPedido, panelCartaMenu);
 				}
 						
 			});
@@ -132,7 +162,7 @@ import javax.swing.SwingUtilities;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//Base de datos
-					CambiarPanel(panelPedido, panelEMenu);
+					CambiarPanel(panelPedido, panelCartaMenu);
 				}
 				
 			});
@@ -142,7 +172,7 @@ import javax.swing.SwingUtilities;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//Base de datos
-					CambiarPanel(panelEMenu, panelPPlato);
+					CambiarPanel(panelECarta, panelPPlato);
 				}
 				
 			});
@@ -152,7 +182,7 @@ import javax.swing.SwingUtilities;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//Base de datos
-					CambiarPanel(panelEMenu, panelSPlato);
+					CambiarPanel(panelECarta, panelSPlato);
 				}
 				
 			});
@@ -162,16 +192,39 @@ import javax.swing.SwingUtilities;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//Base de datos
-					CambiarPanel(panelEMenu, panelPostre);
+					CambiarPanel(panelECarta, panelPostre);
 				}
 				
 			});
 			
+			p3b1.addActionListener(new ActionListener () {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelCartaMenu, panelECarta);
+				}
+				
+			});
+	
+			p3b2.addActionListener(new ActionListener () {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelCartaMenu, panelEMenu);
+				}
+				
+			});
+			
+			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
-			panelEMenu.add(p2b1);
-			panelEMenu.add(p2b2);
-			panelEMenu.add(p2b3);
+			panelECarta.add(p2b1);
+			panelECarta.add(p2b2);
+			panelECarta.add(p2b3);
+			panelCartaMenu.add(p3b1);
+			panelCartaMenu.add(p3b2);
 			
 			ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("Captura de pantalla (43).png"));
 			frame.setIconImage(imagenIcono.getImage());
@@ -183,11 +236,12 @@ import javax.swing.SwingUtilities;
 			frame.setLayout(null);
 			
 			frame.getContentPane().add(panelPedido);
-			frame.getContentPane().add(panelEMenu);
+			frame.getContentPane().add(panelECarta);
 			frame.getContentPane().add(panelPPlato);
 			frame.getContentPane().add(panelSPlato);
 			frame.getContentPane().add(panelPostre);
 			frame.getContentPane().add(panelCartaMenu);
+			frame.getContentPane().add(panelReserva);
 		}
 		public void CrearBoton (JButton g) {
 			
@@ -206,6 +260,7 @@ import javax.swing.SwingUtilities;
 			g.setVisible(true);
 			g.setEnabled(true);
 			g.setBounds(0, 0, 1080, 720);
+			
 		}
 		public static void main(String[] args) {
 			SwingUtilities.invokeLater(new Runnable () {
