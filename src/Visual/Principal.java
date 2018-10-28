@@ -164,6 +164,7 @@ import javax.swing.SwingUtilities;
 			CrearBoton(p3b1);
 			CrearBoton(p3b2);
 			
+			
 			p1b1.setBounds(93, 185, 400, 350);
 			p1b2.setBounds(566, 185, 400, 350);
 			p2b1.setBounds(93, 205, 400, 125);
@@ -171,7 +172,18 @@ import javax.swing.SwingUtilities;
 			p2b3.setBounds(566, 205, 400, 125);
 			p3b1.setBounds(93, 185, 400, 350);
 			p3b2.setBounds(566, 185, 400, 350);
+			botonPruebas.setBounds(0, 0, 50, 50);
 			
+			botonPruebas.addActionListener(new ActionListener () {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelPedido, panelPruebas);
+				
+				}
+						
+			});
 			
 			p1b1.addActionListener(new ActionListener () {
 
@@ -251,6 +263,7 @@ import javax.swing.SwingUtilities;
 			panelECarta.add(p2b3);
 			panelCartaMenu.add(p3b1);
 			panelCartaMenu.add(p3b2);
+			panelPruebas.add(botonPruebas);
 			
 			ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("Captura de pantalla (43).png"));
 			frame.setIconImage(imagenIcono.getImage());
@@ -269,6 +282,7 @@ import javax.swing.SwingUtilities;
 			frame.getContentPane().add(panelCartaMenu);
 			frame.getContentPane().add(panelReserva);
 			frame.getContentPane().add(panelPersonas);
+			frame.getContentPane().add(panelPruebas);
 		}
 		public void CrearBoton (JButton g) {
 			
