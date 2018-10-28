@@ -41,16 +41,45 @@ import javax.swing.SwingUtilities;
 			    }
 			};
 			
+			JPanel panelPPlato = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
+			JPanel panelSPlato = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
+			JPanel panelPostre = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
 			JFrame frame = new JFrame ();
 			
-			panelPedido.setLayout(null);
-			panelPedido.setVisible(true);
-			panelPedido.setEnabled(true);
-			panelEMenu.setLayout(null);
-			panelEMenu.setVisible(false);
-			panelEMenu.setEnabled(false);
-			panelPedido.setBounds(0, 0, 1080, 720);
-			panelEMenu.setBounds(0, 0, 1080, 720);
+			
+			CrearPanel(panelPostre);
+			CrearPanel(panelSPlato);
+			CrearPanel(panelPPlato);
+			CrearPanel(panelEMenu);
+			CrearPanel(panelPedido);
+
 			
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
 			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
@@ -98,6 +127,16 @@ import javax.swing.SwingUtilities;
 				
 			});
 			
+			p2b1.addActionListener(new ActionListener () {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelEMenu, panelPPlato);
+				}
+				
+			});
+			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
 			panelEMenu.add(p2b1);
@@ -115,6 +154,9 @@ import javax.swing.SwingUtilities;
 			
 			frame.getContentPane().add(panelPedido);
 			frame.getContentPane().add(panelEMenu);
+			frame.getContentPane().add(panelPPlato);
+			frame.getContentPane().add(panelSPlato);
+			frame.getContentPane().add(panelPostre);
 		}
 		public void CrearBoton (JButton g) {
 			
@@ -127,6 +169,12 @@ import javax.swing.SwingUtilities;
 			g.setEnabled(false);
 			h.setVisible(true);
 			h.setEnabled(true);
+		}
+		public void CrearPanel (JPanel g) {
+			g.setLayout(null);
+			g.setVisible(true);
+			g.setEnabled(true);
+			g.setBounds(0, 0, 1080, 720);
 		}
 		public static void main(String[] args) {
 			SwingUtilities.invokeLater(new Runnable () {
