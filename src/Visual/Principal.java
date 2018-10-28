@@ -17,10 +17,20 @@ import javax.swing.SwingUtilities;
 	
 
 	public class Principal extends JFrame{
-		JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2;
+		JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas;
 		public Principal (){
 			ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("fondo.jpg"));
-
+			
+			JPanel panelPruebas = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
 			JPanel panelPedido = new JPanel (){
 				public void paintComponent(Graphics g) {
 			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -92,6 +102,17 @@ import javax.swing.SwingUtilities;
 			};
 
 			JPanel panelReserva = new JPanel (){
+
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+
+			JPanel panelPersonas = new JPanel (){
 				public void paintComponent(Graphics g) {
 			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 			        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -103,15 +124,19 @@ import javax.swing.SwingUtilities;
 			
 			JFrame frame = new JFrame ();
 			
-			
+			CrearPanel(panelCartaMenu);
+			CrearPanel(panelEMenu);
+			CrearPanel(panelReserva);
 			CrearPanel(panelPostre);
 			CrearPanel(panelSPlato);
 			CrearPanel(panelPPlato);
 			CrearPanel(panelECarta);
 			CrearPanel(panelPedido);
-			CrearPanel(panelCartaMenu);
-			CrearPanel(panelEMenu);
-			CrearPanel(panelReserva);
+			CrearPanel(panelPersonas);
+			CrearPanel(panelPruebas);
+			
+			panelPedido.setVisible(true);
+			panelPedido.setEnabled(true);
 			
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
 			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
@@ -120,7 +145,7 @@ import javax.swing.SwingUtilities;
 			ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b2.jpg"));
 			ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b1.jpg"));
 			ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b2.jpg"));
-		
+			
 			
 			p1b1 = new JButton (imagenp1b1);
 			p1b2 = new JButton (imagenp1b2);
@@ -129,6 +154,7 @@ import javax.swing.SwingUtilities;
 			p2b3 = new JButton (imagenp2b3);
 			p3b1 = new JButton (imagenp3b1);
 			p3b2 = new JButton (imagenp3b2); 
+			botonPruebas = new JButton ("boton pruebas");
 			
 			CrearBoton(p1b1);
 			CrearBoton(p1b2);
@@ -242,6 +268,7 @@ import javax.swing.SwingUtilities;
 			frame.getContentPane().add(panelPostre);
 			frame.getContentPane().add(panelCartaMenu);
 			frame.getContentPane().add(panelReserva);
+			frame.getContentPane().add(panelPersonas);
 		}
 		public void CrearBoton (JButton g) {
 			
@@ -257,8 +284,8 @@ import javax.swing.SwingUtilities;
 		}
 		public void CrearPanel (JPanel g) {
 			g.setLayout(null);
-			g.setVisible(true);
-			g.setEnabled(true);
+			g.setVisible(false);
+			g.setEnabled(false);
 			g.setBounds(0, 0, 1080, 720);
 			
 		}
