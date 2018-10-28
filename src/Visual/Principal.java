@@ -322,6 +322,7 @@ public class Principal extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setLayout(null);
+		frame.setTitle("Bora");
 
 		frame.getContentPane().add(panelPedido);
 		frame.getContentPane().add(panelECarta);
