@@ -41,6 +41,16 @@ import javax.swing.SwingUtilities;
 			    }
 			};
 			
+			JPanel panelCartaMenu = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
+			
 			JPanel panelPPlato = new JPanel (){
 				public void paintComponent(Graphics g) {
 			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -79,7 +89,7 @@ import javax.swing.SwingUtilities;
 			CrearPanel(panelPPlato);
 			CrearPanel(panelEMenu);
 			CrearPanel(panelPedido);
-
+			CrearPanel(panelCartaMenu);
 			
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
 			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
@@ -137,6 +147,26 @@ import javax.swing.SwingUtilities;
 				
 			});
 			
+			p2b2.addActionListener(new ActionListener () {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelEMenu, panelSPlato);
+				}
+				
+			});
+			
+			p2b3.addActionListener(new ActionListener () {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//Base de datos
+					CambiarPanel(panelEMenu, panelPostre);
+				}
+				
+			});
+			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
 			panelEMenu.add(p2b1);
@@ -157,6 +187,7 @@ import javax.swing.SwingUtilities;
 			frame.getContentPane().add(panelPPlato);
 			frame.getContentPane().add(panelSPlato);
 			frame.getContentPane().add(panelPostre);
+			frame.getContentPane().add(panelCartaMenu);
 		}
 		public void CrearBoton (JButton g) {
 			
