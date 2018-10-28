@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 	
 
 	public class Principal extends JFrame{
-		JButton p1b1, p1b2;
+		JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4;
 		public Principal (){
 			ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("fondo.jpg"));
 
@@ -29,30 +29,52 @@ import javax.swing.SwingUtilities;
 			        g.drawImage(bufferImage, 0, 0, this);
 			       
 			    }
-				};
-			JPanel panelEMenu = new JPanel ();
+			};
+			
+			JPanel panelEMenu = new JPanel (){
+				public void paintComponent(Graphics g) {
+			        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+			        Graphics bufferGraphics = bufferImage.getGraphics();
+			        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+			        g.drawImage(bufferImage, 0, 0, this);
+			       
+			    }
+			};
 			
 			JFrame frame = new JFrame ();
 			
 			panelPedido.setLayout(null);
 			panelPedido.setVisible(true);
 			panelPedido.setEnabled(true);
+			panelEMenu.setLayout(null);
 			panelEMenu.setVisible(false);
 			panelEMenu.setEnabled(false);
 			panelPedido.setBounds(0, 0, 1080, 720);
 			panelEMenu.setBounds(0, 0, 1080, 720);
 			
-		
-			panelEMenu.setBackground(Color.black);
-			
 			ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
 			ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
+			
 			p1b1 = new JButton (imagenp1b1);
-			CrearBoton(p1b1);
 			p1b2 = new JButton (imagenp1b2);
+			p2b1 = new JButton (imagenp1b2);
+			p2b2 = new JButton (imagenp1b2);
+			p2b3 = new JButton (imagenp1b2);
+			p2b4 = new JButton (imagenp1b2);
+			
+			CrearBoton(p1b1);
 			CrearBoton(p1b2);
+			CrearBoton(p2b1);
+			CrearBoton(p2b2);
+			CrearBoton(p2b3);
+			CrearBoton(p2b4);
+			
 			p1b1.setBounds(93, 185, 400, 350);
 			p1b2.setBounds(566, 185, 400, 350);
+			p2b1.setBounds(93, 205, 400, 125);
+			p2b2.setBounds(93, 380, 400, 125);
+			p2b3.setBounds(566, 205, 400, 125);
+			p2b4.setBounds(566, 380, 400, 125);
 			
 			p1b1.addActionListener(new ActionListener () {
 
@@ -76,6 +98,11 @@ import javax.swing.SwingUtilities;
 			
 			panelPedido.add(p1b1);
 			panelPedido.add(p1b2);
+			panelEMenu.add(p2b1);
+			panelEMenu.add(p2b2);
+			panelEMenu.add(p2b3);
+			panelEMenu.add(p2b4);
+			
 			ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("Captura de pantalla (43).png"));
 			frame.setIconImage(imagenIcono.getImage());
 			frame.setBounds(350, 300, 1080, 720);
