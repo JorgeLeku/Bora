@@ -22,8 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class Principal extends JFrame {
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9,
-			pp10, pp11, pp12;
+	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb;
 	Font fuente;
 
 	public Principal() {
@@ -42,19 +41,19 @@ public class Principal extends JFrame {
 	            return;
 	        }
        Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
-       
-        
-		JFrame frame = new JFrame();
-		Paneles panelPruebas = new Paneles ();
-		Paneles panelPedido = new Paneles();
-		Paneles panelECarta = new Paneles();
-		Paneles panelCartaMenu = new Paneles();
-		Paneles panelPPlato = new Paneles();
-		Paneles panelSPlato = new Paneles();
-		Paneles panelPostre = new Paneles();
-		Paneles panelEMenu = new Paneles();
-		Paneles panelReserva = new Paneles();
-		Paneles panelPersonas = new Paneles();
+       int x = 1;
+       String p = "p4b"+x;
+       JFrame frame = new JFrame();
+       Paneles panelPruebas = new Paneles ();
+       Paneles panelPedido = new Paneles();
+       Paneles panelECarta = new Paneles();
+       Paneles panelCartaMenu = new Paneles();
+       Paneles panelPPlato = new Paneles();
+       Paneles panelSPlato = new Paneles();
+       Paneles panelPostre = new Paneles();
+       Paneles panelEMenu = new Paneles();
+       Paneles panelReserva = new Paneles();
+       Paneles panelPersonas = new Paneles();
 
 		CrearPanel(panelCartaMenu);
 		CrearPanel(panelEMenu);
@@ -78,6 +77,8 @@ public class Principal extends JFrame {
 		ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1.jpg"));
 		ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2.jpg"));
 		ImageIcon imagenp4b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1.jpg"));
+		ImageIcon imagenbAb = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAb.png"));
+		ImageIcon imagenbAbbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAbb-n.png"));
 		ImageIcon imagenPrueba = new ImageIcon(this.getClass().getClassLoader().getResource("prueba.png"));
 		ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
 		ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
@@ -95,6 +96,8 @@ public class Principal extends JFrame {
 		p2b3 = new JButton(imagenp2b3);
 		p3b1 = new JButton(imagenp3b1);
 		p3b2 = new JButton(imagenp3b2);
+		bAb = new JButton(imagenbAb);
+		bAb.setRolloverIcon(imagenbAbbn);
 		p1b1.setRolloverIcon(imagenp1b1bn);
 		p1b2.setRolloverIcon(imagenp1b2bn);
 		p2b1.setRolloverIcon(imagenp2b1bn);
@@ -105,17 +108,7 @@ public class Principal extends JFrame {
 		botonPruebas = new JButton(imagenPrueba);
 		pp1 = new JButton(imagenp4b1);
 		pp1.setRolloverIcon(imagenp4b1bn);
-		pp2 = new JButton("p1");
-		pp3 = new JButton("p1");
-		pp4 = new JButton("p1");
-		pp5 = new JButton("p1");
-		pp6 = new JButton("p1");
-		pp7 = new JButton("p1");
-		pp8 = new JButton("p1");
-		pp9 = new JButton("p1");
-		pp10 = new JButton("p1");
-		pp11 = new JButton("p1");
-		pp12 = new JButton("p1");
+		
 		
 		CrearBoton(p1b1);
 		CrearBoton(p1b2);
@@ -125,6 +118,7 @@ public class Principal extends JFrame {
 		CrearBoton(p3b1);
 		CrearBoton(p3b2);
 		CrearBoton(pp1);
+		CrearBoton(bAb);
 
 		p1b1.setBounds(93, 185, 400, 350);
 		p1b2.setBounds(566, 185, 400, 350);
@@ -136,17 +130,8 @@ public class Principal extends JFrame {
 		botonPruebas.setBounds(0, 0, 50, 50);
 
 		pp1.setBounds(38, 185, 300, 75);
-		pp2.setBounds(38, 275, 300, 75);
-		pp3.setBounds(38, 365, 300, 75);
-		pp4.setBounds(38, 455, 300, 75);
-		pp5.setBounds(379, 185, 300, 75);
-		pp6.setBounds(379, 275, 300, 75);
-		pp7.setBounds(379, 365, 300, 75);
-		pp8.setBounds(379, 455, 300, 75);
-		pp9.setBounds(722, 185, 300, 75);
-		pp10.setBounds(722, 275, 300, 75);
-		pp11.setBounds(722, 365, 300, 75);
-		pp12.setBounds(722, 455, 300, 75);
+		bAb.setBounds(500, 30, 80, 80);
+		
 
 		
 		JLabel merluza = new JLabel ();
@@ -270,6 +255,39 @@ public class Principal extends JFrame {
 				merluza.setVisible(false);
 			}
 		});
+		bAb.addMouseListener(new MouseListener () {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		panelPedido.add(p1b1);
 		panelPedido.add(p1b2);
@@ -280,17 +298,7 @@ public class Principal extends JFrame {
 		panelCartaMenu.add(p3b2);
 		panelPedido.add(botonPruebas);
 		panelPruebas.add(pp1);
-		panelPruebas.add(pp2);
-		panelPruebas.add(pp3);
-		panelPruebas.add(pp4);
-		panelPruebas.add(pp5);
-		panelPruebas.add(pp6);
-		panelPruebas.add(pp7);
-		panelPruebas.add(pp8);
-		panelPruebas.add(pp9);
-		panelPruebas.add(pp10);
-		panelPruebas.add(pp11);
-		panelPruebas.add(pp12);
+		panelPruebas.add(bAb);
 
 		ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
 		frame.setIconImage(imagenIcono.getImage());
