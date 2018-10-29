@@ -7,10 +7,12 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -30,8 +32,6 @@ public class Principal extends JFrame {
 		Paneles panelEMenu = new Paneles();
 		Paneles panelReserva = new Paneles();
 		Paneles panelPersonas = new Paneles();
-
-		
 
 		CrearPanel(panelCartaMenu);
 		CrearPanel(panelEMenu);
@@ -125,6 +125,15 @@ public class Principal extends JFrame {
 		pp11.setBounds(722, 365, 300, 75);
 		pp12.setBounds(722, 455, 300, 75);
 
+		
+		JLabel merluza = new JLabel ("Ingredientes: 1 cogote de merluza del cantábrico, sal de Añana al vino, 4 dientes de ajo,\r\n" + 
+				"aceite de oliva virgen extra, vinagre de sidra, 1 pimienta cayena, 1 manojo de perejil.");
+		merluza.setBounds(50, 450, 1080, 300);
+		merluza.setBorder(null);
+		merluza.setVisible(false);
+		merluza.setOpaque(false);
+		panelPruebas.add(merluza);
+		
 		botonPruebas.addActionListener(new ActionListener() {
 
 			@Override
@@ -206,19 +215,35 @@ public class Principal extends JFrame {
 
 		});
 
-		pp1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelPruebas, panelPedido);
-				
-			}
+		
+		pp1.addMouseListener(new MouseListener () {
 			public void mouseEntered(MouseEvent e) {
+				merluza.setVisible(true);
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
 				CambiarPanel(panelPruebas, panelPedido);
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
 				
 			}
 
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				merluza.setVisible(false);
+			}
 		});
 		
 		panelPedido.add(p1b1);
@@ -242,8 +267,7 @@ public class Principal extends JFrame {
 		panelPruebas.add(pp11);
 		panelPruebas.add(pp12);
 
-		ImageIcon imagenIcono = new ImageIcon(
-				this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
+		ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
 		frame.setIconImage(imagenIcono.getImage());
 		frame.setBounds(350, 300, 1080, 720);
 		frame.setVisible(true);
@@ -270,7 +294,7 @@ public class Principal extends JFrame {
 		g.setContentAreaFilled(false);
 		g.setBorderPainted(false);
 	}
-
+	
 	public void CambiarPanel(JPanel g, JPanel h) {
 		g.setVisible(false);
 		g.setEnabled(false);
