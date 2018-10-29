@@ -1,11 +1,12 @@
-package Visual;
+package ventana;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
+
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,110 +19,19 @@ public class Principal extends JFrame {
 			pp10, pp11, pp12;
 
 	public Principal() {
-		ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondo.jpg"));
-
-		JPanel panelPruebas = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelPedido = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelECarta = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelCartaMenu = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelPPlato = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelSPlato = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelPostre = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelEMenu = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelReserva = new JPanel() {
-
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
-		JPanel panelPersonas = new JPanel() {
-			public void paintComponent(Graphics g) {
-				Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-				Graphics bufferGraphics = bufferImage.getGraphics();
-				bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-				g.drawImage(bufferImage, 0, 0, this);
-
-			}
-		};
-
 		JFrame frame = new JFrame();
+		Paneles panelPruebas = new Paneles ();
+		Paneles panelPedido = new Paneles();
+		Paneles panelECarta = new Paneles();
+		Paneles panelCartaMenu = new Paneles();
+		Paneles panelPPlato = new Paneles();
+		Paneles panelSPlato = new Paneles();
+		Paneles panelPostre = new Paneles();
+		Paneles panelEMenu = new Paneles();
+		Paneles panelReserva = new Paneles();
+		Paneles panelPersonas = new Paneles();
+
+		
 
 		CrearPanel(panelCartaMenu);
 		CrearPanel(panelEMenu);
@@ -296,6 +206,21 @@ public class Principal extends JFrame {
 
 		});
 
+		pp1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				CambiarPanel(panelPruebas, panelPedido);
+				
+			}
+			public void mouseEntered(MouseEvent e) {
+				CambiarPanel(panelPruebas, panelPedido);
+				
+			}
+
+		});
+		
 		panelPedido.add(p1b1);
 		panelPedido.add(p1b2);
 		panelECarta.add(p2b1);
