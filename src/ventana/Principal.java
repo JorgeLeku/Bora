@@ -2,12 +2,17 @@ package ventana;
 
 
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.io.InputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,8 +24,26 @@ import javax.swing.SwingUtilities;
 public class Principal extends JFrame {
 	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9,
 			pp10, pp11, pp12;
+	Font fuente;
 
 	public Principal() {
+		InputStream cogerFuente;
+		 try {
+	           cogerFuente = this.getClass().getResource("Stingray.otf").openStream();
+	        }
+	        catch (IOException e1) {
+	            e1.printStackTrace();
+	            return;
+	        }
+       try {
+	            this.fuente = Font.createFont(0, cogerFuente);
+	        }
+	        catch (FontFormatException | IOException e) {
+	            return;
+	        }
+       Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
+       
+        
 		JFrame frame = new JFrame();
 		Paneles panelPruebas = new Paneles ();
 		Paneles panelPedido = new Paneles();
@@ -126,8 +149,10 @@ public class Principal extends JFrame {
 		pp12.setBounds(722, 455, 300, 75);
 
 		
-		JLabel merluza = new JLabel ("Ingredientes: 1 cogote de merluza del cantábrico, sal de Añana al vino, 4 dientes de ajo,\r\n" + 
-				"aceite de oliva virgen extra, vinagre de sidra, 1 pimienta cayena, 1 manojo de perejil.");
+		JLabel merluza = new JLabel ();
+		merluza.setFont(newFont);
+		merluza.setForeground(Color.white);
+		merluza.setText("<html><body>Ingredientes:  1  cogote  de  merluza  del  cantábrico,  sal  de  Añana  al  vino,  4  dientes  de  ajo,<br>aceite  de  oliva  virgen  extra,  vinagre  de  sidra,  1  pimienta  cayena,  1  manojo  de  perejil.</body></html>" );
 		merluza.setBounds(50, 450, 1080, 300);
 		merluza.setBorder(null);
 		merluza.setVisible(false);
