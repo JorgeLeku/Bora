@@ -18,7 +18,7 @@ public class Principal extends JFrame {
 			pp10, pp11, pp12;
 
 	public Principal() {
-		ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("fondo.jpg"));
+		ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondo.jpg"));
 
 		JPanel panelPruebas = new JPanel() {
 			public void paintComponent(Graphics g) {
@@ -137,21 +137,21 @@ public class Principal extends JFrame {
 		panelPedido.setVisible(true);
 		panelPedido.setEnabled(true);
 
-		ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2.jpg"));
-		ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1.jpg"));
-		ImageIcon imagenp2b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b1.jpg"));
-		ImageIcon imagenp2b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b3.jpg"));
-		ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2b2.jpg"));
-		ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b1.jpg"));
-		ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3b2.jpg"));
+		ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2.jpg"));
+		ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1.jpg"));
+		ImageIcon imagenp2b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b1.jpg"));
+		ImageIcon imagenp2b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b3.jpg"));
+		ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2.jpg"));
+		ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1.jpg"));
+		ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2.jpg"));
 		ImageIcon imagenPrueba = new ImageIcon(this.getClass().getClassLoader().getResource("prueba.png"));
-		ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1b2b-n.jpg"));
-		ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1b1b-n.jpg"));
-		ImageIcon imagenp2b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2b1b-n.jpg"));
-		ImageIcon imagenp2b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2b3b-n.jpg"));
-		ImageIcon imagenp2b3bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2b2b-n.jpg"));
-		ImageIcon imagenp3b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3b1b-n.jpg"));
-		ImageIcon imagenp3b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3b2b-n.jpg"));
+		ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
+		ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
+		ImageIcon imagenp2b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b1b-n.jpg"));
+		ImageIcon imagenp2b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b3b-n.jpg"));
+		ImageIcon imagenp2b3bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2b-n.jpg"));
+		ImageIcon imagenp3b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1b-n.jpg"));
+		ImageIcon imagenp3b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2b-n.jpg"));
 		
 		p1b1 = new JButton(imagenp1b1);
 		p1b2 = new JButton(imagenp1b2);
@@ -314,7 +314,7 @@ public class Principal extends JFrame {
 		panelPruebas.add(pp12);
 
 		ImageIcon imagenIcono = new ImageIcon(
-				this.getClass().getClassLoader().getResource("Captura de pantalla (43).png"));
+				this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
 		frame.setIconImage(imagenIcono.getImage());
 		frame.setBounds(350, 300, 1080, 720);
 		frame.setVisible(true);
