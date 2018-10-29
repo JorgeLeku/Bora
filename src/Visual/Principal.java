@@ -144,6 +144,7 @@ public class Principal extends JFrame {
 		ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2.jpg"));
 		ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1.jpg"));
 		ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2.jpg"));
+		ImageIcon imagenp4b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1.jpg"));
 		ImageIcon imagenPrueba = new ImageIcon(this.getClass().getClassLoader().getResource("prueba.png"));
 		ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
 		ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
@@ -152,6 +153,7 @@ public class Principal extends JFrame {
 		ImageIcon imagenp2b3bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2b-n.jpg"));
 		ImageIcon imagenp3b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1b-n.jpg"));
 		ImageIcon imagenp3b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2b-n.jpg"));
+		ImageIcon imagenp4b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1b-n.jpg"));
 		
 		p1b1 = new JButton(imagenp1b1);
 		p1b2 = new JButton(imagenp1b2);
@@ -168,7 +170,8 @@ public class Principal extends JFrame {
 		p3b1.setRolloverIcon(imagenp3b2bn);
 		p3b2.setRolloverIcon(imagenp3b1bn);
 		botonPruebas = new JButton(imagenPrueba);
-		pp1 = new JButton("p1");
+		pp1 = new JButton(imagenp4b1);
+		pp1.setRolloverIcon(imagenp4b1bn);
 		pp2 = new JButton("p1");
 		pp3 = new JButton("p1");
 		pp4 = new JButton("p1");
@@ -188,6 +191,7 @@ public class Principal extends JFrame {
 		CrearBoton(p2b3);
 		CrearBoton(p3b1);
 		CrearBoton(p3b2);
+		CrearBoton(pp1);
 
 		p1b1.setBounds(93, 185, 400, 350);
 		p1b2.setBounds(566, 185, 400, 350);
