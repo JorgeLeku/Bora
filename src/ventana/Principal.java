@@ -32,7 +32,7 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
-	JLabel cbl1, cbl2, cbl3;
+	JLabel cbl1, cbl2, cbl3, cbl4;
 	JTextField cbt1;
 	Font fuente;
 	int x = 1;
@@ -161,6 +161,10 @@ public class Principal extends JFrame {
        cbl3.setBounds(250, 340, 400, 40);
        cbl3.setFont(newFont);
        cbl3.setText("Elegir imagen");
+       
+       cbl4 = new JLabel();
+       cbl4.setBounds(750, 250, 200, 40);
+       cbl4.setFont(newFont);
        
        CrearBoton(p1b1);
        CrearBoton(p1b2);
@@ -434,12 +438,25 @@ public class Principal extends JFrame {
     	 File selectedFile = fileChooser.getSelectedFile();
 
     	 System.out.println(selectedFile.getName());
-
+    	 cbl4.setText(selectedFile.getAbsolutePath());
     	 }
 
-    	 }
+       }
 
-    	 });
+    });
+       
+       cbb1.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println(cbt1.getText());
+			System.out.println(cbl4.getText());
+		}
+	});
+       
+       
+       
        panelPedido.add(p1b1);
        panelPedido.add(p1b2);
        panelECarta.add(p2b1);
@@ -456,6 +473,7 @@ public class Principal extends JFrame {
        panelCreacionBoton.add(cbl2);
        panelCreacionBoton.add(cbl3);
        panelCreacionBoton.add(cbb2);
+       panelCreacionBoton.add(cbl4);
        
        ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
        frame.setIconImage(imagenIcono.getImage());
