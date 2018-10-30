@@ -13,14 +13,17 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class Principal extends JFrame {
@@ -28,7 +31,9 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr;
+	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
+	JLabel cbl1, cbl2, cbl3;
+	JTextField cbt1;
 	Font fuente;
 	int x = 1;
 	public Principal() {
@@ -61,6 +66,7 @@ public class Principal extends JFrame {
        Paneles panelEMenu = new Paneles();
        Paneles panelReserva = new Paneles();
        Paneles panelPersonas = new Paneles();
+       Paneles panelCreacionBoton = new Paneles ();
        JPanel panelBienvenida =  new JPanel(){
 			public void paintComponent(Graphics g) {
 		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -82,6 +88,7 @@ public class Principal extends JFrame {
        CrearPanel(panelPersonas);
        CrearPanel(panelPruebas);
        CrearPanel(panelBienvenida);
+       CrearPanel(panelCreacionBoton);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -98,6 +105,8 @@ public class Principal extends JFrame {
        ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
        ImageIcon imagenbAtrbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtrb-n.png"));
        ImageIcon imagenbAbbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAbb-n.png"));
+       ImageIcon imagencbb2 = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bs1.png"));
+       ImageIcon imagencbb2bn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bs1b-n.png"));
        ImageIcon imagenPrueba = new ImageIcon(this.getClass().getClassLoader().getResource("prueba.png"));
        ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
        ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
@@ -118,6 +127,10 @@ public class Principal extends JFrame {
        p3b2 = new JButton(imagenp3b2);
        bAb = new JButton(imagenbAb);
        bAtr = new JButton (imagenbAtr);
+       cbb1 = new JButton(imagenbAb);
+       cbb2 = new JButton(imagencbb2);
+       cbb2.setRolloverIcon(imagencbb2bn);
+       cbb1.setRolloverIcon(imagenbAbbn);
        bAtr.setRolloverIcon(imagenbAtrbn);
        bAb.setRolloverIcon(imagenbAbbn);
        p1b1.setRolloverIcon(imagenp1b1bn);
@@ -130,7 +143,24 @@ public class Principal extends JFrame {
        botonPruebas = new JButton(imagenPrueba);
        pp1 = new JButton(imagenp4b1);
        pp1.setRolloverIcon(imagenp4b1bn);
+
+       cbt1 = new JTextField();
+       cbt1.setBounds(500, 250, 200, 40);
        
+       cbl1 = new JLabel();
+       cbl1.setBounds(250, 250, 400, 40);
+       cbl1.setFont(newFont);
+       cbl1.setText("Nombra  el  producto");
+       
+       cbl2 = new JLabel();
+       cbl2.setBounds(450, 200, 400, 40);
+       cbl2.setFont(newFont);
+       cbl2.setText("Crear boton");
+       
+       cbl3 = new JLabel();
+       cbl3.setBounds(250, 340, 400, 40);
+       cbl3.setFont(newFont);
+       cbl3.setText("Elegir imagen");
        
        CrearBoton(p1b1);
        CrearBoton(p1b2);
@@ -142,6 +172,9 @@ public class Principal extends JFrame {
        CrearBoton(pp1);
        CrearBoton(bAb);
        CrearBoton(bAtr);
+       CrearBoton(cbb1);
+       CrearBoton(cbb2);
+       
        
        p1b1.setBounds(93, 185, 400, 350);
        p1b2.setBounds(566, 185, 400, 350);
@@ -155,6 +188,8 @@ public class Principal extends JFrame {
        pp1.setBounds(38, 185, 300, 75);
        bAb.setBounds(500, 30, 80, 80);
        bAtr.setBounds(30, 30, 80, 80);
+       cbb1.setBounds(500, 450, 80, 80);
+       cbb2.setBounds(450, 325, 300, 75);
 
 		
        JLabel merluza = new JLabel ();
@@ -311,7 +346,7 @@ public class Principal extends JFrame {
 				String p = "p4b" +x;
 			     JButton v = new JButton ();
 			     */
-				
+				CambiarPanel(panelPruebas, panelCreacionBoton);
 			}
 
 			@Override
@@ -381,6 +416,30 @@ public class Principal extends JFrame {
 			}
 		}
 	});
+       cbb2.addActionListener(new ActionListener() {
+
+    	   //  Lo que sucede al pulsar el boton
+    	 public void actionPerformed(ActionEvent ae) {
+
+    	 //Creamos selector de aperture
+
+    	 JFileChooser fileChooser = new JFileChooser();
+
+    	 int returnValue = fileChooser.showOpenDialog(null);// Nos retorna un entero
+
+    	 // Si apretamos en aceptar un archive ocurrira esto
+
+    	 if (returnValue == JFileChooser.APPROVE_OPTION) {
+
+    	 File selectedFile = fileChooser.getSelectedFile();
+
+    	 System.out.println(selectedFile.getName());
+
+    	 }
+
+    	 }
+
+    	 });
        panelPedido.add(p1b1);
        panelPedido.add(p1b2);
        panelECarta.add(p2b1);
@@ -391,7 +450,12 @@ public class Principal extends JFrame {
        panelPedido.add(botonPruebas);
        panelPruebas.add(pp1);
        panelPruebas.add(bAb);	
-       
+       panelCreacionBoton.add(cbb1);
+       panelCreacionBoton.add(cbt1);
+       panelCreacionBoton.add(cbl1);
+       panelCreacionBoton.add(cbl2);
+       panelCreacionBoton.add(cbl3);
+       panelCreacionBoton.add(cbb2);
        
        ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
        frame.setIconImage(imagenIcono.getImage());
@@ -412,6 +476,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelPersonas);
        frame.getContentPane().add(panelPruebas);
        frame.getContentPane().add(panelBienvenida);
+       frame.getContentPane().add(panelCreacionBoton);
 	}
 	public void CrearBoton(JButton g) {
 
