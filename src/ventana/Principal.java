@@ -250,7 +250,7 @@ public class Principal extends JFrame {
 			}
 
        });
-
+//borrar esto <--
        p1b1.addActionListener(new ActionListener() {
 
 			@Override
