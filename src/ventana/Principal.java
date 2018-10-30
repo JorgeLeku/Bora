@@ -32,9 +32,10 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
-	JLabel cbl1, cbl2, cbl3, cbl4;
+	JLabel cbl1, cbl2, cbl3, cbl4, fl1, fl2;
 	JTextField cbt1;
 	Font fuente;
+	
 	int x = 1;
 	public Principal() {
 		InputStream cogerFuente;
@@ -67,6 +68,7 @@ public class Principal extends JFrame {
        Paneles panelReserva = new Paneles();
        Paneles panelPersonas = new Paneles();
        Paneles panelCreacionBoton = new Paneles ();
+       Paneles panelFactura = new Paneles ();
        JPanel panelBienvenida =  new JPanel(){
 			public void paintComponent(Graphics g) {
 		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -89,6 +91,7 @@ public class Principal extends JFrame {
        CrearPanel(panelPruebas);
        CrearPanel(panelBienvenida);
        CrearPanel(panelCreacionBoton);
+       CrearPanel(panelFactura);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -165,6 +168,17 @@ public class Principal extends JFrame {
        cbl4 = new JLabel();
        cbl4.setBounds(750, 250, 200, 40);
        cbl4.setFont(newFont);
+       
+       fl1 = new JLabel();
+       fl1.setBounds(500, 250, 200, 40);
+       fl1.setFont(newFont);
+       fl1.setText("Factura");
+       
+       fl2 = new JLabel();
+       fl1.setBounds(350, 550, 200, 40);
+       fl1.setFont(newFont);
+       fl1.setText("Total");
+       
        
        CrearBoton(p1b1);
        CrearBoton(p1b2);
@@ -474,6 +488,8 @@ public class Principal extends JFrame {
        panelCreacionBoton.add(cbl3);
        panelCreacionBoton.add(cbb2);
        panelCreacionBoton.add(cbl4);
+       panelFactura.add(fl1);
+       panelFactura.add(fl2);
        
        ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
        frame.setIconImage(imagenIcono.getImage());
@@ -484,6 +500,7 @@ public class Principal extends JFrame {
        frame.setVisible(true);
        frame.setLayout(null);
        frame.setTitle("Bora");	
+       
        frame.getContentPane().add(panelPedido);
        frame.getContentPane().add(panelECarta);
        frame.getContentPane().add(panelPPlato);
@@ -495,6 +512,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelPruebas);
        frame.getContentPane().add(panelBienvenida);
        frame.getContentPane().add(panelCreacionBoton);
+       frame.getContentPane().add(panelFactura);
 	}
 	public void CrearBoton(JButton g) {
 
