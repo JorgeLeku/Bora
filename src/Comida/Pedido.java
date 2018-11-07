@@ -7,91 +7,77 @@ public class Pedido {
 
 	//Propiedades
 	private Date fecha;
-	private int numTarjeta;
+	private int numTargeta;
 	private ArrayList<Comida> productos;
 	private double dineroGastado;
 	//Metodos
-	public Pedido(String fecha, String ntarjeta, Producto[] productos) {
+	public Pedido(Date fecha, int ntarjeta, ArrayList<Comida>productos) {
 		this.fecha = fecha;
-		this.ntarjeta = ntarjeta;
+		this.numTargeta = ntarjeta;
 		this.productos = productos;
 	}
 		
 	public Pedido() {
-		this.fecha = "Sin fecha";
-		this.ntarjeta = "Sin ntarjeta";
+		this.fecha =new Date();
+		this.numTargeta =0;
 		this.productos = null;
 	}
 	
 	public Pedido(Pedido p) {
 		this.fecha = p.fecha;
-		this.ntarjeta = p.ntarjeta;
+		this.numTargeta = p.numTargeta;
 		this.productos = p.productos;
 	}
 	
 	//G&S
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
-	public String getNtarjeta() {
-		return ntarjeta;
+	public int getNtarjeta() {
+		return numTargeta;
 	}
 
-	public void setNtarjeta(String ntarjeta) {
-		this.ntarjeta = ntarjeta;
+	public void setNtarjeta(int ntarjeta) {
+		this.numTargeta = ntarjeta;
 	}
 
-	public Producto[] getProductos() {
+	public ArrayList<Comida> getProductos() {
 		return productos;
 	}
 
-	public void setProductos(Producto[] productos) {
+	public void setProductos(ArrayList<Comida> productos) {
 		this.productos = productos;
 	}
 
-	//StoS
-	public String toString() {
-		return "Pedido [fecha=" + fecha + ", ntarjeta=" + ntarjeta + ", productos=" + Arrays.toString(productos) + "]";
+	
+	public int getNumTargeta() {
+		return numTargeta;
+	}
+
+	public void setNumTargeta(int numTargeta) {
+		this.numTargeta = numTargeta;
+	}
+
+	public double getDineroGastado() {
+		return dineroGastado;
+	}
+
+	public void setDineroGastado(double dineroGastado) {
+		this.dineroGastado = dineroGastado;
 	}
 
 	public double getImporte() {
-		double resultado = 0;
-		
-		for (int i = 0; i < productos.length; i++) {
-			if (productos[i] != null)
-				resultado = resultado + productos[i].getPrecio();
-		}
-		return resultado;
+		return 0;
 	}
 	
 	
 	public static void main(String[] args) {
-		Producto[] prods; 
-		Pedido mipedido;
-		
-		prods = new Producto[10];
-		
-		prods[0] = new Producto(1, "Tomate", 1.35);
-		prods[1] = new Producto(2, "Tomate", 1.35);
-		prods[2] = new Producto(3, "Tomate", 1.35);
-		prods[3] = new Producto(4, "Tomate", 1.35);
-		prods[4] = new Producto(5, "Tomate", 1.35);
-		prods[5] = new Producto(6, "Tomate", 1.35);
-		prods[6] = new Producto(7, "Calcetines a precio de tomate", 1.35);
-		prods[7] = new Producto(8, "Tomate", 1.35);
-		prods[8] = new Producto(9, "Tomate", 1.35);
-		prods[9] = new Producto(10, "Tomate", 1.35);
-		
-		mipedido = new Pedido();
-		mipedido.setNtarjeta("4502 1233 4353 7899");
-		mipedido.setProductos(prods);
-		
-		System.out.println(mipedido.getImporte());
+	
 	}
 	
 
