@@ -38,13 +38,7 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public int getNtarjeta() {
-		return numTargeta;
-	}
 
-	public void setNtarjeta(int ntarjeta) {
-		this.numTargeta = ntarjeta;
-	}
 
 	public ArrayList<Comida> getProductos() {
 		return productos;
@@ -76,6 +70,12 @@ public class Pedido {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Pedido [fecha=" + fecha + ", numTargeta=" + numTargeta + ", productos=" + productos + ", dineroGastado="
+				+ dineroGastado + "]";
+	}
+
 	public static void main(String[] args) {
 	
 	}
