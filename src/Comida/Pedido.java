@@ -11,22 +11,25 @@ public class Pedido {
 	private ArrayList<Comida> productos;
 	private double dineroGastado;
 	//Metodos
-	public Pedido(Date fecha, int ntarjeta, ArrayList<Comida>productos) {
+	public Pedido(Date fecha, int ntarjeta, ArrayList<Comida>productos,double dineroGastado) {
 		this.fecha = fecha;
 		this.numTargeta = ntarjeta;
 		this.productos = productos;
+		this.dineroGastado = getImporte();
 	}
 		
 	public Pedido() {
 		this.fecha =new Date();
 		this.numTargeta =0;
 		this.productos = null;
+		this.dineroGastado = getImporte();
 	}
 	
 	public Pedido(Pedido p) {
 		this.fecha = p.fecha;
 		this.numTargeta = p.numTargeta;
 		this.productos = p.productos;
+		this.dineroGastado = p.dineroGastado;
 	}
 	
 	//G&S
@@ -38,8 +41,6 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-
-
 	public ArrayList<Comida> getProductos() {
 		return productos;
 	}
@@ -48,7 +49,7 @@ public class Pedido {
 		this.productos = productos;
 	}
 
-	
+
 	public int getNumTargeta() {
 		return numTargeta;
 	}
@@ -61,10 +62,7 @@ public class Pedido {
 		return dineroGastado;
 	}
 
-	public void setDineroGastado(double dineroGastado) {
-		this.dineroGastado = dineroGastado;
-	}
-
+	
 	public double getImporte() {
 		return 0;
 	}
