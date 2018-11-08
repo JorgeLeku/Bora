@@ -7,7 +7,7 @@ public class Ingrediente {
 	private double precio;
 	private double calorias;
 	
-	//Metodos
+	//constructores
 	public Ingrediente(String nombre, double peso, double precio, double calorias) {
 		this.nombre = nombre;
 		this.peso = peso;
