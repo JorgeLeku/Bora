@@ -8,7 +8,7 @@ public class Pedido {
 	//Propiedades
 	private Date fecha;
 	private int numTargeta;
-	private ArrayList<Comida> productos;
+	private ArrayList<Alimentos> productos;
 	private double dineroGastado;
 	//Metodos
 	public Pedido(Date fecha, int ntarjeta, ArrayList<Comida>productos,double dineroGastado) {
@@ -62,12 +62,19 @@ public class Pedido {
 		return dineroGastado;
 	}
 
-	
+	//metodo que devuelte el importe delos productos seleccionados
 	public double getImporte() {
-		return 0;
+		double importe = 0;
+		for (Comida comida : productos) {
+			importe = importe + comida.getPrecio();
+		}
+		return importe;
 	}
-	
-	
+	//metodo para añadir comida al 
+	public void añadirComida(Comida c) {
+		this.productos.add(c); //se añade el producto
+		this.dineroGastado = getImporte();
+	}
 	@Override
 	public String toString() {
 		return "Pedido [fecha=" + fecha + ", numTargeta=" + numTargeta + ", productos=" + productos + ", dineroGastado="
