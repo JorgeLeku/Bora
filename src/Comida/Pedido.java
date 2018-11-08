@@ -11,7 +11,7 @@ public class Pedido {
 	private ArrayList<Alimentos> productos;
 	private double dineroGastado;
 	//Metodos
-	public Pedido(Date fecha, int ntarjeta, ArrayList<Comida>productos,double dineroGastado) {
+	public Pedido(Date fecha, int ntarjeta, ArrayList<Alimentos>productos,double dineroGastado) {
 		this.fecha = fecha;
 		this.numTargeta = ntarjeta;
 		this.productos = productos;
@@ -41,11 +41,11 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public ArrayList<Comida> getProductos() {
+	public ArrayList<Alimentos> getProductos() {
 		return productos;
 	}
 
-	public void setProductos(ArrayList<Comida> productos) {
+	public void setProductos(ArrayList<Alimentos> productos) {
 		this.productos = productos;
 	}
 
@@ -65,16 +65,23 @@ public class Pedido {
 	//metodo que devuelte el importe delos productos seleccionados
 	public double getImporte() {
 		double importe = 0;
-		for (Comida comida : productos) {
-			importe = importe + comida.getPrecio();
+		for (Alimentos seleccionado : productos) {
+			importe = importe + seleccionado.getPrecio();
 		}
 		return importe;
 	}
-	//metodo para añadir comida al 
-	public void añadirComida(Comida c) {
+	//metodo para añadir comida al pedido
+	public void addComida(Comida c) {
 		this.productos.add(c); //se añade el producto
 		this.dineroGastado = getImporte();
 	}
+	//metodo para quitar a un producto del pedido
+/*	public void deleteComida(Comida c) {
+		this.productos.remove(c);
+		this.dineroGastado = getImporte();
+	}*/   //este metodo borraria todos o solo 1???
+	
+	//to string 
 	@Override
 	public String toString() {
 		return "Pedido [fecha=" + fecha + ", numTargeta=" + numTargeta + ", productos=" + productos + ", dineroGastado="
