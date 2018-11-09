@@ -76,15 +76,7 @@ public class Pedido {
 		prods = new Producto[10];
 		
 		prods[0] = new Producto(1, "Tomate", 1.35);
-		prods[1] = new Producto(2, "Tomate", 1.35);
-		prods[2] = new Producto(3, "Tomate", 1.35);
-		prods[3] = new Producto(4, "Tomate", 1.35);
-		prods[4] = new Producto(5, "Tomate", 1.35);
-		prods[5] = new Producto(6, "Tomate", 1.35);
-		prods[6] = new Producto(7, "Calcetines a precio de tomate", 1.35);
-		prods[7] = new Producto(8, "Tomate", 1.35);
-		prods[8] = new Producto(9, "Tomate", 1.35);
-		prods[9] = new Producto(10, "Tomate", 1.35);
+		
 		
 		mipedido = new Pedido();
 		mipedido.setNtarjeta("4502 1233 4353 7899");

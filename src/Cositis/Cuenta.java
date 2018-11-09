@@ -76,7 +76,7 @@ public class Cuenta {
 
 	public static void main(String[] args) {
 		
-		Cuenta c1 = new Cuenta("Jorge Gorda","123444444445", 3.50);
+		Cuenta c1 = new Cuenta("Jorge","123444444445", 3.50);
 		Cuenta c2 = new Cuenta("Eneko","987654321",10.50);
 		
 		c1.transferir(3, c2);
