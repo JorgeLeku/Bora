@@ -3,8 +3,8 @@ package Comida;
 import java.util.HashSet;
 
 public class Carta {
-	/*Clase carta,
-	 * objetivo leer y escribir archivos para una carta */
+	/* Clase carta,
+	 * objetivo leer y escribir en la BD   */
 	
 	public HashSet<Comida> comidas;
 	public HashSet<Bebida>bebidas;
@@ -43,6 +43,18 @@ public class Carta {
 	}
 	public void addBebida(Bebida b) {
 		this.bebidas.add(b);
+	}
+	
+	
+	
+	
+	//metodos para conectar con la base de datos
+	public void cargarCarta() {
+		
+	}
+	
+	public void guardarCarta() {
+		
 	}
 	
 	

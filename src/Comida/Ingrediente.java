@@ -3,28 +3,24 @@ package Comida;
 public class Ingrediente {
 	//Propiedades
 	private String nombre;
-	private double peso;
 	private double precio;
 	private double calorias;
 	
 	//constructores
-	public Ingrediente(String nombre, double peso, double precio, double calorias) {
+	public Ingrediente(String nombre,  double precio, double calorias) {
 		this.nombre = nombre;
-		this.peso = peso;
 		this.precio = precio;
 		this.calorias = calorias;
 	}
 		
 	public Ingrediente() {
 			this.nombre = "Sin nombre";
-			this.peso = 0;
 			this.precio = 0;
 			this.calorias =0;
 	}
 	
 	public Ingrediente(Ingrediente i) {
 		this.nombre = i.nombre;
-		this.peso = i.peso;
 		this.calorias = i.calorias;
 		this.precio = i.precio;
 	}
@@ -48,13 +44,7 @@ public class Ingrediente {
 		this.nombre = nombre;
 	}
 
-	public double getPeso() {
-		return peso;
-	}
-
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
+	
 
 	public double getPrecio() {
 		return precio;
@@ -66,7 +56,7 @@ public class Ingrediente {
 	//to string 
 	@Override
 	public String toString() {
-		return  nombre + ", " + peso + ", " + precio + ", " + calorias;
+		return  nombre  + ", " + precio + ", " + calorias;
 	}
 
 
