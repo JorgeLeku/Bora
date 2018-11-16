@@ -48,6 +48,12 @@ public class Bebida extends Alimentos {
 		this.alcoholica = alcoholica;
 	}
 
+	@Override
+	public String toString() {
+		return id + ", " + nombre + ", " + descripcion + ", " + mL + ", " + alcoholica + ", "
+				+ calorias + ", " + precio;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

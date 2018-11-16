@@ -46,15 +46,15 @@ public class Comida extends Alimentos {
 
 
 //to string
-
 	@Override
 	public String toString() {
-		return "Comida [ingredientes=" + ingredientes + ", calorias=" + calorias + ", precio=" + precio + ", nombre="
-				+ nombre + ", id=" + id + "]";
+		return id + ", " + nombre + ", " + ingredientes + ", " + calorias + ", " + precio;
 	}
-
+	
 	public static void main(String[] args) {
 		Comida c = new Comida();
 		System.out.println(c.getId());
 	}
+
+	
 }
