@@ -120,6 +120,7 @@ public class Principal extends JFrame {
        ImageIcon imagenp3b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2b-n.jpg"));
        ImageIcon imagenp4b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1b-n.jpg"));
        
+       //sad
        
        p1b1 = new JButton(imagenp1b1);
        p1b2 = new JButton(imagenp1b2);
