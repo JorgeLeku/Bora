@@ -32,7 +32,7 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
-	JLabel cbl1, cbl2, cbl3, cbl4, fl1, fl2;
+	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2;
 	JTextField cbt1;
 	Font fuente;
 	
@@ -162,13 +162,18 @@ public class Principal extends JFrame {
        cbl2.setText("Crear boton");
        
        cbl3 = new JLabel();
-       cbl3.setBounds(250, 340, 400, 40);
+       cbl3.setBounds(250, 430, 400, 40);
        cbl3.setFont(newFont);
        cbl3.setText("Elegir imagen");
        
        cbl4 = new JLabel();
        cbl4.setBounds(750, 250, 200, 40);
        cbl4.setFont(newFont);
+       
+       cbl5 = new JLabel();
+       cbl5.setBounds(250, 340, 400, 40);
+       cbl5.setFont(newFont);
+       cbl5.setText("Precio");
        
        fl1 = new JLabel();
        fl1.setBounds(500, 250, 200, 40);
@@ -207,7 +212,7 @@ public class Principal extends JFrame {
        pp1.setBounds(38, 185, 300, 75);
        bAb.setBounds(500, 30, 80, 80);
        bAtr.setBounds(30, 30, 80, 80);
-       cbb1.setBounds(500, 450, 80, 80);
+       cbb1.setBounds(500, 580, 80, 80);
        cbb2.setBounds(450, 325, 300, 75);
 
 		
@@ -489,6 +494,7 @@ public class Principal extends JFrame {
        panelCreacionBoton.add(cbl3);
        panelCreacionBoton.add(cbb2);
        panelCreacionBoton.add(cbl4);
+       panelCreacionBoton.add(cbl5);
        panelFactura.add(fl1);
        panelFactura.add(fl2);
        
