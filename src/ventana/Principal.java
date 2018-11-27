@@ -33,7 +33,7 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
 	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2;
-	JTextField cbt1;
+	JTextField cbt1, cbt2;
 	Font fuente;
 	
 	int x = 1;
@@ -149,20 +149,24 @@ public class Principal extends JFrame {
        pp1.setRolloverIcon(imagenp4b1bn);
 
        cbt1 = new JTextField();
-       cbt1.setBounds(500, 250, 200, 40);
+       cbt1.setBounds(300, 250, 200, 40);
+       
+       cbt2 = new JTextField();
+       cbt2.setBounds(300, 340, 200, 40);
        
        cbl1 = new JLabel();
-       cbl1.setBounds(250, 250, 400, 40);
+       cbl1.setBounds(25, 250, 400, 40);
        cbl1.setFont(newFont);
        cbl1.setText("Nombra  el  producto");
        
        cbl2 = new JLabel();
-       cbl2.setBounds(450, 200, 400, 40);
+       cbl2.setBounds(450, 100, 400, 40);
        cbl2.setFont(newFont);
+       cbl2.setForeground(Color.white);
        cbl2.setText("Crear boton");
        
        cbl3 = new JLabel();
-       cbl3.setBounds(250, 430, 400, 40);
+       cbl3.setBounds(25, 430, 400, 40);
        cbl3.setFont(newFont);
        cbl3.setText("Elegir imagen");
        
@@ -171,7 +175,7 @@ public class Principal extends JFrame {
        cbl4.setFont(newFont);
        
        cbl5 = new JLabel();
-       cbl5.setBounds(250, 340, 400, 40);
+       cbl5.setBounds(25, 340, 400, 40);
        cbl5.setFont(newFont);
        cbl5.setText("Precio");
        
@@ -213,7 +217,7 @@ public class Principal extends JFrame {
        bAb.setBounds(500, 30, 80, 80);
        bAtr.setBounds(30, 30, 80, 80);
        cbb1.setBounds(500, 580, 80, 80);
-       cbb2.setBounds(450, 325, 300, 75);
+       cbb2.setBounds(250, 420, 300, 75);
 
 		
        JLabel merluza = new JLabel ();
@@ -489,6 +493,7 @@ public class Principal extends JFrame {
        panelPruebas.add(bAb);	
        panelCreacionBoton.add(cbb1);
        panelCreacionBoton.add(cbt1);
+       panelCreacionBoton.add(cbt2);
        panelCreacionBoton.add(cbl1);
        panelCreacionBoton.add(cbl2);
        panelCreacionBoton.add(cbl3);
