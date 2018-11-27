@@ -35,7 +35,7 @@ public class Principal extends JFrame {
 	JLabel cbl1, cbl2, cbl3, cbl4, fl1, fl2;
 	JTextField cbt1;
 	Font fuente;
-	
+	//Pruebas
 	int x = 1;
 	public Principal() {
 		InputStream cogerFuente;
