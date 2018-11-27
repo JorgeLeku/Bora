@@ -31,8 +31,8 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
-	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2;
+	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2, botonEneko;
+	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2, facTotal;
 	JTextField cbt1, cbt2;
 	Font fuente;
 	
@@ -180,15 +180,37 @@ public class Principal extends JFrame {
        cbl5.setText("Precio");
        
        fl1 = new JLabel();
-       fl1.setBounds(500, 250, 200, 40);
+       fl1.setBounds(500, 100, 200, 70);
        fl1.setFont(newFont);
+       fl1.setForeground(Color.white);
        fl1.setText("Factura");
-       
+      
        fl2 = new JLabel();
-       fl1.setBounds(350, 550, 200, 40);
-       fl1.setFont(newFont);
-       fl1.setText("Total");
+       fl2.setBounds(400, 600, 200, 40);
+       fl2.setFont(newFont);
+       fl2.setForeground(Color.white);
+       fl2.setText("Total:");
        
+       facTotal = new JLabel();
+       facTotal.setBounds(450, 600, 200, 40);
+       facTotal.setFont(newFont);
+       facTotal.setForeground(Color.white);
+       facTotal.setText("€"); //LABEL para poner precio final
+       
+       //ojo al botonEneko ¡¡¡¡¡¡¡¡¡¡
+       botonEneko = new JButton();
+       panelCreacionBoton.add(botonEneko);
+       botonEneko.setBounds(200, 50, 150, 150);
+       botonEneko.setText("Boton Eneko");
+       botonEneko.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				CambiarPanel(panelCreacionBoton, panelFactura);
+
+			}
+       });
        
        CrearBoton(p1b1);
        CrearBoton(p1b2);
