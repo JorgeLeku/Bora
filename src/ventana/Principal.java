@@ -202,7 +202,7 @@ public class Principal extends JFrame {
        p2b3.setBounds(566, 205, 400, 125);
        p3b1.setBounds(93, 185, 400, 350);
        p3b2.setBounds(566, 185, 400, 350);
-       botonPruebas.setBounds(0, 0, 500, 500);
+       botonPruebas.setBounds(0, 0, 50, 50);
 
        pp1.setBounds(38, 185, 300, 75);
        bAb.setBounds(500, 30, 80, 80);
