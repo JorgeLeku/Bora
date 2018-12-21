@@ -15,7 +15,7 @@ public class Leer {
 		BufferedReader br = null;
 		ArrayList<String> todo = new ArrayList<>();
 		try {//buscar el arrchivo
-			archivo = new File("nuevo.txt");
+			archivo = new File("src/ficherosDeTexto/carta.txt");
 			fr = new FileReader(archivo);//path
 			System.out.println("encontrado");
 			br = new BufferedReader(fr);
