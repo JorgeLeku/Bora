@@ -43,12 +43,12 @@ public class Comida extends Alimentos {
 	public void setIngredientes(HashSet<Ingrediente> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
-
+	
 
 //to string
 	@Override
 	public String toString() {
-		return id + ", " + nombre + ", " + ingredientes  + ", " + precio;
+		return id + ", " + nombre + ", " +precio + ", " +ingredientes.toString() ;
 	}
 	
 	public static void main(String[] args) {

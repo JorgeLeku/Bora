@@ -48,7 +48,7 @@ public class Ingrediente {
 	//to string 
 	@Override
 	public String toString() {
-		return  nombre  + ", " + precio ;
+		return  nombre  + ": " + precio ;
 	}
 
 

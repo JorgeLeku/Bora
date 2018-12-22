@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Leer {
 
-	public Leer() {
+	public  Leer() {
 		File archivo = null;
 		FileReader fr = null;
 		BufferedReader br = null;
