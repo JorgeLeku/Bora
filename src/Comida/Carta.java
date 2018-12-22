@@ -84,7 +84,7 @@ public class Carta {
 					  
 					   
 					   //cargar los ingredientes (separados pos :)
-					   HashSet<Ingrediente> setDeIngredientes=  new HashSet<>();
+					   HashSet<String> setDeIngredientes=  new HashSet<>();
 					   //separar el tocken de los ingredientes cojuntos en tockens mas pequeños
 					   String[] ingredientes = tockens[2].split("]");
 					   for (int i = 0; i < ingredientes.length; i++) {
