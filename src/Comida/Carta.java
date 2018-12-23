@@ -135,7 +135,7 @@ public class Carta {
 	}
 	
 	public void guardarCarta() {
-		
+		//metodo para escribir en el fichero de texto los cambios en la carta
 	}
 	
 	
