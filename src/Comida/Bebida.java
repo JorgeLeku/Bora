@@ -17,7 +17,7 @@ public class Bebida extends Alimentos {
 		this.alcoholica = a.alcoholica;	
 		}
 
-	public Bebida(double precio, String nombre, int id,String descripcion, int mL, boolean alcoholica) {
+	public Bebida(int id, String nombre, double precio,  String descripcion, int mL, boolean alcoholica) {
 		super( precio, nombre, id);
 		this.descripcion = descripcion;
 		this.mL = mL;

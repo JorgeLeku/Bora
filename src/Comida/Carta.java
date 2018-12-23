@@ -21,17 +21,21 @@ public class Carta {
 	public HashSet<Comida> comidas;
 	public HashSet<Bebida>bebidas;
 	
-	public Carta(HashSet<Comida> carta) {
+	
+	public Carta(HashSet<Comida> comidas, HashSet<Bebida> bebidas) {
 		super();
-		this.comidas = carta;
+		this.comidas = comidas;
+		this.bebidas = bebidas;
 	}
 	public Carta(Carta c) {
-		super();
+		
 		this.comidas = c.comidas;
+		this.bebidas = c.bebidas;
 	}
 	public Carta() {
 		super();
-		this.comidas = new  HashSet<Comida>();
+		this.comidas = new HashSet<>();
+		this.bebidas = new HashSet<>();
 	}
 
 
@@ -62,6 +66,9 @@ public class Carta {
 	
 	//metodos para conectar con la base de datos
 	public void cargarCarta() {
+		/* como se guarda la comida : id, nombre, precio,ingrediente1, ingrediente2, ...
+		 * como se guardan las bebidas : id, nombre, precio,descripcion, ml, alcoholica;
+		*/
 		File archivo = null;
 		FileReader fr = null;
 		BufferedReader br = null;
@@ -74,28 +81,8 @@ public class Carta {
 			String linea ;
 
 			   while((linea=br.readLine())!=null) {//mientras no este vacio el fichero
-				   String[]tockens = linea.split(":"); //separamos en tockens las distintas partes
-				   if(tockens.length == 4) {
-					   //es comida
-					   Comida c = new Comida();
-					   c.id = Integer.parseInt(tockens[0]) ;
-					   c.nombre = tockens[1];
-					   c.precio =  Double.parseDouble(tockens[2]) ;
-					  
-					   
-					   //cargar los ingredientes (separados pos :)
-					   HashSet<String> setDeIngredientes=  new HashSet<>();
-					   //separar el tocken de los ingredientes cojuntos en tockens mas pequeños
-					   String[] ingredientes = tockens[2].split("]");
-					   for (int i = 0; i < ingredientes.length; i++) {
-						   
-					}
-					   
-					   
-					   
-					   
-					   
-				   }else if( tockens.length == 6) {//bebida completada
+				   String[]tockens = linea.split(","); //separamos en tockens las distintas partes
+				   if( tockens.length == 6) {//bebida completada
 					   //es bebida
 					   Bebida b = new Bebida();
 					   b.id = Integer.parseInt(tockens[0]);
@@ -105,10 +92,25 @@ public class Carta {
 					   b.setmL(Integer.parseInt(tockens[4]));
 					   b.setAlcoholica(Boolean.parseBoolean(tockens[5]));
 					  this.bebidas.add(b);
+				   }else {
+					   //es comida
+					   Comida c = new Comida();
+					   c.id = Integer.parseInt(tockens[0]) ;
+					   c.nombre = tockens[1];
+					   c.precio =  Double.parseDouble(tockens[2]) ;
+					   //a partir de ahora todo lo demas son ingredientes
+					   HashSet<String> ingredientes = new HashSet<>();
+					  for (int i = 0; i < tockens.length; i++) {
+						ingredientes.add(tockens[i]);
+					  }
+					  c.setIngredientes(ingredientes);
+					  
+					  this.comidas.add(c);
+					  
 				   }
 				   
 		            
-		      }
+			   	}
 				//crea el popup
 			
 					 JOptionPane.showMessageDialog(null, "carga completada");
