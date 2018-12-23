@@ -3,7 +3,9 @@ package Comida;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -136,12 +138,43 @@ public class Carta {
 	
 	public void guardarCarta() {
 		//metodo para escribir en el fichero de texto los cambios en la carta
+		FileWriter archivo = null;
+		PrintWriter pw = null;
+
+		try {
+			archivo = new FileWriter("src/ficherosDeTexto/carta.txt");
+			pw = new PrintWriter(archivo);
+			for (Bebida bebida : bebidas) {
+				pw.println(bebida.toString());
+			}
+			for (Comida comida : comidas) {
+				pw.println(comida.toString());
+			}
+			 JOptionPane.showMessageDialog(null,"se ha escrito correctamente" );
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		//	System.err.println("no encontrado");
+			 JOptionPane.showMessageDialog(null,"no encontrado","error",0 );
+		}finally {
+			pw.close();
+			try {
+				archivo.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				//System.err.println("no se cerró");
+				 JOptionPane.showMessageDialog(null,"no se cerró","error",0 );
+			}
+		}
 	}
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		/*Carta c = new Carta();
+		c.cargarCarta();
+		c.guardarCarta();
+		 */
 	}
 
 }
