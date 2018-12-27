@@ -31,7 +31,7 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2, botonEneko;
+	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, bAb, bAtr, cbb1, cbb2, botonEneko;
 	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2, facTotal;
 	JTextField cbt1, cbt2;
 	Font fuente;
@@ -146,9 +146,18 @@ public class Principal extends JFrame {
        p3b1.setRolloverIcon(imagenp3b2bn);
        p3b2.setRolloverIcon(imagenp3b1bn);
        botonPruebas = new JButton(imagenPrueba);
-       pp1 = new JButton(imagenp4b1);
-       pp1.setRolloverIcon(imagenp4b1bn);
-
+       
+       
+       ImageIcon imagenPaco = new ImageIcon(this.getClass().getClassLoader().getResource("p4/paco.jpeg"));
+       Botones pp1 = new Botones();
+       //pp1.setRolloverIcon(imagenp4b1bn);
+      // pp1.setBounds(38, 185, 300, 75);
+       pp1.setBounds(98, 285,300, 75);
+       
+       pp1.setIcon(imagenPaco);
+       
+       
+       
        cbt1 = new JTextField();
        cbt1.setBounds(300, 250, 200, 40);
        
@@ -236,7 +245,7 @@ public class Principal extends JFrame {
        p3b2.setBounds(566, 185, 400, 350);
        botonPruebas.setBounds(0, 0, 50, 50);
 
-       pp1.setBounds(38, 185, 300, 75);
+      
        bAb.setBounds(500, 30, 80, 80);
        bAtr.setBounds(30, 30, 80, 80);
        cbb1.setBounds(500, 580, 80, 80);
@@ -363,6 +372,7 @@ public class Principal extends JFrame {
 			  
 			  panelPruebas.add(pp1);
 	}*/
+       
        pp1.addMouseListener(new MouseListener () {
 			public void mouseEntered(MouseEvent e) {
 				merluza.setVisible(true);
