@@ -9,7 +9,7 @@ public class Comida extends Alimentos {
 
 //Propiedades
 	
-	private HashSet<Ingrediente> ingredientes;
+	private HashSet<String> ingredientes;
 	
 	
 //constructores
@@ -17,11 +17,11 @@ public class Comida extends Alimentos {
 
 	public Comida() {
 		super();
-		this.ingredientes = new HashSet<Ingrediente>();
+		this.ingredientes = new HashSet<String>();
 	}
 	
-	public Comida(int id, String nombre,double calorias, double precio,  HashSet<Ingrediente> ingredientes) {
-	super(calorias, precio, nombre, id);
+	public Comida(int id, String nombre, double precio,  HashSet<String> ingredientes) {
+	super( precio, nombre, id);
 	this.ingredientes = ingredientes;
 }
 
@@ -30,25 +30,25 @@ public class Comida extends Alimentos {
 		this.nombre = p.nombre;
 		this.precio = p.precio;
 		this.ingredientes = p.ingredientes;
-		this.calorias = p.calorias;
+
 		this.precio = p.precio;
 	}
 
 	
 	//getters y setters
-	public HashSet<Ingrediente> getIngredientes() {
+	public HashSet<String> getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(HashSet<Ingrediente> ingredientes) {
+	public void setIngredientes(HashSet<String> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
-
+	
 
 //to string
 	@Override
 	public String toString() {
-		return id + ", " + nombre + ", " + ingredientes + ", " + calorias + ", " + precio;
+		return id + ", " + nombre + ", " +precio + ", " +ingredientes.toString() ;
 	}
 	
 	public static void main(String[] args) {

@@ -31,9 +31,9 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2;
-	JLabel cbl1, cbl2, cbl3, cbl4, fl1, fl2;
-	JTextField cbt1;
+	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, pp1, bAb, bAtr, cbb1, cbb2, botonEneko;
+	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2, facTotal;
+	JTextField cbt1, cbt2;
 	Font fuente;
 	//Pruebas
 	
@@ -150,20 +150,24 @@ public class Principal extends JFrame {
        pp1.setRolloverIcon(imagenp4b1bn);
 
        cbt1 = new JTextField();
-       cbt1.setBounds(500, 250, 200, 40);
+       cbt1.setBounds(300, 250, 200, 40);
+       
+       cbt2 = new JTextField();
+       cbt2.setBounds(300, 340, 200, 40);
        
        cbl1 = new JLabel();
-       cbl1.setBounds(250, 250, 400, 40);
+       cbl1.setBounds(25, 250, 400, 40);
        cbl1.setFont(newFont);
        cbl1.setText("Nombra  el  producto");
        
        cbl2 = new JLabel();
-       cbl2.setBounds(450, 200, 400, 40);
+       cbl2.setBounds(450, 100, 400, 40);
        cbl2.setFont(newFont);
+       cbl2.setForeground(Color.white);
        cbl2.setText("Crear boton");
        
        cbl3 = new JLabel();
-       cbl3.setBounds(250, 340, 400, 40);
+       cbl3.setBounds(25, 430, 400, 40);
        cbl3.setFont(newFont);
        cbl3.setText("Elegir imagen");
        
@@ -171,16 +175,43 @@ public class Principal extends JFrame {
        cbl4.setBounds(750, 250, 200, 40);
        cbl4.setFont(newFont);
        
+       cbl5 = new JLabel();
+       cbl5.setBounds(25, 340, 400, 40);
+       cbl5.setFont(newFont);
+       cbl5.setText("Precio");
+       
        fl1 = new JLabel();
-       fl1.setBounds(500, 250, 200, 40);
+       fl1.setBounds(500, 100, 200, 70);
        fl1.setFont(newFont);
+       fl1.setForeground(Color.white);
        fl1.setText("Factura");
-       
+      
        fl2 = new JLabel();
-       fl1.setBounds(350, 550, 200, 40);
-       fl1.setFont(newFont);
-       fl1.setText("Total");
+       fl2.setBounds(400, 600, 200, 40);
+       fl2.setFont(newFont);
+       fl2.setForeground(Color.white);
+       fl2.setText("Total:");
        
+       facTotal = new JLabel();
+       facTotal.setBounds(450, 600, 200, 40);
+       facTotal.setFont(newFont);
+       facTotal.setForeground(Color.white);
+       facTotal.setText("€"); //LABEL para poner precio final
+       
+       //ojo al botonEneko ¡¡¡¡¡¡¡¡¡¡
+       botonEneko = new JButton();
+       panelCreacionBoton.add(botonEneko);
+       botonEneko.setBounds(200, 50, 150, 150);
+       botonEneko.setText("Boton Eneko");
+       botonEneko.addActionListener(new ActionListener() {
+    	   
+    	   @Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				CambiarPanel(panelCreacionBoton, panelFactura);
+
+			}
+       });
        
        CrearBoton(p1b1);
        CrearBoton(p1b2);
@@ -203,13 +234,13 @@ public class Principal extends JFrame {
        p2b3.setBounds(566, 205, 400, 125);
        p3b1.setBounds(93, 185, 400, 350);
        p3b2.setBounds(566, 185, 400, 350);
-       botonPruebas.setBounds(0, 0, 500, 500);
+       botonPruebas.setBounds(0, 0, 50, 50);
 
        pp1.setBounds(38, 185, 300, 75);
        bAb.setBounds(500, 30, 80, 80);
        bAtr.setBounds(30, 30, 80, 80);
-       cbb1.setBounds(500, 450, 80, 80);
-       cbb2.setBounds(450, 325, 300, 75);
+       cbb1.setBounds(500, 580, 80, 80);
+       cbb2.setBounds(250, 420, 300, 75);
 
 		
        JLabel merluza = new JLabel ();
@@ -485,11 +516,13 @@ public class Principal extends JFrame {
        panelPruebas.add(bAb);	
        panelCreacionBoton.add(cbb1);
        panelCreacionBoton.add(cbt1);
+       panelCreacionBoton.add(cbt2);
        panelCreacionBoton.add(cbl1);
        panelCreacionBoton.add(cbl2);
        panelCreacionBoton.add(cbl3);
        panelCreacionBoton.add(cbb2);
        panelCreacionBoton.add(cbl4);
+       panelCreacionBoton.add(cbl5);
        panelFactura.add(fl1);
        panelFactura.add(fl2);
        
