@@ -354,7 +354,15 @@ public class Principal extends JFrame {
 
        });
 
-		
+       /*
+       NBotones = cantidad de filas que tiene la tabla
+       
+       */
+      /*for (int i = 1; i < 1+NBotones; i++) {
+			  pp1.setLocation(38*i, 185*i);
+			  
+			  panelPruebas.add(pp1);
+	}*/
        pp1.addMouseListener(new MouseListener () {
 			public void mouseEntered(MouseEvent e) {
 				merluza.setVisible(true);

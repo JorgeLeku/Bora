@@ -34,6 +34,7 @@ public class VentanaDinamica extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				JButton boton =new JButton ("boton" + indice);
+				//boton.setActionCommand(actionCommand);
 				panel.add(boton);
 				botones.add(boton);
 				panel.updateUI();
