@@ -372,7 +372,7 @@ public class Principal extends JFrame {
 			  
 			  panelPruebas.add(pp1);
 	}*/
-       
+       	
        pp1.addMouseListener(new MouseListener () {
 			public void mouseEntered(MouseEvent e) {
 				merluza.setVisible(true);

@@ -22,24 +22,16 @@ public class Botones extends JButton{
 	public void paintComponent(Graphics g) {
 		Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 		Graphics bufferGraphics = bufferImage.getGraphics();
+		
 		bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 300, 75, null);
+		
+		
+		bufferGraphics.drawImage(imagenPaco.getImage(), 10, 10, 50, 50, null);
 		g.drawImage(bufferImage, 0, 0, this);
 
 	}
 	
-	@Override
-	public void paintComponents(Graphics g) {
-		// TODO Auto-generated method stub
-		Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-		Graphics bufferGraphics = bufferImage.getGraphics();
-		bufferGraphics.drawImage(imagenPaco.getImage(), 10, 10, 300, 75, null);
-		g.drawImage(bufferImage, 0, 0, this);
-	}
-	/*@Override
-	public void setIcon(Icon defaultIcon) {
-		// TODO Auto-generated method stub
-		super.setIcon(fondoBoton);
-	}*/
+	
 
 	
 }
