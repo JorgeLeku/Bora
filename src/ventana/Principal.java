@@ -149,13 +149,17 @@ public class Principal extends JFrame {
        
        
        ImageIcon imagenPaco = new ImageIcon(this.getClass().getClassLoader().getResource("p4/paco.jpeg"));
-       Botones pp1 = new Botones();
+      
        //pp1.setRolloverIcon(imagenp4b1bn);
       // pp1.setBounds(38, 185, 300, 75);
-       pp1.setBounds(98, 285,300, 75);
-       
-       pp1.setIcon(imagenPaco);
-       
+       //pp1.setBounds(38, 185,300, 75);
+	  // panelPruebas.add(pp1);
+      
+	   
+      // pp1.setIcon(imagenPaco);
+      
+
+		
        
        
        cbt1 = new JTextField();
@@ -229,7 +233,6 @@ public class Principal extends JFrame {
        CrearBoton(p2b3);
        CrearBoton(p3b1);
        CrearBoton(p3b2);
-       CrearBoton(pp1);
        CrearBoton(bAb);
        CrearBoton(bAtr);
        CrearBoton(cbb1);
@@ -288,7 +291,18 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelPedido, panelPruebas);
-
+				for (int i = 1; i < 10; i++) {
+					int p = 350;
+					int q = 50;
+					int indi= 0;
+					JButton pp1 = new JButton("p"+indi);
+					pp1.setBounds(34+p, 185,300, 75);
+					CrearBoton(pp1);
+			    	panelPruebas.add(pp1);
+			    	panelPruebas.updateUI();
+			    	indi++;
+			    	}
+				 
 			}
 
        });
@@ -362,10 +376,9 @@ public class Principal extends JFrame {
 			}
 
        });
-
+      
        /*
        NBotones = cantidad de filas que tiene la tabla
-       
        */
       /*for (int i = 1; i < 1+NBotones; i++) {
 			  pp1.setLocation(38*i, 185*i);
@@ -373,7 +386,7 @@ public class Principal extends JFrame {
 			  panelPruebas.add(pp1);
 	}*/
        	
-       pp1.addMouseListener(new MouseListener () {
+     /*  pp1.addMouseListener(new MouseListener () {
 			public void mouseEntered(MouseEvent e) {
 				merluza.setVisible(true);
 			}
@@ -401,7 +414,7 @@ public class Principal extends JFrame {
 				// TODO Auto-generated method stub
 				merluza.setVisible(false);
 			}
-       });
+       });*/
        bAb.addMouseListener(new MouseListener () {
 
 			@Override
@@ -530,7 +543,7 @@ public class Principal extends JFrame {
        panelCartaMenu.add(p3b1);
        panelCartaMenu.add(p3b2);
        panelPedido.add(botonPruebas);
-       panelPruebas.add(pp1);
+       
        panelPruebas.add(bAb);	
        panelCreacionBoton.add(cbb1);
        panelCreacionBoton.add(cbt1);
