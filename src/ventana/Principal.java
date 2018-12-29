@@ -16,6 +16,8 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -35,10 +37,14 @@ public class Principal extends JFrame {
 	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2, facTotal;
 	JTextField cbt1, cbt2;
 	Font fuente;
+	private List<JButton> botones;
+	private List<JPanel> paneles;
 	//Pruebas
 	
 	int x = 1;
 	public Principal() {
+		botones = new ArrayList<>();
+		paneles = new ArrayList<>();
 		InputStream cogerFuente;
 		 try {
 	           cogerFuente = this.getClass().getResource("Stingray.otf").openStream();
@@ -290,18 +296,50 @@ public class Principal extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
+				/*Botones pp1 = new Botones();
+				pp1.setBounds(34, 185,300, 75);
+				CrearBoton(pp1);
+				panelPruebas.add(pp1);
+		    	panelPruebas.updateUI();
+				pp1.setBounds(354, 185,300, 75);
+				CrearBoton(pp1);
+		    	panelPruebas.add(pp1);
+		    	panelPruebas.updateUI();*/
+		    	int s= 40;
+				int indi= 0;
+				int p = 185;
 				CambiarPanel(panelPedido, panelPruebas);
-				for (int i = 1; i < 10; i++) {
-					int p = 350;
-					int q = 50;
-					int indi= 0;
-					JButton pp1 = new JButton("p"+indi);
-					pp1.setBounds(34+p, 185,300, 75);
-					CrearBoton(pp1);
-			    	panelPruebas.add(pp1);
-			    	panelPruebas.updateUI();
-			    	indi++;
-			    	}
+				for (int x = 0; x < 2; x++) {
+					JPanel panelesMult = new JPanel();
+					CrearPanel(panelesMult);
+					frame.getContentPane().add(panelesMult);
+					frame.update(getGraphics());
+					for (int i = 0; i < 3; i++) {
+						
+			
+						for (int o = 0; o < 3; o++) {
+							Botones pp2 = new Botones();
+							pp2.setBounds(s, p,300, 75);
+							CrearBoton(pp2);
+							s=320+s;
+							pp2.addActionListener(new ActionListener () {
+	
+								@Override
+								public void actionPerformed(ActionEvent arg0) {
+									// TODO Auto-generated method stub
+									CambiarPanel(panelPruebas, panelPedido);
+								}
+								
+							});
+							pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+							panelPruebas.add(pp2);
+							botones.add(pp2);
+							panelPruebas.updateUI();
+				    	}
+						p=p+100;
+						s=40;
+					}
+				}
 				 
 			}
 
