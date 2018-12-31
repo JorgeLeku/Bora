@@ -21,6 +21,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,7 +38,8 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo;
+	JComboBox cOrden;
 	JTextField tNombreProd, cbt2;
 	Font fuente;
 	private List<JButton> botones;
@@ -159,11 +161,24 @@ public class Principal extends JFrame {
        lTituloPAddBoton = new JLabel();
        lSelImagen = new JLabel();
        lDirImg = new JLabel();
+       lTipo = new JLabel();
+       cOrden = new JComboBox();
        
        bQuitBoton = new JButton();
-       
-       bPanelMesa = new JButton();
-       
+
+       ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
+       bPanelMesa = new JButton() {
+    	   public void paintComponent(Graphics g) {
+    		   
+		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+		        Graphics bufferGraphics = bufferImage.getGraphics();
+		        bufferGraphics.drawImage(imagenBotonBlancoPeq.getImage(), 0, 0, 300, 75, null);
+		        g.drawImage(bufferImage, 0, 0, this);
+
+		        }
+		    
+       };
+     
        bPrimerPlato = new JButton();
        
        bPanelRecogida = new JButton();
@@ -243,9 +258,21 @@ public class Principal extends JFrame {
        lSelImagen.setFont(newFont);
        lSelImagen.setText("Elegir imagen");
        
+       lTipo.setBounds(700, 250, 300, 40);
+       lTipo.setFont(newFont);
+       lTipo.setText("Posicion del plato");
+       
+       cOrden.setFont(newFont);
+       cOrden.addItem("1");
+       cOrden.addItem("2");
+       cOrden.addItem("3");
+       cOrden.setBounds(705, 300, 200, 50);
       
-       lDirImg.setBounds(750, 250, 200, 40);
+       lDirImg.setBounds(600, 430, 400, 40);
        lDirImg.setFont(newFont);
+       
+       bPanelMesa.setBounds(450, 500, 300, 75);
+       
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
@@ -613,6 +640,8 @@ public class Principal extends JFrame {
        panelAddBoton.add(bSelImg);
        panelAddBoton.add(lDirImg);
        panelAddBoton.add(cbl5);
+       panelAddBoton.add(lTipo);
+       panelAddBoton.add(cOrden);
        
        panelFactura.add(fl1);
        panelFactura.add(fl2);
