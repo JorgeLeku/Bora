@@ -28,14 +28,17 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import sun.applet.AppletPanel;
+
 public class Principal extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton p1b1, p1b2, p2b1, p2b2, p2b3, p2b4, p3b1, p3b2, botonPruebas, bAb, bAtr, cbb1, cbb2, botonEneko;
-	JLabel cbl1, cbl2, cbl3, cbl4, cbl5, fl1, fl2, facTotal;
-	JTextField cbt1, cbt2;
+	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
+	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal;
+	JTextField tNombreProd, cbt2;
 	Font fuente;
 	private List<JButton> botones;
 	private List<JPanel> paneles;
@@ -43,8 +46,9 @@ public class Principal extends JFrame {
 	
 	int x = 1;
 	public Principal() {
-		botones = new ArrayList<>();
-		paneles = new ArrayList<>();
+	botones = new ArrayList<>();
+	paneles = new ArrayList<>();
+		
 		InputStream cogerFuente;
 		 try {
 	           cogerFuente = this.getClass().getResource("Stingray.otf").openStream();
@@ -61,21 +65,9 @@ public class Principal extends JFrame {
 	        }
        Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
        
-       ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
-       
        JFrame frame = new JFrame();
-       Paneles panelPruebas = new Paneles ();
-       Paneles panelPedido = new Paneles();
-       Paneles panelECarta = new Paneles();
-       Paneles panelCartaMenu = new Paneles();
-       Paneles panelPPlato = new Paneles();
-       Paneles panelSPlato = new Paneles();
-       Paneles panelPostre = new Paneles();
-       Paneles panelEMenu = new Paneles();
-       Paneles panelReserva = new Paneles();
-       Paneles panelPersonas = new Paneles();
-       Paneles panelCreacionBoton = new Paneles ();
-       Paneles panelFactura = new Paneles ();
+       
+       ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
        JPanel panelBienvenida =  new JPanel(){
 			public void paintComponent(Graphics g) {
 		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -84,33 +76,63 @@ public class Principal extends JFrame {
 		        g.drawImage(bufferImage, 0, 0, this);
 		       
 		    }
-			};
+       };
+       Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
+       Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
+      
+       Paneles panelQuitBoton = new Paneles(); //En este panel el admin puede quitar platos del menu
+       Paneles panelAddBoton = new Paneles (); //En este panel el admin puede añadir platos a la comida
+      
+       Paneles panelReserva = new Paneles();
 
-       CrearPanel(panelCartaMenu);
-       CrearPanel(panelEMenu);
-       CrearPanel(panelReserva);
-       CrearPanel(panelPostre);
-       CrearPanel(panelSPlato);
-       CrearPanel(panelPPlato);
-       CrearPanel(panelECarta);
-       CrearPanel(panelPedido);
-       CrearPanel(panelPersonas);
-       CrearPanel(panelPruebas);
+       Paneles panelMesa = new Paneles();
+       
+       Paneles panelRecogerDomicilio = new Paneles();
+       Paneles panelRecogida = new Paneles();
+       Paneles panelDomicilio = new Paneles ();
+       
+       Paneles panelEntrantes = new Paneles();
+       Paneles panelPrimero = new Paneles();
+       Paneles panelSegundo = new Paneles();
+       Paneles panelPostre = new Paneles();
+       Paneles panelBebida = new Paneles();
+       
+       Paneles panelFactura = new Paneles();
+       
+       Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
+       
        CrearPanel(panelBienvenida);
-       CrearPanel(panelCreacionBoton);
+       CrearPanel(panelInicio);
+       CrearPanel(panelAdmin);
+       
+       CrearPanel(panelQuitBoton);
+       CrearPanel(panelAddBoton);
+       
+       CrearPanel(panelReserva);
+       CrearPanel(panelMesa);
+       
+       CrearPanel(panelRecogerDomicilio);
+       CrearPanel(panelRecogida);
+       CrearPanel(panelDomicilio);
+       
+       CrearPanel(panelEntrantes);
+       CrearPanel(panelPrimero);
+       CrearPanel(panelSegundo);
+       CrearPanel(panelPostre);
+       CrearPanel(panelBebida);
+       
        CrearPanel(panelFactura);
+       
+       CrearPanel(panelPruebas);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
        ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2.jpg"));
        ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1.jpg"));
-       ImageIcon imagenp2b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b1.jpg"));
-       ImageIcon imagenp2b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b3.jpg"));
-       ImageIcon imagenp2b3 = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2.jpg"));
-       ImageIcon imagenp3b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1.jpg"));
-       ImageIcon imagenp3b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2.jpg"));
-       ImageIcon imagenp4b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1.jpg"));
+       ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
+       ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
+       
        ImageIcon imagenbAb = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAb.png"));
        ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
        ImageIcon imagenbAtrbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtrb-n.png"));
@@ -118,81 +140,112 @@ public class Principal extends JFrame {
        ImageIcon imagencbb2 = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bs1.png"));
        ImageIcon imagencbb2bn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bs1b-n.png"));
        ImageIcon imagenPrueba = new ImageIcon(this.getClass().getClassLoader().getResource("prueba.png"));
-       ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
-       ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
-       ImageIcon imagenp2b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b1b-n.jpg"));
-       ImageIcon imagenp2b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b3b-n.jpg"));
-       ImageIcon imagenp2b3bn = new ImageIcon(this.getClass().getClassLoader().getResource("p2/p2b2b-n.jpg"));
-       ImageIcon imagenp3b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b1b-n.jpg"));
-       ImageIcon imagenp3b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p3/p3b2b-n.jpg"));
-       ImageIcon imagenp4b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p4/p4b1b-n.jpg"));
-       
+
+
        //sad
        
-       p1b1 = new JButton(imagenp1b1);
-       p1b2 = new JButton(imagenp1b2);
-       p2b1 = new JButton(imagenp2b1);
-       p2b2 = new JButton(imagenp2b2);
-       p2b3 = new JButton(imagenp2b3);
-       p3b1 = new JButton(imagenp3b1);
-       p3b2 = new JButton(imagenp3b2);
+       bPanelRecogerDomicilio = new JButton(imagenp1b1);
+       bPanelReserva = new JButton(imagenp1b2);
+       bPanelAdmin = new JButton();
+       
+       bPanelQuitBoton = new BotonesGrandes();
+       bPanelAddBoton = new BotonesGrandes();
+       
+       bAddBoton = new JButton();
+       bSelImg = new JButton(imagencbb2);
+       bSelImg.setRolloverIcon(imagencbb2bn);
+       lNombrarProd = new JLabel();
+       tNombreProd = new JTextField();
+       lTituloPAddBoton = new JLabel();
+       lSelImagen = new JLabel();
+       lDirImg = new JLabel();
+       
+       bQuitBoton = new JButton();
+       
+       bPanelMesa = new JButton();
+       
+       bPrimerPlato = new JButton();
+       
+       bPanelRecogida = new JButton();
+       
+       bPanelDomicilio = new JButton ();
+       
+       
        bAb = new JButton(imagenbAb);
-       bAtr = new JButton (imagenbAtr);
+       bReturn = new JButton (imagenbAtr);
        cbb1 = new JButton(imagenbAb);
-       cbb2 = new JButton(imagencbb2);
-       cbb2.setRolloverIcon(imagencbb2bn);
+
        cbb1.setRolloverIcon(imagenbAbbn);
-       bAtr.setRolloverIcon(imagenbAtrbn);
+       bReturn.setRolloverIcon(imagenbAtrbn);
        bAb.setRolloverIcon(imagenbAbbn);
-       p1b1.setRolloverIcon(imagenp1b1bn);
-       p1b2.setRolloverIcon(imagenp1b2bn);
-       p2b1.setRolloverIcon(imagenp2b1bn);
-       p2b2.setRolloverIcon(imagenp2b2bn);
-       p2b3.setRolloverIcon(imagenp2b3bn);
-       p3b1.setRolloverIcon(imagenp3b2bn);
-       p3b2.setRolloverIcon(imagenp3b1bn);
+       bPanelRecogerDomicilio.setRolloverIcon(imagenp1b1bn);
+       bPanelReserva.setRolloverIcon(imagenp1b2bn);
        botonPruebas = new JButton(imagenPrueba);
        
        
-       ImageIcon imagenPaco = new ImageIcon(this.getClass().getClassLoader().getResource("p4/paco.jpeg"));
-      
-       //pp1.setRolloverIcon(imagenp4b1bn);
+       CrearBoton(bPanelRecogerDomicilio);
+       CrearBoton(bPanelReserva);
+       //CrearBoton(bPanelAdmin);
+       
+       CrearBoton(bPanelQuitBoton);
+       CrearBoton(bPanelAddBoton);
+       
+       CrearBoton(bAddBoton);
+       CrearBoton(bSelImg);
+       
+       CrearBoton(bQuitBoton);
+       
+       CrearBoton(bPanelMesa);
+       
+       CrearBoton(bPrimerPlato);
+       
+       CrearBoton(bPanelRecogida);
+       
+       CrearBoton(bPanelDomicilio);
+       CrearBoton(bAb);
+       CrearBoton(bReturn);
+       CrearBoton(cbb1);
+       CrearBoton(bSelImg);
+       
+      bPanelRecogerDomicilio.setBounds(93, 185, 400, 350);
+      bPanelReserva.setBounds(566, 185, 400, 350);
+      bPanelAdmin.setBounds(500, 5, 50, 50);
+       
+      bPanelAddBoton.setBounds(93, 185, 400, 350);
+      bPanelQuitBoton.setBounds(566, 185, 400, 350);
+      //pp1.setRolloverIcon(imagenp4b1bn);
       // pp1.setBounds(38, 185, 300, 75);
-       //pp1.setBounds(38, 185,300, 75);
+      //pp1.setBounds(38, 185,300, 75);
 	  // panelPruebas.add(pp1);
-      
-	   
-      // pp1.setIcon(imagenPaco);
       
 
 		
        
        
-       cbt1 = new JTextField();
-       cbt1.setBounds(300, 250, 200, 40);
+       
+       tNombreProd.setBounds(300, 250, 200, 40);
        
        cbt2 = new JTextField();
        cbt2.setBounds(300, 340, 200, 40);
        
-       cbl1 = new JLabel();
-       cbl1.setBounds(25, 250, 400, 40);
-       cbl1.setFont(newFont);
-       cbl1.setText("Nombra  el  producto");
+      
+       lNombrarProd.setBounds(25, 250, 400, 40);
+       lNombrarProd.setFont(newFont);
+       lNombrarProd.setText("Nombra  el  producto");
        
-       cbl2 = new JLabel();
-       cbl2.setBounds(450, 100, 400, 40);
-       cbl2.setFont(newFont);
-       cbl2.setForeground(Color.white);
-       cbl2.setText("Crear boton");
+       lTituloPAddBoton.setBounds(450, 100, 400, 40);
+       lTituloPAddBoton.setFont(newFont);
+       lTituloPAddBoton.setForeground(Color.white);
+       lTituloPAddBoton.setText("Crear boton");
        
-       cbl3 = new JLabel();
-       cbl3.setBounds(25, 430, 400, 40);
-       cbl3.setFont(newFont);
-       cbl3.setText("Elegir imagen");
        
-       cbl4 = new JLabel();
-       cbl4.setBounds(750, 250, 200, 40);
-       cbl4.setFont(newFont);
+       lSelImagen.setBounds(25, 430, 400, 40);
+       lSelImagen.setFont(newFont);
+       lSelImagen.setText("Elegir imagen");
+       
+      
+       lDirImg.setBounds(750, 250, 200, 40);
+       lDirImg.setFont(newFont);
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
@@ -217,48 +270,33 @@ public class Principal extends JFrame {
        facTotal.setForeground(Color.white);
        facTotal.setText("€"); //LABEL para poner precio final
        
-       //ojo al botonEneko ¡¡¡¡¡¡¡¡¡¡
-       botonEneko = new JButton();
-       panelCreacionBoton.add(botonEneko);
-       botonEneko.setBounds(200, 50, 150, 150);
-       botonEneko.setText("Boton Eneko");
-       botonEneko.addActionListener(new ActionListener() {
+      
+       botonPanelFactura = new JButton();
+      // panelAddBoton.add(botonPanelFactura);
+       botonPanelFactura.setBounds(200, 50, 150, 150);
+       botonPanelFactura.setText("Boton Eneko");
+       botonPanelFactura.addActionListener(new ActionListener() {
     	   
     	   @Override
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
-				CambiarPanel(panelCreacionBoton, panelFactura);
+				CambiarPanel(panelAddBoton, panelFactura);
 
 			}
        });
        
-       CrearBoton(p1b1);
-       CrearBoton(p1b2);
-       CrearBoton(p2b1);
-       CrearBoton(p2b2);
-       CrearBoton(p2b3);
-       CrearBoton(p3b1);
-       CrearBoton(p3b2);
-       CrearBoton(bAb);
-       CrearBoton(bAtr);
-       CrearBoton(cbb1);
-       CrearBoton(cbb2);
+    
        
        
-       p1b1.setBounds(93, 185, 400, 350);
-       p1b2.setBounds(566, 185, 400, 350);
-       p2b1.setBounds(93, 205, 400, 125);
-       p2b2.setBounds(293, 380, 400, 125);
-       p2b3.setBounds(566, 205, 400, 125);
-       p3b1.setBounds(93, 185, 400, 350);
-       p3b2.setBounds(566, 185, 400, 350);
+      
+
        botonPruebas.setBounds(0, 0, 50, 50);
 
       
        bAb.setBounds(500, 30, 80, 80);
-       bAtr.setBounds(30, 30, 80, 80);
+       bReturn.setBounds(30, 30, 80, 80);
        cbb1.setBounds(500, 580, 80, 80);
-       cbb2.setBounds(250, 420, 300, 75);
+       bSelImg.setBounds(250, 420, 300, 75);
 
 		
        JLabel merluza = new JLabel ();
@@ -270,12 +308,13 @@ public class Principal extends JFrame {
        merluza.setVisible(false);
        merluza.setOpaque(false);
        panelPruebas.add(merluza);
+       
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			CambiarPanel(panelBienvenida, panelPedido);
+			CambiarPanel(panelBienvenida, panelInicio);
 			System.out.println("hola");
 		}
 		
@@ -308,7 +347,7 @@ public class Principal extends JFrame {
 		    	int s= 40;
 				int indi= 0;
 				int p = 185;
-				CambiarPanel(panelPedido, panelPruebas);
+				CambiarPanel(panelInicio, panelPruebas);
 				for (int x = 0; x < 2; x++) {
 					JPanel panelesMult = new JPanel();
 					CrearPanel(panelesMult);
@@ -327,7 +366,7 @@ public class Principal extends JFrame {
 								@Override
 								public void actionPerformed(ActionEvent arg0) {
 									// TODO Auto-generated method stub
-									CambiarPanel(panelPruebas, panelPedido);
+									CambiarPanel(panelPruebas, panelInicio);
 								}
 								
 							});
@@ -344,76 +383,56 @@ public class Principal extends JFrame {
 			}
 
        });
-//borrar esto <--
-       p1b1.addActionListener(new ActionListener() {
+       
+       bPanelAdmin.addActionListener(new ActionListener () {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			CambiarPanel(panelInicio, panelAdmin);
+		}
+    	   
+       });
+       bPanelRecogerDomicilio.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
-				CambiarPanel(panelPedido, panelCartaMenu);
+				CambiarPanel(panelInicio, panelRecogerDomicilio);
 			}
 
        });
 
-       p1b2.addActionListener(new ActionListener() {
+       bPanelReserva.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
-				CambiarPanel(panelPedido, panelCartaMenu);
+				CambiarPanel(panelInicio, panelReserva);
 			}
 
        });
 
-       p2b1.addActionListener(new ActionListener() {
+       
+       bPanelQuitBoton.addActionListener(new ActionListener () {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelECarta, panelPPlato);
-			}
-
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			CambiarPanel(panelAdmin, panelQuitBoton);
+		}
+    	   
        });
+       
+       bPanelAddBoton.addActionListener(new ActionListener () {
 
-       p2b2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelECarta, panelSPlato);
-			}
-
-       });
-
-       p2b3.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelECarta, panelPostre);
-			}
-
-       });
-
-       p3b1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelCartaMenu, panelECarta);
-			}
-
-       });
-
-       p3b2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelCartaMenu, panelEMenu);
-			}
-
-       });
+   		@Override
+   		public void actionPerformed(ActionEvent e) {
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelAdmin, panelAddBoton);
+   		}
+       	   
+        });
       
        /*
        NBotones = cantidad de filas que tiene la tabla
@@ -466,7 +485,7 @@ public class Principal extends JFrame {
 				String p = "p4b" +x;
 			     JButton v = new JButton ();
 			     */
-				CambiarPanel(panelPruebas, panelCreacionBoton);
+				CambiarPanel(panelPruebas, panelAddBoton);
 			}
 
 			@Override
@@ -494,7 +513,7 @@ public class Principal extends JFrame {
 			}
 			
        });
-       bAtr.addMouseListener(new MouseListener() {
+       bReturn.addMouseListener(new MouseListener() {
 		
 		@Override
 		public void mouseReleased(MouseEvent e) {
@@ -523,20 +542,20 @@ public class Principal extends JFrame {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
-			if (panelPedido.isEnabled()== true) {
-				CambiarPanel(panelPedido, panelPedido);
-			} else if (panelCartaMenu.isEnabled()==true){
-				CambiarPanel(panelCartaMenu, panelPedido);
+			/*if (panelInicio.isEnabled()== true) {
+				CambiarPanel(panelInicio, panelInicio);
+			} else if (eliminarEstePanel.isEnabled()==true){
+				CambiarPanel(eliminarEstePanel, panelInicio);
 			} else if (panelECarta.isEnabled()==true) {
-				CambiarPanel(panelECarta, panelCartaMenu);
+				CambiarPanel(panelECarta, eliminarEstePanel);
 			} else if (panelEMenu.isEnabled()==true) {
-				CambiarPanel(panelEMenu, panelCartaMenu);
+				CambiarPanel(panelEMenu, eliminarEstePanel);
 			} else if (panelPruebas.isEnabled()==true) {
-				CambiarPanel(panelPruebas, panelPedido);
-			}
+				CambiarPanel(panelPruebas, panelInicio);
+			}*/
 		}
 	});
-       cbb2.addActionListener(new ActionListener() {
+       bSelImg.addActionListener(new ActionListener() {
 
     	   //  Lo que sucede al pulsar el boton
     	 public void actionPerformed(ActionEvent ae) {
@@ -554,7 +573,7 @@ public class Principal extends JFrame {
     	 File selectedFile = fileChooser.getSelectedFile();
 
     	 System.out.println(selectedFile.getName());
-    	 cbl4.setText(selectedFile.getAbsolutePath());
+    	 lDirImg.setText(selectedFile.getAbsolutePath());
     	 }
 
        }
@@ -566,32 +585,35 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.out.println(cbt1.getText());
-			System.out.println(cbl4.getText());
+			System.out.println(tNombreProd.getText());
+			System.out.println(lDirImg.getText());
 		}
 	});
        
        
        
-       panelPedido.add(p1b1);
-       panelPedido.add(p1b2);
-       panelECarta.add(p2b1);
-       panelECarta.add(p2b2);
-       panelECarta.add(p2b3);
-       panelCartaMenu.add(p3b1);
-       panelCartaMenu.add(p3b2);
-       panelPedido.add(botonPruebas);
+       panelInicio.add(bPanelRecogerDomicilio);
+       panelInicio.add(bPanelReserva);
+       panelInicio.add(botonPruebas);
+       panelInicio.add(bPanelAdmin);
        
-       panelPruebas.add(bAb);	
-       panelCreacionBoton.add(cbb1);
-       panelCreacionBoton.add(cbt1);
-       panelCreacionBoton.add(cbt2);
-       panelCreacionBoton.add(cbl1);
-       panelCreacionBoton.add(cbl2);
-       panelCreacionBoton.add(cbl3);
-       panelCreacionBoton.add(cbb2);
-       panelCreacionBoton.add(cbl4);
-       panelCreacionBoton.add(cbl5);
+       panelAdmin.add(bPanelQuitBoton);
+       panelAdmin.add(bPanelAddBoton);
+       
+       panelReserva.add(bPanelMesa);
+       
+       panelPruebas.add(bAb);
+       
+       panelAddBoton.add(cbb1);
+       panelAddBoton.add(tNombreProd);
+       panelAddBoton.add(cbt2);
+       panelAddBoton.add(lNombrarProd);
+       panelAddBoton.add(lTituloPAddBoton);
+       panelAddBoton.add(lSelImagen);
+       panelAddBoton.add(bSelImg);
+       panelAddBoton.add(lDirImg);
+       panelAddBoton.add(cbl5);
+       
        panelFactura.add(fl1);
        panelFactura.add(fl2);
        
@@ -603,20 +625,31 @@ public class Principal extends JFrame {
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setVisible(true);
        frame.setLayout(null);
-       frame.setTitle("Bora");	
-       
-       frame.getContentPane().add(panelPedido);
-       frame.getContentPane().add(panelECarta);
-       frame.getContentPane().add(panelPPlato);
-       frame.getContentPane().add(panelSPlato);
-       frame.getContentPane().add(panelPostre);
-       frame.getContentPane().add(panelCartaMenu);
-       frame.getContentPane().add(panelReserva);
-       frame.getContentPane().add(panelPersonas);
-       frame.getContentPane().add(panelPruebas);
+       frame.setTitle("Bora");
+
        frame.getContentPane().add(panelBienvenida);
-       frame.getContentPane().add(panelCreacionBoton);
+       frame.getContentPane().add(panelInicio);
+       frame.getContentPane().add(panelAdmin);
+       
+       frame.getContentPane().add(panelQuitBoton);
+       frame.getContentPane().add(panelAddBoton);
+       
+       frame.getContentPane().add(panelReserva);
+       frame.getContentPane().add(panelMesa);
+       
+       frame.getContentPane().add(panelRecogerDomicilio);
+       frame.getContentPane().add(panelRecogida);
+       frame.getContentPane().add(panelDomicilio);
+       
+       frame.getContentPane().add(panelEntrantes);
+       frame.getContentPane().add(panelPrimero);
+       frame.getContentPane().add(panelSegundo);
+       frame.getContentPane().add(panelPostre);
+       frame.getContentPane().add(panelBebida);
+
        frame.getContentPane().add(panelFactura);
+       
+       frame.getContentPane().add(panelPruebas);
 	}
 	public void CrearBoton(JButton g) {
 
@@ -630,7 +663,7 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		h.add(bAtr);
+		h.add(bReturn);
 	}
 
 	public void CrearPanel(JPanel g) {
