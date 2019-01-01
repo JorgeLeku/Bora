@@ -38,9 +38,9 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR;
 	JComboBox cOrden;
-	JTextField tNombreProd, cbt2;
+	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 	Font fuente;
 	private List<JButton> botones;
 	private List<JPanel> paneles;
@@ -92,7 +92,7 @@ public class Principal extends JFrame {
        Paneles panelRecogerDomicilio = new Paneles();
        Paneles panelRecogida = new Paneles();
        Paneles panelDomicilio = new Paneles ();
-       
+       //prueba
        Paneles panelEntrantes = new Paneles();
        Paneles panelPrimero = new Paneles();
        Paneles panelSegundo = new Paneles();
@@ -145,14 +145,17 @@ public class Principal extends JFrame {
 
 
        //sad
-       
+       //Creacion objetos
+       //Objetos panelInicial
        bPanelRecogerDomicilio = new JButton(imagenp1b1);
        bPanelReserva = new JButton(imagenp1b2);
        bPanelAdmin = new JButton();
        
+       //Objetos panelAdmin
        bPanelQuitBoton = new BotonesGrandes();
        bPanelAddBoton = new BotonesGrandes();
        
+       //Objetos panelAddBoton
        bAddBoton = new JButton();
        bSelImg = new JButton(imagencbb2);
        bSelImg.setRolloverIcon(imagencbb2bn);
@@ -164,8 +167,23 @@ public class Principal extends JFrame {
        lTipo = new JLabel();
        cOrden = new JComboBox();
        
+       //Objetos panelQuitBoton
        bQuitBoton = new JButton();
 
+       //Objetos panelReserva
+       lNombreC = new JLabel ();
+       lNombreC.setFont(newFont);
+       lNombreC.setText("Nombre");
+       lApellidoC = new JLabel ();
+       lApellidoC.setFont(newFont);
+       lApellidoC.setText("Apellidos");
+       lHoraR = new JLabel();
+       lHoraR = new JLabel();
+       lHoraR.setFont(newFont);
+       lHoraR.setText("Hora de la reserva");
+       tApellidosReserva = new JTextField();
+       tNombreReserva = new JTextField();
+       
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
        bPanelMesa = new JButton() {
     	   public void paintComponent(Graphics g) {
