@@ -481,6 +481,10 @@ public class Principal extends JFrame {
       
        /*
        NBotones = cantidad de filas que tiene la tabla
+<<<<<<< HEAD
+=======
+       select count(*) from nombetabla;
+>>>>>>> refs/remotes/origin/master
        */
       /*for (int i = 1; i < 1+NBotones; i++) {
 			  pp1.setLocation(38*i, 185*i);
