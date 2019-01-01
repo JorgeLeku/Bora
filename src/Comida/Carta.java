@@ -81,7 +81,7 @@ public class Carta {
 			System.out.println("encontrado");
 			br = new BufferedReader(fr);
 			String linea ;
-
+//
 			   while((linea=br.readLine())!=null) {//mientras no este vacio el fichero
 				   String[]tockens = linea.split(","); //separamos en tockens las distintas partes
 				   if( tockens.length == 6) {//bebida completada
