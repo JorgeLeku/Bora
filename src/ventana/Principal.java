@@ -1,7 +1,7 @@
 package ventana;
 
 
-//soy moreno 4
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
