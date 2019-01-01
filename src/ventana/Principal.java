@@ -291,6 +291,7 @@ public class Principal extends JFrame {
        
        bPanelMesa.setBounds(450, 500, 300, 75);
        
+       lNombreC.setBounds(25, 250, 400, 40);
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
