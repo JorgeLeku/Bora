@@ -38,8 +38,8 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR;
-	JComboBox cOrden;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
+	JComboBox cOrden, cHoraReserva;
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 	Font fuente;
 	private List<JButton> botones;
@@ -66,6 +66,7 @@ public class Principal extends JFrame {
 	            return;
 	        }
        Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
+       Font titulos = fuente.deriveFont(fuente.getSize()*30F);
        
        JFrame frame = new JFrame();
        
@@ -92,7 +93,7 @@ public class Principal extends JFrame {
        Paneles panelRecogerDomicilio = new Paneles();
        Paneles panelRecogida = new Paneles();
        Paneles panelDomicilio = new Paneles ();
-       //prueba
+
        Paneles panelEntrantes = new Paneles();
        Paneles panelPrimero = new Paneles();
        Paneles panelSegundo = new Paneles();
@@ -183,8 +184,23 @@ public class Principal extends JFrame {
        lHoraR.setText("Hora de la reserva");
        tApellidosReserva = new JTextField();
        tNombreReserva = new JTextField();
+       cHoraReserva=new JComboBox();
        
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
+
+       //Objetos panelMesa, de momento vamos a obviar el panelMesa
+       bPrimerPlato = new JButton() {
+    	   public void paintComponent(Graphics g) {
+    		   
+		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+		        Graphics bufferGraphics = bufferImage.getGraphics();
+		        bufferGraphics.drawImage(imagenBotonBlancoPeq.getImage(), 0, 0, 300, 75, null);
+		        g.drawImage(bufferImage, 0, 0, this);
+
+		        }
+		    
+      };
+       
        bPanelMesa = new JButton() {
     	   public void paintComponent(Graphics g) {
     		   
@@ -196,13 +212,17 @@ public class Principal extends JFrame {
 		        }
 		    
        };
-     
-       bPrimerPlato = new JButton();
        
        bPanelRecogida = new JButton();
        
        bPanelDomicilio = new JButton ();
        
+       //Objetos panelPrimerPlato
+       lPrimerPlato = new JLabel ();
+       lPrimerPlato.setFont(titulos);
+       lPrimerPlato.setForeground(Color.WHITE);
+       lPrimerPlato.setSize(50, 50);
+       lPrimerPlato.setText("Primer Plato");
        
        bAb = new JButton(imagenbAb);
        bReturn = new JButton (imagenbAtr);
@@ -289,9 +309,28 @@ public class Principal extends JFrame {
        lDirImg.setBounds(600, 430, 400, 40);
        lDirImg.setFont(newFont);
        
-       bPanelMesa.setBounds(450, 500, 300, 75);
+       //Panel Reserva
+       bPanelMesa.setBounds(390, 585, 300, 75);
+       lNombreC.setBounds(240, 200, 400, 40);
+       lApellidoC.setBounds(710, 200, 400, 40);    
+       tNombreReserva.setBounds(130, 250, 300, 40);
+       tApellidosReserva.setBounds(620, 250, 300, 40);
+       lHoraR.setBounds(420, 350, 300, 40);
+       cHoraReserva.setBounds(380,400, 300, 40);
+       //Esto es para crear el combo box de la reserva
+       int cantidadHoras = 7; //Sustituir el 7 por la cantidad de horas libres cogidas de la bd
+       for (int i = 0; i < cantidadHoras; i++) {
+		cHoraReserva.addItem("p"+i);// Sustituir el "p"+i por los items de la tabla de la bd
+	}
        
-       lNombreC.setBounds(25, 250, 400, 40);
+       //Panel Mesa
+       bPrimerPlato.setBounds(390, 585, 300, 75);
+       
+       
+       //PanelPrimerPlato
+
+       lPrimerPlato.setBounds(400, 50, 1000, 40);
+       
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
@@ -458,7 +497,7 @@ public class Principal extends JFrame {
 			}
 
        });
-
+       
        
        bPanelQuitBoton.addActionListener(new ActionListener () {
 
@@ -479,7 +518,16 @@ public class Principal extends JFrame {
    		}
        	   
         });
-      
+       
+       bPanelMesa.addActionListener(new ActionListener () {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			CambiarPanel(panelReserva, panelPrimero);
+		}
+    	   
+       });
        /*
        NBotones = cantidad de filas que tiene la tabla
 <<<<<<< HEAD
@@ -654,10 +702,15 @@ public class Principal extends JFrame {
        panelReserva.add(lApellidoC);
        panelReserva.add(lNombreC);
        panelReserva.add(lHoraR);
+       panelReserva.add(tApellidosReserva);
+       panelReserva.add(tNombreReserva);
+       panelReserva.add(cHoraReserva);
        
+       panelMesa.add(bPrimerPlato);
        
        panelPruebas.add(bAb);
        
+       panelPrimero.add(lPrimerPlato);
        panelAddBoton.add(cbb1);
        panelAddBoton.add(tNombreProd);
        panelAddBoton.add(cbt2);
@@ -669,6 +722,7 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
+       
        
        panelFactura.add(fl1);
        panelFactura.add(fl2);
