@@ -651,6 +651,10 @@ public class Principal extends JFrame {
        panelAdmin.add(bPanelAddBoton);
        
        panelReserva.add(bPanelMesa);
+       panelReserva.add(lApellidoC);
+       panelReserva.add(lNombreC);
+       panelReserva.add(lHoraR);
+       
        
        panelPruebas.add(bAb);
        
@@ -676,7 +680,7 @@ public class Principal extends JFrame {
        frame.setTitle("Insertar nombre");
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setVisible(true);
-       frame.setLayout(null);
+       frame.setLayout(null);  
        frame.setTitle("Bora");
 
        frame.getContentPane().add(panelBienvenida);
