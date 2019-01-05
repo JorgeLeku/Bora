@@ -19,15 +19,16 @@ import ventana.Botones;
 
 
 public class VentanaDinamica extends JFrame{
-
+	int prueba = 0;
 	private List<JButton> botones, cambio;
-
+	private List<JPanel> paneles;
 	private JScrollPane scroll;
 	private JButton botonAgre;
 	private JPanel panel, panel1;
 	public VentanaDinamica() {
 		botones = new ArrayList<>();
 		cambio = new ArrayList<>();
+		paneles = new ArrayList<>();
 		//scroll = new JScrollPane();
 		JFrame frame1 = new JFrame ();
 		panel = new JPanel ();
@@ -41,23 +42,27 @@ public class VentanaDinamica extends JFrame{
 		//ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
 		botonAgre.setBounds(500, 400, 100, 100);
 		botonAgre.setVisible(true);
-	
+		paneles.add(panel1);
+		
+		
 		botonAgre.addActionListener(new ActionListener () {
-
+		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				CambiarPanel(panel, panel1);
+				CambiarPanel(panel, paneles.get(0));
+				
 				int s= 40;
 				int indi= 0;
 				int p = 185;
 				//CambiarPanel(panelInicio, panelPruebas);
-				for (int x = 0; x < 2; x++) {
+				for (int x = 0; x <40 ; x++) {
 					JPanel panelesMult = new JPanel();
 					panelesMult.setName("panelesMult" + x);
 					CrearPanel(panelesMult);
 					frame1.getContentPane().add(panelesMult);
 					//frame.update(getGraphics());
+					paneles.add(panelesMult);
 					JButton botonSiguientePanel = new JButton();/* {
 				    	   public void paintComponent(Graphics g) {
 				    		   
@@ -80,7 +85,8 @@ public class VentanaDinamica extends JFrame{
 						@Override
 						public void actionPerformed(ActionEvent arg0) {
 							// TODO Auto-generated method stub
-							CambiarPanel(panel1, panelesMult);
+							CambiarPanel(panel1, paneles.get(0));
+							
 						}
 						
 					});
@@ -97,30 +103,43 @@ public class VentanaDinamica extends JFrame{
 							JButton pp2 = new JButton();
 							//CrearBoton(pp2);
 							pp2.setBounds(s, p,300, 75);
-							pp2.setText("prueba"+o+i);
+							pp2.setText("prueba"+x+i+o);
 							botones.add(pp2);
 							s=320+s;
+							paneles.get(x).add(pp2);
+							paneles.get(x).updateUI();
+							
+							
+							
+							panel1.updateUI();
 							pp2.addActionListener(new ActionListener () {
 
 								@Override
 								public void actionPerformed(ActionEvent arg0) {
 									// TODO Auto-generated method stub
-									CambiarPanel(panel1, panel);
+									CambiarPanel(paneles.get(prueba), paneles.get(prueba+1));
+									prueba++;
 								}
 								
 							});
 							//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
-							panel1.add(pp2);
 							
-							panel1.updateUI();
+							
+							
 				    	}
+					
 						p=p+100;
 						s=40;
+						
 					}
+					s=40;
+					p=185;
 				}
 				for (int i = 0; i < botones.size(); i++) {
 					System.out.println(botones.get(i));
+					
 				}
+				
 			}
 	    	   
 			
