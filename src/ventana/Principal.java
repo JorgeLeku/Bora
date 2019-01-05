@@ -44,7 +44,7 @@ public class Principal extends JFrame {
 	Font fuente;
 	private List<JButton> botones;
 	private List<JPanel> paneles;
-	//Pruebas
+	//Pruebas2
 	
 	int x = 1;
 	public Principal() {
