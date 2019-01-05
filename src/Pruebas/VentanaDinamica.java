@@ -20,14 +20,14 @@ import ventana.Botones;
 
 public class VentanaDinamica extends JFrame{
 
-	private List<JButton> botones;
+	private List<JButton> botones, cambio;
 
 	private JScrollPane scroll;
 	private JButton botonAgre;
 	private JPanel panel, panel1;
 	public VentanaDinamica() {
 		botones = new ArrayList<>();
-
+		cambio = new ArrayList<>();
 		//scroll = new JScrollPane();
 		JFrame frame1 = new JFrame ();
 		panel = new JPanel ();
@@ -38,9 +38,10 @@ public class VentanaDinamica extends JFrame{
 		botonAgre = new JButton("Agregar");
 		panel1 = new JPanel();
 		CrearPanel(panel1);
-		ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
+		//ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
 		botonAgre.setBounds(500, 400, 100, 100);
 		botonAgre.setVisible(true);
+	
 		botonAgre.addActionListener(new ActionListener () {
 
 			@Override
@@ -53,10 +54,11 @@ public class VentanaDinamica extends JFrame{
 				//CambiarPanel(panelInicio, panelPruebas);
 				for (int x = 0; x < 2; x++) {
 					JPanel panelesMult = new JPanel();
+					panelesMult.setName("panelesMult" + x);
 					CrearPanel(panelesMult);
 					frame1.getContentPane().add(panelesMult);
 					//frame.update(getGraphics());
-					JButton botonSiguientePanel = new JButton() {
+					JButton botonSiguientePanel = new JButton();/* {
 				    	   public void paintComponent(Graphics g) {
 				    		   
 						        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -66,12 +68,15 @@ public class VentanaDinamica extends JFrame{
 
 						        }
 						    
-				      };
-				       
+				      };*/
+				    
 					botonSiguientePanel.setBounds(800, 550, 300, 75);
 					CrearBoton(botonSiguientePanel);
+					botonSiguientePanel.setName("bSiguiente"+x);
+					
+					cambio.add(botonSiguientePanel);
 					botonSiguientePanel.addActionListener(new ActionListener() {
-
+					
 						@Override
 						public void actionPerformed(ActionEvent arg0) {
 							// TODO Auto-generated method stub
@@ -79,13 +84,21 @@ public class VentanaDinamica extends JFrame{
 						}
 						
 					});
+					if (x==0) {
+						panel1.add(cambio.get(0));
+					} else if (x>0) {
+						panelesMult.getName();
+						panelesMult.add(cambio.get(x));
+					}
 					for (int i = 0; i < 3; i++) {
 						
 			
 						for (int o = 0; o < 3; o++) {
-							Botones pp2 = new Botones();
+							JButton pp2 = new JButton();
+							//CrearBoton(pp2);
 							pp2.setBounds(s, p,300, 75);
-							CrearBoton(pp2);
+							pp2.setText("prueba"+o+i);
+							botones.add(pp2);
 							s=320+s;
 							pp2.addActionListener(new ActionListener () {
 
@@ -96,14 +109,17 @@ public class VentanaDinamica extends JFrame{
 								}
 								
 							});
-							pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+							//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 							panel1.add(pp2);
-							botones.add(pp2);
+							
 							panel1.updateUI();
 				    	}
 						p=p+100;
 						s=40;
 					}
+				}
+				for (int i = 0; i < botones.size(); i++) {
+					System.out.println(botones.get(i));
 				}
 			}
 	    	   
