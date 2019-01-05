@@ -525,8 +525,117 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelReserva, panelPrimero);
+			int s= 40;
+			int indi= 0;
+			int p = 185;
+			//CambiarPanel(panelInicio, panelPruebas);
+			for (int x = 0; x < 2; x++) {
+				JPanel panelesMult = new JPanel();
+				CrearPanel(panelesMult);
+				frame.getContentPane().add(panelesMult);
+				//frame.update(getGraphics());
+				JButton botonSiguientePanel = new JButton() {
+			    	   public void paintComponent(Graphics g) {
+			    		   
+					        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+					        Graphics bufferGraphics = bufferImage.getGraphics();
+					        bufferGraphics.drawImage(imagenBotonBlancoPeq.getImage(), 0, 0, 300, 75, null);
+					        g.drawImage(bufferImage, 0, 0, this);
+
+					        }
+					    
+			      };
+			       
+				botonSiguientePanel.setBounds(800, 550, 300, 75);
+				CrearBoton(botonSiguientePanel);
+				botonSiguientePanel.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelPrimero, panelesMult);
+					}
+					
+				});
+				for (int i = 0; i < 3; i++) {
+					
+		
+					for (int o = 0; o < 3; o++) {
+						Botones pp2 = new Botones();
+						pp2.setBounds(s, p,300, 75);
+						CrearBoton(pp2);
+						s=320+s;
+						pp2.addActionListener(new ActionListener () {
+
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								// TODO Auto-generated method stub
+								CambiarPanel(panelPrimero, panelSegundo);
+							}
+							
+						});
+						pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+						panelPrimero.add(pp2);
+						botones.add(pp2);
+						panelPrimero.updateUI();
+			    	}
+					p=p+100;
+					s=40;
+				}
+			}
 		}
     	   
+       });
+       bPrimerPlato.addActionListener(new ActionListener () {
+    	   @Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				/*Botones pp1 = new Botones();
+				pp1.setBounds(34, 185,300, 75);
+				CrearBoton(pp1);
+				panelPruebas.add(pp1);
+		    	panelPruebas.updateUI();
+				pp1.setBounds(354, 185,300, 75);
+				CrearBoton(pp1);
+		    	panelPruebas.add(pp1);
+		    	panelPruebas.updateUI();*/
+		    	int s= 40;
+				int indi= 0;
+				int p = 185;
+				CambiarPanel(panelInicio, panelPruebas);
+				for (int x = 0; x < 2; x++) {
+					JPanel panelesMult = new JPanel();
+					CrearPanel(panelesMult);
+					frame.getContentPane().add(panelesMult);
+					frame.update(getGraphics());
+					for (int i = 0; i < 3; i++) {
+						
+			
+						for (int o = 0; o < 3; o++) {
+							Botones pp2 = new Botones();
+							pp2.setBounds(s, p,300, 75);
+							CrearBoton(pp2);
+							s=320+s;
+							pp2.addActionListener(new ActionListener () {
+	
+								@Override
+								public void actionPerformed(ActionEvent arg0) {
+									// TODO Auto-generated method stub
+									CambiarPanel(panelPrimero, panelSegundo);
+								}
+								
+							});
+							pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+							panelPrimero.add(pp2);
+							botones.add(pp2);
+							panelPrimero.updateUI();
+				    	}
+						p=p+100;
+						s=40;
+					}
+				}
+				 
+			}
        });
        /*
        NBotones = cantidad de filas que tiene la tabla
