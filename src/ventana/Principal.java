@@ -1,6 +1,6 @@
 package ventana;
 
-//Prueba
+
 
 import java.awt.Color;
 import java.awt.Font;
