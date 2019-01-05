@@ -16,7 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 
 import ventana.Botones;
-
+//commit
 
 public class VentanaDinamica extends JFrame{
 	int prueba = 0;
