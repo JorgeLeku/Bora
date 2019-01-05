@@ -65,11 +65,13 @@ public class VentanaDinamica extends JFrame{
 					CrearPanel(panelesMult);
 					frame1.getContentPane().add(panelesMult);
 					paneles.add(panelesMult);
-					JButton botonSiguientePanel = new JButton();
-					botonSiguientePanel.setBounds(800, 550, 300, 75);
-					CrearBoton(botonSiguientePanel);
+					JButton botonSiguientePanel = new JButton("siguiente panel");
+					botonSiguientePanel.setBounds(390, 550, 300, 75);
+					
 					botonSiguientePanel.setName("bSiguiente"+x);
 					cambio.add(botonSiguientePanel);
+					paneles.get(x).add(botonSiguientePanel);
+					paneles.get(x).updateUI();
 					botonSiguientePanel.addActionListener(new ActionListener() {
 					
 						@Override
@@ -77,7 +79,8 @@ public class VentanaDinamica extends JFrame{
 							// TODO Auto-generated method stub
 							CambiarPanel(paneles.get(prueba), paneles.get(prueba+1));
 							prueba++;
-							
+							paneles.get(prueba).add(botonSiguientePanel);
+							paneles.get(prueba).updateUI();
 						}
 						
 					});
