@@ -28,13 +28,19 @@ public class VentanaDinamica extends JFrame{
 	public VentanaDinamica() {
 		botones = new ArrayList<>();
 
-		scroll = new JScrollPane();
-		JFrame frame = new JFrame ();
+		//scroll = new JScrollPane();
+		JFrame frame1 = new JFrame ();
 		panel = new JPanel ();
+		panel.setVisible(true);
+		panel.setEnabled(true);
+		panel.setLayout(null);
+		panel.setBounds(0, 0, 1080, 720);
 		botonAgre = new JButton("Agregar");
 		panel1 = new JPanel();
+		CrearPanel(panel1);
 		ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
-
+		botonAgre.setBounds(500, 400, 100, 100);
+		botonAgre.setVisible(true);
 		botonAgre.addActionListener(new ActionListener () {
 
 			@Override
@@ -48,7 +54,7 @@ public class VentanaDinamica extends JFrame{
 				for (int x = 0; x < 2; x++) {
 					JPanel panelesMult = new JPanel();
 					CrearPanel(panelesMult);
-					frame.getContentPane().add(panelesMult);
+					frame1.getContentPane().add(panelesMult);
 					//frame.update(getGraphics());
 					JButton botonSiguientePanel = new JButton() {
 				    	   public void paintComponent(Graphics g) {
@@ -104,17 +110,16 @@ public class VentanaDinamica extends JFrame{
 			
 		});
 		panel.add(botonAgre);
-		panel.add(scroll);
+		//panel.add(scroll);
 		
-		frame.add(panel);
-		frame.add(panel1);
-		frame.setBounds(350, 300, 1080, 720);
-	       frame.setVisible(true);
-	       frame.setTitle("Insertar nombre");
-	       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	       frame.setVisible(true);
-	       frame.setLayout(null);
-	       frame.setTitle("Bora");	
+		frame1.add(panel);
+		frame1.add(panel1);
+		frame1.setBounds(350, 300, 1080, 720);
+	       frame1.setVisible(true);
+	       frame1.setTitle("Insertar nombre");
+	       frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	       frame1.setVisible(true);
+	       frame1.setLayout(null);
 	}
 	public void CrearPanel(JPanel g) {
 		g.setLayout(null);
