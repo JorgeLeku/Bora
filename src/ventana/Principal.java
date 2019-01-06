@@ -188,6 +188,10 @@ public class Principal extends JFrame {
        
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
 
+       //Objetos PanelRecogerDomicilio
+       bPanelRecogida = new JButton("Recogida");
+       bPanelDomicilio = new JButton("Domicilio");
+       
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -263,6 +267,9 @@ public class Principal extends JFrame {
       bPanelRecogerDomicilio.setBounds(93, 185, 400, 350);
       bPanelReserva.setBounds(566, 185, 400, 350);
       bPanelAdmin.setBounds(500, 5, 50, 50);
+      
+      bPanelRecogida.setBounds(93, 185, 400, 350);
+      bPanelDomicilio.setBounds(93, 185, 400, 350);
        
       bPanelAddBoton.setBounds(93, 185, 400, 350);
       bPanelQuitBoton.setBounds(566, 185, 400, 350);
@@ -322,6 +329,10 @@ public class Principal extends JFrame {
        for (int i = 0; i < cantidadHoras; i++) {
 		cHoraReserva.addItem("p"+i);// Sustituir el "p"+i por los items de la tabla de la bd
 	}
+       
+       //PanelRecogidaDomicilio
+       bPanelRecogida.setBounds(10, 10, 400, 350);
+       bPanelDomicilio.setBounds(70, 70, 400, 350);
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
@@ -814,6 +825,9 @@ public class Principal extends JFrame {
        panelReserva.add(tApellidosReserva);
        panelReserva.add(tNombreReserva);
        panelReserva.add(cHoraReserva);
+       
+       panelRecogerDomicilio.add(bPanelRecogida);
+       panelRecogerDomicilio.add(bPanelDomicilio);       
        
        panelMesa.add(bPrimerPlato);
        
