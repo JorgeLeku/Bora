@@ -191,8 +191,6 @@ public class Principal extends JFrame {
        //Objetos PanelRecogerDomicilio
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
-       bPanelRecogida.setBackground(Color.green);
-       bPanelDomicilio.setBackground(Color.blue);
        
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
@@ -267,7 +265,7 @@ public class Principal extends JFrame {
       bPanelAdmin.setBounds(500, 5, 50, 50);
       
       bPanelRecogida.setBounds(93, 185, 400, 350);
-      bPanelDomicilio.setBounds(93, 185, 400, 350);
+      bPanelDomicilio.setBounds(566, 185, 400, 350);
              
       bPanelAddBoton.setBounds(93, 185, 400, 350);
       bPanelQuitBoton.setBounds(566, 185, 400, 350);
