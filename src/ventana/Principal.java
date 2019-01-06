@@ -266,6 +266,8 @@ public class Principal extends JFrame {
       
       bPanelRecogida.setBounds(93, 185, 400, 350);
       bPanelDomicilio.setBounds(93, 185, 400, 350);
+      bPanelRecogida.setBackground(Color.green);
+      bPanelDomicilio.setBackground(Color.blue);
        
       bPanelAddBoton.setBounds(93, 185, 400, 350);
       bPanelQuitBoton.setBounds(566, 185, 400, 350);
