@@ -216,11 +216,7 @@ public class Principal extends JFrame {
 		        }
 		    
        };
-       
-       bPanelRecogida = new JButton();
-       
-       bPanelDomicilio = new JButton ();
-       
+              
        //Objetos panelPrimerPlato
        lPrimerPlato = new JLabel ();
        lPrimerPlato.setFont(titulos);
@@ -489,6 +485,7 @@ public class Principal extends JFrame {
 		}
     	   
        });
+      
        bPanelRecogerDomicilio.addActionListener(new ActionListener() {
 
 			@Override
@@ -498,6 +495,26 @@ public class Principal extends JFrame {
 			}
 
        });
+       
+       bPanelRecogida.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				CambiarPanel(panelRecogerDomicilio, panelRecogida);
+			}
+
+      });
+       
+       bPanelDomicilio.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Base de datos
+				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
+			}
+
+     }); 
 
        bPanelReserva.addActionListener(new ActionListener() {
 
