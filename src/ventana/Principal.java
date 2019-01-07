@@ -252,9 +252,9 @@ public class Principal extends JFrame {
        
        CrearBoton(bPrimerPlato);
        
-       CrearBoton(bPanelRecogida);
+      // CrearBoton(bPanelRecogida);
        
-       CrearBoton(bPanelDomicilio);
+      // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
        CrearBoton(bReturn);
        CrearBoton(cbb1);
@@ -264,8 +264,7 @@ public class Principal extends JFrame {
       bPanelReserva.setBounds(566, 185, 400, 350);
       bPanelAdmin.setBounds(500, 5, 50, 50);
       
-      bPanelRecogida.setBounds(93, 185, 400, 350);
-      bPanelDomicilio.setBounds(566, 185, 400, 350);
+     
              
       bPanelAddBoton.setBounds(93, 185, 400, 350);
       bPanelQuitBoton.setBounds(566, 185, 400, 350);
@@ -327,8 +326,8 @@ public class Principal extends JFrame {
 	}
        
        //PanelRecogidaDomicilio
-       bPanelRecogida.setBounds(10, 10, 400, 350);
-       bPanelDomicilio.setBounds(70, 70, 400, 350);
+       bPanelRecogida.setBounds(93, 185, 400, 350);
+       bPanelDomicilio.setBounds(566, 185, 400, 350);
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
