@@ -1,6 +1,6 @@
 package ventana;
 
-
+//Gorje
 
 import java.awt.Color;
 import java.awt.Font;
