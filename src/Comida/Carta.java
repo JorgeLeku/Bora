@@ -11,7 +11,6 @@ import java.util.HashSet;
 
 import javax.swing.JOptionPane;
 
-import com.sun.javafx.fxml.expression.Expression.Parser.Token;
 
 import jdk.nashorn.internal.parser.TokenStream;
 import sun.security.jgss.TokenTracker;
@@ -100,14 +99,6 @@ public class Carta {
 					   c.id = Integer.parseInt(tockens[0]) ;
 					   c.nombre = tockens[1];
 					   c.precio =  Double.parseDouble(tockens[2]) ;
-					   //a partir de ahora todo lo demas son ingredientes
-					   HashSet<String> ingredientes = new HashSet<>();
-					  for (int i = 0; i < tockens.length; i++) {
-						ingredientes.add(tockens[i]);
-					  }
-					  c.setIngredientes(ingredientes);
-					  
-					  this.comidas.add(c);
 					  
 				   }
 				   

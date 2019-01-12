@@ -17,7 +17,7 @@ public class Comida extends Alimentos {
 
 	public Comida() {
 		super();
-		this.ingredientes = new HashSet<String>();
+	
 	}
 	
 	public Comida(int id, String nombre, double precio,  HashSet<String> ingredientes) {
