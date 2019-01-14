@@ -18,7 +18,7 @@ public class Bebida extends Alimentos {
 		}
 
 	public Bebida(int id, String nombre, double precio,  String descripcion, int mL, boolean alcoholica) {
-		super( precio, nombre, id);
+		super(id, nombre, precio);
 		this.descripcion = descripcion;
 		this.mL = mL;
 		this.alcoholica = alcoholica;
@@ -48,9 +48,10 @@ public class Bebida extends Alimentos {
 		this.alcoholica = alcoholica;
 	}
 
+	//to string preparado para ayudar con la BD
 	@Override
 	public String toString() {
-		return id + ", " + nombre + ", " + descripcion + ", " + mL + ", " + alcoholica + ", "
+		return id + ",' " + nombre + "', '" + descripcion + "', " + mL + ", " + alcoholica + ", "
 				 + precio;
 	}
 

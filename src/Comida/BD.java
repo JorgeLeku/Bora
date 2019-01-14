@@ -17,21 +17,19 @@ public class BD {
 	
 	
 	/**metodo para iniciar conexion con BD
-	 * 
-	 * @param nombreBD
 	 * @return conexion de la base de datos
 	 */
-	public static Connection initBD(String nombreBD) {
+	public static Connection initBD() {
 		  try {
-			Class.forName("org.sqlite.JDBC");
-		    Connection con = DriverManager.getConnection("jdbc:sqlite:" + nombreBD );
-		    log(Level.INFO, "base de datos "+nombreBD ,null );
+			Class.forName("org.postgresql.Driver");//conectamos con el jdbc de postgreSQL
+		    Connection con = DriverManager.getConnection("jdbc:postgresql://postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4?sslmode=require" );
+		    log(Level.INFO, "base de datos conectada",null );
 		   return con;
 		  } catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			
 			lastError = e;
-			log( Level.SEVERE, "Error en conexión de base de datos " + nombreBD, e );
+			log( Level.SEVERE, "Error en conexión de base de datos ", e );
 			e.printStackTrace();
 			return null;
 		  }
@@ -56,59 +54,7 @@ public class BD {
 			return null;
 		}
 	}
-	
-	
-	
-	/** Crea las tablas de la base de datos. Si ya existen, las deja tal cual
-	 * @param con	Conexión ya creada y abierta a la base de datos
-	 * @return	sentencia de trabajo si se crea correctamente, null si hay cualquier error
-	 */
-	public static Statement usarCrearTablasBD( Connection con ) {
-		try {
-			Statement statement = con.createStatement();
-			statement.setQueryTimeout(30);  // poner timeout 30 msg
-			try {
-				statement.executeUpdate("create table teclaspulsadas " +
-					"(tecla string, pulsaciones int)");
-			} catch (SQLException e) {} // Tabla ya existe. Nada que hacer
-			try {
-				statement.executeUpdate("create table pulsaciones " +
-					"(tecla string, pulsada bool, tiempo bigint)");
-			} catch (SQLException e) {} // Tabla ya existe. Nada que hacer
-			log( Level.INFO, "Creada base de datos", null );
-			return statement;
-		} catch (SQLException e) {
-			lastError = e;
-			log( Level.SEVERE, "Error en creación de base de datos", e );
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	/** Reinicia en blanco las tablas de la base de datos. 
-	 * UTILIZAR ESTE MËTODO CON PRECAUCIÓN. Borra todos los datos que hubiera ya en las tablas
-	 * @param con	Conexión ya creada y abierta a la base de datos
-	 * @return	sentencia de trabajo si se borra correctamente, null si hay cualquier error
-	 */
-	public static Statement reiniciarBD( Connection con ) {
-		try {
-			Statement statement = con.createStatement();
-			statement.setQueryTimeout(30);  // poner timeout 30 msg
-			statement.executeUpdate("drop table if exists *");
 			
-			log( Level.INFO, "Reiniciada base de datos", null );
-			return usarCrearTablasBD( con );
-		} catch (SQLException e) {
-			log( Level.SEVERE, "Error en reinicio de base de datos", e );
-			lastError = e;
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	
-	
-	
 	/** Cierra la base de datos abierta
 	 * @param con	Conexión abierta de la BD
 	 * @param st	Sentencia abierta de la BD
@@ -167,14 +113,11 @@ public class BD {
 	 * @param nombreTabla nombre de la tabla a seleccionar
 	 
 	 */
-	public static void teclaInsert( final Statement st, final String valor, String nombreTabla ) {
+	public static void Insert( final Statement st, final String valor, String nombreTabla ) {
 		
 			String sentSQL = "";
 			try {
-				sentSQL = "insert into "+ nombreTabla + " values(" +
-						"'" + secu(valor) + "', " +
-						
-						")";
+				sentSQL = "insert into "+ nombreTabla + " values(" + secu(valor) + ")";
 				int val = st.executeUpdate( sentSQL );
 				log( Level.INFO, "BD añadida " + val + " fila\t" + sentSQL, null );
 				if (val!=1) {  // Se tiene que añadir 1 - error si no
@@ -195,10 +138,10 @@ public class BD {
 	 * @param nombre Tabla
 	 * @return Contador de pulsaciones de esa tecla (-1 si no se encuentra)
 	 */
-	public static void teclaSelect( Statement st, String condicion , String nombreTabla) {
+	public static void Select( Statement st, String condicion , String nombreTabla) {
 		String sentSQL = "";
 		try {
-			sentSQL = "select * from "+ nombreTabla+ " where '" + secu(condicion) + "'";
+			sentSQL = "select * from "+ nombreTabla+ " where " + secu(condicion) ;
 			log( Level.INFO, "BD\t" + sentSQL, null );
 			ResultSet rs = st.executeQuery( sentSQL );
 				
@@ -217,13 +160,13 @@ public class BD {
 	 * @param nombreCol nombre de la columna a editar
 	 * @param nombreTabla nombre de la tabla
 	 */
-	public static void teclaActualiza( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
+	public static void Actualiza( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
 		
 			String sentSQL = "";
 			try {
 				sentSQL = "update "+ nombreTabla+" set" +
 						secu(nombreCol) + " = " + secu(valor) + 
-						" where '" + condicion + "'";
+						" where " + condicion ;
 				int val = st.executeUpdate( sentSQL );
 				log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 				if (val!=1) {  // Se tiene que modificar 1 - error si no

@@ -1,60 +1,55 @@
 package Comida;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 public class Comida extends Alimentos {
-
-//Propiedades
 	
-	private HashSet<String> ingredientes;
+	private int numeroPlato,tipoImagen;
 	
-	
-//constructores
-
-
 	public Comida() {
-		super();
-	
-	}
-	
-	public Comida(int id, String nombre, double precio,  HashSet<String> ingredientes) {
-	super( precio, nombre, id);
-	this.ingredientes = ingredientes;
-}
-
-	public Comida(Comida p) {
-	
-		this.nombre = p.nombre;
-		this.precio = p.precio;
-		this.ingredientes = p.ingredientes;
-
-		this.precio = p.precio;
+		this.numeroPlato = 0;
+		this.tipoImagen = 0;
 	}
 
-	
-	//getters y setters
-	public HashSet<String> getIngredientes() {
-		return ingredientes;
+	public Comida(Comida a) {
+		super(a);
+		this.numeroPlato = a.numeroPlato;
+		this.tipoImagen = a.tipoImagen;
 	}
 
-	public void setIngredientes(HashSet<String> ingredientes) {
-		this.ingredientes = ingredientes;
+	public Comida(int id, String nombre, double precio, int numeroPlato, int tipoImagen) {
+		super(id, nombre, precio);
+		this.numeroPlato = numeroPlato;
+		this.tipoImagen = tipoImagen;
+		// TODO Auto-generated constructor stub
 	}
-	
 
-//to string
+	
+	
+	public int getNumeroPlato() {
+		return numeroPlato;
+	}
+
+	public void setNumeroPlato(int numeroPlato) {
+		this.numeroPlato = numeroPlato;
+	}
+
+	public int getTipoImagen() {
+		return tipoImagen;
+	}
+
+	public void setTipoImagen(int tipoImagen) {
+		this.tipoImagen = tipoImagen;
+	}
+
+	
+	//creado para conectar con la BD
 	@Override
 	public String toString() {
-		return id + ", " + nombre + ", " +precio + ", " +ingredientes.toString() ;
-	}
-	
-	public static void main(String[] args) {
-		Comida c = new Comida();
-		System.out.println(c.getId());
+		return id+",'"+ nombre+ "', "+ precio+", " +numeroPlato+ ", "+tipoImagen ; 
 	}
 
-	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

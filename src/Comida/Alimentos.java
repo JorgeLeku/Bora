@@ -1,11 +1,10 @@
 package Comida;
 
 public abstract class Alimentos  {
-	
-	
-	protected double precio;
-	protected String nombre;
 	protected int id;
+	protected String nombre;
+	protected double precio;
+	
 	
 	public Alimentos() {
 	
@@ -19,12 +18,12 @@ public abstract class Alimentos  {
 		this.nombre = a.nombre;
 		this.id = a.id;
 	}
-	public Alimentos( double precio, String nombre, int id) {
+	public Alimentos(int id,  String nombre,double precio ) {
 		super();
-	
-		this.precio = precio;
-		this.nombre = nombre;
 		this.id = id ;
+		this.nombre = nombre;
+		this.precio = precio;
+		
 	}
 
 
@@ -57,6 +56,11 @@ public abstract class Alimentos  {
 		this.id = id;
 	}
 
+	//to string modificado para ayudar en la BD, las comillas las deja colocadas para que los valores entren directamente en la BD
+	@Override
+	public String toString() {
+		return id + ",'" + nombre + "'," + precio ;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

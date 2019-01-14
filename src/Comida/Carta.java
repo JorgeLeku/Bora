@@ -1,11 +1,13 @@
 package Comida;
 
+import java.sql.Statement;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -65,66 +67,71 @@ public class Carta {
 	
 	
 	
-	//metodos para conectar con la base de datos
-	public void cargarCarta() {
-		/* como se guarda la comida : id, nombre, precio,ingrediente1, ingrediente2, ...
-		 * como se guardan las bebidas : id, nombre, precio,descripcion, ml, alcoholica;
-		*/
-		File archivo = null;
-		FileReader fr = null;
-		BufferedReader br = null;
-		ArrayList<String> todo = new ArrayList<>();
-		try {//buscar el arrchivo
-			archivo = new File("src/ficherosDeTexto/carta.txt");
-			fr = new FileReader(archivo);//path
-			System.out.println("encontrado");
-			br = new BufferedReader(fr);
-			String linea ;
-//
-			   while((linea=br.readLine())!=null) {//mientras no este vacio el fichero
-				   String[]tockens = linea.split(","); //separamos en tockens las distintas partes
-				   if( tockens.length == 6) {//bebida completada
-					   //es bebida
-					   Bebida b = new Bebida();
-					   b.id = Integer.parseInt(tockens[0]);
-					   b.nombre = tockens[1];
-					   b.precio = Double.parseDouble(tockens[2]);
-					   b.setDescripcion(tockens[3]);
-					   b.setmL(Integer.parseInt(tockens[4]));
-					   b.setAlcoholica(Boolean.parseBoolean(tockens[5]));
-					  this.bebidas.add(b);
-				   }else {
-					   //es comida
-					   Comida c = new Comida();
-					   c.id = Integer.parseInt(tockens[0]) ;
-					   c.nombre = tockens[1];
-					   c.precio =  Double.parseDouble(tockens[2]) ;
-					  
-				   }
-				   
-		            
-			   	}
-				//crea el popup
+	
+	public boolean cargarCarta() {
+		for (Bebida bebida : bebidas) {
+			Connection conn = BD.initBD();
+			Statement st = conn.createStatement();
 			
-					 JOptionPane.showMessageDialog(null, "carga completada");
-				
-				
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("no encontrado");
-		}finally {
-			try {
-				 if( null != fr ){   
-		               fr.close();     
-		            } 
-				System.out.println("cerrando");
-				System.out.println(todo.toString());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+					}
+		return false;
+//		File archivo = null;
+//		FileReader fr = null;
+//		BufferedReader br = null;
+//		ArrayList<String> todo = new ArrayList<>();
+//		try {//buscar el arrchivo
+//			archivo = new File("src/ficherosDeTexto/carta.txt");
+//			fr = new FileReader(archivo);//path
+//			System.out.println("encontrado");
+//			br = new BufferedReader(fr);
+//			String linea ;
+////
+//			   while((linea=br.readLine())!=null) {//mientras no este vacio el fichero
+//				   String[]tockens = linea.split(","); //separamos en tockens las distintas partes
+//				   if( tockens.length == 6) {//bebida completada
+//					   //es bebida
+//					   Bebida b = new Bebida();
+//					   b.id = Integer.parseInt(tockens[0]);
+//					   b.nombre = tockens[1];
+//					   b.precio = Double.parseDouble(tockens[2]);
+//					   b.setDescripcion(tockens[3]);
+//					   b.setmL(Integer.parseInt(tockens[4]));
+//					   b.setAlcoholica(Boolean.parseBoolean(tockens[5]));
+//					  this.bebidas.add(b);
+//				   }else {
+//					   //es comida
+//					   Comida c = new Comida();
+//					   c.id = Integer.parseInt(tockens[0]) ;
+//					   c.nombre = tockens[1];
+//					   c.precio =  Double.parseDouble(tockens[2]) ;
+//					  
+//				   }
+//				   
+//		            
+//			   	}
+//				//crea el popup
+//			
+//					 JOptionPane.showMessageDialog(null, "carga completada");
+//				
+//				
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			System.out.println("no encontrado");
+//		}finally {
+//			try {
+//				 if( null != fr ){   
+//		               fr.close();     
+//		            } 
+//				System.out.println("cerrando");
+//				System.out.println(todo.toString());
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+		
+		
 	}
 	
 	public void guardarCarta() {
