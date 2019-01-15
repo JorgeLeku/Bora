@@ -59,16 +59,18 @@ public class BD {
 	 * @param con	Conexión abierta de la BD
 	 * @param st	Sentencia abierta de la BD
 	 */
-	public static void cerrarBD( final Connection con, final Statement st ) {
+	public static boolean cerrarBD( final Connection con, final Statement st ) {
 		
 			try {
 				if (st!=null) st.close();
 				if (con!=null) con.close();
 				log( Level.INFO, "Cierre de base de datos", null );
+				return true;
 			} catch (SQLException e) {
 				lastError = e;
 				log( Level.SEVERE, "Error en cierre de base de datos", e );
 				e.printStackTrace();
+				return false;
 			}
 			
 		
@@ -109,25 +111,28 @@ public class BD {
 	
 	/** Añade valores  a la tabla abierta de BD, usando la sentencia INSERT de SQL
 	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
-	 * @param valor valor de lo que se quiere meter
+	 * @param valor valor de lo que se quiere meter( en nuestro caso metemos el toString de Bebida o Comida)
 	 * @param nombreTabla nombre de la tabla a seleccionar
 	 
 	 */
-	public static void Insert( final Statement st, final String valor, String nombreTabla ) {
+	public static boolean Insert( final Statement st, final String valor, String nombreTabla ) {
 		
 			String sentSQL = "";
 			try {
-				sentSQL = "insert into "+ nombreTabla + " values(" + secu(valor) + ")";
+				sentSQL = "insert into "+ nombreTabla + " values(" + valor + ")";
 				int val = st.executeUpdate( sentSQL );
 				log( Level.INFO, "BD añadida " + val + " fila\t" + sentSQL, null );
 				if (val!=1) {  // Se tiene que añadir 1 - error si no
 					log( Level.SEVERE, "Error en insert de BD\t" + sentSQL, null );
 				}
+				return true;
 			} catch (SQLException e) {
 				log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 				lastError = e;
 				e.printStackTrace();
+				return false;//ha ocurrido un problema
 			}
+			
 		
 	}
 
@@ -138,20 +143,24 @@ public class BD {
 	 * @param nombre Tabla
 	 * @return Contador de pulsaciones de esa tecla (-1 si no se encuentra)
 	 */
-	public static void Select( Statement st, String condicion , String nombreTabla) {
+	public static ResultSet Select( Statement st, String condicion , String nombreTabla) {
 		String sentSQL = "";
+		ResultSet rs = null;
 		try {
-			sentSQL = "select * from "+ nombreTabla+ " where " + secu(condicion) ;
+			sentSQL = "select * from "+ nombreTabla+ " where " + condicion ;
 			log( Level.INFO, "BD\t" + sentSQL, null );
-			ResultSet rs = st.executeQuery( sentSQL );
+			rs = st.executeQuery( sentSQL );
+			
+			return rs;
 				
-				rs.close();
 			
 		} catch (Exception e) {
 			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 			lastError = e;
 			e.printStackTrace();
+			return null;
 		}
+		
 	}
 	
 	/** Modifica un valor de la tabla abierta de BD, usando la sentencia UPDATE de SQL
@@ -160,22 +169,25 @@ public class BD {
 	 * @param nombreCol nombre de la columna a editar
 	 * @param nombreTabla nombre de la tabla
 	 */
-	public static void Actualiza( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
+	public static boolean Actualiza( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
 		
 			String sentSQL = "";
 			try {
 				sentSQL = "update "+ nombreTabla+" set" +
-						secu(nombreCol) + " = " + secu(valor) + 
+						secu(nombreCol) + " = " + valor + 
 						" where " + condicion ;
 				int val = st.executeUpdate( sentSQL );
 				log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 				if (val!=1) {  // Se tiene que modificar 1 - error si no
 					log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+					return false;
 				}
+				return true;
 			} catch (SQLException e) {
 				log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 				lastError = e;
 				e.printStackTrace();
+				return false;
 			}
 		
 	}

@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -71,10 +72,20 @@ public class Carta {
 	public boolean cargarCarta() {
 		for (Bebida bebida : bebidas) {
 			Connection conn = BD.initBD();
-			Statement st = conn.createStatement();
+			try {
+				Statement st = conn.createStatement();
+				//creamos una conexion y mediante el metodo siguiente introducimos los valores en la BD
+				boolean result = BD.Insert(st,  bebida.toString() , "bebida");
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
 			
 					}
 		return false;
+	}
 //		File archivo = null;
 //		FileReader fr = null;
 //		BufferedReader br = null;
@@ -132,7 +143,7 @@ public class Carta {
 //		}
 		
 		
-	}
+	
 	
 	public void guardarCarta() {
 		//metodo para escribir en el fichero de texto los cambios en la carta
