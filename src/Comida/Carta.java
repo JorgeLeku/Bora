@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -69,7 +70,7 @@ public class Carta {
 	
 	
 	
-	public boolean cargarCarta() {
+	public boolean guardarCarta() {
 		for (Bebida bebida : bebidas) {
 			Connection conn = BD.initBD();
 			try {
@@ -86,6 +87,8 @@ public class Carta {
 					}
 		return false;
 	}
+	
+	//leer en fichero de texto
 //		File archivo = null;
 //		FileReader fr = null;
 //		BufferedReader br = null;
@@ -145,38 +148,59 @@ public class Carta {
 		
 	
 	
-	public void guardarCarta() {
-		//metodo para escribir en el fichero de texto los cambios en la carta
-		FileWriter archivo = null;
-		PrintWriter pw = null;
-
+	public void cargarCarta() {
+		String sentSQL= "";
+		Connection conn = BD.initBD();
 		try {
-			archivo = new FileWriter("src/ficherosDeTexto/carta.txt");
-			pw = new PrintWriter(archivo);
-			for (Bebida bebida : bebidas) {
-				pw.println(bebida.toString());
+			Statement st = conn.createStatement();
+			//cargamos las bebidas y las guardamos
+			sentSQL = "select * from bebida";
+			ResultSet rs = st.executeQuery(sentSQL);
+			while(rs.next()) {//mientras el rs tenga elementos los almacenamos
+				Bebida b = new Bebida();
+				b.id = rs.getInt("cod");
+				b.nombre = rs.getString("nombre");
+				b.precio = rs.getDouble("precio");
 			}
-			for (Comida comida : comidas) {
-				pw.println(comida.toString());
-			}
-			 JOptionPane.showMessageDialog(null,"se ha escrito correctamente" );
-		
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		//	System.err.println("no encontrado");
-			 JOptionPane.showMessageDialog(null,"no encontrado","error",0 );
-		}finally {
-			pw.close();
-			try {
-				archivo.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				//System.err.println("no se cerró");
-				 JOptionPane.showMessageDialog(null,"no se cerró","error",0 );
-			}
 		}
+		
+		
 	}
+	//escribir fichero de texto
+//		//metodo para escribir en el fichero de texto los cambios en la carta
+//		FileWriter archivo = null;
+//		PrintWriter pw = null;
+//
+//		try {
+//			archivo = new FileWriter("src/ficherosDeTexto/carta.txt");
+//			pw = new PrintWriter(archivo);
+//			for (Bebida bebida : bebidas) {
+//				pw.println(bebida.toString());
+//			}
+//			for (Comida comida : comidas) {
+//				pw.println(comida.toString());
+//			}
+//			 JOptionPane.showMessageDialog(null,"se ha escrito correctamente" );
+//		
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		//	System.err.println("no encontrado");
+//			 JOptionPane.showMessageDialog(null,"no encontrado","error",0 );
+//		}finally {
+//			pw.close();
+//			try {
+//				archivo.close();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				//System.err.println("no se cerró");
+//				 JOptionPane.showMessageDialog(null,"no se cerró","error",0 );
+//			}
+//		}
+	
 	
 	
 	public static void main(String[] args) {
