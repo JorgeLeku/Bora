@@ -38,7 +38,7 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lcalle;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 	Font fuente;
@@ -192,6 +192,9 @@ public class Principal extends JFrame {
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
        
+       //Objetos PanelRecogida
+       lcalle = new JLabel("Calle");
+       
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -253,6 +256,7 @@ public class Principal extends JFrame {
        CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
+       lcalle.setBounds(50, 50, 100, 30);
        
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
@@ -325,9 +329,14 @@ public class Principal extends JFrame {
 		cHoraReserva.addItem("p"+i);// Sustituir el "p"+i por los items de la tabla de la bd
 	}
        
-       //PanelRecogidaDomicilio
+       //PanelRecogerDomicilio
        bPanelRecogida.setBounds(93, 185, 400, 350);
        bPanelDomicilio.setBounds(566, 185, 400, 350);
+       
+       //PanelRecogida
+       
+       //PanelDomicilio
+       
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
@@ -843,7 +852,10 @@ public class Principal extends JFrame {
        panelReserva.add(cHoraReserva);
        
        panelRecogerDomicilio.add(bPanelRecogida);
-       panelRecogerDomicilio.add(bPanelDomicilio);       
+       panelRecogerDomicilio.add(bPanelDomicilio);  
+       
+       panelRecogida.add(lcalle);
+       
        
        panelMesa.add(bPrimerPlato);
        
