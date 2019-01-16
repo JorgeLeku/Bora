@@ -6,40 +6,75 @@ import java.util.Date;
 public class Pedido {
 
 	//Propiedades
-	private Date fecha;
-	private int numTargeta;
-	private ArrayList<Alimentos> productos;
+	private int cod;
+	private Date fechaPedido, fechaEntrega;
 	private double dineroGastado;
+	private String direccion;
+	private ArrayList<Alimentos> productos;
+	
 	//Metodos
-	public Pedido(Date fecha, int ntarjeta, ArrayList<Alimentos>productos,double dineroGastado) {
-		this.fecha = fecha;
-		this.numTargeta = ntarjeta;
-		this.productos = productos;
-		this.dineroGastado = getImporte();
-	}
-		
+
 	public Pedido() {
-		this.fecha =new Date();
-		this.numTargeta =0;
+		this.cod =0;
+		this.fechaPedido = new Date();
+		this.fechaEntrega =new Date();	
 		this.productos = null;
-		this.dineroGastado = getImporte();
+		this.dineroGastado = 0;
+		this.direccion ="";
 	}
 	
+	public Pedido(int cod, Date fechaPedido, Date fechaEntrega,String direccion ,ArrayList<Alimentos> productos) {
+		super();
+		this.cod = cod;
+		this.fechaPedido = fechaPedido;
+		this.fechaEntrega = fechaEntrega;
+		this.dineroGastado = getImporte();
+		this.productos = productos;
+		this.direccion = direccion;
+	}
+
 	public Pedido(Pedido p) {
-		this.fecha = p.fecha;
-		this.numTargeta = p.numTargeta;
+		this.fechaEntrega = p.fechaEntrega;
+		this.cod = p.cod;
 		this.productos = p.productos;
 		this.dineroGastado = p.dineroGastado;
+		this.direccion = p.direccion;
 	}
 	
 	//G&S
-	public Date getFecha() {
-		return fecha;
+
+	public int getCod() {
+		return cod;
 	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public String getDireccion() {
+		return direccion;
 	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public void setCod(int cod) {
+		this.cod = cod;
+	}
+
+	public Date getFechaPedido() {
+		return fechaPedido;
+	}
+
+	public void setFechaPedido(Date fechaPedido) {
+		this.fechaPedido = fechaPedido;
+	}
+
+	public Date getFechaEntrega() {
+		return fechaEntrega;
+	}
+
+	public void setFechaEntrega(Date fechaEntrega) {
+		this.fechaEntrega = fechaEntrega;
+	}
+
 
 	public ArrayList<Alimentos> getProductos() {
 		return productos;
@@ -49,20 +84,18 @@ public class Pedido {
 		this.productos = productos;
 	}
 
-
-	public int getNumTargeta() {
-		return numTargeta;
-	}
-
-	public void setNumTargeta(int numTargeta) {
-		this.numTargeta = numTargeta;
-	}
-
 	public double getDineroGastado() {
 		return dineroGastado;
 	}
 
-	//metodo que devuelte el importe delos productos seleccionados
+	public void setDineroGastado() {
+		this.dineroGastado = getImporte();
+	}
+
+	/**
+	 * Metodo que devuelve el importe del pedido
+	 * @return
+	 */
 	public double getImporte() {
 		double importe = 0;
 		for (Alimentos seleccionado : productos) {
@@ -70,26 +103,24 @@ public class Pedido {
 		}
 		return importe;
 	}
-	//metodo para añadir comida al pedido
-	public void addComida(Comida c) {
-		this.productos.add(c); //se añade el producto
-		this.dineroGastado = getImporte();
-	}
-	//metodo para quitar a un producto del pedido
-/*	public void deleteComida(Comida c) {
-		this.productos.remove(c);
-		this.dineroGastado = getImporte();
-	}*/   //este metodo borraria todos o solo 1???
 	
-	//to string 
-	@Override
-	public String toString() {
-		return "Pedido [fecha=" + fecha + ", numTargeta=" + numTargeta + ", productos=" + productos + ", dineroGastado="
-				+ dineroGastado + "]";
+	/**
+	 * Metodo para anyadir comida o bebida al carrito
+	 * @param c Comida que queremos añadir
+	 */
+	public void addAlCarrito(Alimentos c) {
+		this.productos.add(c); //se añade el producto
 	}
+
 
 	public static void main(String[] args) {
 	
+	}
+	//to string modificado para subirlo a la BD.
+	@Override
+	public String toString() {
+		return cod + ", '" + fechaPedido + "', '" + fechaEntrega
+				+ "', " + dineroGastado;
 	}
 	
 

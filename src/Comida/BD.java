@@ -142,7 +142,7 @@ public class BD {
 	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
 	 * @param condicion condicion completa desde el where
 	 * @param nombre Tabla
-	 * @return Contador de pulsaciones de esa tecla (-1 si no se encuentra)
+	 * @return Contador de filas(-1 si no se encuentra)
 	 */
 	public static boolean Select( Statement st, String condicion , String nombreTabla) {
 		String sentSQL = "";
@@ -172,6 +172,7 @@ public class BD {
 	 * @param valor	valor a introducir
 	 * @param nombreCol nombre de la columna a editar
 	 * @param nombreTabla nombre de la tabla
+	 * @return boolean para saber si la transaccion ha sido correcta o no
 	 */
 	public static boolean Update( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
 		
@@ -195,7 +196,13 @@ public class BD {
 			}
 		
 	}
-
+	
+/**Modifica los valores de una fila en la tabla comida
+ * 
+ * @param st Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
+ * @param comida el objeto que se quiere actualizar
+ * @return boolean nos indica si se ha cumplido o no la transaccion
+ */
 	public static boolean comidaUpdate( Statement st, Comida comida ) {
 		String sentSQL = "";
 		try {
@@ -219,6 +226,12 @@ public class BD {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param st Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
+	 * @param bebida objeto que queremos actualizar
+	 * @return boolean nos indica si la transferencia ha sido correcta
+	 */
 	public static boolean bebidaUpdate( Statement st, Bebida bebida) {
 		String sentSQL = "";
 		try {
