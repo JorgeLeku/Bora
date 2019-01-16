@@ -43,13 +43,13 @@ public class Principal extends JFrame {
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 	Font fuente;
 	private List<JButton> botones;
-	private List<JPanel> paneles;
+	//private List<JPanel> paneles;
 	//Pruebas2
 	
 	int x = 1;
 	public Principal() {
 	botones = new ArrayList<>();
-	paneles = new ArrayList<>();
+//	paneles = new ArrayList<>();
 		
 		InputStream cogerFuente;
 		 try {
@@ -551,8 +551,15 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
+			List <JPanel> paneles = new ArrayList <> ();
 			CambiarPanel(panelReserva, panelPrimero);
-			int s= 40;
+			paneles=Paneles.VentanaDinamicaa(panelPrimero);
+			for (int i = 0; i < paneles.size(); i++) {
+				paneles.get(i).updateUI();
+				frame.getContentPane().add(paneles.get(i));
+				
+			}
+			/*int s= 40;
 			int indi= 0;
 			int p = 185;
 			//CambiarPanel(panelInicio, panelPruebas);
@@ -609,7 +616,7 @@ public class Principal extends JFrame {
 					p=p+100;
 					s=40;
 				}
-			}
+			}*/
 		}
     	   
        });

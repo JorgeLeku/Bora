@@ -40,7 +40,16 @@ public class VentanaDinamica extends JFrame{
 		panel.setLayout(null);
 		panel.setBounds(0, 0, 1080, 720);
 		botonAgre = new JButton("Agregar");
-		panel1 = new JPanel();
+		ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
+		panel1 =  new JPanel(){
+			public void paintComponent(Graphics g) {
+		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+		        Graphics bufferGraphics = bufferImage.getGraphics();
+		        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+		        g.drawImage(bufferImage, 0, 0, this);
+		       
+		    }
+       };
 		CrearPanel(panel1);
 		
 		botonAgre.setBounds(500, 400, 100, 100);

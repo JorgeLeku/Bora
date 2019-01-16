@@ -1,5 +1,6 @@
 package ventana;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -23,28 +24,33 @@ public class Paneles extends JPanel{
 
 	}
 	
+	
+
+	static // lista para guardar botones de platos
+	// lista para guardar botones de cambio de panel con mas platos
+	// lista de paneles con platos
 	int prueba = 0;
-	int borrarbi = 0;
-	int borrarbo = 0;
+	static int borrarbi = 0;
+	static int borrarbo = 0;
 	String nombrebotoncambio = " " + 0;
-	private List<JButton> botones, cambio;
-	private List<JPanel> paneles;
-	private JScrollPane scroll;
-	private JButton botonAgre;
-	private JPanel panel, panel1;
-	public void VentanaDinamica(JPanel panel) {
-		botones = new ArrayList<>();
-		cambio = new ArrayList<>();
-		paneles = new ArrayList<>();
+
+	private static JPanel panel1;
+	public static List<JPanel> VentanaDinamicaa(JPanel panel) {
+		List<JButton> botones = new ArrayList<>();
+		List<JButton> cambio = new ArrayList<>();
+		List<JPanel> paneles = new ArrayList<>();
+		
+		
 		
 		JFrame frame1 = new JFrame ();
-		//panel = new JPanel ();
+		//propiedades del panel
 		panel.setVisible(true);
 		panel.setEnabled(true);
 		panel.setLayout(null);
 		panel.setBounds(0, 0, 1080, 720);
-		botonAgre = new JButton("Agregar");
+		JButton botonAgre = new JButton("Agregar"); //boton agregar panel
 		panel1 = new JPanel();
+		panel1.setBackground(Color.red);
 		CrearPanel(panel1);
 		
 		botonAgre.setBounds(500, 400, 100, 100);
@@ -59,12 +65,21 @@ public class Paneles extends JPanel{
 				// TODO Auto-generated method stub
 				CambiarPanel(panel, paneles.get(0));
 				
-				int s= 40;
-				int indi= 0;
-				int p = 185;
+				int s= 40; //posicion en x del boton
+				int p = 185; // posicion en Y del boton
 				
 				for (int x = 0; x <40 ; x++) {
-					JPanel panelesMult = new JPanel();
+					ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
+					JPanel panelesMult =  new JPanel(){
+						public void paintComponent(Graphics g) {
+					        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+					        Graphics bufferGraphics = bufferImage.getGraphics();
+					        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+					        g.drawImage(bufferImage, 0, 0, this);
+					       
+					    }
+			       };
+			    
 					panelesMult.setName("panelesMult" + x);
 					CrearPanel(panelesMult);
 					frame1.getContentPane().add(panelesMult);
@@ -141,6 +156,7 @@ public class Paneles extends JPanel{
 			
 		});
 		panel.add(botonAgre);
+		return paneles;
 	}
 		public static void CrearPanel(JPanel g) {
 			g.setLayout(null);
