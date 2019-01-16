@@ -72,7 +72,7 @@ public class Carta {
 	
 	//introducimos todos los datos en la BD
 	//primero habra que saber si ya existe para hacer un insert o un update
-	public boolean guardarCarta() {
+	public void guardarCarta() {
 		boolean resultBebidas= false;
 		boolean	resultComidas= false; 
 		
@@ -83,23 +83,26 @@ public class Carta {
 			Statement st = conn.createStatement();
 			for (Bebida bebida : bebidas) {
 			//creamos una conexion y mediante el metodo siguiente introducimos los valores en la BD
-			if(BD.Select(st, "cod = "+ bebida.id, "bebida")) {
-				
+			if(BD.Select(st, "cod = "+ bebida.id, "bebida")) {//comprobamos si existe esta comida o no para actualizarla
+				resultBebidas = BD.bebidaUpdate(st, bebida);//existe y actualizamos
 			}else{
-				resultBebidas  = BD.Insert(st,  bebida.toString() , "bebida");
+				resultBebidas  = BD.Insert(st,  bebida.toString() , "bebida");//no existe y creamos
 			}
 				
 			}
 			
 			 for (Comida comida : comidas) {
-				resultComidas = BD.Insert(st, comida.toString(), "comida");
+				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
+				 }else{
+					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
+				 }
 			}
 			 
-			 if()
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				return false;
+				
 			}			
 		
 		
@@ -181,8 +184,6 @@ public class Carta {
 				b.id = rs.getInt("cod");
 				b.nombre = rs.getString("nombre");
 				b.precio = rs.getDouble("precio");
-				b.descripcion = rs.getString("descripcion");
-				b.ml = rs.getInt("ml");
 				b.alcoholica = rs.getBoolean("alcoholica");
 				bebidas.add(b);
 				}
@@ -199,7 +200,7 @@ public class Carta {
 				c.tipoImagen = rs.getInt("imagen");
 				comidas.add(c);
 			}
-			//vas por aqui falta por crear las comidas
+
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
@@ -207,7 +208,7 @@ public class Carta {
 		
 		
 	}
-	private static Logger logger = Logger.getLogger("");
+
 	
 	//escribir fichero de texto
 //		//metodo para escribir en el fichero de texto los cambios en la carta
