@@ -1,6 +1,6 @@
 package ventana;
 
-
+//p1
 
 import java.awt.Color;
 import java.awt.Font;
@@ -104,29 +104,29 @@ public class Principal extends JFrame {
        
        Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
        
-       CrearPanel(panelBienvenida);
-       CrearPanel(panelInicio);
-       CrearPanel(panelAdmin);
+       Paneles.CrearPanel(panelBienvenida);
+       //CrearPanel(panelInicio);
+       Paneles.CrearPanel(panelAdmin);
+       Paneles.CrearPanel(panelInicio);
+       Paneles.CrearPanel(panelQuitBoton);
+       Paneles.CrearPanel(panelAddBoton);
        
-       CrearPanel(panelQuitBoton);
-       CrearPanel(panelAddBoton);
+       Paneles.CrearPanel(panelReserva);
+       Paneles.CrearPanel(panelMesa);
        
-       CrearPanel(panelReserva);
-       CrearPanel(panelMesa);
+       Paneles.CrearPanel(panelRecogerDomicilio);
+       Paneles.CrearPanel(panelRecogida);
+       Paneles.CrearPanel(panelDomicilio);
        
-       CrearPanel(panelRecogerDomicilio);
-       CrearPanel(panelRecogida);
-       CrearPanel(panelDomicilio);
+       Paneles.CrearPanel(panelEntrantes);
+       Paneles.CrearPanel(panelPrimero);
+       Paneles.CrearPanel(panelSegundo);
+       Paneles.CrearPanel(panelPostre);
+       Paneles.CrearPanel(panelBebida);
        
-       CrearPanel(panelEntrantes);
-       CrearPanel(panelPrimero);
-       CrearPanel(panelSegundo);
-       CrearPanel(panelPostre);
-       CrearPanel(panelBebida);
+       Paneles.CrearPanel(panelFactura);
        
-       CrearPanel(panelFactura);
-       
-       CrearPanel(panelPruebas);
+       Paneles.CrearPanel(panelPruebas);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -236,29 +236,29 @@ public class Principal extends JFrame {
        botonPruebas = new JButton(imagenPrueba);
        
        
-       CrearBoton(bPanelRecogerDomicilio);
-       CrearBoton(bPanelReserva);
+       Paneles.CrearBoton(bPanelRecogerDomicilio);
+       Paneles.CrearBoton(bPanelReserva);
        //CrearBoton(bPanelAdmin);
        
-       CrearBoton(bPanelQuitBoton);
-       CrearBoton(bPanelAddBoton);
+       Paneles.CrearBoton(bPanelQuitBoton);
+       Paneles.CrearBoton(bPanelAddBoton);
        
-       CrearBoton(bAddBoton);
-       CrearBoton(bSelImg);
+       Paneles.CrearBoton(bAddBoton);
+       Paneles.CrearBoton(bSelImg);
        
-       CrearBoton(bQuitBoton);
+       Paneles.CrearBoton(bQuitBoton);
        
-       CrearBoton(bPanelMesa);
+       Paneles.CrearBoton(bPanelMesa);
        
-       CrearBoton(bPrimerPlato);
+       Paneles.CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
        
       // CrearBoton(bPanelDomicilio);
-       CrearBoton(bAb);
-       CrearBoton(bReturn);
-       CrearBoton(cbb1);
-       CrearBoton(bSelImg);
+       Paneles.CrearBoton(bAb);
+       Paneles.CrearBoton(bReturn);
+       Paneles.CrearBoton(cbb1);
+       Paneles.CrearBoton(bSelImg);
        
       bPanelRecogerDomicilio.setBounds(93, 185, 400, 350);
       bPanelReserva.setBounds(566, 185, 400, 350);
