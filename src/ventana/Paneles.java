@@ -129,7 +129,7 @@ public class Paneles extends JPanel{
 								@Override
 								public void actionPerformed(ActionEvent arg0) {
 									// TODO Auto-generated method stub
-									System.out.println(arg0.getSource());//9*prueba
+									//System.out.println(arg0.getSource());//9*prueba
 								}
 								
 							});
@@ -147,7 +147,7 @@ public class Paneles extends JPanel{
 					p=185;
 				}
 				for (int i = 0; i < botones.size(); i++) {
-					System.out.println(botones.get(i));
+					//System.out.println(botones.get(i));
 					
 				}
 				

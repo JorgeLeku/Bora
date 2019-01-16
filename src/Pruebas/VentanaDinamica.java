@@ -25,7 +25,7 @@ public class VentanaDinamica extends JFrame{
 	String nombrebotoncambio = " " + 0;
 	private List<JButton> botones, cambio;
 	private List<JPanel> paneles;
-	private JScrollPane scroll;
+	
 	private JButton botonAgre;
 	private JPanel panel, panel1;
 	public VentanaDinamica() {

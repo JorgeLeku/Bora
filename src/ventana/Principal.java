@@ -42,6 +42,7 @@ public class Principal extends JFrame {
 	JComboBox cOrden, cHoraReserva;
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 	Font fuente;
+	int prueba = 0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botones;
 	//private List<JPanel> paneles;
 	//Pruebas2
@@ -546,19 +547,160 @@ public class Principal extends JFrame {
        	   
         });
        
-       bPanelMesa.addActionListener(new ActionListener () {
+		
+		
 
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
+		
+			/*// TODO Auto-generated method stub
 			List <JPanel> paneles = new ArrayList <> ();
-			CambiarPanel(panelReserva, panelPrimero);
+			
 			paneles=Paneles.VentanaDinamicaa(panelPrimero);
+			for (int i = 0; i < paneles.size(); i++) {
+				System.out.println(paneles.get(i));
+			}
 			for (int i = 0; i < paneles.size(); i++) {
 				paneles.get(i).updateUI();
 				frame.getContentPane().add(paneles.get(i));
 				
-			}
+			}*/
+			
+			
+			
+		
+		String nombrebotoncambio = " " + 0;
+		List<JButton> botones;//Arraylist de botones para guardar todos los botones creados
+		List<JButton> cambio;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JPanel> paneles;//Arraylist de paneles para guardar todos los paneles creados
+		
+		JPanel panel1;
+		
+		botones = new ArrayList<>();
+		cambio = new ArrayList<>();
+		paneles = new ArrayList<>();
+		
+		
+		
+		panel1 =  new JPanel(){
+			public void paintComponent(Graphics g) {
+		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+		        Graphics bufferGraphics = bufferImage.getGraphics();
+		        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+		        g.drawImage(bufferImage, 0, 0, this);
+		       
+		    }
+       };
+		CrearPanel(panel1);
+		
+		
+		paneles.add(panel1);
+		frame.getContentPane().add(panel1);
+		paneles.get(0).updateUI();
+		
+			bPanelMesa.addActionListener(new ActionListener () {
+				
+				
+				
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					
+					
+					int s= 40;
+					int indi= 0;
+					int p = 185;
+				
+					for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
+						JPanel panelesMult = new JPanel();  //creamos mas paneles
+						panelesMult.setName("panelesMult" + x); //le ponemos un nombre
+						CrearPanel(panelesMult);  //Le damoslos datos basicos
+						frame.getContentPane().add(panelesMult); //lo añadimos al frame
+						paneles.add(panelesMult);  //Lo metemos en el array de paneles
+						JButton botonSiguientePanel = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
+						botonSiguientePanel.setBounds(390, 550, 300, 75); //La posicion del boton
+						enQuePanel = x;
+						botonSiguientePanel.setName("bSiguiente"+x);  //Ponemos nombre al boton
+						cambio.add(botonSiguientePanel);  //Lo añadimos al array de botones
+						paneles.get(x).add(botonSiguientePanel); //añadimos el boton para cambiar de panel a cada panel
+						paneles.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+						botonSiguientePanel.addActionListener(new ActionListener() {
+						
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								// TODO Auto-generated method stub
+								CambiarPanel(paneles.get(prueba), paneles.get(prueba+1)); //Cambiamos de paneles prueba elige el numero de panel
+								prueba++; //Incrementamos prueba para que se pueda pasar de panel
+								paneles.get(prueba).add(botonSiguientePanel); //Añadimos el boton al panel es necesario repetir??(mirar arriba)
+								paneles.get(prueba).updateUI(); //Actualizamos el panel para que aparezca el boton, es realmente necesario repetirlo??
+								
+							}
+							
+						});
+						if (x==0) {  //si es el primer panel se añade un boton a panel1 para pasar al panel siguiente
+							panel1.add(cambio.get(0)); 
+						} else if (x>0) {//si no es el primer panel ponemos un boton al panel el cual sirva para pasar al siguiente panel
+							//he quitadp panelesMult.getName();
+							panelesMult.add(cambio.get(x));
+						}
+						for (int i = 0; i < 3; i++) {//son filas columnas de botones por panel
+							
+				
+							for (int o = 0; o < 3; o++) {//son tres columnas de botones por panel
+								
+								JButton pp2 = new JButton(); //Creamos el boton del plato
+								//CrearBoton(pp2);
+								pp2.setBounds(s, p,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
+								pp2.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+								botones.add(pp2); //añadimos el boton al arraylist de botones
+								s=320+s; //Incrementamos s para que el boton siguiente este a la izquierda
+								paneles.get(x).add(pp2); //añadimos el boton al panel correspondiente
+								paneles.get(x).updateUI(); //actualizamos el panel para que muestre los botones
+								pp2.setName("prueba"+x+i+o);	//nombramos el boton para saber cual es (sacar de la bd)
+								panel1.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
+								pp2.addActionListener(new ActionListener () {
+
+									@Override
+									public void actionPerformed(ActionEvent arg0) {
+										// TODO Auto-generated method stub
+										
+										CambiarPanel(paneles.get(enQuePanel), panelSegundo);
+										paneles.get(enQuePanel).setEnabled(false);
+										paneles.get(enQuePanel).setVisible(false);
+										paneles.get(enQuePanel).updateUI();
+										
+										panelSegundo.updateUI();
+										
+										System.out.println(arg0.getSource());//9*prueba //sacamos los datos del boton para ver si funciona
+									}
+									
+								});
+								//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+								
+								//he borrado borrarbo++;
+								
+					    	}
+						
+							p=p+100;//aumentamos la y de los botones
+							s=40;//iniciamos la columna de nuevo
+							//he borrado borrarbi++;
+						}
+						s=40;//iniciamos la columna de nuevo
+						p=185; //iniciamos
+					}
+					for (int i = 0; i < botones.size(); i++) {//imprimimos los datos de los botones que hemos creado
+						System.out.println(botones.get(i));
+						
+					}
+					CambiarPanel(panelReserva, paneles.get(0));
+				}
+		    	   
+				
+			});
+			
+					
+				
+			
+		
+			
 			/*int s= 40;
 			int indi= 0;
 			int p = 185;
@@ -617,9 +759,9 @@ public class Principal extends JFrame {
 					s=40;
 				}
 			}*/
-		}
+		
     	   
-       });
+       
        bPrimerPlato.addActionListener(new ActionListener () {
     	   @Override
 			public void actionPerformed(ActionEvent e) {
