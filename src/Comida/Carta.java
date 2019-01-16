@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -69,23 +70,41 @@ public class Carta {
 	
 	
 	
-	
+	//introducimos todos los datos en la BD
+	//primero habra que saber si ya existe para hacer un insert o un update
 	public boolean guardarCarta() {
-		for (Bebida bebida : bebidas) {
-			Connection conn = BD.initBD();
-			try {
-				Statement st = conn.createStatement();
-				//creamos una conexion y mediante el metodo siguiente introducimos los valores en la BD
-				boolean result = BD.Insert(st,  bebida.toString() , "bebida");
+		boolean resultBebidas= false;
+		boolean	resultComidas= false; 
+		
+		Connection conn = BD.initBD();
+		
+		
+		try {
+			Statement st = conn.createStatement();
+			for (Bebida bebida : bebidas) {
+			//creamos una conexion y mediante el metodo siguiente introducimos los valores en la BD
+			if(BD.Select(st, "cod = "+ bebida.id, "bebida")) {
 				
+			}else{
+				resultBebidas  = BD.Insert(st,  bebida.toString() , "bebida");
+			}
+				
+			}
+			
+			 for (Comida comida : comidas) {
+				resultComidas = BD.Insert(st, comida.toString(), "comida");
+			}
+			 
+			 if()
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return false;
-			}
-			
-					}
-		return false;
+			}			
+		
+		
+	
+		
 	}
 	
 	//leer en fichero de texto
@@ -156,19 +175,40 @@ public class Carta {
 			//cargamos las bebidas y las guardamos
 			sentSQL = "select * from bebida";
 			ResultSet rs = st.executeQuery(sentSQL);
-			while(rs.next()) {//mientras el rs tenga elementos los almacenamos
+			while(rs.next()) {//mientras el rs tenga elementos los almacenamos 
+				//creamos una nueva bebida vacia y le colocamos los valores correspondientes
 				Bebida b = new Bebida();
 				b.id = rs.getInt("cod");
 				b.nombre = rs.getString("nombre");
 				b.precio = rs.getDouble("precio");
+				b.descripcion = rs.getString("descripcion");
+				b.ml = rs.getInt("ml");
+				b.alcoholica = rs.getBoolean("alcoholica");
+				bebidas.add(b);
+				}
+			
+			//cargamos las comidas
+			sentSQL = "select * from comida";
+			rs = st.executeQuery(sentSQL);
+			while(rs.next()) {
+				Comida c = new Comida();
+				c.id = rs.getInt("cod");
+				c.nombre = rs.getString("nombre");
+				c.precio = rs.getDouble("precio");
+				c.numeroPlato = rs.getInt("numeroPlato");
+				c.tipoImagen = rs.getInt("imagen");
+				comidas.add(c);
 			}
+			//vas por aqui falta por crear las comidas
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		
 	}
+	private static Logger logger = Logger.getLogger("");
+	
 	//escribir fichero de texto
 //		//metodo para escribir en el fichero de texto los cambios en la carta
 //		FileWriter archivo = null;

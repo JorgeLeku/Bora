@@ -9,6 +9,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import examenResuelto.parc201811.CentroEd;
+
 
 
 public class BD {
@@ -22,7 +24,7 @@ public class BD {
 	public static Connection initBD() {
 		  try {
 			Class.forName("org.postgresql.Driver");//conectamos con el jdbc de postgreSQL
-		    Connection con = DriverManager.getConnection("jdbc:postgresql://postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4?sslmode=require" );
+		    Connection con = DriverManager.getConnection("jdbc:postgresql://postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4?sslmode=require","cozwxagqcksbyh","fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" );
 		    log(Level.INFO, "base de datos conectada",null );
 		   return con;
 		  } catch (ClassNotFoundException | SQLException e) {
@@ -143,22 +145,25 @@ public class BD {
 	 * @param nombre Tabla
 	 * @return Contador de pulsaciones de esa tecla (-1 si no se encuentra)
 	 */
-	public static ResultSet Select( Statement st, String condicion , String nombreTabla) {
+	public static boolean Select( Statement st, String condicion , String nombreTabla) {
 		String sentSQL = "";
 		ResultSet rs = null;
 		try {
-			sentSQL = "select * from "+ nombreTabla+ " where " + condicion ;
+			sentSQL = "select * from "+ nombreTabla+ " where " + condicion ;//coje el valor de la BD
 			log( Level.INFO, "BD\t" + sentSQL, null );
 			rs = st.executeQuery( sentSQL );
-			
-			return rs;
+			if(rs.next()){
+				return true;
+			}else{
+				return false;
+			}
 				
 			
 		} catch (Exception e) {
 			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 			lastError = e;
 			e.printStackTrace();
-			return null;
+			return false;
 		}
 		
 	}
@@ -169,7 +174,7 @@ public class BD {
 	 * @param nombreCol nombre de la columna a editar
 	 * @param nombreTabla nombre de la tabla
 	 */
-	public static boolean Actualiza( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
+	public static boolean Update( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
 		
 			String sentSQL = "";
 			try {
@@ -192,7 +197,51 @@ public class BD {
 		
 	}
 
+	public static boolean comidaUpdate( Statement st, Comida comida ) {
+		String sentSQL = "";
+		try {
+			sentSQL = "update comida set" +
+					" nombre= '" + comida.getNombre()+ "', " +
+					" precio=" + comida.getPrecio() + ", "+
+					" numeroPlato=" +comida.getNumeroPlato() + ", "+
+					" imagen=" +comida.getTipoImagen() + ", "+
+					" where cod= " + comida.getId() ;
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que modificar 1 - error si no
+				log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
+	public static boolean bebidaUpdate( Statement st, Bebida bebida) {
+		String sentSQL = "";
+		try {
+			sentSQL = "update comida set" +
+					" nombre= '" + bebida.getNombre()+ "', " +
+					" precio=" + bebida.getPrecio() + ", "+
+					" numeroPlato=" +bebida.getNumeroPlato() + ", "+
+					" imagen=" +comida.getTipoImagen() + ", "+
+					" where cod= " + comida.getId() ;
+			int val = st.executeUpdate( sentSQL );
+			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
+			if (val!=1) {  // Se tiene que modificar 1 - error si no
+				log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+				return false;  
+			}
+			return true;
+		} catch (SQLException e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 	/////////////////////////////////////////////////////////////////////
