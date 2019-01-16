@@ -2,7 +2,7 @@ package Comida;
 
 public class Comida extends Alimentos {
 	
-	private int numeroPlato,tipoImagen;
+	protected int numeroPlato,tipoImagen;
 	
 	public Comida() {
 		this.numeroPlato = 0;

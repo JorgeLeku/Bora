@@ -1,26 +1,26 @@
 package Comida;
 
 public class Bebida extends Alimentos {
-	private String descripcion;
-	private int mL;
-	private boolean alcoholica;
+	protected String descripcion;
+	protected int ml;
+	protected boolean alcoholica;
 	public Bebida() {
 		this.descripcion = "";
-		this.mL =0;
+		this.ml =0;
 		this.alcoholica = false;
 	}
 
 	public Bebida(Bebida  a) {
 		super(a);
 		this.descripcion =a.descripcion ;
-		this.mL =a.mL;
+		this.ml =a.ml;
 		this.alcoholica = a.alcoholica;	
 		}
 
 	public Bebida(int id, String nombre, double precio,  String descripcion, int mL, boolean alcoholica) {
 		super(id, nombre, precio);
 		this.descripcion = descripcion;
-		this.mL = mL;
+		this.ml = mL;
 		this.alcoholica = alcoholica;
 	}
 
@@ -33,11 +33,11 @@ public class Bebida extends Alimentos {
 	}
 
 	public int getmL() {
-		return mL;
+		return ml;
 	}
 
 	public void setmL(int mL) {
-		this.mL = mL;
+		this.ml = mL;
 	}
 
 	public boolean isAlcoholica() {
@@ -51,7 +51,7 @@ public class Bebida extends Alimentos {
 	//to string preparado para ayudar con la BD
 	@Override
 	public String toString() {
-		return id + ",' " + nombre + "', '" + descripcion + "', " + mL + ", " + alcoholica + ", "
+		return id + ",' " + nombre + "', '" + descripcion + "', " + ml + ", " + alcoholica + ", "
 				 + precio;
 	}
 
