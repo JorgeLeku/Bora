@@ -9,7 +9,6 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import examenResuelto.parc201811.CentroEd;
 
 
 
@@ -204,7 +203,7 @@ public class BD {
 					" nombre= '" + comida.getNombre()+ "', " +
 					" precio=" + comida.getPrecio() + ", "+
 					" numeroPlato=" +comida.getNumeroPlato() + ", "+
-					" imagen=" +comida.getTipoImagen() + ", "+
+					" imagen=" +comida.getTipoImagen() +
 					" where cod= " + comida.getId() ;
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
@@ -226,9 +225,8 @@ public class BD {
 			sentSQL = "update comida set" +
 					" nombre= '" + bebida.getNombre()+ "', " +
 					" precio=" + bebida.getPrecio() + ", "+
-					" numeroPlato=" +bebida.getNumeroPlato() + ", "+
-					" imagen=" +comida.getTipoImagen() + ", "+
-					" where cod= " + comida.getId() ;
+					" alcoholica=" +bebida.alcoholica + 
+					" where cod= " + bebida.getId() ;
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
