@@ -192,6 +192,8 @@ public class Principal extends JFrame {
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
        
+       //Objetos panelRecogida
+       
        //Objetos panelDomicilio
        lCalle = new JLabel();
        tCalle = new JTextField();
@@ -268,6 +270,8 @@ public class Principal extends JFrame {
        CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
+       
+      //PANEL DOMICILIO LABEL Y TF 
       lCalle.setBounds(200, 200, 200, 40);
       lCalle.setFont(newFont);
       lCalle.setText("Calle");
