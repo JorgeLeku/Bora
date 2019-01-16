@@ -36,11 +36,11 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
+	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarRecogida;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lcalle;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido;
 	JComboBox cOrden, cHoraReserva;
-	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
+	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido;
 	Font fuente;
 	private List<JButton> botones;
 	private List<JPanel> paneles;
@@ -193,7 +193,19 @@ public class Principal extends JFrame {
        bPanelDomicilio = new JButton("Domicilio");
        
        //Objetos PanelRecogida
-       lcalle = new JLabel("Calle");
+       lCalle = new JLabel();
+       tCalle = new JTextField();
+       lEdificio = new JLabel();
+       tEdificio = new JTextField();
+       lPiso = new JLabel();
+       tPiso = new JTextField();
+       lLetra = new JLabel();
+       tLetra = new JTextField();
+       lNombre = new JLabel();
+       tNombre = new JTextField();
+       lApellido = new JLabel();
+       tApellido = new JTextField();
+       bConfirmarRecogida = new JButton();
        
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
@@ -256,7 +268,39 @@ public class Principal extends JFrame {
        CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
-       lcalle.setBounds(50, 50, 100, 30);
+      lCalle.setBounds(200, 200, 200, 40);
+      lCalle.setFont(newFont);
+      lCalle.setText("Calle");
+      tCalle.setBounds(200, 250, 200, 40);
+      
+      lEdificio.setBounds(700, 200, 200, 40);
+      lEdificio.setFont(newFont);
+      lEdificio.setText("Nombre Edificio");
+      tEdificio.setBounds(700, 250, 200, 40);
+     // 
+      lPiso.setBounds(200, 325, 200, 40);
+      lPiso.setFont(newFont);
+      lPiso.setText("Piso");
+      tPiso.setBounds(200, 375, 200, 40);
+      
+      lLetra.setBounds(700, 325, 200, 40);
+      lLetra.setFont(newFont);
+      lLetra.setText("Letra");
+      tLetra.setBounds(700, 375, 200, 40);
+     // 
+      lNombre.setBounds(200, 450, 200, 40);
+      lNombre.setFont(newFont);
+      lNombre.setText("Nombre");
+      tNombre.setBounds(200, 500, 200, 40);
+      
+      lApellido.setBounds(700, 450, 200, 40);
+      lApellido.setFont(newFont);
+      lApellido.setText("Apellido");
+      tApellido.setBounds(700, 500, 200, 40);
+     // 
+      bConfirmarRecogida.setBounds(390, 585, 300, 75);
+      bConfirmarRecogida.setFont(newFont);
+      bConfirmarRecogida.setText("Confirmar");
        
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
@@ -854,7 +898,19 @@ public class Principal extends JFrame {
        panelRecogerDomicilio.add(bPanelRecogida);
        panelRecogerDomicilio.add(bPanelDomicilio);  
        
-       panelRecogida.add(lcalle);
+       panelRecogida.add(lCalle);
+       panelRecogida.add(lEdificio);
+       panelRecogida.add(lPiso);
+       panelRecogida.add(lLetra);
+       panelRecogida.add(lNombre);
+       panelRecogida.add(lApellido);
+       panelRecogida.add(tCalle);
+       panelRecogida.add(tEdificio);
+       panelRecogida.add(tPiso);
+       panelRecogida.add(tLetra);
+       panelRecogida.add(tNombre);
+       panelRecogida.add(tApellido);
+       panelRecogida.add(bConfirmarRecogida);
        
        
        panelMesa.add(bPrimerPlato);
