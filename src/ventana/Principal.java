@@ -192,7 +192,7 @@ public class Principal extends JFrame {
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
        
-       //Objetos PanelRecogida
+       //Objetos panelDomicilio
        lCalle = new JLabel();
        tCalle = new JTextField();
        lEdificio = new JLabel();
@@ -898,19 +898,19 @@ public class Principal extends JFrame {
        panelRecogerDomicilio.add(bPanelRecogida);
        panelRecogerDomicilio.add(bPanelDomicilio);  
        
-       panelRecogida.add(lCalle);
-       panelRecogida.add(lEdificio);
-       panelRecogida.add(lPiso);
-       panelRecogida.add(lLetra);
-       panelRecogida.add(lNombre);
-       panelRecogida.add(lApellido);
-       panelRecogida.add(tCalle);
-       panelRecogida.add(tEdificio);
-       panelRecogida.add(tPiso);
-       panelRecogida.add(tLetra);
-       panelRecogida.add(tNombre);
-       panelRecogida.add(tApellido);
-       panelRecogida.add(bConfirmarRecogida);
+       panelDomicilio.add(lCalle);
+       panelDomicilio.add(lEdificio);
+       panelDomicilio.add(lPiso);
+       panelDomicilio.add(lLetra);
+       panelDomicilio.add(lNombre);
+       panelDomicilio.add(lApellido);
+       panelDomicilio.add(tCalle);
+       panelDomicilio.add(tEdificio);
+       panelDomicilio.add(tPiso);
+       panelDomicilio.add(tLetra);
+       panelDomicilio.add(tNombre);
+       panelDomicilio.add(tApellido);
+       panelDomicilio.add(bConfirmarRecogida);
        
        
        panelMesa.add(bPrimerPlato);
