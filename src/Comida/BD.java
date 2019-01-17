@@ -174,7 +174,7 @@ public class BD {
 	 * @param nombreTabla nombre de la tabla
 	 * @return boolean para saber si la transaccion ha sido correcta o no
 	 */
-	public static boolean Update( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
+	public static boolean Update(  Statement st, String nombreCol, String valor , String condicion ,String nombreTabla) {
 		
 			String sentSQL = "";
 			try {
@@ -290,5 +290,8 @@ public class BD {
 		// TODO Auto-generated method stub
 
 	}
+
+
+
 
 }
