@@ -115,29 +115,29 @@ public class Principal extends JFrame {
        
        Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
        
-       Paneles.CrearPanel(panelBienvenida);
+       CrearPanel(panelBienvenida);
        //CrearPanel(panelInicio);
-       Paneles.CrearPanel(panelAdmin);
-       Paneles.CrearPanel(panelInicio);
-       Paneles.CrearPanel(panelQuitBoton);
-       Paneles.CrearPanel(panelAddBoton);
+       CrearPanel(panelAdmin);
+       CrearPanel(panelInicio);
+       CrearPanel(panelQuitBoton);
+       CrearPanel(panelAddBoton);
        
-       Paneles.CrearPanel(panelReserva);
-       Paneles.CrearPanel(panelMesa);
+       CrearPanel(panelReserva);
+       CrearPanel(panelMesa);
        
-       Paneles.CrearPanel(panelRecogerDomicilio);
-       Paneles.CrearPanel(panelRecogida);
-       Paneles.CrearPanel(panelDomicilio);
+       CrearPanel(panelRecogerDomicilio);
+       CrearPanel(panelRecogida);
+       CrearPanel(panelDomicilio);
        
-       Paneles.CrearPanel(panelEntrantes);
-       Paneles.CrearPanel(panelPrimero);
-       Paneles.CrearPanel(panelSegundo);
-       Paneles.CrearPanel(panelPostre);
-       Paneles.CrearPanel(panelBebida);
+       CrearPanel(panelEntrantes);
+       CrearPanel(panelPrimero);
+       CrearPanel(panelSegundo);
+       CrearPanel(panelPostre);
+       CrearPanel(panelBebida);
        
-       Paneles.CrearPanel(panelFactura);
+       CrearPanel(panelFactura);
        
-       Paneles.CrearPanel(panelPruebas);
+       CrearPanel(panelPruebas);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -275,21 +275,21 @@ public class Principal extends JFrame {
        botonPruebas = new JButton(imagenPrueba);
        
        
-       Paneles.CrearBoton(bPanelRecogerDomicilio);
-       Paneles.CrearBoton(bPanelReserva);
+       CrearBoton(bPanelRecogerDomicilio);
+       CrearBoton(bPanelReserva);
        //CrearBoton(bPanelAdmin);
        
-       Paneles.CrearBoton(bPanelQuitBoton);
-       Paneles.CrearBoton(bPanelAddBoton);
+       CrearBoton(bPanelQuitBoton);
+       CrearBoton(bPanelAddBoton);
        
-       Paneles.CrearBoton(bAddBoton);
-       Paneles.CrearBoton(bSelImg);
+       CrearBoton(bAddBoton);
+       CrearBoton(bSelImg);
        
-       Paneles.CrearBoton(bQuitBoton);
+       CrearBoton(bQuitBoton);
        
-       Paneles.CrearBoton(bPanelMesa);
+       CrearBoton(bPanelMesa);
        
-       Paneles.CrearBoton(bPrimerPlato);
+       CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
        
@@ -356,10 +356,10 @@ public class Principal extends JFrame {
       bConfirmarDomicilio.setText("Confirmar");
        
       // CrearBoton(bPanelDomicilio);
-       Paneles.CrearBoton(bAb);
-       Paneles.CrearBoton(bReturn);
-       Paneles.CrearBoton(cbb1);
-       Paneles.CrearBoton(bSelImg);
+       CrearBoton(bAb);
+       CrearBoton(bReturn);
+       CrearBoton(cbb1);
+       CrearBoton(bSelImg);
        
       bPanelRecogerDomicilio.setBounds(93, 185, 400, 350);
       bPanelReserva.setBounds(566, 185, 400, 350);
@@ -677,15 +677,7 @@ public class Principal extends JFrame {
 		cambiobebida = new ArrayList<>();
 		panelesbebida = new ArrayList<>();
 		
-		panel1 =  new JPanel(){
-			public void paintComponent(Graphics g) {
-		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-		        Graphics bufferGraphics = bufferImage.getGraphics();
-		        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
-		        g.drawImage(bufferImage, 0, 0, this);
-		       
-		    }
-       };
+		panel1 =  new Paneles();
 		CrearPanel(panel1);
 		
 		
@@ -768,8 +760,9 @@ public class Principal extends JFrame {
 				
 							for (int o = 0; o < 3; o++) {//son tres columnas de botones por panel
 								
-								JButton pp2e = new JButton(); //Creamos el boton del plato
+								Botones pp2e = new Botones(); //Creamos el boton del plato
 								//CrearBoton(pp2);
+								
 								pp2e.setBounds(se, pe,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 								pp2e.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 								botonesentrantes.add(pp2e); //añadimos el boton al arraylist de botones
@@ -801,7 +794,7 @@ public class Principal extends JFrame {
 											       lprimero.setSize(500, 50);
 											       lprimero.setText("Primer Plato");
 											       
-												JPanel panelesMult = new JPanel();  //creamos mas paneles
+												Paneles panelesMult = new Paneles();  //creamos mas paneles
 												panelesMult.setName("panelesMult" + x); //le ponemos un nombre
 												CrearPanel(panelesMult);  //Le damoslos datos basicos
 												frame.getContentPane().add(panelesMult); //lo añadimos al frame
@@ -862,7 +855,7 @@ public class Principal extends JFrame {
 																
 																
 																
-															JPanel panel1s =  new JPanel(){
+															Paneles panel1s =  new Paneles(){
 																	public void paintComponent(Graphics g) {
 																        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 																        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -889,7 +882,7 @@ public class Principal extends JFrame {
 																int ps = 185;
 																CambiarPanel(panelesprimero.get(enQuePanel), panelessegundo.get(0));
 																for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
-																	JPanel panelesMultseg = new JPanel();  //creamos mas paneles
+																	Paneles panelesMultseg = new Paneles();  //creamos mas paneles
 																	JLabel lsegundo = new JLabel();
 																	lsegundo.setBounds(400, 50, 1000, 40);
 																	
@@ -955,7 +948,7 @@ public class Principal extends JFrame {
 																					// TODO Auto-generated method stub
 																					//me cago en dioooooooooooooooooooooososososoossos
 																					
-																					JPanel panel1p =  new JPanel(){
+																					Paneles panel1p =  new Paneles(){
 																						public void paintComponent(Graphics g) {
 																					        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 																					        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -982,7 +975,7 @@ public class Principal extends JFrame {
 																					int pp = 185;
 																					CambiarPanel(panelessegundo.get(enQuePanel), panelespostre.get(0));
 																					for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
-																						JPanel panelesMultpos = new JPanel();  //creamos mas paneles
+																						Paneles panelesMultpos = new Paneles();  //creamos mas paneles
 																						JLabel lpostre = new JLabel();
 																						lpostre.setBounds(400, 50, 1000, 40);
 																						
@@ -1048,7 +1041,7 @@ public class Principal extends JFrame {
 																										// TODO Auto-generated method stub
 																										//me cago en dioooooooooooooooooooooososososoossos
 																										
-																										JPanel panel1b =  new JPanel(){
+																										Paneles panel1b =  new Paneles(){
 																											public void paintComponent(Graphics g) {
 																										        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 																										        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -1075,7 +1068,7 @@ public class Principal extends JFrame {
 																										int pb = 185;
 																										CambiarPanel(panelespostre.get(enQuePanel), panelesbebida.get(0));
 																										for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
-																											JPanel panelesMultbeb = new JPanel();  //creamos mas paneles
+																											Paneles panelesMultbeb = new Paneles();  //creamos mas paneles
 																											JLabel lbebida = new JLabel();
 																											lbebida.setBounds(400, 50, 1000, 40);
 																											
