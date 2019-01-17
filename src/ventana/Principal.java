@@ -339,7 +339,7 @@ public class Principal extends JFrame {
       bConfirmarDomicilio.setFont(newFont);
       bConfirmarDomicilio.setText("Confirmar");
        
-      //CrearBoton(bPanelDomicilio);
+      // CrearBoton(bPanelDomicilio);
        Paneles.CrearBoton(bAb);
        Paneles.CrearBoton(bReturn);
        Paneles.CrearBoton(cbb1);
