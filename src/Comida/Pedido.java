@@ -1,4 +1,7 @@
 package Comida;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -13,7 +16,6 @@ public class Pedido {
 	private ArrayList<Alimentos> productos;
 	
 	//Metodos
-
 	public Pedido() {
 		this.cod =0;
 		this.fechaPedido = new Date();
@@ -42,7 +44,6 @@ public class Pedido {
 	}
 	
 	//G&S
-
 	public int getCod() {
 		return cod;
 	}
@@ -74,7 +75,6 @@ public class Pedido {
 	public void setFechaEntrega(Date fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
-
 
 	public ArrayList<Alimentos> getProductos() {
 		return productos;
@@ -111,10 +111,19 @@ public class Pedido {
 	public void addAlCarrito(Alimentos c) {
 		this.productos.add(c); //se añade el producto
 	}
-
-
-	public static void main(String[] args) {
 	
+	
+	public void insertPedido() {
+		Connection conn = BD.initBD();
+		String sentSQL = "";
+		try {
+			Statement st = conn.createStatement();
+			BD.Insert(st, this.toString(), "pedido");//se introduce el pedido
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	//to string modificado para subirlo a la BD.
 	@Override
@@ -122,6 +131,9 @@ public class Pedido {
 		return cod + ", '" + fechaPedido + "', '" + fechaEntrega
 				+ "', " + dineroGastado;
 	}
+
+	public static void main(String[] args) {
 	
+	}
 
 }
