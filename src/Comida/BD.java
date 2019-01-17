@@ -169,17 +169,17 @@ public class BD {
 	
 	/** Modifica un valor de la tabla abierta de BD, usando la sentencia UPDATE de SQL
 	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
-	 * @param valor	valor a introducir
+	 * @param i	valor a introducir
 	 * @param nombreCol nombre de la columna a editar
 	 * @param nombreTabla nombre de la tabla
 	 * @return boolean para saber si la transaccion ha sido correcta o no
 	 */
-	public static boolean Update( final Statement st, String nombreCol,final String valor , String condicion ,String nombreTabla) {
+	public static boolean Update(  Statement st, String nombreCol,  String i , String condicion ,String nombreTabla) {
 		
 			String sentSQL = "";
 			try {
 				sentSQL = "update "+ nombreTabla+" set" +
-						secu(nombreCol) + " = " + valor + 
+						secu(nombreCol) + " = " + i + 
 						" where " + condicion ;
 				int val = st.executeUpdate( sentSQL );
 				log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
@@ -290,5 +290,8 @@ public class BD {
 		// TODO Auto-generated method stub
 
 	}
+
+
+
 
 }
