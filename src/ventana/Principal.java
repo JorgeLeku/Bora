@@ -1,7 +1,5 @@
 package ventana;
 
-//p1
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -36,11 +34,23 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
+=======
+	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
+<<<<<<< HEAD
 	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
+=======
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2;
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 	JComboBox cOrden, cHoraReserva;
+<<<<<<< HEAD
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
+=======
+	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 	Font fuente;
 	int prueba = 0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botones;
@@ -193,6 +203,35 @@ public class Principal extends JFrame {
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
        
+<<<<<<< HEAD
+=======
+       //Objetos panelRecogida
+       lHora = new JLabel();
+       tHora = new JTextField();
+       lTlfn = new JLabel();
+       tTlfn = new JTextField();
+       lNombre2 = new JLabel();
+       tNombre2 = new JTextField();
+       lApellido2 = new JLabel();
+       tApellido2 = new JTextField();
+       bConfirmarRecogida = new JButton();
+       
+       //Objetos panelDomicilio
+       lCalle = new JLabel();
+       tCalle = new JTextField();
+       lEdificio = new JLabel();
+       tEdificio = new JTextField();
+       lPiso = new JLabel();
+       tPiso = new JTextField();
+       lLetra = new JLabel();
+       tLetra = new JTextField();
+       lNombre = new JLabel();
+       tNombre = new JTextField();
+       lApellido = new JLabel();
+       tApellido = new JTextField();
+       bConfirmarDomicilio = new JButton();
+       
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -255,6 +294,70 @@ public class Principal extends JFrame {
        
       // CrearBoton(bPanelRecogida);
        
+<<<<<<< HEAD
+=======
+     //PANEL RECOGIDA LABEL Y TF
+       lHora.setBounds(360, 250, 200, 40);
+       lHora.setFont(newFont);
+       lHora.setText("Hora");
+       tHora.setBounds(300, 300, 200, 40);
+       
+       lTlfn.setBounds(660, 250, 200, 40);
+       lTlfn.setFont(newFont);
+       lTlfn.setText("Telefono");
+       tTlfn.setBounds(600, 300, 200, 40);
+       
+       lNombre2.setBounds(360, 400, 200, 40);
+       lNombre2.setFont(newFont);
+       lNombre2.setText("Nombre");
+       tNombre2.setBounds(300, 450, 200, 40);
+       
+       lApellido2.setBounds(660, 400, 200, 40);
+       lApellido2.setFont(newFont);
+       lApellido2.setText("Apellido");
+       tApellido2.setBounds(600, 450, 200, 40);
+       
+       bConfirmarRecogida.setBounds(390, 585, 300, 75);
+       bConfirmarRecogida.setFont(newFont);
+       bConfirmarRecogida.setText("Confirmar");
+       
+       
+      //PANEL DOMICILIO LABEL Y TF 
+      lCalle.setBounds(260, 200, 200, 40);
+      lCalle.setFont(newFont);
+      lCalle.setText("Calle");
+      tCalle.setBounds(200, 250, 200, 40);
+      
+      lEdificio.setBounds(700, 200, 200, 40);
+      lEdificio.setFont(newFont);
+      lEdificio.setText("Nombre Edificio");
+      tEdificio.setBounds(700, 250, 200, 40);
+      
+      lPiso.setBounds(260, 325, 200, 40);
+      lPiso.setFont(newFont);
+      lPiso.setText("Piso");
+      tPiso.setBounds(200, 375, 200, 40);
+      
+      lLetra.setBounds(760, 325, 200, 40);
+      lLetra.setFont(newFont);
+      lLetra.setText("Letra");
+      tLetra.setBounds(700, 375, 200, 40);
+      
+      lNombre.setBounds(260, 450, 200, 40);
+      lNombre.setFont(newFont);
+      lNombre.setText("Nombre");
+      tNombre.setBounds(200, 500, 200, 40);
+      
+      lApellido.setBounds(760, 450, 200, 40);
+      lApellido.setFont(newFont);
+      lApellido.setText("Apellido");
+      tApellido.setBounds(700, 500, 200, 40);
+      
+      bConfirmarDomicilio.setBounds(390, 585, 300, 75);
+      bConfirmarDomicilio.setFont(newFont);
+      bConfirmarDomicilio.setText("Confirmar");
+       
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
       // CrearBoton(bPanelDomicilio);
        Paneles.CrearBoton(bAb);
        Paneles.CrearBoton(bReturn);
@@ -995,7 +1098,35 @@ public class Principal extends JFrame {
        panelReserva.add(cHoraReserva);
        
        panelRecogerDomicilio.add(bPanelRecogida);
+<<<<<<< HEAD
        panelRecogerDomicilio.add(bPanelDomicilio);       
+=======
+       panelRecogerDomicilio.add(bPanelDomicilio);  
+       
+       panelDomicilio.add(lCalle);
+       panelDomicilio.add(lEdificio);
+       panelDomicilio.add(lPiso);
+       panelDomicilio.add(lLetra);
+       panelDomicilio.add(lNombre);
+       panelDomicilio.add(lApellido);
+       panelDomicilio.add(tCalle);
+       panelDomicilio.add(tEdificio);
+       panelDomicilio.add(tPiso);
+       panelDomicilio.add(tLetra);
+       panelDomicilio.add(tNombre);
+       panelDomicilio.add(tApellido);
+       panelDomicilio.add(bConfirmarDomicilio);
+       
+       panelRecogida.add(lHora);
+       panelRecogida.add(tHora);
+       panelRecogida.add(lTlfn);
+       panelRecogida.add(tTlfn);
+       panelRecogida.add(lNombre2);
+       panelRecogida.add(tNombre2);
+       panelRecogida.add(lApellido2);
+       panelRecogida.add(tApellido2);
+       panelRecogida.add(bConfirmarRecogida);
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
        
        panelMesa.add(bPrimerPlato);
        
