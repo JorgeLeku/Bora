@@ -3,16 +3,13 @@ package Comida;
 public class Usuario {
 	private int codigo;
 	private String username;
-	private int tf;
-	private String email;
+	private int tf;	
 	
-	
-	public Usuario(int codigo, String username, int tf, String email) {
+	public Usuario(int codigo, String username, int tf) {
 		super();
 		this.codigo = codigo;
 		this.username = username;
 		this.tf = tf;
-		this.email = email;
 	}
 
 
@@ -22,7 +19,6 @@ public class Usuario {
 		this.codigo = u.codigo;
 		this.username = u.username;
 		this.tf =u. tf;
-		this.email = u.email;
 	}
 
 
@@ -63,21 +59,12 @@ public class Usuario {
 
 
 
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 
 //to string modificado para conectar con la BD
 	@Override
 	public String toString() {
-		return codigo + ", '" + username + "', " + tf + ",'" + email + "'";
+		return codigo + ", '" + username + "', " + tf ;
 	}
 
  
