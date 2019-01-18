@@ -37,7 +37,7 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Carta carta = new Carta();
+	//Carta carta = new Carta();
 	
 	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
@@ -55,7 +55,7 @@ public class Principal extends JFrame {
 	
 	int x = 1;
 	public Principal() {
-		carta.cargarCarta();
+		
 		
 //	paneles = new ArrayList<>();
 		
@@ -577,6 +577,7 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, panelInicio);
+   			//System.out.println(carta.getBebidas().size());
    		}
        	   
           });
