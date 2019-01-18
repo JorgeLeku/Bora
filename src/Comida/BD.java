@@ -210,7 +210,6 @@ public class BD {
 					" nombre= '" + comida.getNombre()+ "', " +
 					" precio=" + comida.getPrecio() + ", "+
 					" numeroPlato=" +comida.getNumeroPlato() + ", "+
-					" imagen=" +comida.getTipoImagen() +
 					" where cod= " + comida.getId() ;
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
@@ -285,7 +284,7 @@ public class BD {
 			logger.log( level, msg, excepcion );
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

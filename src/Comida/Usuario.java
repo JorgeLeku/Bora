@@ -52,9 +52,4 @@ public class Usuario {
 	public String toString() {
 		return codigo + ", '" + username + "', " + tf ;
 	}
-
- 
-
-
-
 }

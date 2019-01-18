@@ -2,23 +2,21 @@ package Comida;
 
 public class Comida extends Alimentos {
 	
-	protected int numeroPlato,tipoImagen;
+	protected int numeroPlato;
 	
 	public Comida() {
 		this.numeroPlato = 0;
-		this.tipoImagen = 0;
+	
 	}
 
 	public Comida(Comida a) {
 		super(a);
 		this.numeroPlato = a.numeroPlato;
-		this.tipoImagen = a.tipoImagen;
 	}
 
-	public Comida(int id, String nombre, double precio, int numeroPlato, int tipoImagen) {
+	public Comida(int id, String nombre, double precio, int numeroPlato) {
 		super(id, nombre, precio);
 		this.numeroPlato = numeroPlato;
-		this.tipoImagen = tipoImagen;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -32,19 +30,12 @@ public class Comida extends Alimentos {
 		this.numeroPlato = numeroPlato;
 	}
 
-	public int getTipoImagen() {
-		return tipoImagen;
-	}
-
-	public void setTipoImagen(int tipoImagen) {
-		this.tipoImagen = tipoImagen;
-	}
 
 	
 	//creado para conectar con la BD
 	@Override
 	public String toString() {
-		return id+",'"+ nombre+ "', "+ precio+", " +numeroPlato+ ", "+tipoImagen ; 
+		return id+",'"+ nombre+ "', "+ precio+", " +numeroPlato ; 
 	}
 
 	public static void main(String[] args) {
