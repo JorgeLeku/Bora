@@ -1,7 +1,5 @@
 package ventana;
 
-
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -18,7 +16,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-//eneko
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -36,20 +33,21 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
+	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2;
 	JComboBox cOrden, cHoraReserva;
-	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
+	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 	Font fuente;
+	int prueba = 0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botones;
-	private List<JPanel> paneles;
+	//private List<JPanel> paneles;
 	//Pruebas2
 	
 	int x = 1;
 	public Principal() {
 	botones = new ArrayList<>();
-	paneles = new ArrayList<>();
+//	paneles = new ArrayList<>();
 		
 		InputStream cogerFuente;
 		 try {
@@ -104,29 +102,29 @@ public class Principal extends JFrame {
        
        Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
        
-       CrearPanel(panelBienvenida);
-       CrearPanel(panelInicio);
-       CrearPanel(panelAdmin);
+       Paneles.CrearPanel(panelBienvenida);
+       //CrearPanel(panelInicio);
+       Paneles.CrearPanel(panelAdmin);
+       Paneles.CrearPanel(panelInicio);
+       Paneles.CrearPanel(panelQuitBoton);
+       Paneles.CrearPanel(panelAddBoton);
        
-       CrearPanel(panelQuitBoton);
-       CrearPanel(panelAddBoton);
+       Paneles.CrearPanel(panelReserva);
+       Paneles.CrearPanel(panelMesa);
        
-       CrearPanel(panelReserva);
-       CrearPanel(panelMesa);
+       Paneles.CrearPanel(panelRecogerDomicilio);
+       Paneles.CrearPanel(panelRecogida);
+       Paneles.CrearPanel(panelDomicilio);
        
-       CrearPanel(panelRecogerDomicilio);
-       CrearPanel(panelRecogida);
-       CrearPanel(panelDomicilio);
+       Paneles.CrearPanel(panelEntrantes);
+       Paneles.CrearPanel(panelPrimero);
+       Paneles.CrearPanel(panelSegundo);
+       Paneles.CrearPanel(panelPostre);
+       Paneles.CrearPanel(panelBebida);
        
-       CrearPanel(panelEntrantes);
-       CrearPanel(panelPrimero);
-       CrearPanel(panelSegundo);
-       CrearPanel(panelPostre);
-       CrearPanel(panelBebida);
+       Paneles.CrearPanel(panelFactura);
        
-       CrearPanel(panelFactura);
-       
-       CrearPanel(panelPruebas);
+       Paneles.CrearPanel(panelPruebas);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -192,6 +190,32 @@ public class Principal extends JFrame {
        bPanelRecogida = new JButton("Recogida");
        bPanelDomicilio = new JButton("Domicilio");
        
+       //Objetos panelRecogida
+       lHora = new JLabel();
+       tHora = new JTextField();
+       lTlfn = new JLabel();
+       tTlfn = new JTextField();
+       lNombre2 = new JLabel();
+       tNombre2 = new JTextField();
+       lApellido2 = new JLabel();
+       tApellido2 = new JTextField();
+       bConfirmarRecogida = new JButton();
+       
+       //Objetos panelDomicilio
+       lCalle = new JLabel();
+       tCalle = new JTextField();
+       lEdificio = new JLabel();
+       tEdificio = new JTextField();
+       lPiso = new JLabel();
+       tPiso = new JTextField();
+       lLetra = new JLabel();
+       tLetra = new JTextField();
+       lNombre = new JLabel();
+       tNombre = new JTextField();
+       lApellido = new JLabel();
+       tApellido = new JTextField();
+       bConfirmarDomicilio = new JButton();
+       
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -236,29 +260,90 @@ public class Principal extends JFrame {
        botonPruebas = new JButton(imagenPrueba);
        
        
-       CrearBoton(bPanelRecogerDomicilio);
-       CrearBoton(bPanelReserva);
+       Paneles.CrearBoton(bPanelRecogerDomicilio);
+       Paneles.CrearBoton(bPanelReserva);
        //CrearBoton(bPanelAdmin);
        
-       CrearBoton(bPanelQuitBoton);
-       CrearBoton(bPanelAddBoton);
+       Paneles.CrearBoton(bPanelQuitBoton);
+       Paneles.CrearBoton(bPanelAddBoton);
        
-       CrearBoton(bAddBoton);
-       CrearBoton(bSelImg);
+       Paneles.CrearBoton(bAddBoton);
+       Paneles.CrearBoton(bSelImg);
        
-       CrearBoton(bQuitBoton);
+       Paneles.CrearBoton(bQuitBoton);
        
-       CrearBoton(bPanelMesa);
+       Paneles.CrearBoton(bPanelMesa);
        
-       CrearBoton(bPrimerPlato);
+       Paneles.CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
        
+     //PANEL RECOGIDA LABEL Y TF
+       lHora.setBounds(360, 250, 200, 40);
+       lHora.setFont(newFont);
+       lHora.setText("Hora");
+       tHora.setBounds(300, 300, 200, 40);
+       
+       lTlfn.setBounds(660, 250, 200, 40);
+       lTlfn.setFont(newFont);
+       lTlfn.setText("Telefono");
+       tTlfn.setBounds(600, 300, 200, 40);
+       
+       lNombre2.setBounds(360, 400, 200, 40);
+       lNombre2.setFont(newFont);
+       lNombre2.setText("Nombre");
+       tNombre2.setBounds(300, 450, 200, 40);
+       
+       lApellido2.setBounds(660, 400, 200, 40);
+       lApellido2.setFont(newFont);
+       lApellido2.setText("Apellido");
+       tApellido2.setBounds(600, 450, 200, 40);
+       
+       bConfirmarRecogida.setBounds(390, 585, 300, 75);
+       bConfirmarRecogida.setFont(newFont);
+       bConfirmarRecogida.setText("Confirmar");
+       
+       
+      //PANEL DOMICILIO LABEL Y TF 
+      lCalle.setBounds(260, 200, 200, 40);
+      lCalle.setFont(newFont);
+      lCalle.setText("Calle");
+      tCalle.setBounds(200, 250, 200, 40);
+      
+      lEdificio.setBounds(700, 200, 200, 40);
+      lEdificio.setFont(newFont);
+      lEdificio.setText("Nombre Edificio");
+      tEdificio.setBounds(700, 250, 200, 40);
+      
+      lPiso.setBounds(260, 325, 200, 40);
+      lPiso.setFont(newFont);
+      lPiso.setText("Piso");
+      tPiso.setBounds(200, 375, 200, 40);
+      
+      lLetra.setBounds(760, 325, 200, 40);
+      lLetra.setFont(newFont);
+      lLetra.setText("Letra");
+      tLetra.setBounds(700, 375, 200, 40);
+      
+      lNombre.setBounds(260, 450, 200, 40);
+      lNombre.setFont(newFont);
+      lNombre.setText("Nombre");
+      tNombre.setBounds(200, 500, 200, 40);
+      
+      lApellido.setBounds(760, 450, 200, 40);
+      lApellido.setFont(newFont);
+      lApellido.setText("Apellido");
+      tApellido.setBounds(700, 500, 200, 40);
+      
+      bConfirmarDomicilio.setBounds(390, 585, 300, 75);
+      bConfirmarDomicilio.setFont(newFont);
+      bConfirmarDomicilio.setText("Confirmar");
+       
       // CrearBoton(bPanelDomicilio);
-       CrearBoton(bAb);
-       CrearBoton(bReturn);
-       CrearBoton(cbb1);
-       CrearBoton(bSelImg);
+       Paneles.CrearBoton(bAb);
+       Paneles.CrearBoton(bReturn);
+       Paneles.CrearBoton(cbb1);
+       Paneles.CrearBoton(bSelImg);
        
       bPanelRecogerDomicilio.setBounds(93, 185, 400, 350);
       bPanelReserva.setBounds(566, 185, 400, 350);
@@ -325,9 +410,14 @@ public class Principal extends JFrame {
 		cHoraReserva.addItem("p"+i);// Sustituir el "p"+i por los items de la tabla de la bd
 	}
        
-       //PanelRecogidaDomicilio
+       //PanelRecogerDomicilio
        bPanelRecogida.setBounds(93, 185, 400, 350);
        bPanelDomicilio.setBounds(566, 185, 400, 350);
+       
+       //PanelRecogida
+       
+       //PanelDomicilio
+       
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
@@ -425,7 +515,7 @@ public class Principal extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Base de datos
+				 // Base de datos
 				/*Botones pp1 = new Botones();
 				pp1.setBounds(34, 185,300, 75);
 				CrearBoton(pp1);
@@ -546,13 +636,161 @@ public class Principal extends JFrame {
        	   
         });
        
-       bPanelMesa.addActionListener(new ActionListener () {
+		
+		
 
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			CambiarPanel(panelReserva, panelPrimero);
-			int s= 40;
+		
+			/*// TODO Auto-generated method stub
+			List <JPanel> paneles = new ArrayList <> ();
+			
+			paneles=Paneles.VentanaDinamicaa(panelPrimero);
+			for (int i = 0; i < paneles.size(); i++) {
+				System.out.println(paneles.get(i));
+			}
+			for (int i = 0; i < paneles.size(); i++) {
+				paneles.get(i).updateUI();
+				frame.getContentPane().add(paneles.get(i));
+				
+			}*/
+			
+			
+			
+		
+		String nombrebotoncambio = " " + 0;
+		List<JButton> botones;//Arraylist de botones para guardar todos los botones creados
+		List<JButton> cambio;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JPanel> paneles;//Arraylist de paneles para guardar todos los paneles creados
+		
+		JPanel panel1;
+		
+		botones = new ArrayList<>();
+		cambio = new ArrayList<>();
+		paneles = new ArrayList<>();
+		
+		
+		
+		panel1 =  new JPanel(){
+			public void paintComponent(Graphics g) {
+		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
+		        Graphics bufferGraphics = bufferImage.getGraphics();
+		        bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 1080, 720, null);
+		        g.drawImage(bufferImage, 0, 0, this);
+		       
+		    }
+       };
+		CrearPanel(panel1);
+		
+		
+		paneles.add(panel1);
+		frame.getContentPane().add(panel1);
+		paneles.get(0).updateUI();
+		
+			bPanelMesa.addActionListener(new ActionListener () {
+				
+				
+				
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					
+					
+					int s= 40;
+					int indi= 0;
+					int p = 185;
+				
+					for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
+						JPanel panelesMult = new JPanel();  //creamos mas paneles
+						panelesMult.setName("panelesMult" + x); //le ponemos un nombre
+						CrearPanel(panelesMult);  //Le damoslos datos basicos
+						frame.getContentPane().add(panelesMult); //lo añadimos al frame
+						paneles.add(panelesMult);  //Lo metemos en el array de paneles
+						JButton botonSiguientePanel = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
+						botonSiguientePanel.setBounds(390, 550, 300, 75); //La posicion del boton
+						enQuePanel = x;
+						botonSiguientePanel.setName("bSiguiente"+x);  //Ponemos nombre al boton
+						cambio.add(botonSiguientePanel);  //Lo añadimos al array de botones
+						paneles.get(x).add(botonSiguientePanel); //añadimos el boton para cambiar de panel a cada panel
+						paneles.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+						botonSiguientePanel.addActionListener(new ActionListener() {
+						
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								// TODO Auto-generated method stub
+								CambiarPanel(paneles.get(prueba), paneles.get(prueba+1)); //Cambiamos de paneles prueba elige el numero de panel
+								prueba++; //Incrementamos prueba para que se pueda pasar de panel
+								paneles.get(prueba).add(botonSiguientePanel); //Añadimos el boton al panel es necesario repetir??(mirar arriba)
+								paneles.get(prueba).updateUI(); //Actualizamos el panel para que aparezca el boton, es realmente necesario repetirlo??
+								
+							}
+							
+						});
+						if (x==0) {  //si es el primer panel se añade un boton a panel1 para pasar al panel siguiente
+							panel1.add(cambio.get(0)); 
+						} else if (x>0) {//si no es el primer panel ponemos un boton al panel el cual sirva para pasar al siguiente panel
+							//he quitadp panelesMult.getName();
+							panelesMult.add(cambio.get(x));
+						}
+						for (int i = 0; i < 3; i++) {//son filas columnas de botones por panel
+							
+				
+							for (int o = 0; o < 3; o++) {//son tres columnas de botones por panel
+								
+								JButton pp2 = new JButton(); //Creamos el boton del plato
+								//CrearBoton(pp2);
+								pp2.setBounds(s, p,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
+								pp2.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+								botones.add(pp2); //añadimos el boton al arraylist de botones
+								s=320+s; //Incrementamos s para que el boton siguiente este a la izquierda
+								paneles.get(x).add(pp2); //añadimos el boton al panel correspondiente
+								paneles.get(x).updateUI(); //actualizamos el panel para que muestre los botones
+								pp2.setName("prueba"+x+i+o);	//nombramos el boton para saber cual es (sacar de la bd)
+								panel1.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
+								pp2.addActionListener(new ActionListener () {
+
+									@Override
+									public void actionPerformed(ActionEvent arg0) {
+										// TODO Auto-generated method stub
+										
+										CambiarPanel(paneles.get(enQuePanel), panelSegundo);
+										paneles.get(enQuePanel).setEnabled(false);
+										paneles.get(enQuePanel).setVisible(false);
+										paneles.get(enQuePanel).updateUI();
+										
+										panelSegundo.updateUI();
+										
+										System.out.println(arg0.getSource());//9*prueba //sacamos los datos del boton para ver si funciona
+									}
+									
+								});
+								//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
+								
+								//he borrado borrarbo++;
+								
+					    	}
+						
+							p=p+100;//aumentamos la y de los botones
+							s=40;//iniciamos la columna de nuevo
+							//he borrado borrarbi++;
+						}
+						s=40;//iniciamos la columna de nuevo
+						p=185; //iniciamos
+					}
+					for (int i = 0; i < botones.size(); i++) {//imprimimos los datos de los botones que hemos creado
+						System.out.println(botones.get(i));
+						
+					}
+					CambiarPanel(panelReserva, paneles.get(0));
+				}
+		    	   
+				
+			});
+			
+					
+				
+			
+		
+			
+			/*int s= 40;
 			int indi= 0;
 			int p = 185;
 			//CambiarPanel(panelInicio, panelPruebas);
@@ -609,10 +847,10 @@ public class Principal extends JFrame {
 					p=p+100;
 					s=40;
 				}
-			}
-		}
+			}*/
+		
     	   
-       });
+       
        bPrimerPlato.addActionListener(new ActionListener () {
     	   @Override
 			public void actionPerformed(ActionEvent e) {
@@ -843,7 +1081,31 @@ public class Principal extends JFrame {
        panelReserva.add(cHoraReserva);
        
        panelRecogerDomicilio.add(bPanelRecogida);
-       panelRecogerDomicilio.add(bPanelDomicilio);       
+       panelRecogerDomicilio.add(bPanelDomicilio);  
+       
+       panelDomicilio.add(lCalle);
+       panelDomicilio.add(lEdificio);
+       panelDomicilio.add(lPiso);
+       panelDomicilio.add(lLetra);
+       panelDomicilio.add(lNombre);
+       panelDomicilio.add(lApellido);
+       panelDomicilio.add(tCalle);
+       panelDomicilio.add(tEdificio);
+       panelDomicilio.add(tPiso);
+       panelDomicilio.add(tLetra);
+       panelDomicilio.add(tNombre);
+       panelDomicilio.add(tApellido);
+       panelDomicilio.add(bConfirmarDomicilio);
+       
+       panelRecogida.add(lHora);
+       panelRecogida.add(tHora);
+       panelRecogida.add(lTlfn);
+       panelRecogida.add(tTlfn);
+       panelRecogida.add(lNombre2);
+       panelRecogida.add(tNombre2);
+       panelRecogida.add(lApellido2);
+       panelRecogida.add(tApellido2);
+       panelRecogida.add(bConfirmarRecogida);
        
        panelMesa.add(bPrimerPlato);
        
