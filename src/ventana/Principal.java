@@ -26,6 +26,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.plaf.PanelUI;
+
+import Comida.*;
 
 import sun.applet.AppletPanel;
 
@@ -34,18 +37,16 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
-	JButton bQuit;
-	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva;
-	JLabel lQuit, lValidarTlfn;
-	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
-	JComboBox cOrden, cHoraReserva;
-	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
-	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tQuit;
+	//Carta carta = new Carta();
 	
+	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
+	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
+
+	JLabel  lQuit, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JComboBox cOrden, cHoraReserva;
+	JTextField tQuit, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+
 	Font fuente;
 	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botonesprimero;
@@ -54,7 +55,8 @@ public class Principal extends JFrame {
 	
 	int x = 1;
 	public Principal() {
-
+		
+		
 //	paneles = new ArrayList<>();
 		
 		InputStream cogerFuente;
@@ -86,7 +88,10 @@ public class Principal extends JFrame {
 		       
 		    }
        };
+       Paneles panelInicioSesion = new Paneles();
+       panelInicioSesion.setName("panelInicioSesion");
        Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
+       panelInicio.setName("panelInicio");
        Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
       
        Paneles panelQuitBoton = new Paneles(); //En este panel el admin puede quitar platos del menu
@@ -111,6 +116,7 @@ public class Principal extends JFrame {
        Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
        
        CrearPanel(panelBienvenida);
+       CrearPanel(panelInicioSesion);
        //CrearPanel(panelInicio);
        CrearPanel(panelAdmin);
        CrearPanel(panelInicio);
@@ -264,7 +270,8 @@ public class Principal extends JFrame {
 		    
       };
        
-       bPanelMesa = new Botones();
+       Botones bPanelMesa = new Botones();
+       bPanelMesa.setNombre("Aceptar");
        //Objetos panelPrimerPlato
        lPrimerPlato = new JLabel ();
        lPrimerPlato.setFont(titulos);
@@ -281,8 +288,28 @@ public class Principal extends JFrame {
        bAb.setRolloverIcon(imagenbAbbn);
        bPanelRecogerDomicilio.setRolloverIcon(imagenp1b1bn);
        bPanelReserva.setRolloverIcon(imagenp1b2bn);
-       botonPruebas = new JButton(imagenPrueba);
+
+       lUsuario = new JLabel();
+       lUsuario.setFont(newFont);
+       lUsuario.setText("Usuario");
+       lUsuario.setBounds(250, 250, 200, 40);
        
+       lContraseña = new JLabel();
+       lContraseña.setFont(newFont);
+       lContraseña.setText("Contraseña");
+       lContraseña.setBounds(250, 400, 200, 40);
+       Botones bIniciar = new Botones();
+       Botones bRegistrarse = new Botones();
+       CrearBoton(bIniciar);
+       CrearBoton(bRegistrarse);
+       bIniciar.setNombre("Iniciar Sesion");
+       bRegistrarse.setNombre("Registrarse");
+       bIniciar.setBounds(150, 580,300, 75);
+       bRegistrarse.setBounds(600, 580,300, 75);
+       tUsuario = new JTextField();
+       tPassword = new JTextField();
+       tUsuario.setBounds(550, 250, 200, 40);
+       tPassword.setBounds(550, 400, 200, 40);
        
        CrearBoton(bPanelRecogerDomicilio);
        CrearBoton(bPanelReserva);
@@ -442,6 +469,8 @@ public class Principal extends JFrame {
        cOrden.addItem("1");
        cOrden.addItem("2");
        cOrden.addItem("3");
+       cOrden.addItem("4");
+       cOrden.addItem("5");
        cOrden.setBounds(705, 300, 200, 50);
       
        lDirImg.setBounds(600, 430, 400, 40);
@@ -449,8 +478,6 @@ public class Principal extends JFrame {
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
-       panelRecogida.add(bPanelMesa);
-       panelReserva.add(bPanelMesa);
        lNombreC.setBounds(240, 200, 400, 40);
        lApellidoC.setBounds(710, 200, 400, 40);    
        tNombreReserva.setBounds(130, 250, 300, 40);
@@ -500,26 +527,13 @@ public class Principal extends JFrame {
        facTotal.setText("€"); //LABEL para poner precio final
        
       
-       botonPanelFactura = new JButton();
-      // panelAddBoton.add(botonPanelFactura);
-       botonPanelFactura.setBounds(200, 50, 150, 150);
-       botonPanelFactura.setText("Boton Eneko");
-       botonPanelFactura.addActionListener(new ActionListener() {
-    	   
-    	   @Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelAddBoton, panelFactura);
-
-			}
-       });
-       
+     
     
        
        
       
 
-       botonPruebas.setBounds(0, 0, 50, 50);
+ 
 
       
        bAb.setBounds(500, 30, 80, 80);
@@ -543,7 +557,7 @@ public class Principal extends JFrame {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			CambiarPanel(panelBienvenida, panelInicio);
+			CambiarPanel(panelBienvenida, panelInicioSesion);
 			System.out.println("hola");
 		}
 		
@@ -559,51 +573,26 @@ public class Principal extends JFrame {
 			
 		}
 	});
-       botonPruebas.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-		    	int s= 40;
-				int indi= 0;
-				int p = 185;
-				CambiarPanel(panelInicio, panelPruebas);
-				for (int x = 0; x < 2; x++) {
-					JPanel panelesMult = new JPanel();
-					CrearPanel(panelesMult);
-					frame.getContentPane().add(panelesMult);
-					frame.update(getGraphics());
-					for (int i = 0; i < 3; i++) {
-						
-			
-						for (int o = 0; o < 3; o++) {
-							Botones pp2 = new Botones();
-							pp2.setBounds(s, p,300, 75);
-							CrearBoton(pp2);
-							s=320+s;
-							pp2.addActionListener(new ActionListener () {
-	
-								@Override
-								public void actionPerformed(ActionEvent arg0) {
-									// TODO Auto-generated method stub
-									CambiarPanel(panelPruebas, panelInicio);
-								}
-								
-							});
-							pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
-							panelPruebas.add(pp2);
-							botonesprimero.add(pp2);
-							panelPruebas.updateUI();
-				    	}
-						p=p+100;
-						s=40;
-					}
-				}
-				 
-			}
-
-       });
        
+       bIniciar.addActionListener(new ActionListener () {
+
+   		@Override
+   		public void actionPerformed(ActionEvent arg0) {
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelInicioSesion, panelInicio);
+   			//System.out.println(carta.getBebidas().size());
+   		}
+       	   
+          });
+       bRegistrarse.addActionListener(new ActionListener () {
+
+   		@Override
+   		public void actionPerformed(ActionEvent arg0) {
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelInicioSesion, panelInicio);
+   		}
+       	   
+          });
        bPanelAdmin.addActionListener(new ActionListener () {
 
 		@Override
@@ -630,6 +619,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
+				panelRecogida.add(bPanelMesa);
 			}
 
       });
@@ -640,6 +630,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
+				panelDomicilio.add(bPanelMesa);
 			}
 
      }); 
@@ -650,6 +641,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
+				panelReserva.add(bPanelMesa);
 			}
 
        });
@@ -816,7 +808,7 @@ public class Principal extends JFrame {
 								//CrearBoton(pp2);
 								
 								pp2e.setBounds(se, pe,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-								pp2e.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+								pp2e.setNombre("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 								botonesentrantes.add(pp2e); //añadimos el boton al arraylist de botones
 								se=320+se; //Incrementamos s para que el boton siguiente este a la izquierda
 								panelesentrantes.get(x).add(pp2e); //añadimos el boton al panel correspondiente
@@ -1373,17 +1365,13 @@ public class Principal extends JFrame {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
-			/*if (panelInicio.isEnabled()== true) {
-				CambiarPanel(panelInicio, panelInicio);
-			} else if (eliminarEstePanel.isEnabled()==true){
-				CambiarPanel(eliminarEstePanel, panelInicio);
-			} else if (panelECarta.isEnabled()==true) {
-				CambiarPanel(panelECarta, eliminarEstePanel);
-			} else if (panelEMenu.isEnabled()==true) {
-				CambiarPanel(panelEMenu, eliminarEstePanel);
-			} else if (panelPruebas.isEnabled()==true) {
-				CambiarPanel(panelPruebas, panelInicio);
-			}*/
+			if (panelAddBoton.isEnabled()== true) {
+				CambiarPanel(panelAddBoton, panelAdmin);
+			} else if (panelQuitBoton.isEnabled()== true) {
+				CambiarPanel(panelQuitBoton, panelAdmin);
+			} else if (panelAdmin.isEnabled()== true) {
+				CambiarPanel(panelAdmin, panelInicio);
+			}
 		}
 	});
        bSelImg.addActionListener(new ActionListener() {
@@ -1427,7 +1415,7 @@ public class Principal extends JFrame {
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);
-       panelInicio.add(botonPruebas);
+       
        panelInicio.add(bPanelAdmin);
        
        panelAdmin.add(bPanelQuitBoton);
@@ -1459,7 +1447,6 @@ public class Principal extends JFrame {
        panelDomicilio.add(tLetra);
        panelDomicilio.add(tNombre);
        panelDomicilio.add(tApellido);
-       panelDomicilio.add(bPanelMesa);
        panelDomicilio.updateUI();
        
        panelRecogida.add(lHora);
@@ -1499,7 +1486,12 @@ public class Principal extends JFrame {
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
        
-       
+       panelInicioSesion.add(lUsuario);
+       panelInicioSesion.add(lContraseña);
+       panelInicioSesion.add(bRegistrarse);
+       panelInicioSesion.add(bIniciar);
+       panelInicioSesion.add(tUsuario);
+       panelInicioSesion.add(tPassword);
        panelFactura.add(fl1);
        panelFactura.add(fl2);
        
@@ -1512,7 +1504,7 @@ public class Principal extends JFrame {
        frame.setVisible(true);
        frame.setLayout(null);  
        frame.setTitle("Bora");
-
+       frame.getContentPane().add(panelInicioSesion);
        frame.getContentPane().add(panelBienvenida);
        frame.getContentPane().add(panelInicio);
        frame.getContentPane().add(panelAdmin);
@@ -1549,7 +1541,9 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		h.add(bReturn);
+		if (h.getName()!="panelInicio" && g.getName()!="panelInicio" || h.getName()!="panelInicioSesion" && g.getName()!="panelInicioSesion" ) {
+			h.add(bReturn);
+		}
 		
 		
 	}
