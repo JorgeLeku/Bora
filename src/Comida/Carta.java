@@ -24,32 +24,64 @@ public class Carta {
 	/* Clase carta,
 	 * objetivo leer y escribir en la BD   */
 	
-	public HashSet<Comida> comidas;
+	public HashSet<Comida> entrantes;
+	public HashSet<Comida> primeros;
+	public HashSet<Comida> segundos;
+	public HashSet<Comida> postres;
 	public HashSet<Bebida>bebidas;
 	
 	
-	public Carta(HashSet<Comida> comidas, HashSet<Bebida> bebidas) {
+
+	public Carta(HashSet<Comida> entrantes, HashSet<Comida> primeros, HashSet<Comida> segundos, HashSet<Comida> postres,
+			HashSet<Bebida> bebidas) {
 		super();
-		this.comidas = comidas;
+		this.entrantes = entrantes;
+		this.primeros = primeros;
+		this.segundos = segundos;
+		this.postres = postres;
 		this.bebidas = bebidas;
 	}
 	public Carta(Carta c) {
-		
-		this.comidas = c.comidas;
+		this.entrantes = c.entrantes;
+		this.primeros = c.primeros;
+		this.segundos = c.segundos;
+		this.postres = c.postres;
 		this.bebidas = c.bebidas;
 	}
 	public Carta() {
 		super();
-		this.comidas = new HashSet<>();
+		this.entrantes = new HashSet<>();
+		this.primeros = new HashSet<>();
+		this.segundos = new HashSet<>();
+		this.postres = new HashSet<>();
 		this.bebidas = new HashSet<>();
 	}
 
 
-	public HashSet<Comida> getComidas() {
-		return comidas;
+
+	public HashSet<Comida> getEntrantes() {
+		return entrantes;
 	}
-	public void setComidas(HashSet<Comida> comidas) {
-		this.comidas = comidas;
+	public void setEntrantes(HashSet<Comida> entrantes) {
+		this.entrantes = entrantes;
+	}
+	public HashSet<Comida> getPrimeros() {
+		return primeros;
+	}
+	public void setPrimeros(HashSet<Comida> primeros) {
+		this.primeros = primeros;
+	}
+	public HashSet<Comida> getSegundos() {
+		return segundos;
+	}
+	public void setSegundos(HashSet<Comida> segundos) {
+		this.segundos = segundos;
+	}
+	public HashSet<Comida> getPostres() {
+		return postres;
+	}
+	public void setPostres(HashSet<Comida> postres) {
+		this.postres = postres;
 	}
 	public HashSet<Bebida> getBebidas() {
 		return bebidas;
@@ -60,15 +92,19 @@ public class Carta {
 	
 	//Añadir comida/bebida
 	public void addComida(Comida c) {
-		this.comidas.add(c);
-		
+		if(c.numeroPlato == 1) {
+			entrantes.add(c);
+		}else if(c.numeroPlato == 2) {
+			primeros.add(c);
+		}else if(c.numeroPlato == 3) {
+			segundos.add(c);
+		}else if(c.numeroPlato == 4) {
+			postres.add(c);
+		}
 	}
 	public void addBebida(Bebida b) {
 		this.bebidas.add(b);
 	}
-	
-	
-	
 	
 	//introducimos todos los datos en la BD
 	//primero habra que saber si ya existe para hacer un insert o un update
@@ -91,7 +127,26 @@ public class Carta {
 				
 			}
 			
-			 for (Comida comida : comidas) {
+			 for (Comida comida : entrantes) {
+				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
+				 }else{
+					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
+				 }
+			}
+			 for (Comida comida : primeros) {
+				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
+				 }else{
+					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
+				 }
+			} for (Comida comida : segundos) {
+				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
+				 }else{
+					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
+				 }
+			} for (Comida comida : postres) {
 				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
@@ -197,8 +252,7 @@ public class Carta {
 				c.nombre = rs.getString("nombre");
 				c.precio = rs.getDouble("precio");
 				c.numeroPlato = rs.getInt("numeroPlato");
-				c.tipoImagen = rs.getInt("imagen");
-				comidas.add(c);
+				this.addComida(c);
 			}
 
 		} catch (SQLException e) {
