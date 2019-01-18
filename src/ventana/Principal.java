@@ -1353,17 +1353,13 @@ public class Principal extends JFrame {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
-			/*if (panelInicio.isEnabled()== true) {
-				CambiarPanel(panelInicio, panelInicio);
-			} else if (eliminarEstePanel.isEnabled()==true){
-				CambiarPanel(eliminarEstePanel, panelInicio);
-			} else if (panelECarta.isEnabled()==true) {
-				CambiarPanel(panelECarta, eliminarEstePanel);
-			} else if (panelEMenu.isEnabled()==true) {
-				CambiarPanel(panelEMenu, eliminarEstePanel);
-			} else if (panelPruebas.isEnabled()==true) {
-				CambiarPanel(panelPruebas, panelInicio);
-			}*/
+			if (panelAddBoton.isEnabled()== true) {
+				CambiarPanel(panelAddBoton, panelAdmin);
+			} else if (panelQuitBoton.isEnabled()== true) {
+				CambiarPanel(panelQuitBoton, panelAdmin);
+			} else if (panelAdmin.isEnabled()== true) {
+				CambiarPanel(panelAdmin, panelInicio);
+			}
 		}
 	});
        bSelImg.addActionListener(new ActionListener() {
