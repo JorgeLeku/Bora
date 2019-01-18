@@ -35,7 +35,7 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2;
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 	Font fuente;
@@ -216,6 +216,11 @@ public class Principal extends JFrame {
        tApellido = new JTextField();
        bConfirmarDomicilio = new JButton();
        
+       //Objetos panelFactura (NO estan aqui todos los objetos¡¡¡)
+       precio = new JLabel();
+       iva = new JLabel();
+       precioTotal = new JLabel();
+       
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -347,7 +352,20 @@ public class Principal extends JFrame {
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
       bConfirmarDomicilio.setFont(newFont);
       bConfirmarDomicilio.setText("Confirmar");
-       
+      
+      // panelFactura Label
+      precio.setBounds(260, 200, 200, 40);
+      precio.setFont(newFont);
+      precio.setText("Precio: ");
+      
+      iva.setBounds(260, 325, 200, 40);
+      iva.setFont(newFont);
+      iva.setText("IVA: ");
+      
+      precioTotal.setBounds(260, 450, 200, 40);
+      precioTotal.setFont(newFont);
+      precioTotal.setText("Total: ");
+      
       // CrearBoton(bPanelDomicilio);
        Paneles.CrearBoton(bAb);
        Paneles.CrearBoton(bReturn);
@@ -1113,6 +1131,10 @@ public class Principal extends JFrame {
        panelRecogida.add(lApellido2);
        panelRecogida.add(tApellido2);
        panelRecogida.add(bConfirmarRecogida);
+       
+       panelFactura.add(precio);
+       panelFactura.add(iva);
+       panelFactura.add(precioTotal);
        
        panelMesa.add(bPrimerPlato);
        
