@@ -40,15 +40,15 @@ public class Principal extends JFrame {
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-<<<<<<< HEAD
+
 	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
-=======
+
 
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
 
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2;
 
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
+
+
 	JComboBox cOrden, cHoraReserva;
 
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
@@ -234,15 +234,13 @@ public class Principal extends JFrame {
        tApellido = new JTextField();
        bConfirmarDomicilio = new JButton();
        
-<<<<<<< HEAD
+
        //Objetos panelFactura (NO estan aqui todos los objetos¡¡¡)
        precio = new JLabel();
        iva = new JLabel();
        precioTotal = new JLabel();
        
-=======
 
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
     	   public void paintComponent(Graphics g) {
@@ -293,8 +291,7 @@ public class Principal extends JFrame {
        CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
-       
-<<<<<<< HEAD
+
        //PanelRecogerDomicilio
        bPanelRecogida.setBounds(93, 185, 400, 350);
        bPanelRecogida.setFont(newFont);
@@ -304,9 +301,7 @@ public class Principal extends JFrame {
        bPanelDomicilio.setFont(newFont);
        bPanelDomicilio.setText("Domicilio");
        
-=======
 
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
      //PANEL RECOGIDA LABEL Y TF
        lHora.setBounds(360, 250, 200, 40);
        lHora.setFont(newFont);
@@ -367,7 +362,7 @@ public class Principal extends JFrame {
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
       bConfirmarDomicilio.setFont(newFont);
       bConfirmarDomicilio.setText("Confirmar");
-<<<<<<< HEAD
+
       
       // panelFactura Label
       precio.setBounds(260, 200, 200, 40);
@@ -382,9 +377,7 @@ public class Principal extends JFrame {
       precioTotal.setFont(newFont);
       precioTotal.setText("Total: ");
       
-=======
-       
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
+
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
        CrearBoton(bReturn);
@@ -450,24 +443,12 @@ public class Principal extends JFrame {
 		cHoraReserva.addItem("p"+i);// Sustituir el "p"+i por los items de la tabla de la bd
 	}
        
-<<<<<<< HEAD
-       //PanelRecogerDomicilio
-       		//estan en otro sitio
-=======
+
        //PanelRecogidaDomicilio
        bPanelRecogida.setBounds(93, 185, 400, 350);
        bPanelDomicilio.setBounds(566, 185, 400, 350);
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
-       
-<<<<<<< HEAD
-       //PanelRecogida
-       		//estan en otro sitio
-       
-       //PanelDomicilio
-       		//estan en otro sitio
-       
-=======
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora
+
+
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
        
