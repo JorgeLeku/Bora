@@ -205,7 +205,7 @@ public class Principal extends JFrame {
        lTlfn = new JLabel();
        lValidarTlfn = new JLabel();
        tTlfn = new JTextField();
-       tTlfn.addKeyListener(new KeyAdapter() {
+      /* tTlfn.addKeyListener(new KeyAdapter() {
     	   @Override
     	   public void keyPressed (KeyEvent e) {
     		   try {
@@ -215,7 +215,10 @@ public class Principal extends JFrame {
     			   lValidarTlfn.setText("NUMERO DE TELEFONO");
     		   }
     	   }
-       });
+       });	*/
+       /*if ((tTlfn.getText()).contains("[a-zA-Z]+") == false && tTlfn.getText().length() == 9) {
+    	   lValidarTlfn.setText("");
+    	} else { lValidarTlfn.setText("NUMERO DE TELEFONO"); } */
        
        lNombre2 = new JLabel();
        tNombre2 = new JTextField();
@@ -319,7 +322,7 @@ public class Principal extends JFrame {
        lTlfn.setFont(newFont);
        lTlfn.setText("Telefono");
        tTlfn.setBounds(600, 300, 200, 40);
-       lValidarTlfn.setBounds(600, 350, 20, 20);
+       lValidarTlfn.setBounds(600, 350, 150, 20);
        lValidarTlfn.setForeground(Color.red);
        
        lNombre2.setBounds(360, 400, 200, 40);
