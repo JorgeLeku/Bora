@@ -23,8 +23,9 @@ public class BD {
 	public static Connection initBD() {
 		  try {
 			Class.forName("org.postgresql.Driver");//conectamos con el jdbc de postgreSQL
-		    Connection con = DriverManager.getConnection("jdbc:postgresql://postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4?sslmode=require","cozwxagqcksbyh","fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" );
-		    log(Level.INFO, "base de datos conectada",null );
+		    
+			Connection con = DriverManager.getConnection("postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4","cozwxagqcksbyh","fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" );
+			log(Level.INFO, "base de datos conectada",null );
 		   return con;
 		  } catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
