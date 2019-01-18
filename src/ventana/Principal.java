@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -16,7 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-//eneko
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -37,23 +37,31 @@ public class Principal extends JFrame {
 
 	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPrimerPlato, bPanelRecogida, bPanelDomicilio, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
+	
+
+
+	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
+	
 
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
 
-	JLabel lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 
+	JLabel  lQuit, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+
+
+
+
+	
 
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
-
-
-
-
 	JComboBox cOrden, cHoraReserva;
-
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 
-	JTextField tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+
+	JTextField tQuit, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+
+
+	
 
 	Font fuente;
 	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
@@ -214,7 +222,20 @@ public class Principal extends JFrame {
        lHora = new JLabel();
        tHora = new JTextField();
        lTlfn = new JLabel();
+       lValidarTlfn = new JLabel();
        tTlfn = new JTextField();
+       tTlfn.addKeyListener(new KeyAdapter() {
+    	   @Override
+    	   public void keyPressed (KeyEvent e) {
+    		   try {
+    			   int i = Integer.parseInt(tTlfn.getText());
+    			   lValidarTlfn.setText("");
+    		   } catch (NumberFormatException e1) {
+    			   lValidarTlfn.setText("Invalid number");
+    		   }
+    	   }
+       });
+       
        lNombre2 = new JLabel();
        tNombre2 = new JTextField();
        lApellido2 = new JLabel();
@@ -240,8 +261,11 @@ public class Principal extends JFrame {
        //Objetos panelFactura (NO estan aqui todos los objetos¡¡¡)
        precio = new JLabel();
        iva = new JLabel();
-       precioTotal = new JLabel();
        
+       //objetos panelQuitBoton
+       lQuit = new JLabel();
+       tQuit = new JTextField();
+       bQuit = new JButton();
 
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
@@ -335,6 +359,8 @@ public class Principal extends JFrame {
        lTlfn.setFont(newFont);
        lTlfn.setText("Telefono");
        tTlfn.setBounds(600, 300, 200, 40);
+       lValidarTlfn.setBounds(600, 350, 10, 10);
+       lValidarTlfn.setForeground(Color.red);
        
        lNombre2.setBounds(360, 400, 200, 40);
        lNombre2.setFont(newFont);
@@ -388,19 +414,27 @@ public class Principal extends JFrame {
 
       
       // panelFactura Label
-      precio.setBounds(260, 200, 200, 40);
+      precio.setBounds(200, 450, 200, 40);
       precio.setFont(newFont);
       precio.setText("Precio: ");
       
-      iva.setBounds(260, 325, 200, 40);
+      iva.setBounds(200, 500, 200, 40);
       iva.setFont(newFont);
       iva.setText("IVA: ");
       
-      precioTotal.setBounds(260, 450, 200, 40);
-      precioTotal.setFont(newFont);
-      precioTotal.setText("Total: ");
+      //panelQuitBoton
+      lQuit.setBounds(200, 300, 300, 75);
+      lQuit.setFont(newFont);
+      lQuit.setText("Nombre del boton: ");
       
-
+      tQuit.setBounds(500, 310, 350, 60);
+      tQuit.setFont(newFont);
+      tQuit.setText("");
+      
+      bQuit.setBounds(390, 585, 300, 75);
+      bQuit.setFont(newFont);
+      bQuit.setText("Aceptar");
+      
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
        CrearBoton(bReturn);
@@ -485,8 +519,8 @@ public class Principal extends JFrame {
        cbl5.setText("Precio");
        
        fl1 = new JLabel();
-       fl1.setBounds(500, 100, 200, 70);
-       fl1.setFont(newFont);
+       fl1.setBounds(440, 90, 500, 50);	//esta es la de panelFactura??
+       fl1.setFont(titulos);
        fl1.setForeground(Color.white);
        fl1.setText("Factura");
       
@@ -1445,12 +1479,16 @@ public class Principal extends JFrame {
        panelRecogida.add(tNombre2);
        panelRecogida.add(lApellido2);
        panelRecogida.add(tApellido2);
+       panelRecogida.add(lValidarTlfn);
        
        panelRecogida.updateUI();
        
        panelFactura.add(precio);
        panelFactura.add(iva);
-       panelFactura.add(precioTotal);
+       
+       panelQuitBoton.add(lQuit);
+       panelQuitBoton.add(tQuit);
+       panelQuitBoton.add(bQuit);
        
        panelMesa.add(bPrimerPlato);
        
