@@ -26,6 +26,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.plaf.PanelUI;
+
+import Comida.*;
 
 import sun.applet.AppletPanel;
 
@@ -34,34 +37,15 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
-
+	Carta carta = new Carta();
 	
-
-
-	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
-	
+	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
 
-
 	JLabel  lQuit, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
-
-
-
-
-	
-
-	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
 	JComboBox cOrden, cHoraReserva;
-	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
-
-
 	JTextField tQuit, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
-
-
-	
 
 	Font fuente;
 	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
@@ -71,7 +55,8 @@ public class Principal extends JFrame {
 	
 	int x = 1;
 	public Principal() {
-
+		carta.cargarCarta();
+		
 //	paneles = new ArrayList<>();
 		
 		InputStream cogerFuente;
@@ -104,7 +89,9 @@ public class Principal extends JFrame {
 		    }
        };
        Paneles panelInicioSesion = new Paneles();
+       panelInicioSesion.setName("panelInicioSesion");
        Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
+       panelInicio.setName("panelInicio");
        Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
       
        Paneles panelQuitBoton = new Paneles(); //En este panel el admin puede quitar platos del menu
@@ -537,20 +524,7 @@ public class Principal extends JFrame {
        facTotal.setText("€"); //LABEL para poner precio final
        
       
-       botonPanelFactura = new JButton();
-      // panelAddBoton.add(botonPanelFactura);
-       botonPanelFactura.setBounds(200, 50, 150, 150);
-       botonPanelFactura.setText("Boton Eneko");
-       botonPanelFactura.addActionListener(new ActionListener() {
-    	   
-    	   @Override
-			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelAddBoton, panelFactura);
-
-			}
-       });
-       
+     
     
        
        
@@ -1563,7 +1537,10 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		h.add(bReturn);
+		if (h.getName()!="panelInicio" && g.getName()!="panelInicio" || h.getName()!="panelInicioSesion" && g.getName()!="panelInicioSesion" ) {
+			h.add(bReturn);
+		}
+		
 		
 	}
 
