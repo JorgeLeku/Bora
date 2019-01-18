@@ -212,7 +212,7 @@ public class Principal extends JFrame {
     			   int i = Integer.parseInt(tTlfn.getText());
     			   lValidarTlfn.setText("");
     		   } catch (NumberFormatException e1) {
-    			   lValidarTlfn.setText("Invalid number");
+    			   lValidarTlfn.setText("NUMERO DE TELEFONO");
     		   }
     	   }
        });
@@ -319,7 +319,7 @@ public class Principal extends JFrame {
        lTlfn.setFont(newFont);
        lTlfn.setText("Telefono");
        tTlfn.setBounds(600, 300, 200, 40);
-       lValidarTlfn.setBounds(600, 350, 10, 10);
+       lValidarTlfn.setBounds(600, 350, 20, 20);
        lValidarTlfn.setForeground(Color.red);
        
        lNombre2.setBounds(360, 400, 200, 40);
