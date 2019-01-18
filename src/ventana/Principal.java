@@ -563,7 +563,24 @@ public class Principal extends JFrame {
 		}
 	});
        
-       
+       bIniciar.addActionListener(new ActionListener () {
+
+   		@Override
+   		public void actionPerformed(ActionEvent arg0) {
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelInicioSesion, panelInicio);
+   		}
+       	   
+          });
+       bRegistrarse.addActionListener(new ActionListener () {
+
+   		@Override
+   		public void actionPerformed(ActionEvent arg0) {
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelInicioSesion, panelInicio);
+   		}
+       	   
+          });
        bPanelAdmin.addActionListener(new ActionListener () {
 
 		@Override
