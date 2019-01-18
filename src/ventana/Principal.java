@@ -37,11 +37,11 @@ public class Principal extends JFrame {
 
 	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
+	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
 
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 
 
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
@@ -53,7 +53,7 @@ public class Principal extends JFrame {
 
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
 
-	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+	JTextField tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
 	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
@@ -95,6 +95,7 @@ public class Principal extends JFrame {
 		       
 		    }
        };
+       Paneles panelInicioSesion = new Paneles();
        Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
        Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
       
@@ -120,6 +121,7 @@ public class Principal extends JFrame {
        Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
        
        CrearPanel(panelBienvenida);
+       CrearPanel(panelInicioSesion);
        //CrearPanel(panelInicio);
        CrearPanel(panelAdmin);
        CrearPanel(panelInicio);
@@ -254,7 +256,8 @@ public class Principal extends JFrame {
 		    
       };
        
-       bPanelMesa = new Botones();
+       Botones bPanelMesa = new Botones();
+       bPanelMesa.setNombre("Aceptar");
        //Objetos panelPrimerPlato
        lPrimerPlato = new JLabel ();
        lPrimerPlato.setFont(titulos);
@@ -272,7 +275,14 @@ public class Principal extends JFrame {
        bPanelRecogerDomicilio.setRolloverIcon(imagenp1b1bn);
        bPanelReserva.setRolloverIcon(imagenp1b2bn);
        botonPruebas = new JButton(imagenPrueba);
-       
+       lUsuario = new JLabel();
+       lUsuario.setFont(newFont);
+       lUsuario.setText("Usuario");
+       lUsuario.setBounds(50, 250, 200, 40);
+       lContraseña = new JLabel();
+       lContraseña.setFont(newFont);
+       lContraseña.setText("Contraseña");
+       lContraseña.setBounds(50, 400, 200, 40);
        
        CrearBoton(bPanelRecogerDomicilio);
        CrearBoton(bPanelReserva);
@@ -555,7 +565,9 @@ public class Principal extends JFrame {
 						
 			
 						for (int o = 0; o < 3; o++) {
+							
 							Botones pp2 = new Botones();
+							pp2.setNombre("a");
 							pp2.setBounds(s, p,300, 75);
 							CrearBoton(pp2);
 							s=320+s;
@@ -797,7 +809,7 @@ public class Principal extends JFrame {
 								//CrearBoton(pp2);
 								
 								pp2e.setBounds(se, pe,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-								pp2e.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+								pp2e.setNombre("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 								botonesentrantes.add(pp2e); //añadimos el boton al arraylist de botones
 								se=320+se; //Incrementamos s para que el boton siguiente este a la izquierda
 								panelesentrantes.get(x).add(pp2e); //añadimos el boton al panel correspondiente
