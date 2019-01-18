@@ -36,23 +36,12 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
-
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
-
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
-
-	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
-
-
+	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva;
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
-
-
-
-
 	JComboBox cOrden, cHoraReserva;
-
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
-
 	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
@@ -238,7 +227,9 @@ public class Principal extends JFrame {
        //Objetos panelFactura (NO estan aqui todos los objetos¡¡¡)
        precio = new JLabel();
        iva = new JLabel();
-       precioTotal = new JLabel();
+       
+       //objetos quitboton
+       
        
 
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
@@ -365,19 +356,14 @@ public class Principal extends JFrame {
 
       
       // panelFactura Label
-      precio.setBounds(260, 200, 200, 40);
+      precio.setBounds(200, 450, 200, 40);
       precio.setFont(newFont);
       precio.setText("Precio: ");
       
-      iva.setBounds(260, 325, 200, 40);
+      iva.setBounds(200, 500, 200, 40);
       iva.setFont(newFont);
       iva.setText("IVA: ");
       
-      precioTotal.setBounds(260, 450, 200, 40);
-      precioTotal.setFont(newFont);
-      precioTotal.setText("Total: ");
-      
-
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
        CrearBoton(bReturn);
@@ -462,8 +448,8 @@ public class Principal extends JFrame {
        cbl5.setText("Precio");
        
        fl1 = new JLabel();
-       fl1.setBounds(500, 100, 200, 70);
-       fl1.setFont(newFont);
+       fl1.setBounds(440, 90, 500, 50);	//esta es la de panelFactura??
+       fl1.setFont(titulos);
        fl1.setForeground(Color.white);
        fl1.setText("Factura");
       
@@ -1455,7 +1441,6 @@ public class Principal extends JFrame {
        
        panelFactura.add(precio);
        panelFactura.add(iva);
-       panelFactura.add(precioTotal);
        
        panelMesa.add(bPrimerPlato);
        
