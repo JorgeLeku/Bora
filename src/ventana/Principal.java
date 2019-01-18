@@ -187,8 +187,8 @@ public class Principal extends JFrame {
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
 
        //Objetos PanelRecogerDomicilio
-       bPanelRecogida = new JButton("Recogida");
-       bPanelDomicilio = new JButton("Domicilio");
+       bPanelRecogida = new JButton();
+       bPanelDomicilio = new JButton();
        
        //Objetos panelRecogida
        lHora = new JLabel();
@@ -277,6 +277,15 @@ public class Principal extends JFrame {
        Paneles.CrearBoton(bPrimerPlato);
        
       // CrearBoton(bPanelRecogida);
+       
+       //PanelRecogerDomicilio
+       bPanelRecogida.setBounds(93, 185, 400, 350);
+       bPanelRecogida.setFont(newFont);
+       bPanelRecogida.setText("Recogida");
+       
+       bPanelDomicilio.setBounds(566, 185, 400, 350);
+       bPanelDomicilio.setFont(newFont);
+       bPanelDomicilio.setText("Domicilio");
        
      //PANEL RECOGIDA LABEL Y TF
        lHora.setBounds(360, 250, 200, 40);
@@ -411,22 +420,20 @@ public class Principal extends JFrame {
 	}
        
        //PanelRecogerDomicilio
-       bPanelRecogida.setBounds(93, 185, 400, 350);
-       bPanelDomicilio.setBounds(566, 185, 400, 350);
+       		//estan en otro sitio
        
        //PanelRecogida
+       		//estan en otro sitio
        
        //PanelDomicilio
-       
+       		//estan en otro sitio
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
        
        
        //PanelPrimerPlato
-
        lPrimerPlato.setBounds(400, 50, 1000, 40);
-       
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
