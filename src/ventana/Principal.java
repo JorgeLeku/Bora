@@ -368,17 +368,17 @@ public class Principal extends JFrame {
       iva.setText("IVA: ");
       
       //panelQuitBoton
-      lQuit.setBounds(200, 450, 200, 40);
+      lQuit.setBounds(200, 300, 300, 75);
       lQuit.setFont(newFont);
-      lQuit.setText("lQuit");
+      lQuit.setText("Nombre del boton: ");
       
-      tQuit.setBounds(200, 450, 200, 40);
+      tQuit.setBounds(500, 310, 350, 60);
       tQuit.setFont(newFont);
-      tQuit.setText("tQuit");
+      tQuit.setText("");
       
-      bQuit.setBounds(200, 450, 200, 40);
+      bQuit.setBounds(390, 585, 300, 75);
       bQuit.setFont(newFont);
-      bQuit.setText("bQuit");
+      bQuit.setText("Aceptar");
       
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
