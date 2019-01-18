@@ -40,7 +40,7 @@ public class Principal extends JFrame {
 	JButton bQuit;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
 	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva;
-	JLabel lQuit;
+	JLabel lQuit, lValidarTlfn;
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
 	JComboBox cOrden, cHoraReserva;
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
@@ -203,16 +203,16 @@ public class Principal extends JFrame {
        lHora = new JLabel();
        tHora = new JTextField();
        lTlfn = new JLabel();
-       
+       lValidarTlfn = new JLabel();
        tTlfn = new JTextField();
        tTlfn.addKeyListener(new KeyAdapter() {
     	   @Override
     	   public void keyPressed (KeyEvent e) {
     		   try {
     			   int i = Integer.parseInt(tTlfn.getText());
-    			   show_validation_here.setText("");
+    			   lValidarTlfn.setText("");
     		   } catch (NumberFormatException e1) {
-    			   show_validation_here.setText("Invalid number");
+    			   lValidarTlfn.setText("Invalid number");
     		   }
     	   }
        });
@@ -319,6 +319,8 @@ public class Principal extends JFrame {
        lTlfn.setFont(newFont);
        lTlfn.setText("Telefono");
        tTlfn.setBounds(600, 300, 200, 40);
+       lValidarTlfn.setBounds(600, 350, 10, 10);
+       lValidarTlfn.setForeground(Color.red);
        
        lNombre2.setBounds(360, 400, 200, 40);
        lNombre2.setFont(newFont);
@@ -1465,6 +1467,7 @@ public class Principal extends JFrame {
        panelRecogida.add(tNombre2);
        panelRecogida.add(lApellido2);
        panelRecogida.add(tApellido2);
+       panelRecogida.add(lValidarTlfn);
        
        panelRecogida.updateUI();
        
