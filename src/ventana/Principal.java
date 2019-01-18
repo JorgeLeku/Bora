@@ -251,7 +251,7 @@ public class Principal extends JFrame {
        lPrimerPlato.setForeground(Color.WHITE);
        lPrimerPlato.setSize(50, 50);
        lPrimerPlato.setText("Primer Plato");
-       //
+       
        bAb = new JButton(imagenbAb);
        bReturn = new JButton (imagenbAtr);
        cbb1 = new JButton(imagenbAb);
