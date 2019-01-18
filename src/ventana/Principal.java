@@ -420,21 +420,20 @@ public class Principal extends JFrame {
 	}
        
        //PanelRecogerDomicilio
-       
+       		//estan en otro sitio
        
        //PanelRecogida
+       		//estan en otro sitio
        
        //PanelDomicilio
-       
+       		//estan en otro sitio
        
        //Panel Mesa
        bPrimerPlato.setBounds(390, 585, 300, 75);
        
        
        //PanelPrimerPlato
-
        lPrimerPlato.setBounds(400, 50, 1000, 40);
-       
        
        cbl5 = new JLabel();
        cbl5.setBounds(25, 340, 400, 40);
