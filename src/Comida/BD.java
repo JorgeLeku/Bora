@@ -1,5 +1,9 @@
 package Comida;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,12 +13,16 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.sun.jndi.toolkit.url.Uri;
+
 
 
 
 public class BD {
 	private static Exception lastError = null;  // Información de último error SQL ocurrido
-	
+	private static final String HOST = "ec2-54-247-74-131.eu-west-1.compute.amazonaws.com";
+	private static final String USERNAME= "cozwxagqcksbyh";
+	private static final String PASSWORD ="fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" ;
 	
 	
 	/**metodo para iniciar conexion con BD
@@ -23,19 +31,15 @@ public class BD {
 	public static Connection initBD() {
 		  try {
 			Class.forName("org.postgresql.Driver");//conectamos con el jdbc de postgreSQL
-		    
-			Connection con = DriverManager.getConnection("postgres://cozwxagqcksbyh:fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4","cozwxagqcksbyh","fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" );
-			log(Level.INFO, "base de datos conectada",null );
+		    Connection con = DriverManager.getConnection("jdbc:postgres://"+HOST +"?sslmode=require",USERNAME,PASSWORD);
+			log(Level.INFO, "base de datos conectada",null );		
 		   return con;
-		  } catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			
+		  } catch (ClassNotFoundException | SQLException  e) {
 			lastError = e;
-			log( Level.SEVERE, "Error en conexión de base de datos ", e );
+			log( Level.SEVERE, "Error en conexión de base de datos ", e );			
 			e.printStackTrace();
 			return null;
-		  }
-	
+		  }	
 	}
 
 	
@@ -73,9 +77,7 @@ public class BD {
 				log( Level.SEVERE, "Error en cierre de base de datos", e );
 				e.printStackTrace();
 				return false;
-			}
-			
-		
+			}		
 	}
 	
 	
@@ -133,9 +135,7 @@ public class BD {
 				lastError = e;
 				e.printStackTrace();
 				return false;//ha ocurrido un problema
-			}
-			
-		
+			}		
 	}
 
 	/** Busca un valor de la tabla abierta de BD, usando la sentencia SELECT de SQL
@@ -156,16 +156,13 @@ public class BD {
 				return true;
 			}else{
 				return false;
-			}
-				
-			
+			}			
 		} catch (Exception e) {
 			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
 			lastError = e;
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
 	}
 	
 	/** Modifica un valor de la tabla abierta de BD, usando la sentencia UPDATE de SQL
@@ -194,8 +191,7 @@ public class BD {
 				lastError = e;
 				e.printStackTrace();
 				return false;
-			}
-		
+			}		
 	}
 	
 /**Modifica los valores de una fila en la tabla comida
@@ -267,6 +263,7 @@ public class BD {
 	public static void setLogger( Logger logger ) {
 		BD.logger = logger;
 	}
+	
 	// Método local para loggear (si no se asigna un logger externo, se asigna uno local)
 	private static void log( Level level, String msg, Throwable excepcion ) {
 		if (logger==null) {  // Logger por defecto local:
@@ -285,13 +282,4 @@ public class BD {
 			logger.log( level, msg, excepcion );
 		}
 	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-
-
-
 }
