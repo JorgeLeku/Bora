@@ -515,7 +515,7 @@ public class Principal extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				 // Base de datos
+				// Base de datos
 				/*Botones pp1 = new Botones();
 				pp1.setBounds(34, 185,300, 75);
 				CrearBoton(pp1);
