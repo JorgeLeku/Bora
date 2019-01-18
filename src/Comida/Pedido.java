@@ -1,5 +1,6 @@
 package Comida;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -112,24 +113,50 @@ public class Pedido {
 		this.productos.add(c); //se añade el producto
 	}
 	
-	
-	public void insertPedido() {
+	/**
+	 * inserta un pedido en la Base de datos
+	 * @param Coduser codigo del usuario que esta haciendo la transaccion
+	 */
+	public void insertPedido(String CodUser) {
 		Connection conn = BD.initBD();
 		String sentSQL = "";
 		try {
 			Statement st = conn.createStatement();
-			BD.Insert(st, this.toString(), "pedido");//se introduce el pedido
+			BD.Insert(st, this.toString()+ ", "+ CodUser  , "pedido");//se introduce el pedido con el codigo del usuario
 			
+			//unir el pedido a las comidas y bebidas
+			for (Alimentos seleccionado : productos) {
+				if(seleccionado.getClass().equals(Comida.class)) {//es una comida
+					if(BD.Select(st, "Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id, "ContieneC")) {//si ya existia en la BD significa que la cantidad >1
+					ResultSet rs = 	st.executeQuery("select cantidad from ContieneC where Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id );			
+					String cant = ""+rs.getInt("cantidad");
+					BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id, "ContieneC");
+					}else {
+						 BD.Insert(st, this.cod+", "+seleccionado.id, "ContieneC");//si no hay una fila de esto
+					}
+				}else if(seleccionado.getClass().equals(Bebida.class)){//es una bebida
+					if(BD.Select(st, "Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id, "ContieneB")) {//si ya existia en la BD significa que la cantidad >1
+						ResultSet rs = 	st.executeQuery("select cantidad from ContieneB where Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id );			
+						String cant = ""+rs.getInt("cantidad");
+						BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id, "ContieneB");
+						}else {
+							 BD.Insert(st, this.cod+", "+seleccionado.id, "ContieneB");//si no hay una fila de esto
+						}
+				}
+				
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	
 	}
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
-		return cod + ", '" + fechaPedido + "', '" + fechaEntrega
-				+ "', " + dineroGastado;
+		return cod + ", '" + fechaPedido + "', '" + fechaEntrega 
+				+ "', '" + direccion +"'" ;
 	}
 
 	public static void main(String[] args) {
