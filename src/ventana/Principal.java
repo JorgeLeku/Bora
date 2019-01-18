@@ -37,13 +37,15 @@ public class Principal extends JFrame {
 
 	//JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura;
 	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, botonPanelFactura, bConfirmarDomicilio, bConfirmarRecogida;
+	JButton bQuit;
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
 	JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva;
+	JLabel lQuit;
 	//JLabel lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato;
 	JComboBox cOrden, cHoraReserva;
 	//JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva;
-	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
-
+	JTextField tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tQuit;
+	
 	Font fuente;
 	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botonesprimero;
@@ -228,9 +230,10 @@ public class Principal extends JFrame {
        precio = new JLabel();
        iva = new JLabel();
        
-       //objetos quitboton
-       
-       
+       //objetos panelQuitBoton
+       lQuit = new JLabel();
+       tQuit = new JTextField();
+       bQuit = new JButton();
 
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
        bPrimerPlato = new JButton() {
@@ -363,6 +366,19 @@ public class Principal extends JFrame {
       iva.setBounds(200, 500, 200, 40);
       iva.setFont(newFont);
       iva.setText("IVA: ");
+      
+      //panelQuitBoton
+      lQuit.setBounds(200, 450, 200, 40);
+      lQuit.setFont(newFont);
+      lQuit.setText("lQuit");
+      
+      tQuit.setBounds(200, 450, 200, 40);
+      tQuit.setFont(newFont);
+      tQuit.setText("tQuit");
+      
+      bQuit.setBounds(200, 450, 200, 40);
+      bQuit.setFont(newFont);
+      bQuit.setText("bQuit");
       
       // CrearBoton(bPanelDomicilio);
        CrearBoton(bAb);
@@ -1441,6 +1457,10 @@ public class Principal extends JFrame {
        
        panelFactura.add(precio);
        panelFactura.add(iva);
+       
+       panelQuitBoton.add(lQuit);
+       panelQuitBoton.add(tQuit);
+       panelQuitBoton.add(bQuit);
        
        panelMesa.add(bPrimerPlato);
        
