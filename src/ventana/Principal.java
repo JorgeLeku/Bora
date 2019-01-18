@@ -211,17 +211,20 @@ public class Principal extends JFrame {
        lTlfn = new JLabel();
        lValidarTlfn = new JLabel();
        tTlfn = new JTextField();
-       tTlfn.addKeyListener(new KeyAdapter() {
+      /* tTlfn.addKeyListener(new KeyAdapter() {
     	   @Override
     	   public void keyPressed (KeyEvent e) {
     		   try {
     			   int i = Integer.parseInt(tTlfn.getText());
     			   lValidarTlfn.setText("");
     		   } catch (NumberFormatException e1) {
-    			   lValidarTlfn.setText("Invalid number");
+    			   lValidarTlfn.setText("NUMERO DE TELEFONO");
     		   }
     	   }
-       });
+       });	*/
+       /*if ((tTlfn.getText()).contains("[a-zA-Z]+") == false && tTlfn.getText().length() == 9) {
+    	   lValidarTlfn.setText("");
+    	} else { lValidarTlfn.setText("NUMERO DE TELEFONO"); } */
        
        
        lNombre2 = new JLabel();
@@ -347,7 +350,7 @@ public class Principal extends JFrame {
        lTlfn.setFont(newFont);
        lTlfn.setText("Telefono");
        tTlfn.setBounds(600, 300, 200, 40);
-       lValidarTlfn.setBounds(600, 350, 10, 10);
+       lValidarTlfn.setBounds(600, 350, 150, 20);
        lValidarTlfn.setForeground(Color.red);
        
        lNombre2.setBounds(360, 400, 200, 40);
@@ -774,7 +777,7 @@ public class Principal extends JFrame {
 					
 							@Override
 							public void actionPerformed(ActionEvent arg0) {
-								// TODO Auto-generated method stub
+								//  TODO Auto-generated method stub
 								
 								CambiarPanel(panelesentrantes.get(pruebae), panelesentrantes.get(pruebae+1)); //Cambiamos de paneles prueba elige el numero de panel
 								
@@ -837,6 +840,7 @@ public class Principal extends JFrame {
 											       lprimero.setSize(500, 50);
 											       lprimero.setText("Primer Plato");
 											       
+<<<<<<< HEAD
 												Paneles panelesMultprim = new Paneles();  //creamos mas paneles
 												panelesMultprim.setName("panelesMult" + x); //le ponemos un nombre
 												CrearPanel(panelesMultprim);  //Le damoslos datos basicos
@@ -844,6 +848,15 @@ public class Principal extends JFrame {
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												JButton botonSiguientePanelprimero = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
 												botonSiguientePanelprimero.setBounds(390, 550, 300, 75); //La posicion del boton
+=======
+												Paneles panelesMult = new Paneles();  //creamos mas paneles
+												panelesMult.setName("panelesMult" + x); //le ponemos un nombre
+												CrearPanel(panelesMult);  //Le damoslos datos basicos
+												frame.getContentPane().add(panelesMult); //lo añadimos al frame
+												panelesprimero.add(panelesMult);  //Lo metemos en el array de paneles
+												JButton botonSiguientePanel = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
+												botonSiguientePanel.setBounds(390, 575, 300, 75); //La posicion del boton
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 												
 												botonSiguientePanelprimero.setName("bSiguiente"+x);  //Ponemos nombre al boton
 												panelesprimero.get(x).add(lprimero);
@@ -939,7 +952,7 @@ public class Principal extends JFrame {
 																	panelessegundo.add(panelesMultseg);  //Lo metemos en el array de paneles
 																	panelessegundo.get(x).add(lsegundo);
 																	JButton botonSiguientePanelsegundo = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
-																	botonSiguientePanelsegundo.setBounds(390, 550, 300, 75); //La posicion del boton
+																	botonSiguientePanelsegundo.setBounds(390, 575, 300, 75); //La posicion del boton
 																	
 																	botonSiguientePanelsegundo.setName("bSiguiente"+x);  //Ponemos nombre al boton
 																	cambiosegundo.add(botonSiguientePanelsegundo);  //Lo añadimos al array de botones
@@ -1032,7 +1045,7 @@ public class Principal extends JFrame {
 																						panelespostre.add(panelesMultpos);  //Lo metemos en el array de paneles
 																						panelespostre.get(x).add(lpostre);
 																						JButton botonSiguientePanelpostre = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
-																						botonSiguientePanelpostre.setBounds(390, 550, 300, 75); //La posicion del boton
+																						botonSiguientePanelpostre.setBounds(390, 575, 300, 75); //La posicion del boton
 																						
 																						botonSiguientePanelpostre.setName("bSiguiente"+x);  //Ponemos nombre al boton
 																						cambiopostre.add(botonSiguientePanelpostre);  //Lo añadimos al array de botones
@@ -1125,7 +1138,7 @@ public class Principal extends JFrame {
 																											panelesbebida.add(panelesMultbeb);  //Lo metemos en el array de paneles
 																											panelesbebida.get(x).add(lbebida);
 																											JButton botonSiguientePanelbebida = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
-																											botonSiguientePanelbebida.setBounds(390, 550, 300, 75); //La posicion del boton
+																											botonSiguientePanelbebida.setBounds(390, 575, 300, 75); //La posicion del boton
 																											
 																											botonSiguientePanelbebida.setName("bSiguiente"+x);  //Ponemos nombre al boton
 																											cambiobebida.add(botonSiguientePanelbebida);  //Lo añadimos al array de botones
