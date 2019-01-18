@@ -840,7 +840,7 @@ public class Principal extends JFrame {
 											       lprimero.setSize(500, 50);
 											       lprimero.setText("Primer Plato");
 											       
-<<<<<<< HEAD
+
 												Paneles panelesMultprim = new Paneles();  //creamos mas paneles
 												panelesMultprim.setName("panelesMult" + x); //le ponemos un nombre
 												CrearPanel(panelesMultprim);  //Le damoslos datos basicos
@@ -848,7 +848,7 @@ public class Principal extends JFrame {
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												JButton botonSiguientePanelprimero = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
 												botonSiguientePanelprimero.setBounds(390, 550, 300, 75); //La posicion del boton
-=======
+
 												Paneles panelesMult = new Paneles();  //creamos mas paneles
 												panelesMult.setName("panelesMult" + x); //le ponemos un nombre
 												CrearPanel(panelesMult);  //Le damoslos datos basicos
@@ -856,7 +856,7 @@ public class Principal extends JFrame {
 												panelesprimero.add(panelesMult);  //Lo metemos en el array de paneles
 												JButton botonSiguientePanel = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
 												botonSiguientePanel.setBounds(390, 575, 300, 75); //La posicion del boton
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
+
 												
 												botonSiguientePanelprimero.setName("bSiguiente"+x);  //Ponemos nombre al boton
 												panelesprimero.get(x).add(lprimero);
