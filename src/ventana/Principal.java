@@ -1,6 +1,7 @@
 package ventana;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
@@ -15,18 +16,21 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.PanelUI;
+import javax.swing.text.NumberFormatter;
 
 import Comida.*;
 
@@ -38,7 +42,7 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	
+	Boolean bpAdmin = false,bpquitboton=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	JButton bQuit,bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelQuitBoton, bPanelAddBoton;
@@ -56,9 +60,17 @@ public class Principal extends JFrame {
 	int x = 1;
 	public Principal() {
 		//carta.cargarCarta();
-		
+		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
+		 bReturn = new JButton (imagenbAtr);
 //	paneles = new ArrayList<>();
-		
+		NumberFormat format = NumberFormat.getInstance();
+	    NumberFormatter formatter = new NumberFormatter(format);
+	    formatter.setValueClass(Integer.class);
+	    formatter.setMinimum(0);
+	    formatter.setMaximum(999999999);
+	    formatter.setAllowsInvalid(false);
+	    formatter.setCommitsOnValidEdit(true);
+	    
 		InputStream cogerFuente;
 		 try {
 	           cogerFuente = this.getClass().getResource("Stingray.otf").openStream();
@@ -149,7 +161,7 @@ public class Principal extends JFrame {
        ImageIcon imagenp1b1bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1b-n.jpg"));
        
        ImageIcon imagenbAb = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAb.png"));
-       ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
+      
        ImageIcon imagenbAtrbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtrb-n.png"));
        ImageIcon imagenbAbbn = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAbb-n.png"));
        ImageIcon imagencbb2 = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bs1.png"));
@@ -210,7 +222,7 @@ public class Principal extends JFrame {
        tHora = new JTextField();
        lTlfn = new JLabel();
        lValidarTlfn = new JLabel();
-       tTlfn = new JTextField();
+       tTlfn = new JFormattedTextField(formatter);
       /* tTlfn.addKeyListener(new KeyAdapter() {
     	   @Override
     	   public void keyPressed (KeyEvent e) {
@@ -281,7 +293,7 @@ public class Principal extends JFrame {
        lPrimerPlato.setText("Primer Plato");
        
        bAb = new JButton(imagenbAb);
-       bReturn = new JButton (imagenbAtr);
+      
        cbb1 = new JButton(imagenbAb);
 
        cbb1.setRolloverIcon(imagenbAbbn);
@@ -526,16 +538,6 @@ public class Principal extends JFrame {
        facTotal.setFont(newFont);
        facTotal.setForeground(Color.white);
        facTotal.setText("€"); //LABEL para poner precio final
-       
-      
-     
-    
-       
-       
-      
-
- 
-
       
        bAb.setBounds(500, 30, 80, 80);
        bReturn.setBounds(30, 30, 80, 80);
@@ -600,7 +602,12 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
-			CambiarPanel(panelInicio, panelAdmin);
+			CambiarPanel(panelInicio, panelAdmin); 
+			if (bpAdmin == false) {
+				panelAdmin.add(bReturn);
+				bpAdmin=true;
+			}
+			
 		}
     	   
        });
@@ -610,7 +617,12 @@ public class Principal extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
-				CambiarPanel(panelInicio, panelRecogerDomicilio);
+				CambiarPanel(panelInicio, panelRecogerDomicilio); 
+				if (bprecogerdomicilio==false) {
+					panelRecogerDomicilio.add(bReturn);
+					bprecogerdomicilio=true;
+				}
+				
 			}
 
        });
@@ -621,7 +633,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
-				panelRecogida.add(bPanelMesa);
+				if (bprecogida==false) {
+					panelRecogida.add(bPanelMesa);
+					panelRecogida.add(bReturn);
+					bprecogida=true;
+				}
+				
 			}
 
       });
@@ -632,7 +649,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-				panelDomicilio.add(bPanelMesa);
+				if (bpdomicilio==false) {
+					panelDomicilio.add(bPanelMesa);
+					panelDomicilio.add(bReturn);
+					bpdomicilio=true;
+				}
+				
 			}
 
      }); 
@@ -643,7 +665,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
-				panelReserva.add(bPanelMesa);
+				if (bpreserva==false) {
+					panelReserva.add(bPanelMesa);
+					panelReserva.add(bReturn);
+					bpreserva=true;
+				}
+				
 			}
 
        });
@@ -655,6 +682,12 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelAdmin, panelQuitBoton);
+			
+			if (bpquitboton==false) {
+				panelQuitBoton.add(bReturn);
+				bpquitboton=true;
+			}
+			
 		}
     	   
        });
@@ -665,6 +698,11 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
+   			if (bpaddboton==false) {
+   				panelAddBoton.add(bReturn);
+   				bpaddboton=true;
+			}
+   			
    		}
        	   
         });
@@ -1413,7 +1451,16 @@ public class Principal extends JFrame {
 				CambiarPanel(panelQuitBoton, panelAdmin);
 			} else if (panelAdmin.isEnabled()== true) {
 				CambiarPanel(panelAdmin, panelInicio);
-			}
+			} else if (bPanelRecogerDomicilio.isEnabled()== true) {
+				CambiarPanel(panelRecogerDomicilio, panelInicio);
+			} else if (panelReserva.isEnabled()== true) {
+				CambiarPanel(panelReserva, panelInicio);
+			} else if (panelRecogida.isEnabled()== true) {
+				CambiarPanel(panelRecogida, panelRecogerDomicilio);
+			} else if (panelDomicilio.isEnabled()== true) {
+				CambiarPanel(panelDomicilio, panelRecogerDomicilio);
+			} 
+			
 		}
 	});
        bSelImg.addActionListener(new ActionListener() {
@@ -1583,9 +1630,16 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		if (h.getName()!="panelInicio" && g.getName()!="panelInicio" || h.getName()!="panelInicioSesion" && g.getName()!="panelInicioSesion" ) {
-			h.add(bReturn);
-		}
+		for (Component cp : g.getComponents() ){
+	        cp.setEnabled(false);
+	        cp.setVisible(false);
+	 }
+		for (Component cp : h.getComponents() ){
+	        cp.setEnabled(true);
+	        cp.setVisible(true);
+	 }
+		
+			g.add(bReturn);
 		
 		
 	}
@@ -1595,6 +1649,7 @@ public class Principal extends JFrame {
 		g.setVisible(false);
 		g.setEnabled(false);
 		g.setBounds(0, 0, 1080, 720);
+		
 		
 
 	}

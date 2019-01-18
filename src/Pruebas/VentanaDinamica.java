@@ -5,15 +5,19 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
+import javax.swing.text.NumberFormatter;
 
 import ventana.Botones;
 //commit
@@ -29,6 +33,25 @@ public class VentanaDinamica extends JFrame{
 	private JButton botonAgre;
 	private JPanel panel, panel1;
 	public VentanaDinamica() {
+	
+		    NumberFormat format = NumberFormat.getInstance();
+		    NumberFormatter formatter = new NumberFormatter(format);
+		    formatter.setValueClass(Integer.class);
+		    formatter.setMinimum(0);
+		    formatter.setMaximum(999999999);
+		    formatter.setAllowsInvalid(false);
+		    formatter.setCommitsOnValidEdit(true);
+		    JFormattedTextField field = new JFormattedTextField(formatter);
+		    field.setValue(0);
+		    
+
+		    // getValue() always returns something valid
+		    System.out.println(field.getValue());
+		    field.setBounds(100, 100, 200, 40);
+		
+		    JOptionPane.showMessageDialog(null, field);
+		
+		
 		botones = new ArrayList<>();
 		cambio = new ArrayList<>();
 		paneles = new ArrayList<>();
@@ -146,6 +169,7 @@ public class VentanaDinamica extends JFrame{
 			
 		});
 		panel.add(botonAgre);
+		panel.add(field);
 		//panel.add(scroll);
 		
 		frame1.add(panel);
