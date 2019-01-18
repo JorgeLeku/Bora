@@ -429,8 +429,6 @@ public class Principal extends JFrame {
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
-       panelRecogida.add(bPanelMesa);
-       panelReserva.add(bPanelMesa);
        lNombreC.setBounds(240, 200, 400, 40);
        lApellidoC.setBounds(710, 200, 400, 40);    
        tNombreReserva.setBounds(130, 250, 300, 40);
@@ -610,6 +608,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
+				panelRecogida.add(bPanelMesa);
 			}
 
       });
@@ -620,6 +619,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
+				panelDomicilio.add(bPanelMesa);
 			}
 
      }); 
@@ -630,6 +630,7 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
+				panelReserva.add(bPanelMesa);
 			}
 
        });
@@ -1439,7 +1440,6 @@ public class Principal extends JFrame {
        panelDomicilio.add(tLetra);
        panelDomicilio.add(tNombre);
        panelDomicilio.add(tApellido);
-       panelDomicilio.add(bPanelMesa);
        panelDomicilio.updateUI();
        
        panelRecogida.add(lHora);
@@ -1526,7 +1526,6 @@ public class Principal extends JFrame {
 		h.setVisible(true);
 		h.setEnabled(true);
 		h.add(bReturn);
-		
 		
 	}
 
