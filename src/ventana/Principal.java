@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -16,7 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-//eneko
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -203,7 +203,20 @@ public class Principal extends JFrame {
        lHora = new JLabel();
        tHora = new JTextField();
        lTlfn = new JLabel();
+       
        tTlfn = new JTextField();
+       tTlfn.addKeyListener(new KeyAdapter() {
+    	   @Override
+    	   public void keyPressed (KeyEvent e) {
+    		   try {
+    			   int i = Integer.parseInt(tTlfn.getText());
+    			   show_validation_here.setText("");
+    		   } catch (NumberFormatException e1) {
+    			   show_validation_here.setText("Invalid number");
+    		   }
+    	   }
+       });
+       
        lNombre2 = new JLabel();
        tNombre2 = new JTextField();
        lApellido2 = new JLabel();
