@@ -48,7 +48,7 @@ public class Principal extends JFrame {
 	JTextField tQuit, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
-	int  pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botonesprimero;
 	//private List<JPanel> paneles;
 	//Pruebas2
@@ -694,7 +694,7 @@ public class Principal extends JFrame {
 		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
-		JPanel panel1;
+		
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -726,7 +726,7 @@ public class Principal extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					// TODO Auto-generated method stub
 					Paneles panel1e =  new Paneles();
-						
+					
 					CrearPanel(panel1e);
 					
 					
@@ -804,7 +804,7 @@ public class Principal extends JFrame {
 								//CrearBoton(pp2);
 								
 								pp2e.setBounds(se, pe,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-								pp2e.setNombre("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+								pp2e.setNombre("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 								botonesentrantes.add(pp2e); //añadimos el boton al arraylist de botones
 								se=320+se; //Incrementamos s para que el boton siguiente este a la izquierda
 								panelesentrantes.get(x).add(pp2e); //añadimos el boton al panel correspondiente
@@ -820,8 +820,15 @@ public class Principal extends JFrame {
 										//me cago en dioooooooooooooooooooooososososoossos
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
-										
-										
+											for (int j = 0; j < botonesentrantes.size(); j++) {
+												botonesentrantes.get(j).setEnabled(false);
+												botonesentrantes.get(j).setVisible(false);
+											}
+											for (int k = 0; k < cambioentrantes.size(); k++) {
+												cambioentrantes.get(k).setEnabled(false);
+												cambioentrantes.get(k).setVisible(false);
+											}
+											enQuePlato++;
 											panelesprimero.add(panel1primero);
 											frame.getContentPane().add(panel1primero);
 											panelesprimero.get(0).updateUI();
@@ -847,7 +854,7 @@ public class Principal extends JFrame {
 												frame.getContentPane().add(panelesMultprim); //lo añadimos al frame
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												JButton botonSiguientePanelprimero = new JButton("siguiente panel"); //Creamos el boton para pasar al siguiente panel
-												botonSiguientePanelprimero.setBounds(390, 550, 300, 75); //La posicion del boton
+												botonSiguientePanelprimero.setBounds(390, 575, 300, 75); //La posicion del boton
 
 												Paneles panelesMult = new Paneles();  //creamos mas paneles
 												panelesMult.setName("panelesMult" + x); //le ponemos un nombre
@@ -893,7 +900,7 @@ public class Principal extends JFrame {
 														JButton pp2primero = new JButton(); //Creamos el boton del plato
 														//CrearBoton(pp2);
 														pp2primero.setBounds(spr, ppr,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-														pp2primero.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+														pp2primero.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 														botonesprimero.add(pp2primero); //añadimos el boton al arraylist de botones
 														spr=320+spr; //Incrementamos s para que el boton siguiente este a la izquierda
 														panelesprimero.get(x).add(pp2primero); //añadimos el boton al panel correspondiente
@@ -908,9 +915,16 @@ public class Principal extends JFrame {
 																// TODO Auto-generated method stub
 																//me cago en dioooooooooooooooooooooososososoossos
 																//CambiarPanel(panelesprimero.get(enQuePanel), panelSegundo);
+																for (int j = 0; j < botonesprimero.size(); j++) {
+																	botonesprimero.get(j).setEnabled(false);
+																	botonesprimero.get(j).setVisible(false);
+																}
+																for (int k = 0; k < cambioprimero.size(); k++) {
+																	cambioprimero.get(k).setEnabled(false);
+																	cambioprimero.get(k).setVisible(false);
+																}
 																
-																
-																
+																enQuePlato++;
 															Paneles panel1s =  new Paneles(){
 																	public void paintComponent(Graphics g) {
 																        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -989,7 +1003,7 @@ public class Principal extends JFrame {
 																			JButton pp2s = new JButton(); //Creamos el boton del plato
 																			//CrearBoton(pp2);
 																			pp2s.setBounds(ss, ps,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-																			pp2s.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+																			pp2s.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																			botonessegundo.add(pp2s); //añadimos el boton al arraylist de botones
 																			ss=320+ss; //Incrementamos s para que el boton siguiente este a la izquierda
 																			panelessegundo.get(x).add(pp2s); //añadimos el boton al panel correspondiente
@@ -1003,7 +1017,15 @@ public class Principal extends JFrame {
 																				public void actionPerformed(ActionEvent arg0) {
 																					// TODO Auto-generated method stub
 																					//me cago en dioooooooooooooooooooooososososoossos
-																					
+																					for (int j = 0; j < botonessegundo.size(); j++) {
+																						botonessegundo.get(j).setEnabled(false);
+																						botonessegundo.get(j).setVisible(false);
+																					}
+																					for (int k = 0; k < cambiosegundo.size(); k++) {
+																						cambiosegundo.get(k).setEnabled(false);
+																						cambiosegundo.get(k).setVisible(false);
+																					}
+																					enQuePlato++;
 																					Paneles panel1p =  new Paneles(){
 																						public void paintComponent(Graphics g) {
 																					        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -1082,7 +1104,7 @@ public class Principal extends JFrame {
 																								JButton pp2p = new JButton(); //Creamos el boton del plato
 																								//CrearBoton(pp2);
 																								pp2p.setBounds(sp, pp,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-																								pp2p.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+																								pp2p.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																								botonespostre.add(pp2p); //añadimos el boton al arraylist de botones
 																								sp=320+sp; //Incrementamos s para que el boton siguiente este a la izquierda
 																								panelespostre.get(x).add(pp2p); //añadimos el boton al panel correspondiente
@@ -1096,7 +1118,15 @@ public class Principal extends JFrame {
 																									public void actionPerformed(ActionEvent arg0) {
 																										// TODO Auto-generated method stub
 																										//me cago en dioooooooooooooooooooooososososoossos
-																										
+																										for (int j = 0; j < botonespostre.size(); j++) {
+																											botonespostre.get(j).setEnabled(false);
+																											botonespostre.get(j).setVisible(false);
+																										}
+																										for (int k = 0; k < cambiopostre.size(); k++) {
+																											cambiopostre.get(k).setEnabled(false);
+																											cambiopostre.get(k).setVisible(false);
+																										}
+																										enQuePlato++;
 																										Paneles panel1b =  new Paneles(){
 																											public void paintComponent(Graphics g) {
 																										        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
@@ -1175,7 +1205,7 @@ public class Principal extends JFrame {
 																													JButton pp2b = new JButton(); //Creamos el boton del plato
 																													//CrearBoton(pp2);
 																													pp2b.setBounds(sb, pb,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-																													pp2b.setText("prueba"+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+																													pp2b.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																													botonesbebida.add(pp2b); //añadimos el boton al arraylist de botones
 																													sb=320+sb; //Incrementamos s para que el boton siguiente este a la izquierda
 																													panelesbebida.get(x).add(pp2b); //añadimos el boton al panel correspondiente
