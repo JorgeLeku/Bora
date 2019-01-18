@@ -104,7 +104,7 @@ public class Principal extends JFrame {
        Paneles panelRecogerDomicilio = new Paneles();
        Paneles panelRecogida = new Paneles();
        Paneles panelDomicilio = new Paneles ();
-
+    
        Paneles panelEntrantes = new Paneles();
        Paneles panelPrimero = new Paneles();
        Paneles panelSegundo = new Paneles();
@@ -244,18 +244,7 @@ public class Principal extends JFrame {
 		    
       };
        
-       bPanelMesa = new JButton() {
-    	   public void paintComponent(Graphics g) {
-    		   
-		        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
-		        Graphics bufferGraphics = bufferImage.getGraphics();
-		        bufferGraphics.drawImage(imagenBotonBlancoPeq.getImage(), 0, 0, 300, 75, null);
-		        g.drawImage(bufferImage, 0, 0, this);
-
-		        }
-		    
-       };
-              
+       bPanelMesa = new Botones();
        //Objetos panelPrimerPlato
        lPrimerPlato = new JLabel ();
        lPrimerPlato.setFont(titulos);
@@ -406,6 +395,8 @@ public class Principal extends JFrame {
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
+       panelRecogida.add(bPanelMesa);
+       panelReserva.add(bPanelMesa);
        lNombreC.setBounds(240, 200, 400, 40);
        lApellidoC.setBounds(710, 200, 400, 40);    
        tNombreReserva.setBounds(130, 250, 300, 40);
@@ -710,7 +701,14 @@ public class Principal extends JFrame {
 					int se= 40;
 					
 					int pe = 185;
-					CambiarPanel(panelReserva, panelesentrantes.get(0));
+					if (panelReserva.isEnabled()==true) {
+						CambiarPanel(panelReserva, panelesentrantes.get(0));
+					} else if (panelDomicilio.isEnabled()==true) {
+						CambiarPanel(panelDomicilio, panelesentrantes.get(0));
+					} else if (panelRecogida.isEnabled()==true) {
+						CambiarPanel(panelRecogida, panelesentrantes.get(0));
+					}
+					
 					for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 						Paneles panelesMultent = new Paneles();  //creamos mas paneles
 						JLabel lentrantes = new JLabel();
@@ -939,7 +937,7 @@ public class Principal extends JFrame {
 																			panelessegundo.get(x).add(pp2s); //añadimos el boton al panel correspondiente
 																			panelessegundo.get(x).updateUI(); //actualizamos el panel para que muestre los botones
 																			pp2s.setName("prueba"+x+i+o);	//nombramos el boton para saber cual es (sacar de la bd)
-																			panel1.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
+																			panel1s.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
 																			pp2s.addActionListener(new ActionListener () {
 						
 																		
@@ -1381,14 +1379,14 @@ public class Principal extends JFrame {
        panelAdmin.add(bPanelQuitBoton);
        panelAdmin.add(bPanelAddBoton);
        
-       panelReserva.add(bPanelMesa);
+      
        panelReserva.add(lApellidoC);
        panelReserva.add(lNombreC);
        panelReserva.add(lHoraR);
        panelReserva.add(tApellidosReserva);
        panelReserva.add(tNombreReserva);
        panelReserva.add(cHoraReserva);
-       
+       panelReserva.updateUI();
        panelRecogerDomicilio.add(bPanelRecogida);
 
        panelRecogerDomicilio.add(bPanelDomicilio);       
@@ -1407,7 +1405,8 @@ public class Principal extends JFrame {
        panelDomicilio.add(tLetra);
        panelDomicilio.add(tNombre);
        panelDomicilio.add(tApellido);
-       panelDomicilio.add(bConfirmarDomicilio);
+       panelDomicilio.add(bPanelMesa);
+       panelDomicilio.updateUI();
        
        panelRecogida.add(lHora);
        panelRecogida.add(tHora);
@@ -1417,14 +1416,15 @@ public class Principal extends JFrame {
        panelRecogida.add(tNombre2);
        panelRecogida.add(lApellido2);
        panelRecogida.add(tApellido2);
-       panelRecogida.add(bConfirmarRecogida);
-
+       
+       panelRecogida.updateUI();
        
        panelMesa.add(bPrimerPlato);
        
        panelPruebas.add(bAb);
        
        panelPrimero.add(lPrimerPlato);
+       
        panelAddBoton.add(cbb1);
        panelAddBoton.add(tNombreProd);
        panelAddBoton.add(cbt2);
@@ -1488,6 +1488,8 @@ public class Principal extends JFrame {
 		h.setVisible(true);
 		h.setEnabled(true);
 		h.add(bReturn);
+		
+		
 	}
 
 	public void CrearPanel(JPanel g) {
