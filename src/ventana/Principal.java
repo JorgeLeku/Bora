@@ -26,6 +26,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -47,7 +48,7 @@ public class Principal extends JFrame {
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
-	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
@@ -186,7 +187,6 @@ public class Principal extends JFrame {
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
        lSelImagen = new JLabel();
-       lDirImg = new JLabel();
        lTipo = new JLabel();
        cOrden = new JComboBox();
        
@@ -500,9 +500,7 @@ public class Principal extends JFrame {
        cOrden.addItem("4");
        cOrden.addItem("5");
        cOrden.setBounds(705, 300, 200, 50);
-      
-       lDirImg.setBounds(600, 430, 400, 40);
-       lDirImg.setFont(newFont);
+ 
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -708,6 +706,7 @@ public class Principal extends JFrame {
    				panelQuitBoton.add(bReturn);
    				bpquitboton=true;
    			}*/
+   		
    			
    		}
        	   
@@ -728,7 +727,36 @@ public class Principal extends JFrame {
       		}
           	   
          });
-       
+       bQuitBebida.addActionListener(new ActionListener () {
+
+     		@Override
+     		public void actionPerformed(ActionEvent e) {
+     			// TODO Auto-generated method stub
+     			/*if (poner que si existe un plato se haga esto) {
+				JOptionPane.showMessageDialog(null, "Bebida Eliminada");
+				} else {
+				JOptionPane.showMessageDialog(null, "Bebida no eliminada");
+				}*/
+     			JOptionPane.showMessageDialog(null, "Bebida eliminada");
+     			
+     		}
+         	   
+        });
+       bQuitComida.addActionListener(new ActionListener () {
+
+    		@Override
+    		public void actionPerformed(ActionEvent e) {
+    			// TODO Auto-generated method stub
+    			/*if (poner que si existe una bebida se haga esto) {
+				JOptionPane.showMessageDialog(null, "Plato eliminado");
+				} else {
+				JOptionPane.showMessageDialog(null, "Plato no eliminado");
+				}*/
+    			JOptionPane.showMessageDialog(null, "Plato eliminado");
+    			
+    		}
+        	   
+       });
        bPanelAddBoton.addActionListener(new ActionListener () {
 
    		@Override
@@ -1481,30 +1509,8 @@ public class Principal extends JFrame {
 			
 		}
 	});
-       bSelImg.addActionListener(new ActionListener() {
+      
 
-    	   //  Lo que sucede al pulsar el boton
-    	 public void actionPerformed(ActionEvent ae) {
-
-    	 //Creamos selector de aperture
-
-    	 JFileChooser fileChooser = new JFileChooser();
-
-    	 int returnValue = fileChooser.showOpenDialog(null);// Nos retorna un entero
-
-    	 // Si apretamos en aceptar un archive ocurrira esto
-
-    	 if (returnValue == JFileChooser.APPROVE_OPTION) {
-
-    	 File selectedFile = fileChooser.getSelectedFile();
-
-    	 System.out.println(selectedFile.getName());
-    	 lDirImg.setText(selectedFile.getAbsolutePath());
-    	 }
-
-       }
-
-    });
        
        cbb1.addActionListener(new ActionListener() {
 		
@@ -1512,7 +1518,7 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			System.out.println(tNombreProd.getText());
-			System.out.println(lDirImg.getText());
+			
 		}
 	});
        JButton pene = new JButton();
@@ -1592,8 +1598,6 @@ public class Principal extends JFrame {
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
        panelAddBoton.add(lSelImagen);
-       panelAddBoton.add(bSelImg);
-       panelAddBoton.add(lDirImg);
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
