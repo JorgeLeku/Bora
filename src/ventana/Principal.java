@@ -847,7 +847,7 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
-		
+		int pene=3;
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -889,7 +889,7 @@ public class Principal extends JFrame {
 					
 					
 					
-					
+					//(int)Math.ceil((double)nombreentr.size()/9)
 					
 					
 					int se= 40;
@@ -903,7 +903,7 @@ public class Principal extends JFrame {
 						CambiarPanel(panelRecogida, panelesentrantes.get(0));
 					}
 					
-					for (int x = 0; x <(int)Math.ceil((double)nombreentr.size()/9); x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
+					for (int x = 0; x <pene; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 						Paneles panelesMultent = new Paneles();  //creamos mas paneles
 						JLabel lentrantes = new JLabel();
 						lentrantes.setBounds(400, 50, 1000, 40);
@@ -921,9 +921,12 @@ public class Principal extends JFrame {
 						botonSiguientePanelentrantes.setBounds(390, 575, 300, 75); //La posicion del boton
 						
 						botonSiguientePanelentrantes.setName("bSiguiente"+x);  //Ponemos nombre al boton
-						cambioentrantes.add(botonSiguientePanelentrantes);  //Lo añadimos al array de botones
-						panelesentrantes.get(x).add(botonSiguientePanelentrantes); //añadimos el boton para cambiar de panel a cada panel
-						panelesentrantes.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+						if (pene-(x+1)>0) {
+							cambioentrantes.add(botonSiguientePanelentrantes);  //Lo añadimos al array de botones
+							panelesentrantes.get(x).add(cambioentrantes.get(x)); //añadimos el boton para cambiar de panel a cada panel
+							panelesentrantes.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+						}
+					
 						
 						botonSiguientePanelentrantes.addActionListener(new ActionListener() {
 					
@@ -935,18 +938,13 @@ public class Principal extends JFrame {
 								
 								pruebae++; //Incrementamos prueba para que se pueda pasar de panel
 								enQuePanel = pruebae;
-								panelesentrantes.get(pruebae).add(botonSiguientePanelentrantes); //Añadimos el boton al panel es necesario repetir??(mirar arriba)
-								panelesentrantes.get(pruebae).updateUI(); //Actualizamos el panel para que aparezca el boton, es realmente necesario repetirlo??
 								
 							}
 							
 						});
-						if (x==0) {  //si es el primer panel se añade un boton a panel1 para pasar al panel siguiente
+						if (x==0&&pene-(x+1)>0) {  //si es el primer panel se añade un boton a panel1 para pasar al panel siguiente
 							panel1e.add(cambioentrantes.get(0)); 
-						} else if (x>0) {//si no es el primer panel ponemos un boton al panel el cual sirva para pasar al siguiente panel
-							//he quitadp panelesMult.getName();
-							panelesMultent.add(cambioentrantes.get(x));
-						}
+						} 
 						for (int i = 0; i < 3; i++) {//son filas columnas de botones por panel
 							
 				
