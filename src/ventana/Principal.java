@@ -1008,7 +1008,7 @@ public class Principal extends JFrame {
 																		@Override
 																		public void actionPerformed(ActionEvent arg0) {
 																			// TODO Auto-generated method stub
-																			
+																			//hahahah
 																			CambiarPanel(panelessegundo.get(pruebas), panelessegundo.get(pruebas+1)); //Cambiamos de paneles prueba elige el numero de panel
 																			
 																			pruebas++; //Incrementamos prueba para que se pueda pasar de panel
