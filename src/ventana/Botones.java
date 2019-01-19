@@ -68,8 +68,8 @@ public class Botones extends JButton{
 		
 		bufferGraphics.drawImage(imagenInicio.getImage(), 0, 0, 300, 75, null);
 		bufferGraphics.setFont(newFont);
-		bufferGraphics.setColor(Color.GRAY);
-		bufferGraphics.drawString(nombre, 100, 40);
+		bufferGraphics.setColor(Color.BLACK);
+		bufferGraphics.drawString(nombre, 60, 40);
 		
 		g.drawImage(bufferImage, 0, 0, this);
 

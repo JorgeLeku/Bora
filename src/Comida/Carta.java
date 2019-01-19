@@ -225,7 +225,7 @@ public class Carta {
 		
 	
 	
-	public void cargarCarta() {
+	public boolean cargarCarta() {
 		String sentSQL= "";
 		Connection conn = BD.initBD();
 		try {
@@ -233,6 +233,7 @@ public class Carta {
 			//cargamos las bebidas y las guardamos
 			sentSQL = "select * from bebida";
 			ResultSet rs = st.executeQuery(sentSQL);
+			boolean res = rs.wasNull();
 			while(rs.next()) {//mientras el rs tenga elementos los almacenamos 
 				//creamos una nueva bebida vacia y le colocamos los valores correspondientes
 				Bebida b = new Bebida();
@@ -240,8 +241,8 @@ public class Carta {
 				b.nombre = rs.getString("nombre");
 				b.precio = rs.getDouble("precio");
 				b.alcoholica = rs.getBoolean("alcoholica");
-				bebidas.add(b);
-				}
+				this.addBebida(b);
+			}
 			
 			//cargamos las comidas
 			sentSQL = "select * from comida";
@@ -254,10 +255,12 @@ public class Carta {
 				c.numeroPlato = rs.getInt("numeroPlato");
 				this.addComida(c);
 			}
+			return res;//nos devuelve true si esta vacio
 
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+			return true;
 		}
 		
 		
