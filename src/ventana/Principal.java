@@ -42,10 +42,10 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	Boolean bpAdmin = false,bpquitboton=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-	JButton bPanelRecogerDomicilio, bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato, bPanelRecogida, bPanelDomicilio, botonPruebas, bAb, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
-	BotonesGrandes bPanelQuitBebida, bPanelQuitComida, bPanelQuitBoton, bPanelAddBoton;
+	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, lDirImg, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
@@ -126,8 +126,6 @@ public class Principal extends JFrame {
        
        Paneles panelFactura = new Paneles();
        
-       Paneles panelPruebas = new Paneles ();//este panel sera eliminado en el futuro
-       
        CrearPanel(panelBienvenida);
        CrearPanel(panelInicioSesion);
        //CrearPanel(panelInicio);
@@ -152,8 +150,6 @@ public class Principal extends JFrame {
        CrearPanel(panelQuitBebida);
        
        CrearPanel(panelFactura);
-       
-       CrearPanel(panelPruebas);
 
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
@@ -179,7 +175,7 @@ public class Principal extends JFrame {
        bPanelAdmin = new JButton();
        
        //Objetos panelAdmin
-       bPanelQuitBoton = new BotonesGrandes();
+       bPanelBebidaComida = new BotonesGrandes();
        bPanelAddBoton = new BotonesGrandes();
        
        //Objetos panelAddBoton
@@ -215,8 +211,8 @@ public class Principal extends JFrame {
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
 
        //Objetos PanelRecogerDomicilio
-       bPanelRecogida = new JButton();
-       bPanelDomicilio = new JButton();
+       bPanelRecogida = new BotonesGrandes();
+       bPanelDomicilio = new BotonesGrandes();
        
 
        //Objetos panelRecogida
@@ -281,13 +277,13 @@ public class Principal extends JFrame {
        lPrimerPlato.setSize(50, 50);
        lPrimerPlato.setText("Primer Plato");
        
-       bAb = new JButton(imagenbAb);
+
       
        cbb1 = new JButton(imagenbAb);
 
        cbb1.setRolloverIcon(imagenbAbbn);
        bReturn.setRolloverIcon(imagenbAtrbn);
-       bAb.setRolloverIcon(imagenbAbbn);
+
        bPanelRecogerDomicilio.setRolloverIcon(imagenp1b1bn);
        bPanelReserva.setRolloverIcon(imagenp1b2bn);
 
@@ -317,8 +313,8 @@ public class Principal extends JFrame {
        CrearBoton(bPanelReserva);
        //CrearBoton(bPanelAdmin);
        
-       CrearBoton(bPanelQuitBoton);
-       bPanelQuitBoton.setNombre("Eliminar Plato");
+       CrearBoton(bPanelBebidaComida);
+       bPanelBebidaComida.setNombre("Eliminar Plato");
        CrearBoton(bPanelAddBoton);
        bPanelAddBoton.setNombre("Añadir Plato");
        
@@ -335,12 +331,11 @@ public class Principal extends JFrame {
 
        //PanelRecogerDomicilio
        bPanelRecogida.setBounds(93, 185, 400, 350);
-       bPanelRecogida.setFont(newFont);
-       bPanelRecogida.setText("Recogida");
+       bPanelRecogida.setNombre("Recogida");
        
        bPanelDomicilio.setBounds(566, 185, 400, 350);
        bPanelDomicilio.setFont(newFont);
-       bPanelDomicilio.setText("Domicilio");
+       bPanelDomicilio.setNombre("Domicilio");
        
 
      //PANEL RECOGIDA LABEL Y TF
@@ -459,7 +454,7 @@ public class Principal extends JFrame {
       
       
       // CrearBoton(bPanelDomicilio);
-       CrearBoton(bAb);
+
        CrearBoton(bReturn);
        CrearBoton(cbb1);
        CrearBoton(bSelImg);
@@ -471,7 +466,7 @@ public class Principal extends JFrame {
      
              
       bPanelAddBoton.setBounds(93, 185, 400, 350);
-      bPanelQuitBoton.setBounds(566, 185, 400, 350);
+      bPanelBebidaComida.setBounds(566, 185, 400, 350);
 
        
        tNombreProd.setBounds(300, 250, 200, 40);
@@ -559,21 +554,11 @@ public class Principal extends JFrame {
        facTotal.setForeground(Color.white);
        facTotal.setText("€"); //LABEL para poner precio final
       
-       bAb.setBounds(500, 30, 80, 80);
        bReturn.setBounds(30, 30, 80, 80);
        cbb1.setBounds(500, 580, 80, 80);
        bSelImg.setBounds(250, 420, 300, 75);
 
 		
-       JLabel merluza = new JLabel ();
-       merluza.setFont(newFont);
-       merluza.setForeground(Color.white);
-       merluza.setText("<html><body>Ingredientes:  1  cogote  de  merluza  del  cantábrico,  sal  de  Añana  al  vino,  4  dientes  de  ajo,<br>aceite  de  oliva  virgen  extra,  vinagre  de  sidra,  1  pimienta  cayena,  1  manojo  de  perejil.</body></html>" );
-       merluza.setBounds(50, 450, 1080, 300);
-       merluza.setBorder(null);
-       merluza.setVisible(false);
-       merluza.setOpaque(false);
-       panelPruebas.add(merluza);
        
        frame.addKeyListener(new KeyListener() {
 		
@@ -581,7 +566,7 @@ public class Principal extends JFrame {
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelBienvenida, panelInicioSesion);
-			System.out.println("hola");
+			
 		}
 		
 		@Override
@@ -603,8 +588,8 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, panelInicio);
-   			System.out.println(carta.getBebidas().size());
-   			System.out.println(carta.getPostres().size());
+   			//System.out.println(carta.getBebidas().size());
+   			//System.out.println(carta.getPostres().size());
    		}
        	   
           });
@@ -623,10 +608,10 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelInicio, panelAdmin); 
-			/*if (bpAdmin == false) {
+			if (bpAdmin == false) {
 				panelAdmin.add(bReturn);
 				bpAdmin=true;
-			}*/
+			}
 			
 		}
     	   
@@ -638,10 +623,10 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelRecogerDomicilio); 
-				/*if (bprecogerdomicilio==false) {
+				if (bprecogerdomicilio==false) {
 					panelRecogerDomicilio.add(bReturn);
 					bprecogerdomicilio=true;
-				}*/
+				}
 				
 			}
 
@@ -653,12 +638,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
-				/*if (bprecogida==false) {
-					
+				if (bprecogida==false) {
+					panelRecogida.add(bPanelMesa);
 					panelRecogida.add(bReturn);
 					bprecogida=true;
-				}*/
-				panelRecogida.add(bPanelMesa);
+				}
+				
 			}
 
       });
@@ -669,12 +654,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-				/*if (bpdomicilio==false) {
-					
+				if (bpdomicilio==false) {
+					panelDomicilio.add(bPanelMesa);
 					panelDomicilio.add(bReturn);
 					bpdomicilio=true;
-				}*/
-				panelDomicilio.add(bPanelMesa);
+				}
+				
 			}
 
      }); 
@@ -685,19 +670,19 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
-				/*if (bpreserva==false) {
-					
+				if (bpreserva==false) {
+					panelReserva.add(bPanelMesa);
 					panelReserva.add(bReturn);
 					bpreserva=true;
-				}*/
-				panelReserva.add(bPanelMesa);
+				}
+				
 				
 			}
 
        });
        
        
-       bPanelQuitBoton.addActionListener(new ActionListener () {
+       bPanelBebidaComida.addActionListener(new ActionListener () {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -734,10 +719,11 @@ public class Principal extends JFrame {
       			// TODO Auto-generated method stub
       			CambiarPanel(panelBebidaComida, panelQuitComida);
       			
-      			/*if (bpquitboton==false) {
-      				panelQuitBoton.add(bReturn);
-      				bpquitboton=true;
-      			}*/
+      			if (bpquitbotonComida==false) {
+      				
+      				panelQuitComida.add(bReturn);
+      				bpquitbotonComida=true;
+      			}
       			
       		}
           	   
@@ -749,10 +735,11 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
-   			/*if (bpaddboton==false) {
+   			if (bpaddboton==false) {
    				panelAddBoton.add(bReturn);
+   				
    				bpaddboton=true;
-			}*/
+			}
    			
    		}
        	   
@@ -1444,40 +1431,7 @@ public class Principal extends JFrame {
 			}
        });
       
-       bAb.addMouseListener(new MouseListener () {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-				CambiarPanel(panelPruebas, panelAddBoton);
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-       });
+       
        bReturn.addMouseListener(new MouseListener() {
 		
 		@Override
@@ -1508,20 +1462,22 @@ public class Principal extends JFrame {
 		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
 			if (panelAddBoton.isEnabled()== true) {
-				CambiarPanel(panelAddBoton, panelAdmin);
+				CambiarPanelRetorno(panelAddBoton, panelAdmin);
 			} else if (panelQuitComida.isEnabled()== true) {
-				CambiarPanel(panelQuitComida, panelAdmin);
+				CambiarPanelRetorno(panelQuitComida, panelAdmin);
 			} else if (panelAdmin.isEnabled()== true) {
-				CambiarPanel(panelAdmin, panelInicio);
+				CambiarPanelRetorno(panelAdmin, panelInicio);
 			} else if (bPanelRecogerDomicilio.isEnabled()== true) {
-				CambiarPanel(panelRecogerDomicilio, panelInicio);
+				CambiarPanelRetorno(panelRecogerDomicilio, panelInicio);
 			} else if (panelReserva.isEnabled()== true) {
-				CambiarPanel(panelReserva, panelInicio);
+				CambiarPanelRetorno(panelReserva, panelInicio);
 			} else if (panelRecogida.isEnabled()== true) {
-				CambiarPanel(panelRecogida, panelRecogerDomicilio);
+				CambiarPanelRetorno(panelRecogida, panelRecogerDomicilio);
 			} else if (panelDomicilio.isEnabled()== true) {
-				CambiarPanel(panelDomicilio, panelRecogerDomicilio);
-			} 
+				CambiarPanelRetorno(panelDomicilio, panelRecogerDomicilio);
+			} else  {
+				System.out.println("No funchiona");
+			}
 			
 		}
 	});
@@ -1569,7 +1525,7 @@ public class Principal extends JFrame {
        
        panelInicio.add(bPanelAdmin);
        
-       panelAdmin.add(bPanelQuitBoton);
+       panelAdmin.add(bPanelBebidaComida);
        panelAdmin.add(bPanelAddBoton);
        
       
@@ -1628,8 +1584,6 @@ public class Principal extends JFrame {
        
        panelMesa.add(bPrimerPlato);
        
-       panelPruebas.add(bAb);
-       
        panelPrimero.add(lPrimerPlato);
        
        panelAddBoton.add(cbb1);
@@ -1686,8 +1640,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-       
-       frame.getContentPane().add(panelPruebas);
+
 	}
 	public void CrearBoton(JButton g) {
 
@@ -1701,19 +1654,28 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		/*for (Component cp : g.getComponents() ){
-	        cp.setEnabled(false);
-	        cp.setVisible(false);
-	 }
-		for (Component sp : h.getComponents() ){
-	        sp.setEnabled(true);
-	        sp.setVisible(true);
-	 }
 		
-			h.add(bReturn);
 		
-		*/
+			//h.add(bReturn);
+		
+		
 	}
+	public void CambiarPanelRetorno(JPanel g, JPanel h) {
+			g.setVisible(false);
+			g.setEnabled(false);
+			h.setVisible(true);
+			h.setEnabled(true);
+			
+			for (Component cp : g.getComponents() ){
+				cp.setEnabled(false);
+				cp.setVisible(false);
+			}
+			for (Component sp : h.getComponents() ){
+		        sp.setEnabled(true);
+		        sp.setVisible(true);
+			}
+	}
+	
 
 	public void CrearPanel(JPanel g) {
 		g.setLayout(null);
