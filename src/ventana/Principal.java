@@ -56,7 +56,7 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
-	int contbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botonesprimero;
 	//private List<JPanel> paneles;
 	//Pruebas2
@@ -789,7 +789,7 @@ public class Principal extends JFrame {
 			
 			
 		
-	
+       	
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
 		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
@@ -819,6 +819,7 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			nombrepostre.add(postre.getNombre());
 		}
+		
 		
 		
 		List<Double>preciobeb = new ArrayList<>();
@@ -891,7 +892,6 @@ public class Principal extends JFrame {
 					
 					
 					
-					
 					int se= 40;
 					
 					int pe = 185;
@@ -903,7 +903,7 @@ public class Principal extends JFrame {
 						CambiarPanel(panelRecogida, panelesentrantes.get(0));
 					}
 					
-					for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
+					for (int x = 0; x <(int)Math.ceil((double)nombreentr.size()/9); x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 						Paneles panelesMultent = new Paneles();  //creamos mas paneles
 						JLabel lentrantes = new JLabel();
 						lentrantes.setBounds(400, 50, 1000, 40);
@@ -1362,7 +1362,7 @@ public class Principal extends JFrame {
 																													//CrearBoton(pp2);
 																													
 																													pp2b.setBounds(sb, pb,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-																													pp2b.setText(nombrebeb.get(contbebida)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+																													pp2b.setText(nombrebeb.get(contcontbebida)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																													botonesbebida.add(pp2b); //añadimos el boton al arraylist de botones
 																													sb=320+sb; //Incrementamos s para que el boton siguiente este a la izquierda
 																													panelesbebida.get(x).add(pp2b); //añadimos el boton al panel correspondiente
