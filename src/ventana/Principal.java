@@ -60,7 +60,7 @@ public class Principal extends JFrame {
 	
 	int x = 1;
 	public Principal() {
-		//carta.cargarCarta();
+		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
 		 bReturn = new JButton (imagenbAtr);
 //	paneles = new ArrayList<>();
