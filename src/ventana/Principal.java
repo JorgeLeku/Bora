@@ -603,10 +603,10 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelInicio, panelAdmin); 
-			if (bpAdmin == false) {
+			/*if (bpAdmin == false) {
 				panelAdmin.add(bReturn);
 				bpAdmin=true;
-			}
+			}*/
 			
 		}
     	   
@@ -618,10 +618,10 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelRecogerDomicilio); 
-				if (bprecogerdomicilio==false) {
+				/*if (bprecogerdomicilio==false) {
 					panelRecogerDomicilio.add(bReturn);
 					bprecogerdomicilio=true;
-				}
+				}*/
 				
 			}
 
@@ -633,12 +633,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
-				if (bprecogida==false) {
-					panelRecogida.add(bPanelMesa);
+				/*if (bprecogida==false) {
+					
 					panelRecogida.add(bReturn);
 					bprecogida=true;
-				}
-				
+				}*/
+				panelRecogida.add(bPanelMesa);
 			}
 
       });
@@ -649,12 +649,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-				if (bpdomicilio==false) {
-					panelDomicilio.add(bPanelMesa);
+				/*if (bpdomicilio==false) {
+					
 					panelDomicilio.add(bReturn);
 					bpdomicilio=true;
-				}
-				
+				}*/
+				panelDomicilio.add(bPanelMesa);
 			}
 
      }); 
@@ -665,11 +665,12 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
-				if (bpreserva==false) {
-					panelReserva.add(bPanelMesa);
+				/*if (bpreserva==false) {
+					
 					panelReserva.add(bReturn);
 					bpreserva=true;
-				}
+				}*/
+				panelReserva.add(bPanelMesa);
 				
 			}
 
@@ -683,10 +684,10 @@ public class Principal extends JFrame {
 			// TODO Auto-generated method stub
 			CambiarPanel(panelAdmin, panelQuitBoton);
 			
-			if (bpquitboton==false) {
+			/*if (bpquitboton==false) {
 				panelQuitBoton.add(bReturn);
 				bpquitboton=true;
-			}
+			}*/
 			
 		}
     	   
@@ -698,10 +699,10 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
-   			if (bpaddboton==false) {
+   			/*if (bpaddboton==false) {
    				panelAddBoton.add(bReturn);
    				bpaddboton=true;
-			}
+			}*/
    			
    		}
        	   
@@ -711,18 +712,7 @@ public class Principal extends JFrame {
 		
 
 		
-			/*// TODO Auto-generated method stub
-			List <JPanel> paneles = new ArrayList <> ();
 			
-			paneles=Paneles.VentanaDinamicaa(panelPrimero);
-			for (int i = 0; i < paneles.size(); i++) {
-				System.out.println(paneles.get(i));
-			}
-			for (int i = 0; i < paneles.size(); i++) {
-				paneles.get(i).updateUI();
-				frame.getContentPane().add(paneles.get(i));
-				
-			}*/
 			
 			
 			
@@ -856,8 +846,13 @@ public class Principal extends JFrame {
 									public void actionPerformed(ActionEvent arg0) {
 										// TODO Auto-generated method stub
 										//me cago en dioooooooooooooooooooooososososoossos
+										enQuePanel=0;
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
+											for (int j = 0; j < panelesentrantes.size(); j++) {
+												panelesentrantes.get(j).setVisible(false);
+												panelesentrantes.get(j).setEnabled(false);
+											}
 											for (int j = 0; j < botonesentrantes.size(); j++) {
 												botonesentrantes.get(j).setEnabled(false);
 												botonesentrantes.get(j).setVisible(false);
@@ -875,7 +870,7 @@ public class Principal extends JFrame {
 											int spr= 40;
 											
 											int ppr = 185;
-											CambiarPanel(panelesentrantes.get(enQuePanel), panelesprimero.get(0));
+											
 											for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 												JLabel lprimero = new JLabel();
 												lprimero.setBounds(400, 50, 1000, 40);
@@ -953,6 +948,10 @@ public class Principal extends JFrame {
 																// TODO Auto-generated method stub
 																//me cago en dioooooooooooooooooooooososososoossos
 																//CambiarPanel(panelesprimero.get(enQuePanel), panelSegundo);
+																for (int j = 0; j < panelesprimero.size(); j++) {
+																	panelesprimero.get(j).setVisible(false);
+																	panelesprimero.get(j).setEnabled(false);
+																}
 																for (int j = 0; j < botonesprimero.size(); j++) {
 																	botonesprimero.get(j).setEnabled(false);
 																	botonesprimero.get(j).setVisible(false);
@@ -961,9 +960,9 @@ public class Principal extends JFrame {
 																	cambioprimero.get(k).setEnabled(false);
 																	cambioprimero.get(k).setVisible(false);
 																}
-																
+																enQuePanel=0;
 																enQuePlato++;
-															Paneles panel1s =  new Paneles(){
+																Paneles panel1s =  new Paneles(){
 																	public void paintComponent(Graphics g) {
 																        Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);
 																        Graphics bufferGraphics = bufferImage.getGraphics();
@@ -979,25 +978,18 @@ public class Principal extends JFrame {
 																frame.getContentPane().add(panel1s);
 																panelessegundo.get(0).updateUI();
 																
-																
-																
-																
-																
-																
-																
 																int ss= 40;
 																
 																int ps = 185;
-																CambiarPanel(panelesprimero.get(enQuePanel), panelessegundo.get(0));
+																
 																for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 																	Paneles panelesMultseg = new Paneles();  //creamos mas paneles
 																	JLabel lsegundo = new JLabel();
 																	lsegundo.setBounds(400, 50, 1000, 40);
-																	
-																       lsegundo.setFont(titulos);
-																       lsegundo.setForeground(Color.WHITE);
-																       lsegundo.setSize(500, 50);
-																       lsegundo.setText("Segundo plato");
+																    lsegundo.setFont(titulos);
+																    lsegundo.setForeground(Color.WHITE);
+																    lsegundo.setSize(500, 50);
+																    lsegundo.setText("Segundo plato");
 																	panelesMultseg.setName("panelesMult" + x); //le ponemos un nombre
 																	CrearPanel(panelesMultseg);  //Le damoslos datos basicos
 																	frame.getContentPane().add(panelesMultseg); //lo añadimos al frame
@@ -1055,6 +1047,11 @@ public class Principal extends JFrame {
 																				public void actionPerformed(ActionEvent arg0) {
 																					// TODO Auto-generated method stub
 																					//me cago en dioooooooooooooooooooooososososoossos
+																					enQuePanel=0;
+																					for (int j = 0; j < panelessegundo.size(); j++) {
+																						panelessegundo.get(j).setVisible(false);
+																						panelessegundo.get(j).setEnabled(false);
+																					}
 																					for (int j = 0; j < botonessegundo.size(); j++) {
 																						botonessegundo.get(j).setEnabled(false);
 																						botonessegundo.get(j).setVisible(false);
@@ -1079,13 +1076,6 @@ public class Principal extends JFrame {
 																					panelespostre.add(panel1p);
 																					frame.getContentPane().add(panel1p);
 																					panelespostre.get(0).updateUI();
-																					
-																					
-																					
-																					
-																					
-																					
-																					
 																					int sp= 40;
 																					
 																					int pp = 185;
@@ -1156,6 +1146,11 @@ public class Principal extends JFrame {
 																									public void actionPerformed(ActionEvent arg0) {
 																										// TODO Auto-generated method stub
 																										//me cago en dioooooooooooooooooooooososososoossos
+																										enQuePanel=0;
+																										for (int j = 0; j < panelespostre.size(); j++) {
+																											panelespostre.get(j).setEnabled(false);
+																											panelespostre.get(j).setVisible(false);
+																										}
 																										for (int j = 0; j < botonespostre.size(); j++) {
 																											botonespostre.get(j).setEnabled(false);
 																											botonespostre.get(j).setVisible(false);
@@ -1190,7 +1185,7 @@ public class Principal extends JFrame {
 																										int sb= 40;
 																										
 																										int pb = 185;
-																										CambiarPanel(panelespostre.get(enQuePanel), panelesbebida.get(0));
+																										
 																										for (int x = 0; x <40 ; x++) { //creamos 40 paneles (eso tiene que cambiar con la bd)
 																											Paneles panelesMultbeb = new Paneles();  //creamos mas paneles
 																											JLabel lbebida = new JLabel();
@@ -1220,7 +1215,6 @@ public class Principal extends JFrame {
 																													// TODO Auto-generated method stub
 																													
 																													CambiarPanel(panelesbebida.get(pruebab), panelesbebida.get(pruebab+1)); //Cambiamos de paneles prueba elige el numero de panel
-																													
 																													pruebab++; //Incrementamos prueba para que se pueda pasar de panel
 																													enQuePanel = pruebab;
 																													panelesbebida.get(pruebab).add(botonSiguientePanelbebida); //Añadimos el boton al panel es necesario repetir??(mirar arriba)
@@ -1242,6 +1236,7 @@ public class Principal extends JFrame {
 																													
 																													JButton pp2b = new JButton(); //Creamos el boton del plato
 																													//CrearBoton(pp2);
+																													
 																													pp2b.setBounds(sb, pb,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																													pp2b.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																													botonesbebida.add(pp2b); //añadimos el boton al arraylist de botones
@@ -1257,6 +1252,19 @@ public class Principal extends JFrame {
 																														public void actionPerformed(ActionEvent arg0) {
 																															// TODO Auto-generated method stub
 																															//me cago en dioooooooooooooooooooooososososoossos
+																															for (int j = 0; j < panelesbebida.size(); j++) {
+																																panelesbebida.get(j).setVisible(false);
+																																panelesbebida.get(j).setEnabled(false);
+																															}
+																															for (int j = 0; j < botonesbebida.size(); j++) {
+																																botonesbebida.get(j).setEnabled(false);
+																																botonesbebida.get(j).setVisible(false);
+																															}
+																															for (int k = 0; k < cambiobebida.size(); k++) {
+																																cambiobebida.get(k).setEnabled(false);
+																																cambiobebida.get(k).setVisible(false);
+																															}
+																															enQuePanel=0;
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
 																															
 																														}
@@ -1275,6 +1283,7 @@ public class Principal extends JFrame {
 																											sb=40;//iniciamos la columna de nuevo
 																											pb=185; //iniciamos
 																										}
+																										CambiarPanel(panelespostre.get(enQuePanel), panelesbebida.get(0));
 																										for (int i = 0; i < botonesbebida.size(); i++) {//imprimimos los datos de los botones que hemos creado
 																											System.out.println(botonesbebida.get(i));
 																											
@@ -1297,6 +1306,7 @@ public class Principal extends JFrame {
 																						sp=40;//iniciamos la columna de nuevo
 																						pp=185; //iniciamos
 																					}
+																					CambiarPanel(panelessegundo.get(enQuePanel), panelespostre.get(0));
 																					for (int i = 0; i < botonessegundo.size(); i++) {//imprimimos los datos de los botones que hemos creado
 																						System.out.println(botonessegundo.get(i));
 																						
@@ -1315,6 +1325,7 @@ public class Principal extends JFrame {
 																	ss=40;//iniciamos la columna de nuevo
 																	ps=185; //iniciamos
 																}
+																CambiarPanel(panelesprimero.get(enQuePanel), panelessegundo.get(0));
 																for (int i = 0; i < botonessegundo.size(); i++) {//imprimimos los datos de los botones que hemos creado
 																	System.out.println(botonessegundo.get(i));
 																	
@@ -1335,6 +1346,7 @@ public class Principal extends JFrame {
 												spr=40;//iniciamos la columna de nuevo
 												ppr=185; //iniciamos
 											}
+											CambiarPanel(panelesentrantes.get(enQuePanel), panelesprimero.get(0));
 											for (int i = 0; i < botonesprimero.size(); i++) {//imprimimos los datos de los botones que hemos creado
 												System.out.println(botonesprimero.get(i));
 												
@@ -1630,18 +1642,18 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		for (Component cp : g.getComponents() ){
+		/*for (Component cp : g.getComponents() ){
 	        cp.setEnabled(false);
 	        cp.setVisible(false);
 	 }
-		for (Component cp : h.getComponents() ){
-	        cp.setEnabled(true);
-	        cp.setVisible(true);
+		for (Component sp : h.getComponents() ){
+	        sp.setEnabled(true);
+	        sp.setVisible(true);
 	 }
 		
-			g.add(bReturn);
+			h.add(bReturn);
 		
-		
+		*/
 	}
 
 	public void CrearPanel(JPanel g) {
