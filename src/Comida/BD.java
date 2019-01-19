@@ -20,7 +20,7 @@ import com.sun.jndi.toolkit.url.Uri;
 
 public class BD {
 	private static Exception lastError = null;  // Información de último error SQL ocurrido
-	private static final String HOST = "ec2-54-247-74-131.eu-west-1.compute.amazonaws.com";
+	private static final String HOST = "ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/dchj8qn2eclus4";
 	private static final String USERNAME= "cozwxagqcksbyh";
 	private static final String PASSWORD ="fe8cbfe6ece6701368e303cdb2f46cd77fb4abdc30e7e7de2ae7bc7edbf759b3" ;
 	
@@ -31,7 +31,8 @@ public class BD {
 	public static Connection initBD() {
 		  try {
 			Class.forName("org.postgresql.Driver");//conectamos con el jdbc de postgreSQL
-		    Connection con = DriverManager.getConnection("jdbc:postgres://"+HOST +"?sslmode=require",USERNAME,PASSWORD);
+		
+		    Connection con = DriverManager.getConnection("jdbc:postgresql://"+ HOST +"?sslmode=require",USERNAME,PASSWORD);
 			log(Level.INFO, "base de datos conectada",null );		
 		   return con;
 		  } catch (ClassNotFoundException | SQLException  e) {
