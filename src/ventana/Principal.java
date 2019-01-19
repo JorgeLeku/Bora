@@ -18,7 +18,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -53,7 +56,7 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
-	int enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int contbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	private List<JButton> botonesprimero;
 	//private List<JPanel> paneles;
 	//Pruebas2
@@ -579,6 +582,10 @@ public class Principal extends JFrame {
 			
 		}
 	});
+      
+       
+		
+		
        
        bIniciar.addActionListener(new ActionListener () {
 
@@ -586,8 +593,8 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, panelInicio);
-   			//System.out.println(carta.getBebidas().size());
-   			//System.out.println(carta.getPostres().size());
+   			
+   			
    		}
        	   
           });
@@ -678,8 +685,7 @@ public class Principal extends JFrame {
 			}
 
        });
-       
-       
+      
        bPanelBebidaComida.addActionListener(new ActionListener () {
 
 		@Override
@@ -691,6 +697,7 @@ public class Principal extends JFrame {
 				panelQuitBoton.add(bReturn);
 				bpquitboton=true;
 			}*/
+			//carta.getEntrantes()
 			
 		}
     	   
@@ -787,6 +794,58 @@ public class Principal extends JFrame {
 		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
+		List<String>nombrebeb = new ArrayList<>();
+		
+		for (Bebida bebida : carta.getBebidas()) {
+			nombrebeb.add(bebida.getNombre());
+		}
+		List<String>nombreentr = new ArrayList<>();
+		
+		for (Comida entrantes : carta.getEntrantes()) {
+			nombreentr.add(entrantes.getNombre());
+		}
+		List<String>nombreprimero = new ArrayList<>();
+		
+		for (Comida primero : carta.getPrimeros()) {
+			nombreprimero.add(primero.getNombre());
+		}
+		List<String>nombresegundo = new ArrayList<>();
+		
+		for (Comida segundo : carta.getSegundos()) {
+			nombresegundo.add(segundo.getNombre());
+		}
+		List<String>nombrepostre = new ArrayList<>();
+		
+		for (Comida postre : carta.getPostres()) {
+			nombrepostre.add(postre.getNombre());
+		}
+		
+		
+		List<Double>preciobeb = new ArrayList<>();
+		
+		for (Bebida bebida : carta.getBebidas()) {
+			preciobeb.add(bebida.getPrecio());
+		}
+		List<Double>precioentr = new ArrayList<>();
+		
+		for (Comida entrantes : carta.getEntrantes()) {
+			precioentr.add(entrantes.getPrecio());
+		}
+		List<Double>precioprimero = new ArrayList<>();
+		
+		for (Comida primero : carta.getPrimeros()) {
+			precioprimero.add(primero.getPrecio());
+		}
+		List<Double>preciosegundo = new ArrayList<>();
+		
+		for (Comida segundo : carta.getSegundos()) {
+			preciosegundo.add(segundo.getPrecio());
+		}
+		List<Double>preciopostre = new ArrayList<>();
+		
+		for (Comida postre : carta.getPostres()) {
+			preciopostre.add(postre.getPrecio());
+		}
 		
 		
 		botonesentrantes = new ArrayList<>();
@@ -1303,7 +1362,7 @@ public class Principal extends JFrame {
 																													//CrearBoton(pp2);
 																													
 																													pp2b.setBounds(sb, pb,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
-																													pp2b.setText("prueba"+enQuePlato+x+i+o); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
+																													pp2b.setText(nombrebeb.get(contbebida)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																													botonesbebida.add(pp2b); //añadimos el boton al arraylist de botones
 																													sb=320+sb; //Incrementamos s para que el boton siguiente este a la izquierda
 																													panelesbebida.get(x).add(pp2b); //añadimos el boton al panel correspondiente
@@ -1521,10 +1580,8 @@ public class Principal extends JFrame {
 			
 		}
 	});
-       JButton pene = new JButton();
-       pene.setBounds(200, 200, 200, 200);
-       pene.setText("vadsfsa");
-       panelSegundo.add(pene);//esto se quita
+      
+  
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);

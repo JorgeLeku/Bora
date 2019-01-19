@@ -3839,3 +3839,751 @@
   <message>base de datos conectada</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:36:52</date>
+  <millis>1547915812502</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en conexión de base de datos </message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: El intento de conexión falló.</message>
+    <frame>
+      <class>org.postgresql.core.v3.ConnectionFactoryImpl</class>
+      <method>openConnectionImpl</method>
+      <line>292</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.ConnectionFactory</class>
+      <method>openConnection</method>
+      <line>49</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>195</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>makeConnection</method>
+      <line>454</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>connect</method>
+      <line>256</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>initBD</method>
+      <line>35</line>
+    </frame>
+    <frame>
+      <class>Comida.Carta</class>
+      <method>cargarCarta</method>
+      <line>230</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal</class>
+      <method>&lt;init&gt;</method>
+      <line>63</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$21</class>
+      <method>run</method>
+      <line>1700</line>
+    </frame>
+    <frame>
+      <class>java.awt.event.InvocationEvent</class>
+      <method>dispatch</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:36:59</date>
+  <millis>1547915819375</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en conexión de base de datos </message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: El intento de conexión falló.</message>
+    <frame>
+      <class>org.postgresql.core.v3.ConnectionFactoryImpl</class>
+      <method>openConnectionImpl</method>
+      <line>292</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.ConnectionFactory</class>
+      <method>openConnection</method>
+      <line>49</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>195</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>makeConnection</method>
+      <line>454</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>connect</method>
+      <line>256</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>initBD</method>
+      <line>35</line>
+    </frame>
+    <frame>
+      <class>Comida.Carta</class>
+      <method>cargarCarta</method>
+      <line>230</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal</class>
+      <method>&lt;init&gt;</method>
+      <line>63</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$21</class>
+      <method>run</method>
+      <line>1700</line>
+    </frame>
+    <frame>
+      <class>java.awt.event.InvocationEvent</class>
+      <method>dispatch</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:37:26</date>
+  <millis>1547915846615</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en conexión de base de datos </message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: El intento de conexión falló.</message>
+    <frame>
+      <class>org.postgresql.core.v3.ConnectionFactoryImpl</class>
+      <method>openConnectionImpl</method>
+      <line>292</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.ConnectionFactory</class>
+      <method>openConnection</method>
+      <line>49</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>195</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>makeConnection</method>
+      <line>454</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>connect</method>
+      <line>256</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>initBD</method>
+      <line>35</line>
+    </frame>
+    <frame>
+      <class>Comida.Carta</class>
+      <method>cargarCarta</method>
+      <line>230</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal</class>
+      <method>&lt;init&gt;</method>
+      <line>63</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$21</class>
+      <method>run</method>
+      <line>1700</line>
+    </frame>
+    <frame>
+      <class>java.awt.event.InvocationEvent</class>
+      <method>dispatch</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:37:33</date>
+  <millis>1547915853127</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en conexión de base de datos </message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: El intento de conexión falló.</message>
+    <frame>
+      <class>org.postgresql.core.v3.ConnectionFactoryImpl</class>
+      <method>openConnectionImpl</method>
+      <line>292</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.ConnectionFactory</class>
+      <method>openConnection</method>
+      <line>49</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>195</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>makeConnection</method>
+      <line>454</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.Driver</class>
+      <method>connect</method>
+      <line>256</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>initBD</method>
+      <line>35</line>
+    </frame>
+    <frame>
+      <class>Comida.Carta</class>
+      <method>cargarCarta</method>
+      <line>230</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal</class>
+      <method>&lt;init&gt;</method>
+      <line>63</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$21</class>
+      <method>run</method>
+      <line>1700</line>
+    </frame>
+    <frame>
+      <class>java.awt.event.InvocationEvent</class>
+      <method>dispatch</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:38:00</date>
+  <millis>1547915880608</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:38:31</date>
+  <millis>1547915911162</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:38:49</date>
+  <millis>1547915929253</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:51:27</date>
+  <millis>1547916687528</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T17:52:46</date>
+  <millis>1547916766499</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:00:53</date>
+  <millis>1547917253443</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:03:11</date>
+  <millis>1547917391032</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:05:10</date>
+  <millis>1547917510756</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:12:37</date>
+  <millis>1547917957351</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:16:00</date>
+  <millis>1547918160114</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:19:32</date>
+  <millis>1547918372432</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:20:23</date>
+  <millis>1547918423671</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:21:21</date>
+  <millis>1547918481064</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:37:28</date>
+  <millis>1547919448572</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:38:17</date>
+  <millis>1547919497946</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-19T18:50:26</date>
+  <millis>1547920226347</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
