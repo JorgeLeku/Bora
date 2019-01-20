@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -11,7 +12,7 @@ public class Pedido {
 
 	//Propiedades
 	private int cod;
-	private Date fechaPedido, fechaEntrega;
+	private Time fechaPedido, fechaEntrega;
 	private double dineroGastado;
 	private String direccion;
 	private ArrayList<Alimentos> productos;
@@ -19,14 +20,14 @@ public class Pedido {
 	//Metodos
 	public Pedido() {
 		this.cod =0;
-		this.fechaPedido = new Date();
-		this.fechaEntrega =new Date();	
+		this.fechaPedido = new Time(System.currentTimeMillis());
+		this.fechaEntrega =new Time(System.currentTimeMillis());	
 		this.productos = null;
 		this.dineroGastado = 0;
 		this.direccion ="";
 	}
 	
-	public Pedido(int cod, Date fechaPedido, Date fechaEntrega,String direccion ,ArrayList<Alimentos> productos) {
+	public Pedido(int cod, Time fechaPedido, Time fechaEntrega,String direccion ,ArrayList<Alimentos> productos) {
 		super();
 		this.cod = cod;
 		this.fechaPedido = fechaPedido;
@@ -65,7 +66,7 @@ public class Pedido {
 		return fechaPedido;
 	}
 
-	public void setFechaPedido(Date fechaPedido) {
+	public void setFechaPedido(Time fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
 
@@ -73,7 +74,7 @@ public class Pedido {
 		return fechaEntrega;
 	}
 
-	public void setFechaEntrega(Date fechaEntrega) {
+	public void setFechaEntrega(Time fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
 
@@ -155,7 +156,7 @@ public class Pedido {
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
-		return cod + ", '" + fechaPedido + "', '" + fechaEntrega 
+		return cod + ", '" + fechaPedido.toString() + "', '" + fechaEntrega.toString()
 				+ "', '" + direccion +"'" ;
 	}
 
