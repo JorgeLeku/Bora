@@ -599,20 +599,22 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			CambiarPanel(panelBienvenida, panelInicioSesion);
+			if (panelBienvenida.isEnabled()) {
+				CambiarPanel(panelBienvenida, panelInicioSesion);
+			}
+			
 			
 		}
 		
 		@Override
 		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 	});
@@ -625,7 +627,6 @@ public class Principal extends JFrame {
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, panelInicio);
    			
    			
@@ -636,7 +637,6 @@ public class Principal extends JFrame {
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, panelInicio);
    		}
        	   
@@ -645,7 +645,6 @@ public class Principal extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
 			CambiarPanel(panelInicio, panelAdmin); 
 			if (bpAdmin == false) {
 				panelAdmin.add(bReturn);
@@ -660,7 +659,6 @@ public class Principal extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Base de datos
 				CambiarPanel(panelInicio, panelRecogerDomicilio); 
 				if (bprecogerdomicilio==false) {
 					panelRecogerDomicilio.add(bReturn);
