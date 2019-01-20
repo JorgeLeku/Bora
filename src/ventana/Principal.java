@@ -332,7 +332,7 @@ Boolean esnomentr=false;
        lUsuario.setFont(newFont);
        lUsuario.setText("Usuario");
        lUsuario.setBounds(250, 250, 200, 40);
-       //
+       
        lContraseña = new JLabel();
        lContraseña.setFont(newFont);
        lContraseña.setText("Contraseña");
@@ -1673,36 +1673,40 @@ Boolean esnomentr=false;
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			@SuppressWarnings("unused")
+			
 			Connection conn = BD.initBD();
-			@SuppressWarnings("unused")
+			
 			Statement st=null;
-			System.out.println(nombreentr);
+			
+			//System.out.println(nombreentr);
+			//System.out.println(tNombreProd.getText());
 			if (cOrden.getSelectedIndex()==0) {
 				for (int i = 0; i < nombreentr.size(); i++) {
-					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
-				
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					System.out.println("'Alubias', 13, 1");
+					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
-					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre o el formato del precio no es valido");
 				}
 				
 				
 			}else if (cOrden.getSelectedIndex()==1) {
 				
 				for (int i = 0; i < nombreprimero.size(); i++) {
-					if (nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1710,13 +1714,15 @@ Boolean esnomentr=false;
 				
 			}else if (cOrden.getSelectedIndex()==2) {
 				for (int i = 0; i < nombresegundo.size(); i++) {
-					if (nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {	
+						esnomentr=true;
+						System.out.println("que son igualesssss");
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1724,31 +1730,33 @@ Boolean esnomentr=false;
 				
 			}else if (cOrden.getSelectedIndex()==3) {
 				for (int i = 0; i < nombrepostre.size(); i++) {
-					if (nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}else if (cOrden.getSelectedIndex()==4) {
 				for (int i = 0; i < nombrebeb.size(); i++) {
-					if (nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}
-			
-			
+			tNombreProd.setText("");
+			esnomentr=false;
 		}
 	});
       
@@ -1892,6 +1900,14 @@ Boolean esnomentr=false;
 			//h.add(bReturn);
 		
 		
+	}
+	public static boolean esNumerico(String str)
+	{
+	    for (char c : str.toCharArray())
+	    {
+	        if (!Character.isDigit(c)&&c!=',') return false;
+	    }
+	    return true;
 	}
 	public void CambiarPanelRetorno(JPanel g, JPanel h) {
 			g.setVisible(false);
