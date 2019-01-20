@@ -117,12 +117,12 @@ public class Pedido {
 	 * inserta un pedido en la Base de datos
 	 * @param Coduser codigo del usuario que esta haciendo la transaccion
 	 */
-	public void insertPedido(String CodUser) {
+	public void insertPedido(String Username) {
 		Connection conn = BD.initBD();
 		String sentSQL = "";
 		try {
 			Statement st = conn.createStatement();
-			BD.Insert(st, this.toString()+ ", "+ CodUser  , "pedido");//se introduce el pedido con el codigo del usuario
+			BD.Insert(st, this.toString()+ ", "+ Username  , "pedido");//se introduce el pedido con el codigo del usuario
 			
 			//unir el pedido a las comidas y bebidas
 			for (Alimentos seleccionado : productos) {

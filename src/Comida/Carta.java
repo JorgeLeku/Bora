@@ -55,9 +55,8 @@ public class Carta {
 		this.segundos = new HashSet<>();
 		this.postres = new HashSet<>();
 		this.bebidas = new HashSet<>();
+		
 	}
-
-
 
 	public HashSet<Comida> getEntrantes() {
 		return entrantes;
