@@ -10,7 +10,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CartaTest {
+public class Testear {
 	static Connection conn = BD.initBD();
 	@Test
 	public void testCargarCarta() {
