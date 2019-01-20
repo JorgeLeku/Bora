@@ -250,6 +250,33 @@ public class BD {
 			return false;
 		}
 	}
+	/**
+	 * 
+	 * @param st Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
+	 * @param username nombre del usuario a comprobar
+	 * @param password contraseña de la cuenta
+	 * @param nombreTabla el nombre de la tabla a consultar("Administrador" si es un admin o "Usuario" si es un cliente)
+	 * @return devuelve si la contraseña corresponde o no al usuario
+	 */
+	public static boolean verificarPersona(Statement st ,String username, String password, String nombreTabla) {
+		String SentSQL = "select * from "+nombreTabla+ "where username= "+username;
+		try {
+			ResultSet rs = st.executeQuery(SentSQL);
+			log( Level.INFO, "BD\t" + SentSQL, null );
+				String contraseña = rs.getString("password");
+				if(contraseña == password) {
+					return true;
+				}else return false;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log( Level.SEVERE, "Error en BD\t" + SentSQL, e );
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+	}
 	
 	
 	/////////////////////////////////////////////////////////////////////

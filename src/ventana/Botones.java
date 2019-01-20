@@ -71,6 +71,7 @@ public class Botones extends JButton{
 		bufferGraphics.setColor(Color.BLACK);
 		bufferGraphics.drawString(nombre, 60, 40);
 		
+		
 		g.drawImage(bufferImage, 0, 0, this);
 
 	}
