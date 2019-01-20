@@ -8,12 +8,12 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -21,14 +21,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,12 +36,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import javax.swing.plaf.PanelUI;
+
 import javax.swing.text.NumberFormatter;
 
 import Comida.*;
 
-import sun.applet.AppletPanel;
+
 
 public class Principal extends JFrame {
 	/**
@@ -50,20 +50,33 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
 
+ 
 	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 
 	//Boolean esnomentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
+ 
+	Pedido pedido = new Pedido();
+	Usuario usuario = new Usuario();
+	//Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	//Boolean esnomentr=false;
+	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+ 
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
+ 
 
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 
 	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 
+ 
+	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	@SuppressWarnings("rawtypes")
+ 
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
@@ -73,7 +86,10 @@ public class Principal extends JFrame {
 
 	
 	int x = 1;
+	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
+		
+		
 		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
 		 bReturn = new JButton (imagenbAtr);
@@ -175,34 +191,34 @@ public class Principal extends JFrame {
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
-       List<Integer>idbeb = new ArrayList<>();
+       List<String>idbeb = new ArrayList<>();
 		
 		for (Bebida bebida : carta.getBebidas()) {
-			idbeb.add(bebida.getId());
+			idbeb.add(bebida.getNombre());
 		}
 		
-		List<Integer>identr = new ArrayList<>();
+		List<String>identr = new ArrayList<>();
 		
 		for (Comida entrantes : carta.getEntrantes()) {
-			identr.add(entrantes.getId());
+			identr.add(entrantes.getNombre());
 		}
 		
-		List<Integer>idprim = new ArrayList<>();
+		List<String>idprim = new ArrayList<>();
 		
 		for (Comida primero : carta.getPrimeros()) {
-			idprim.add(primero.getId());
+			idprim.add(primero.getNombre());
 		}
 		
-		List<Integer>idseg = new ArrayList<>();
+		List<String>idseg = new ArrayList<>();
 		
 		for (Comida segundo : carta.getSegundos()) {
-			idseg.add(segundo.getId());
+			idseg.add(segundo.getNombre());
 		}
 		
-		List<Integer>idpos = new ArrayList<>();
+		List<String>idpos = new ArrayList<>();
 		
 		for (Comida postre : carta.getPostres()) {
-			idpos.add(postre.getId());
+			idpos.add(postre.getNombre());
 		}
 		
 		
@@ -656,25 +672,27 @@ public class Principal extends JFrame {
        bSelImg.setBounds(250, 420, 300, 75);
 
 		
-       
+       //s
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			CambiarPanel(panelBienvenida, panelInicioSesion);
+			if (panelBienvenida.isEnabled()) {
+				CambiarPanel(panelBienvenida, panelInicioSesion);
+			}
+			
 			
 		}
 		
 		@Override
 		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 	});
@@ -687,9 +705,22 @@ public class Principal extends JFrame {
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, panelInicio);
    			
+   			Connection conn = BD.initBD();
+   			
+   			Statement st=null;
+   			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch bl	ock
+				e1.printStackTrace();
+			}
+   			
+   			if (BD.verificarPersona(st, "'leku'", "'eneko'", "usuario ")==true) {
+   				CambiarPanel(panelInicioSesion, panelInicio);
+			}else {
+				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+			}
    			
    		}
        	   
@@ -698,8 +729,12 @@ public class Principal extends JFrame {
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
+ 
    			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
+ 
+   			CambiarPanel(panelInicioSesion, panelInicio);
+ 
    		}
        	   
           });
@@ -716,7 +751,6 @@ public class Principal extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
 			CambiarPanel(panelInicio, panelAdmin); 
 			if (bpAdmin == false) {
 				panelAdmin.add(bReturn);
@@ -731,7 +765,6 @@ public class Principal extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Base de datos
 				CambiarPanel(panelInicio, panelRecogerDomicilio); 
 				if (bprecogerdomicilio==false) {
 					panelRecogerDomicilio.add(bReturn);
@@ -970,7 +1003,7 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
-		int pene=3;
+		
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -1572,13 +1605,14 @@ public class Principal extends JFrame {
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													
 																													String nombreElegido =pp2e.getNombre();
+																													@SuppressWarnings("unused")
 																													Comida entranteElegido = new Comida();
 																													for (Comida entrante : carta.entrantes) {
 																														if(entrante.getNombre().equals(nombreElegido)) {
 																															entranteElegido = entrante;
 																														}
 																													}
-																												
+																												//mikel
 																										    	}
 																											
 																												pb=pb+100;//aumentamos la y de los botones
@@ -1743,33 +1777,47 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			Connection conn = BD.initBD();
-			Statement st=null;
 			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			
+			//System.out.println(nombreentr);
+			//System.out.println(tNombreProd.getText());
 			if (cOrden.getSelectedIndex()==0) {
 				for (int i = 0; i < nombreentr.size(); i++) {
-					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
-				
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
+					System.out.println("'Alubias', 13, 1");
+					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
-					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre o el formato del precio no es valido");
 				}
 				
 				
 			}else if (cOrden.getSelectedIndex()==1) {
 				
 				for (int i = 0; i < nombreprimero.size(); i++) {
-					if (nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1777,13 +1825,15 @@ public class Principal extends JFrame {
 				
 			}else if (cOrden.getSelectedIndex()==2) {
 				for (int i = 0; i < nombresegundo.size(); i++) {
-					if (nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {	
+						esnomentr=true;
+						System.out.println("que son igualesssss");
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1791,31 +1841,33 @@ public class Principal extends JFrame {
 				
 			}else if (cOrden.getSelectedIndex()==3) {
 				for (int i = 0; i < nombrepostre.size(); i++) {
-					if (nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}else if (cOrden.getSelectedIndex()==4) {
 				for (int i = 0; i < nombrebeb.size(); i++) {
-					if (nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
 					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
-					esnomentr=true;
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}
-			
-			
+			tNombreProd.setText("");
+			esnomentr=false;
 		}
 	});
       
@@ -1976,6 +2028,14 @@ public class Principal extends JFrame {
 			//h.add(bReturn);
 		
 		
+	}
+	public static boolean esNumerico(String str)
+	{
+	    for (char c : str.toCharArray())
+	    {
+	        if (!Character.isDigit(c)&&c!='.') return false;
+	    }
+	    return true;
 	}
 	public void CambiarPanelRetorno(JPanel g, JPanel h) {
 			g.setVisible(false);

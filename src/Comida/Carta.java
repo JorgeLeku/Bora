@@ -118,7 +118,7 @@ public class Carta {
 			Statement st = conn.createStatement();
 			for (Bebida bebida : bebidas) {
 			//creamos una conexion y mediante el metodo siguiente introducimos los valores en la BD
-			if(BD.Select(st, "cod = "+ bebida.id, "bebida")) {//comprobamos si existe esta comida o no para actualizarla
+			if(BD.Select(st, "nombre = "+ bebida.nombre, "bebida")) {//comprobamos si existe esta comida o no para actualizarla
 				resultBebidas = BD.bebidaUpdate(st, bebida);//existe y actualizamos
 			}else{
 				resultBebidas  = BD.Insert(st,  bebida.toString() , "bebida");//no existe y creamos
@@ -126,27 +126,29 @@ public class Carta {
 				
 			}
 			
-			 for (Comida comida : entrantes) {
-				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+			for (Comida comida : entrantes) {
+				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
 			}
-			 for (Comida comida : primeros) {
-				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+			for (Comida comida : primeros) {
+				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
-			} for (Comida comida : segundos) {
-				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+			} 
+			for (Comida comida : segundos) {
+				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
-			} for (Comida comida : postres) {
-				 if(BD.Select(st, "cod = "+comida.id,"comida")) {//comprobamos si existe esta comida
+			}
+			for (Comida comida : postres) {
+				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
@@ -236,7 +238,6 @@ public class Carta {
 			while(rs.next()) {//mientras el rs tenga elementos los almacenamos 
 				//creamos una nueva bebida vacia y le colocamos los valores correspondientes
 				Bebida b = new Bebida();
-				b.id = rs.getInt("cod");
 				b.nombre = rs.getString("nombre");
 				b.precio = rs.getDouble("precio");
 				b.alcoholica = rs.getBoolean("alcoholica");
@@ -248,7 +249,6 @@ public class Carta {
 			rs = st.executeQuery(sentSQL);
 			while(rs.next()) {
 				Comida c = new Comida();
-				c.id = rs.getInt("cod");
 				c.nombre = rs.getString("nombre");
 				c.precio = rs.getDouble("precio");
 				c.numeroPlato = rs.getInt("numeroPlato");
