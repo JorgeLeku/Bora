@@ -1791,7 +1791,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelMesa);
        
        //Nko
-       frame.getContentPane().add(panelRegistrarse);
+       //frame.getContentPane().add(panelRegistrarse);
        
        frame.getContentPane().add(panelRecogerDomicilio);
        frame.getContentPane().add(panelRecogida);
