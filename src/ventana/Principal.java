@@ -16,6 +16,9 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -46,18 +49,20 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
+
 	Pedido pedido = new Pedido();
 	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+Boolean esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
-	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
-	int valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 
 	
@@ -158,6 +163,37 @@ public class Principal extends JFrame {
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
+       List<String>idbeb = new ArrayList<>();
+		
+		for (Bebida bebida : carta.getBebidas()) {
+			idbeb.add(bebida.getNombre());
+		}
+		
+		List<String>identr = new ArrayList<>();
+		
+		for (Comida entrantes : carta.getEntrantes()) {
+			identr.add(entrantes.getNombre());
+		}
+		
+		List<String>idprim = new ArrayList<>();
+		
+		for (Comida primero : carta.getPrimeros()) {
+			idprim.add(primero.getNombre());
+		}
+		
+		List<String>idseg = new ArrayList<>();
+		
+		for (Comida segundo : carta.getSegundos()) {
+			idseg.add(segundo.getNombre());
+		}
+		
+		List<String>idpos = new ArrayList<>();
+		
+		for (Comida postre : carta.getPostres()) {
+			idpos.add(postre.getNombre());
+		}
+		
+		
        ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2.jpg"));
        ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1.jpg"));
        ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
@@ -189,7 +225,7 @@ public class Principal extends JFrame {
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
-       lSelImagen = new JLabel();
+
        lTipo = new JLabel();
        cOrden = new JComboBox();
        
@@ -413,6 +449,7 @@ public class Principal extends JFrame {
       iva.setBounds(200, 500, 200, 40);
       iva.setFont(newFont);
       iva.setText("IVA: ");
+      lgastado = new JLabel();
       //PanelBebidaComida
       bPanelQuitBebida = new BotonesGrandes();
       CrearBoton(bPanelQuitBebida);
@@ -488,22 +525,20 @@ public class Principal extends JFrame {
        lTituloPAddBoton.setText("Crear boton");
        
        
-       lSelImagen.setBounds(25, 430, 400, 40);
-       lSelImagen.setFont(newFont);
-       lSelImagen.setText("Elegir imagen");
+
        
        lTipo.setBounds(700, 250, 300, 40);
        lTipo.setFont(newFont);
        lTipo.setText("Posicion del plato");
        
        cOrden.setFont(newFont);
-       cOrden.addItem("1");
-       cOrden.addItem("2");
-       cOrden.addItem("3");
-       cOrden.addItem("4");
-       cOrden.addItem("5");
+       cOrden.addItem("Entrantes");
+       cOrden.addItem("Primero");
+       cOrden.addItem("Segundo");
+       cOrden.addItem("Postre");
+       cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
- 
+       
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -690,7 +725,7 @@ public class Principal extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			// 
 			CambiarPanel(panelAdmin, panelBebidaComida);
 			
 			/*if (bpquitboton==false) {
@@ -793,6 +828,7 @@ public class Principal extends JFrame {
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
 		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
+		
 		
 		List<String>nombrebeb = new ArrayList<>();
 		
@@ -1436,6 +1472,28 @@ public class Principal extends JFrame {
 																																cambiobebida.get(k).setVisible(false);
 																															}
 																															enQuePanel=0;
+																															
+																															lgastado.setFont(newFont);
+																															lgastado.setBounds(300, 200, 200, 200);
+																															lgastado.setFont(newFont);
+																															
+																															//pedido.addAlCarrito(pp2e.getNombre());
+																															//Comida(501,pp2e.getNombre(),30,0);
+																															//carta.setEntrantes(pp2e.getNombre());
+																															/*Connection conn = BD.initBD();
+																															Statement st=null;
+																															try {
+																																st = conn.createStatement();
+																															} catch (SQLException e) {
+																																// TODO Auto-generated catch block
+																																e.printStackTrace();
+																															}*/
+																															
+																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
+																															
+																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
+																															panelFactura.updateUI();
+
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
 																															
 																														}
@@ -1614,7 +1672,79 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.out.println(tNombreProd.getText());
+			Connection conn = BD.initBD();
+			Statement st=null;
+			
+			if (cOrden.getSelectedIndex()==0) {
+				for (int i = 0; i < nombreentr.size(); i++) {
+					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+				
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+				
+				
+			}else if (cOrden.getSelectedIndex()==1) {
+				
+				for (int i = 0; i < nombreprimero.size(); i++) {
+					if (nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+				
+				
+			}else if (cOrden.getSelectedIndex()==2) {
+				for (int i = 0; i < nombresegundo.size(); i++) {
+					if (nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+
+				
+			}else if (cOrden.getSelectedIndex()==3) {
+				for (int i = 0; i < nombrepostre.size(); i++) {
+					if (nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+			}else if (cOrden.getSelectedIndex()==4) {
+				for (int i = 0; i < nombrebeb.size(); i++) {
+					if (nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+			}
+			
 			
 		}
 	});
@@ -1671,6 +1801,7 @@ public class Principal extends JFrame {
        
        panelFactura.add(precio);
        panelFactura.add(iva);
+       panelFactura.add(lgastado);
        
        panelBebidaComida.add(bPanelQuitComida);
        panelBebidaComida.add(bPanelQuitBebida);
@@ -1692,7 +1823,7 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-       panelAddBoton.add(lSelImagen);
+
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
