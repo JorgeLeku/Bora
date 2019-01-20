@@ -50,7 +50,7 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
 
-	Boolean bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
@@ -67,7 +67,7 @@ public class Principal extends JFrame {
 	int numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 
-	JButton bReturne = null;
+	JButton bReturne = null,bReturna=null;
 	int x = 1;
 	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
@@ -723,10 +723,32 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
  
    			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
- 
+   			CambiarPanel(panelInicioSesion, panelRegistrarse );
+
+   			if (bpregistro==false) {
+				
+   				bpregistro=true;
+				bReturne = new JButton("bpRegistrarse");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelRegistrarse.add(bReturne);
+				
+				
+			}
+   		
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelRegistrarse,panelInicioSesion); 
+				}
+			});
    			//CambiarPanel(panelInicioSesion, panelInicio);
- 
+   			
    		}
        	   
           });
@@ -802,17 +824,17 @@ public class Principal extends JFrame {
 				
 				if (bprecogerdomicilio==false) {
 					bprecogerdomicilio=true;
-					 bReturne = new JButton("bprecogerdomicilio");
-					CrearBoton(bReturne);
-					bReturne.setIcon(imagenbAtr);
-					bReturne.setRolloverIcon(imagenbAtrbn);
-					bReturne.setBounds(30, 30, 80, 80);
-					bReturns.add(bReturne);
-					panelRecogerDomicilio.add(bReturne);
+					bReturna = new JButton("bprecogerdomicilio");
+					CrearBoton(bReturna);
+					bReturna.setIcon(imagenbAtr);
+					bReturna.setRolloverIcon(imagenbAtrbn);
+					bReturna.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturna);
+					panelRecogerDomicilio.add(bReturna);
 					
 					
 				}
-				bReturne.addActionListener(new ActionListener() {
+				bReturna.addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -831,9 +853,9 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
-				
+				panelRecogida.add(bPanelMesa);
 				if (bprecogida==false) {
-					panelRecogida.add(bPanelMesa);
+					
 					bprecogida=true;
 					
 					bReturne = new JButton("bprecogida");
@@ -846,7 +868,8 @@ public class Principal extends JFrame {
 					
 					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -865,13 +888,13 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-				
-				
+			
+				panelDomicilio.add(bPanelMesa);
 				if (bpdomicilio==false) {
-					panelDomicilio.add(bPanelMesa);
+					
 					bpdomicilio=true;
 					
-					 bReturne = new JButton("bprecogerdomicilio");
+					 bReturne = new JButton("bpdomicilio");
 					CrearBoton(bReturne);
 					bReturne.setIcon(imagenbAtr);
 					bReturne.setRolloverIcon(imagenbAtrbn);
@@ -881,6 +904,8 @@ public class Principal extends JFrame {
 					
 					
 				}
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -899,12 +924,33 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
+				panelReserva.add(bPanelMesa);
 				if (bpreserva==false) {
-					panelReserva.add(bPanelMesa);
-					panelReserva.add(bReturn);
+					
+					
 					bpreserva=true;
+					
+					bReturne = new JButton("bpReserva");
+					panelReserva.add(bReturne);
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelReserva,panelInicio); 
+					}
+				});
 				
 			}
 
@@ -918,11 +964,33 @@ public class Principal extends JFrame {
 			CambiarPanel(panelAdmin, panelBebidaComida);
 			
 			
-			if (bpbebidacomida==false) {
-				panelBebidaComida.add(bReturn);
-				bpbebidacomida=true;
-			}
 			
+
+			if (bpbebidacomida==false) {
+				
+				
+				bpbebidacomida=true;
+			
+				
+				bReturne = new JButton("bpBebidaComida");
+				
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelBebidaComida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelBebidaComida,panelAdmin); 
+				}
+			});
 			
 		}
     	   
@@ -934,11 +1002,29 @@ public class Principal extends JFrame {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelBebidaComida, panelQuitBebida);
    			
+   			
    			if (bpBebida==false) {
-   				panelQuitBebida.add(bReturn);
-   				bpBebida=true;
-   			}
-   		
+				
+				bpBebida=true;
+				bReturne = new JButton("bpBebida");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelQuitBebida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelQuitBebida, panelBebidaComida); 
+				}
+			});
+   			
    			
    		}
        	   
@@ -950,11 +1036,29 @@ public class Principal extends JFrame {
       			// TODO Auto-generated method stub
       			CambiarPanel(panelBebidaComida, panelQuitComida);
       			
-      			if (bpquitbotonComida==false) {
-      				panelQuitComida.add(bReturn);
-      				bpquitbotonComida=true;
-      			}
       			
+      			if (bpquitbotonComida==false) {
+    				
+      				bpquitbotonComida=true;
+    				
+    				bReturne = new JButton("bpQuitComida");
+    				CrearBoton(bReturne);
+    				bReturne.setIcon(imagenbAtr);
+    				bReturne.setRolloverIcon(imagenbAtrbn);
+    				bReturne.setBounds(30, 30, 80, 80);
+    				bReturns.add(bReturne);
+    				panelQuitComida.add(bReturne);
+    				
+    				
+    			}
+    			bReturne.addActionListener(new ActionListener() {
+    				
+    				@Override
+    				public void actionPerformed(ActionEvent e) {
+    					// TODO Auto-generated method stub
+    					CambiarPanel(panelQuitComida,panelBebidaComida); 
+    				}
+    			});
       		}
           	   
          });
@@ -1014,11 +1118,29 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
+   			
    			if (bpaddboton==false) {
-   				panelAddBoton.add(bReturn);
-   				
-   				bpaddboton=true;
+				
+				bpaddboton=true;
+				
+				bReturne = new JButton("bpAddBoton");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelAddBoton.add(bReturne);
+				
+				
 			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelAddBoton,panelAdmin); 
+				}
+			});
    			
    		}
        	   
@@ -1978,7 +2100,7 @@ public class Principal extends JFrame {
 			esnomentr=false;
 		}
 	});
-      
+     
   
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
