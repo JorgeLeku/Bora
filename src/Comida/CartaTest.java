@@ -16,7 +16,7 @@ public class CartaTest {
 		assertTrue(comprobarConexion());
 		
 	}
-	
+	//s
 	public static boolean comprobarConexion() {
 		Connection conn = BD.initBD();
 		if(conn == null) {
