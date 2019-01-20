@@ -49,12 +49,12 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	Boolean esidentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	Boolean esnomentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
-	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
@@ -222,7 +222,7 @@ public class Principal extends JFrame {
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
-       lSelImagen = new JLabel();
+
        lTipo = new JLabel();
        cOrden = new JComboBox();
        
@@ -522,22 +522,20 @@ public class Principal extends JFrame {
        lTituloPAddBoton.setText("Crear boton");
        
        
-       lSelImagen.setBounds(25, 430, 400, 40);
-       lSelImagen.setFont(newFont);
-       lSelImagen.setText("Elegir imagen");
+
        
        lTipo.setBounds(700, 250, 300, 40);
        lTipo.setFont(newFont);
        lTipo.setText("Posicion del plato");
        
        cOrden.setFont(newFont);
-       cOrden.addItem("1");
-       cOrden.addItem("2");
-       cOrden.addItem("3");
-       cOrden.addItem("4");
-       cOrden.addItem("5");
+       cOrden.addItem("Entrantes");
+       cOrden.addItem("Primero");
+       cOrden.addItem("Segundo");
+       cOrden.addItem("Postre");
+       cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
- 
+       
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -1673,25 +1671,75 @@ public class Principal extends JFrame {
 			// TODO Auto-generated method stub
 			Connection conn = BD.initBD();
 			Statement st=null;
-			if (cOrden.getSelectedItem().equals("1")) {
+			
+			if (cOrden.getSelectedIndex()==0) {
 				for (int i = 0; i < nombreentr.size(); i++) {
-					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {
-						JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
-					} else {
-						BD.Insert(st, "'"+ tNombreProd+"'"+cOrden.getSelectedItem(), "comida");
+					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
 					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+				
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 				
 				
-			}else if (cOrden.getSelectedItem().equals("2")) {
-				System.out.println("2");
+			}else if (cOrden.getSelectedIndex()==1) {
 				
-			}else if (cOrden.getSelectedItem().equals("3")) {
-				System.out.println("3");
-			}else if (cOrden.getSelectedItem().equals("4")) {
-				System.out.println("4");
-			}else if (cOrden.getSelectedItem().equals("5")) {
-				System.out.println("5");
+				for (int i = 0; i < nombreprimero.size(); i++) {
+					if (nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+				
+				
+			}else if (cOrden.getSelectedIndex()==2) {
+				for (int i = 0; i < nombresegundo.size(); i++) {
+					if (nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+
+				
+			}else if (cOrden.getSelectedIndex()==3) {
+				for (int i = 0; i < nombrepostre.size(); i++) {
+					if (nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
+			}else if (cOrden.getSelectedIndex()==4) {
+				for (int i = 0; i < nombrebeb.size(); i++) {
+					if (nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					}
+				}
+				if (esnomentr==false) {
+					System.out.println(cbt2.getText());
+					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
+					esnomentr=true;
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+				}
 			}
 			
 			
@@ -1772,7 +1820,7 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-       panelAddBoton.add(lSelImagen);
+
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);

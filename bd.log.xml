@@ -8263,3 +8263,330 @@
   <message>base de datos conectada</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:47:11</date>
+  <millis>1548002831542</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:47:21</date>
+  <millis>1548002841766</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:47:33</date>
+  <millis>1548002853477</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:48:03</date>
+  <millis>1548002883267</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:50:19</date>
+  <millis>1548003019392</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:50:25</date>
+  <millis>1548003025590</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:50:39</date>
+  <millis>1548003039817</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:50:46</date>
+  <millis>1548003046020</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:50:53</date>
+  <millis>1548003053892</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:52:54</date>
+  <millis>1548003174967</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T17:53:01</date>
+  <millis>1548003181581</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:58:52</date>
+  <millis>1548003532961</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T17:59:44</date>
+  <millis>1548003584834</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:00:03</date>
+  <millis>1548003603747</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:00:19</date>
+  <millis>1548003619673</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:03:19</date>
+  <millis>1548003799628</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:03:47</date>
+  <millis>1548003827839</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:03:56</date>
+  <millis>1548003836809</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:03:57</date>
+  <millis>1548003837808</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:04:26</date>
+  <millis>1548003866098</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:04:34</date>
+  <millis>1548003874128</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:04:44</date>
+  <millis>1548003884178</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T18:06:58</date>
+  <millis>1548004018466</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:07:05</date>
+  <millis>1548004025213</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T18:07:13</date>
+  <millis>1548004033012</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+</log>
