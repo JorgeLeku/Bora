@@ -597,7 +597,7 @@ Boolean esnomentr=false;
        bSelImg.setBounds(250, 420, 300, 75);
 
 		
-       
+       //s
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
