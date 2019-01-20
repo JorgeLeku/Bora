@@ -12,7 +12,8 @@ public class Pedido {
 
 	//Propiedades
 	private int cod;
-	private Time fechaPedido, fechaEntrega;
+	private Date fecha;
+	private Time hora;
 	private double dineroGastado;
 	private String direccion;
 	private ArrayList<Alimentos> productos;
@@ -20,26 +21,27 @@ public class Pedido {
 	//Metodos
 	public Pedido() {
 		this.cod =0;
-		this.fechaPedido = new Time(System.currentTimeMillis());
-		this.fechaEntrega =new Time(System.currentTimeMillis());	
+		this.fecha = new Date(System.currentTimeMillis());
+		this.hora = new Time (System.currentTimeMillis());
 		this.productos = null;
 		this.dineroGastado = 0;
 		this.direccion ="";
 	}
 	
-	public Pedido(int cod, Time fechaPedido, Time fechaEntrega,String direccion ,ArrayList<Alimentos> productos) {
+	public Pedido(int cod, Date fechaPedido,Time hora, String direccion ,ArrayList<Alimentos> productos) {
 		super();
 		this.cod = cod;
-		this.fechaPedido = fechaPedido;
-		this.fechaEntrega = fechaEntrega;
+		this.fecha = fechaPedido;
+		this.hora = hora;
 		this.dineroGastado = getImporte();
 		this.productos = productos;
 		this.direccion = direccion;
 	}
 
 	public Pedido(Pedido p) {
-		this.fechaEntrega = p.fechaEntrega;
 		this.cod = p.cod;
+		this.fecha = p.fecha;
+		this.hora = p.hora;
 		this.productos = p.productos;
 		this.dineroGastado = p.dineroGastado;
 		this.direccion = p.direccion;
@@ -62,21 +64,15 @@ public class Pedido {
 		this.cod = cod;
 	}
 
-	public Date getFechaPedido() {
-		return fechaPedido;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaPedido(Time fechaPedido) {
-		this.fechaPedido = fechaPedido;
+	public void setFecha(Time fechaPedido) {
+		this.fecha = fechaPedido;
 	}
 
-	public Date getFechaEntrega() {
-		return fechaEntrega;
-	}
 
-	public void setFechaEntrega(Time fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
-	}
 
 	public ArrayList<Alimentos> getProductos() {
 		return productos;
@@ -156,8 +152,7 @@ public class Pedido {
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
-		return cod + ", '" + fechaPedido.toString() + "', '" + fechaEntrega.toString()
-				+ "', '" + direccion +"'" ;
+		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"'" ;
 	}
 
 	public static void main(String[] args) {

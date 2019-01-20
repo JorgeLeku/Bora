@@ -3,8 +3,10 @@ package Comida;
 import static org.junit.Assert.*;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 
 import org.junit.After;
 import org.junit.Before;
@@ -31,7 +33,13 @@ public class Testear {
 		}
 		
 	}
-	
+	@Test
+	public void testFechas() {
+		Time fecha = new Time(System.currentTimeMillis());
+		Date da = new Date(System.currentTimeMillis());
+		System.out.println(da.toString());
+		System.out.println(fecha.toString());
+	}
 	
 	public static boolean comprobarConexion() {
 		
