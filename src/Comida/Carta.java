@@ -55,9 +55,8 @@ public class Carta {
 		this.segundos = new HashSet<>();
 		this.postres = new HashSet<>();
 		this.bebidas = new HashSet<>();
+		
 	}
-
-
 
 	public HashSet<Comida> getEntrantes() {
 		return entrantes;
@@ -153,7 +152,7 @@ public class Carta {
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
 			}
-			 
+			BD.cerrarBD(conn, st);//se cierra la BD
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -255,10 +254,16 @@ public class Carta {
 				c.numeroPlato = rs.getInt("numeroPlato");
 				this.addComida(c);
 			}
+			BD.cerrarBD(conn, st);
 			return res;//nos devuelve true si esta vacio
 
 		} catch (SQLException e) {
-			
+			try {
+				if(conn!=null)conn.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 			return true;
 		}

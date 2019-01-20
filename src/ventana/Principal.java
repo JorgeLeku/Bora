@@ -34,14 +34,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.PanelUI;
-import javax.swing.text.MutableAttributeSet;
 import javax.swing.text.NumberFormatter;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 
 import Comida.*;
 
@@ -53,14 +49,12 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	Pedido pedido = new Pedido();
-	
 	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
-	JLabel lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
@@ -421,11 +415,7 @@ public class Principal extends JFrame {
       iva.setBounds(200, 500, 200, 40);
       iva.setFont(newFont);
       iva.setText("IVA: ");
-      
-      JTextArea lgastado=new JTextArea();
-      lgastado.setBounds(300, 200, 400, 200);
-      lgastado.setFont(newFont);
-      
+      lgastado = new JLabel();
       //PanelBebidaComida
       bPanelQuitBebida = new BotonesGrandes();
       CrearBoton(bPanelQuitBebida);
@@ -1009,7 +999,6 @@ public class Principal extends JFrame {
 									public void actionPerformed(ActionEvent arg0) {
 										// TODO Auto-generated method stub
 										//me cago en dioooooooooooooooooooooososososoossos
-										//pedido.setProductos(productos);
 										enQuePanel=0;
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
@@ -1279,6 +1268,8 @@ public class Principal extends JFrame {
 																							panelespostre.get(x).add(botonSiguientePanelpostre); //añadimos el boton para cambiar de panel a cada panel
 																							panelespostre.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
 																						}
+																						
+																						
 																						botonSiguientePanelpostre.addActionListener(new ActionListener() {
 																						
 																							@Override
@@ -1448,24 +1439,28 @@ public class Principal extends JFrame {
 																																cambiobebida.get(k).setVisible(false);
 																															}
 																															enQuePanel=0;
+																															
+																															lgastado.setFont(newFont);
+																															lgastado.setBounds(300, 200, 200, 200);
 																															lgastado.setFont(newFont);
 																															
 																															//pedido.addAlCarrito(pp2e.getNombre());
 																															//Comida(501,pp2e.getNombre(),30,0);
 																															//carta.setEntrantes(pp2e.getNombre());
-																															Connection conn = BD.initBD();
+																															/*Connection conn = BD.initBD();
 																															Statement st=null;
 																															try {
 																																st = conn.createStatement();
 																															} catch (SQLException e) {
 																																// TODO Auto-generated catch block
 																																e.printStackTrace();
-																															}
+																															}*/
 																															
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
-																															lgastado.setLineWrap(true);
-																															BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
+																															
+																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
 																															panelFactura.updateUI();
+
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
 																															
 																														}
@@ -1473,8 +1468,14 @@ public class Principal extends JFrame {
 																													});
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													
-																													//he borrado borrarbo++;
-																													
+																													String nombreElegido =pp2e.getNombre();
+																													Comida entranteElegido = new Comida();
+																													for (Comida entrante : carta.entrantes) {
+																														if(entrante.getNombre().equals(nombreElegido)) {
+																															entranteElegido = entrante;
+																														}
+																													}
+																												
 																										    	}
 																											
 																												pb=pb+100;//aumentamos la y de los botones
