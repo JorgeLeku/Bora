@@ -51,6 +51,7 @@ public class Principal extends JFrame {
 	Carta carta = new Carta();
 
 	Pedido pedido = new Pedido();
+	Usuario usuario = new Usuario();
 	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 Boolean esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
@@ -70,6 +71,8 @@ Boolean esnomentr=false;
 	int x = 1;
 	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
+		
+		
 		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
 		 bReturn = new JButton (imagenbAtr);
@@ -630,18 +633,23 @@ Boolean esnomentr=false;
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			CambiarPanel(panelInicioSesion, panelInicio);
+   			
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
    			try {
 				st = conn.createStatement();
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
+				// TODO Auto-generated catch bl	ock
 				e1.printStackTrace();
 			}
-   			BD.SelectAll(st, "Usuario");
-   			System.out.println();
+   			
+   			if (BD.verificarPersona(st, "'leku'", "'eneko'", "usuario ")==true) {
+   				CambiarPanel(panelInicioSesion, panelInicio);
+			}else {
+				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+			}
+   			
    		}
        	   
           });
