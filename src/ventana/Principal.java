@@ -16,6 +16,9 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -1450,9 +1453,18 @@ public class Principal extends JFrame {
 																															//pedido.addAlCarrito(pp2e.getNombre());
 																															//Comida(501,pp2e.getNombre(),30,0);
 																															//carta.setEntrantes(pp2e.getNombre());
+																															Connection conn = BD.initBD();
+																															Statement st=null;
+																															try {
+																																st = conn.createStatement();
+																															} catch (SQLException e) {
+																																// TODO Auto-generated catch block
+																																e.printStackTrace();
+																															}
+																															
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															lgastado.setLineWrap(true);
-																															
+																															BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
 																															panelFactura.updateUI();
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
 																															
