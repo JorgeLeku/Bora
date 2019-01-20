@@ -1,5 +1,5 @@
 package ventana;
-// 2
+//3
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -737,7 +737,7 @@ public class Principal extends JFrame {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
  
-   			CambiarPanel(panelInicioSesion, panelInicio);
+   			//CambiarPanel(panelInicioSesion, panelInicio);
  
    		}
        	   
