@@ -9130,6 +9130,7 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-20T18:10:26</date>
   <millis>1548004226669</millis>
   <sequence>0</sequence>
@@ -13644,6 +13645,1119 @@
   <method>log</method>
   <thread>15</thread>
   <message>BD	select * from usuario where username= 'leku'</message>
+=======
+  <date>2019-01-20T20:01:25</date>
+  <millis>1548010885528</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:01:25</date>
+  <millis>1548010885594</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error en BD	select * from usuariowhere username= leku</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 36</message>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>receiveErrorResponse</method>
+      <line>2440</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>processResults</method>
+      <line>2183</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>execute</method>
+      <line>308</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeInternal</method>
+      <line>441</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>execute</method>
+      <line>365</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeCachedSql</method>
+      <line>293</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>270</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeQuery</method>
+      <line>224</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>297</line>
+    </frame>
+    <frame>
+      <class>Comida.CartaTest</class>
+      <method>testUsuarios</method>
+      <line>27</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke0</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.DelegatingMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>java.lang.reflect.Method</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod$1</class>
+      <method>runReflectiveCall</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.model.ReflectiveCallable</class>
+      <method>run</method>
+      <line>12</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod</class>
+      <method>invokeExplosively</method>
+      <line>47</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.statements.InvokeMethod</class>
+      <method>evaluate</method>
+      <line>17</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runLeaf</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>78</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>57</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$3</class>
+      <method>run</method>
+      <line>290</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$1</class>
+      <method>schedule</method>
+      <line>71</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runChildren</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>access$000</method>
+      <line>58</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$2</class>
+      <method>evaluate</method>
+      <line>268</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>run</method>
+      <line>363</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference</class>
+      <method>run</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.TestExecution</class>
+      <method>run</method>
+      <line>38</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>538</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>760</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>run</method>
+      <line>460</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>main</method>
+      <line>206</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:18:26</date>
+  <millis>1548011906691</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:18:26</date>
+  <millis>1548011906761</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error en BD	select * from usuariowhere username = leku</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 37</message>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>receiveErrorResponse</method>
+      <line>2440</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>processResults</method>
+      <line>2183</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>execute</method>
+      <line>308</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeInternal</method>
+      <line>441</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>execute</method>
+      <line>365</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeCachedSql</method>
+      <line>293</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>270</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeQuery</method>
+      <line>224</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>297</line>
+    </frame>
+    <frame>
+      <class>Comida.CartaTest</class>
+      <method>testUsuarios</method>
+      <line>27</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke0</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.DelegatingMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>java.lang.reflect.Method</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod$1</class>
+      <method>runReflectiveCall</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.model.ReflectiveCallable</class>
+      <method>run</method>
+      <line>12</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod</class>
+      <method>invokeExplosively</method>
+      <line>47</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.statements.InvokeMethod</class>
+      <method>evaluate</method>
+      <line>17</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runLeaf</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>78</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>57</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$3</class>
+      <method>run</method>
+      <line>290</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$1</class>
+      <method>schedule</method>
+      <line>71</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runChildren</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>access$000</method>
+      <line>58</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$2</class>
+      <method>evaluate</method>
+      <line>268</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>run</method>
+      <line>363</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference</class>
+      <method>run</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.TestExecution</class>
+      <method>run</method>
+      <line>38</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>538</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>760</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>run</method>
+      <line>460</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>main</method>
+      <line>206</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:19:28</date>
+  <millis>1548011968224</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:19:28</date>
+  <millis>1548011968294</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error en BD	select * from usuariowhere username = 'leku'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 37</message>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>receiveErrorResponse</method>
+      <line>2440</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>processResults</method>
+      <line>2183</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>execute</method>
+      <line>308</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeInternal</method>
+      <line>441</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>execute</method>
+      <line>365</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeCachedSql</method>
+      <line>293</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>270</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeQuery</method>
+      <line>224</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>297</line>
+    </frame>
+    <frame>
+      <class>Comida.CartaTest</class>
+      <method>testUsuarios</method>
+      <line>27</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke0</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.DelegatingMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>java.lang.reflect.Method</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod$1</class>
+      <method>runReflectiveCall</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.model.ReflectiveCallable</class>
+      <method>run</method>
+      <line>12</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod</class>
+      <method>invokeExplosively</method>
+      <line>47</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.statements.InvokeMethod</class>
+      <method>evaluate</method>
+      <line>17</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runLeaf</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>78</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>57</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$3</class>
+      <method>run</method>
+      <line>290</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$1</class>
+      <method>schedule</method>
+      <line>71</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runChildren</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>access$000</method>
+      <line>58</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$2</class>
+      <method>evaluate</method>
+      <line>268</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>run</method>
+      <line>363</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference</class>
+      <method>run</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.TestExecution</class>
+      <method>run</method>
+      <line>38</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>538</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>760</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>run</method>
+      <line>460</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>main</method>
+      <line>206</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:19:57</date>
+  <millis>1548011997830</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:19:57</date>
+  <millis>1548011997904</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from usuario where username = 'leku'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:21:31</date>
+  <millis>1548012091221</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:21:31</date>
+  <millis>1548012091301</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from usuario where username = 'leku'</message>
+</record>
+<record>
+  <date>2019-01-20T20:21:31</date>
+  <millis>1548012091306</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error en BD	select * from usuario where username = 'leku'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>300</line>
+    </frame>
+    <frame>
+      <class>Comida.CartaTest</class>
+      <method>testUsuarios</method>
+      <line>27</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke0</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.DelegatingMethodAccessorImpl</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>java.lang.reflect.Method</class>
+      <method>invoke</method>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod$1</class>
+      <method>runReflectiveCall</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.model.ReflectiveCallable</class>
+      <method>run</method>
+      <line>12</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.model.FrameworkMethod</class>
+      <method>invokeExplosively</method>
+      <line>47</line>
+    </frame>
+    <frame>
+      <class>org.junit.internal.runners.statements.InvokeMethod</class>
+      <method>evaluate</method>
+      <line>17</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runLeaf</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>78</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.BlockJUnit4ClassRunner</class>
+      <method>runChild</method>
+      <line>57</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$3</class>
+      <method>run</method>
+      <line>290</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$1</class>
+      <method>schedule</method>
+      <line>71</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>runChildren</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>access$000</method>
+      <line>58</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner$2</class>
+      <method>evaluate</method>
+      <line>268</line>
+    </frame>
+    <frame>
+      <class>org.junit.runners.ParentRunner</class>
+      <method>run</method>
+      <line>363</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference</class>
+      <method>run</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.TestExecution</class>
+      <method>run</method>
+      <line>38</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>538</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>runTests</method>
+      <line>760</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>run</method>
+      <line>460</line>
+    </frame>
+    <frame>
+      <class>org.eclipse.jdt.internal.junit.runner.RemoteTestRunner</class>
+      <method>main</method>
+      <line>206</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:22:02</date>
+  <millis>1548012122895</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:22:02</date>
+  <millis>1548012122974</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from usuario where username = 'leku'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:23:04</date>
+  <millis>1548012184218</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:23:04</date>
+  <millis>1548012184298</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from usuario where username = 'leku'</message>
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-20T20:38:52</date>
+  <millis>1548013132163</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:38:52</date>
+  <millis>1548013132302</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:00</date>
+  <millis>1548013140697</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:00</date>
+  <millis>1548013140749</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'lekua'</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:00</date>
+  <millis>1548013140765</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'lekua'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$4</class>
+      <method>actionPerformed</method>
+      <line>647</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-20T20:39:13</date>
+  <millis>1548013153441</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:13</date>
+  <millis>1548013153492</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku'</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:18</date>
+  <millis>1548013158501</millis>
+  <sequence>7</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-20T20:39:18</date>
+  <millis>1548013158556</millis>
+  <sequence>8</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku'</message>
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
