@@ -1442,8 +1442,14 @@ public class Principal extends JFrame {
 																													});
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													
-																													//he borrado borrarbo++;
-																													
+																													String nombreElegido =pp2e.getNombre();
+																													Comida entranteElegido = new Comida();
+																													for (Comida entrante : carta.entrantes) {
+																														if(entrante.getNombre().equals(nombreElegido)) {
+																															entranteElegido = entrante;
+																														}
+																													}
+																												
 																										    	}
 																											
 																												pb=pb+100;//aumentamos la y de los botones
