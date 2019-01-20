@@ -52,7 +52,7 @@ public class Principal extends JFrame {
 
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	Boolean esAdmin=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 Boolean esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
@@ -645,9 +645,17 @@ Boolean esnomentr=false;
 			}
    			
    			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
+   				//aha
    				CambiarPanel(panelInicioSesion, panelInicio);
+   				bPanelAdmin.setEnabled(false);
+   				bPanelAdmin.setVisible(false);
+   				panelInicio.updateUI();
 			}else {
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+			}
+   			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true) {
+   				CambiarPanel(panelInicioSesion, panelInicio);
+   				JOptionPane.showMessageDialog(null, "Bienvenido admin <3");
 			}
    			
    		}
