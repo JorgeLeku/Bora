@@ -17,7 +17,7 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -631,8 +631,17 @@ Boolean esnomentr=false;
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
    			CambiarPanel(panelInicioSesion, panelInicio);
+   			Connection conn = BD.initBD();
    			
-   			
+   			Statement st=null;
+   			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+   			BD.SelectAll(st, "Usuario");
+   			System.out.println();
    		}
        	   
           });
@@ -1673,10 +1682,17 @@ Boolean esnomentr=false;
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			
 			Connection conn = BD.initBD();
 			
 			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			
 			//System.out.println(nombreentr);
 			//System.out.println(tNombreProd.getText());
@@ -1687,6 +1703,7 @@ Boolean esnomentr=false;
 					}
 				}
 				if (esnomentr==false) {
+					
 					System.out.println("'Alubias', 13, 1");
 					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
@@ -1905,7 +1922,7 @@ Boolean esnomentr=false;
 	{
 	    for (char c : str.toCharArray())
 	    {
-	        if (!Character.isDigit(c)&&c!=',') return false;
+	        if (!Character.isDigit(c)&&c!='.') return false;
 	    }
 	    return true;
 	}
