@@ -208,7 +208,7 @@ public class BD {
 					" nombre= '" + comida.getNombre()+ "', " +
 					" precio=" + comida.getPrecio() + ", "+
 					" numeroPlato=" +comida.getNumeroPlato() + ", "+
-					" where cod= " + comida.getId() ;
+					" where nombre= " + comida.getNombre();
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no
@@ -236,7 +236,7 @@ public class BD {
 					" nombre= '" + bebida.getNombre()+ "', " +
 					" precio=" + bebida.getPrecio() + ", "+
 					" alcoholica=" +bebida.alcoholica + 
-					" where cod= " + bebida.getId() ;
+					" where nombre= " + bebida.nombre;
 			int val = st.executeUpdate( sentSQL );
 			log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
 			if (val!=1) {  // Se tiene que modificar 1 - error si no

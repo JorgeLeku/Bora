@@ -46,6 +46,7 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
+	Pedido pedido = new Pedido();
 	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
@@ -1449,7 +1450,7 @@ public class Principal extends JFrame {
 																															entranteElegido = entrante;
 																														}
 																													}
-																												
+																												//mikel
 																										    	}
 																											
 																												pb=pb+100;//aumentamos la y de los botones
