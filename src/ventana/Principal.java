@@ -1,5 +1,5 @@
 package ventana;
-//1
+//2
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -56,9 +56,16 @@ public class Principal extends JFrame {
 	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
+
 	//Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	//Boolean esnomentr=false;
 	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
+	//Boolean esAdmin=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	//Boolean esnomentr=false;
+	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
+
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
@@ -705,10 +712,19 @@ public class Principal extends JFrame {
 			}
    			
    			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
+   				//aha
    				CambiarPanel(panelInicioSesion, panelInicio);
+   				bPanelAdmin.setEnabled(false);
+   				bPanelAdmin.setVisible(false);
+   				panelInicio.updateUI();
+			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
+				CambiarPanel(panelInicioSesion, panelInicio);
+				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
 			}else {
+			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
 			}
+   			
    			
    		}
        	   
