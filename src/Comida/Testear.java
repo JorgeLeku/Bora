@@ -16,7 +16,7 @@ public class Testear {
 	public void testCargarCarta() {
 		Carta carta = new Carta();
 		assertTrue(comprobarConexion());
-		
+	
 	}
 
 	@Test
