@@ -15,6 +15,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 public class Paneles extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondo.jpg"));
 	public void paintComponent(Graphics g) {
 		Image bufferImage = this.createImage(this.getSize().width, this.getSize().height);

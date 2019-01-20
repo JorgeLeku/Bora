@@ -8,27 +8,27 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.SQLException;
+
 import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,12 +36,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import javax.swing.plaf.PanelUI;
+
 import javax.swing.text.NumberFormatter;
 
 import Comida.*;
 
-import sun.applet.AppletPanel;
+
 
 public class Principal extends JFrame {
 	/**
@@ -55,6 +55,7 @@ public class Principal extends JFrame {
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 
 	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	@SuppressWarnings("rawtypes")
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
@@ -64,6 +65,7 @@ public class Principal extends JFrame {
 
 	
 	int x = 1;
+	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
 		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
@@ -897,7 +899,7 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
-		int pene=3;
+		
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -1499,6 +1501,7 @@ public class Principal extends JFrame {
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													
 																													String nombreElegido =pp2e.getNombre();
+																													@SuppressWarnings("unused")
 																													Comida entranteElegido = new Comida();
 																													for (Comida entrante : carta.entrantes) {
 																														if(entrante.getNombre().equals(nombreElegido)) {
@@ -1669,7 +1672,9 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			@SuppressWarnings("unused")
 			Connection conn = BD.initBD();
+			@SuppressWarnings("unused")
 			Statement st=null;
 			
 			if (cOrden.getSelectedIndex()==0) {

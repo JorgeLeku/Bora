@@ -4,14 +4,14 @@ import static org.junit.Assert.*;
 
 import java.sql.Connection;
 
-import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
 
 public class CartaTest {
 
 	@Test
 	public void testCargarCarta() {
+		@SuppressWarnings("unused")
 		Carta carta = new Carta();
 		assertTrue(comprobarConexion());
 		
