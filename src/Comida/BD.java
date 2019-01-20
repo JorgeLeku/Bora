@@ -194,6 +194,39 @@ public class BD {
 				return false;
 			}		
 	}
+	/**
+	 * metodo para borrar filas de una tabla
+	 * @param st sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
+	 * @param condicion condicion a escribir desde el where
+	 * @param nombreTabla nombre de la tabla a la cual pertenece el alimento
+	 * @return true si se cumple sin problema
+	 */
+	public static boolean delete(Statement st,String condicion, String nombreTabla) {
+		String sentSQL = "";
+		try {
+		sentSQL = "delete from "+secu(nombreTabla) +" where "+ condicion;
+		int val = st.executeUpdate( sentSQL );
+		log( Level.INFO, "BD modificada " + val + " fila\t" + sentSQL, null );
+		if (val!=1) {  // Se tiene que modificar 1 - error si no
+			log( Level.SEVERE, "Error en update de BD\t" + sentSQL, null );
+			return false;
+		}
+		return true;
+	} catch (SQLException e) {
+		log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+		lastError = e;
+		e.printStackTrace();
+		return false;
+	}	
+	}
+	
+	public static boolean borrarAlimento(Statement st,String nombreAlimento, String nombreTabla) {
+		if(BD.delete(st, "nombre= "+nombreAlimento, nombreTabla)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 /**Modifica los valores de una fila en la tabla comida
  * 
