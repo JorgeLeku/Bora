@@ -332,7 +332,7 @@ Boolean esnomentr=false;
        lUsuario.setFont(newFont);
        lUsuario.setText("Usuario");
        lUsuario.setBounds(250, 250, 200, 40);
-       
+       //
        lContraseña = new JLabel();
        lContraseña.setFont(newFont);
        lContraseña.setText("Contraseña");
