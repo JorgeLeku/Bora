@@ -644,7 +644,7 @@ Boolean esnomentr=false;
 				e1.printStackTrace();
 			}
    			
-   			if (BD.verificarPersona(st, "'leku'", "'eneko'", "usuario ")==true) {
+   			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
    				CambiarPanel(panelInicioSesion, panelInicio);
 			}else {
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
