@@ -650,13 +650,14 @@ Boolean esnomentr=false;
    				bPanelAdmin.setEnabled(false);
    				bPanelAdmin.setVisible(false);
    				panelInicio.updateUI();
+			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
+				CambiarPanel(panelInicioSesion, panelInicio);
+				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
 			}else {
+			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
 			}
-   			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true) {
-   				CambiarPanel(panelInicioSesion, panelInicio);
-   				JOptionPane.showMessageDialog(null, "Bienvenido admin <3");
-			}
+   			
    			
    		}
        	   
