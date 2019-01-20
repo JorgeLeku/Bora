@@ -1671,19 +1671,21 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			Connection conn = BD.initBD();
+			Statement st=null;
 			if (cOrden.getSelectedItem().equals("1")) {
-				System.out.println("1");
-				for (int i = 0; i <identr.size() ; i++) {
-					if (identr.get(i)-identr.get(i-1)!=0&&identr.get(i)!=0&& esidentr==false) {
-						queidentr=identr.get(i)-1;
-						esidentr = true;
-					}else if (esidentr=false){
-						
+				for (int i = 0; i < nombreentr.size(); i++) {
+					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {
+						JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+					} else {
+						BD.Insert(st, "'"+ tNombreProd+"'"+cOrden.getSelectedItem(), "comida");
 					}
 				}
 				
+				
 			}else if (cOrden.getSelectedItem().equals("2")) {
 				System.out.println("2");
+				
 			}else if (cOrden.getSelectedItem().equals("3")) {
 				System.out.println("3");
 			}else if (cOrden.getSelectedItem().equals("4")) {
