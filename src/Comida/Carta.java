@@ -126,26 +126,28 @@ public class Carta {
 				
 			}
 			
-			 for (Comida comida : entrantes) {
+			for (Comida comida : entrantes) {
 				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
 			}
-			 for (Comida comida : primeros) {
+			for (Comida comida : primeros) {
 				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
-			} for (Comida comida : segundos) {
+			} 
+			for (Comida comida : segundos) {
 				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
 					 resultComidas = BD.Insert(st, comida.toString(), "comida");//no existe y creamos
 				 }
-			} for (Comida comida : postres) {
+			}
+			for (Comida comida : postres) {
 				 if(BD.Select(st, "nombre = "+comida.nombre,"comida")) {//comprobamos si existe esta comida
 					 resultComidas = BD.comidaUpdate(st, comida);//existe y actualizamos					 
 				 }else{
