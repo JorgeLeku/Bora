@@ -14,8 +14,8 @@ public class Comida extends Alimentos {
 		this.numeroPlato = a.numeroPlato;
 	}
 
-	public Comida(int id, String nombre, double precio, int numeroPlato) {
-		super(id, nombre, precio);
+	public Comida( String nombre, double precio, int numeroPlato) {
+		super(nombre, precio);
 		this.numeroPlato = numeroPlato;
 		// TODO Auto-generated constructor stub
 	}
@@ -35,7 +35,7 @@ public class Comida extends Alimentos {
 	//creado para conectar con la BD
 	@Override
 	public String toString() {
-		return id+",'"+ nombre+ "', "+ precio+", " +numeroPlato ; 
+		return "'"+ nombre+ "', "+ precio+", " +numeroPlato ; 
 	}
 
 	public static void main(String[] args) {

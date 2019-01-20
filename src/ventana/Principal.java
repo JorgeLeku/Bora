@@ -49,7 +49,10 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	Boolean esnomentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+
+	Pedido pedido = new Pedido();
+	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+Boolean esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
@@ -162,34 +165,34 @@ public class Principal extends JFrame {
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
-       List<Integer>idbeb = new ArrayList<>();
+       List<String>idbeb = new ArrayList<>();
 		
 		for (Bebida bebida : carta.getBebidas()) {
-			idbeb.add(bebida.getId());
+			idbeb.add(bebida.getNombre());
 		}
 		
-		List<Integer>identr = new ArrayList<>();
+		List<String>identr = new ArrayList<>();
 		
 		for (Comida entrantes : carta.getEntrantes()) {
-			identr.add(entrantes.getId());
+			identr.add(entrantes.getNombre());
 		}
 		
-		List<Integer>idprim = new ArrayList<>();
+		List<String>idprim = new ArrayList<>();
 		
 		for (Comida primero : carta.getPrimeros()) {
-			idprim.add(primero.getId());
+			idprim.add(primero.getNombre());
 		}
 		
-		List<Integer>idseg = new ArrayList<>();
+		List<String>idseg = new ArrayList<>();
 		
 		for (Comida segundo : carta.getSegundos()) {
-			idseg.add(segundo.getId());
+			idseg.add(segundo.getNombre());
 		}
 		
-		List<Integer>idpos = new ArrayList<>();
+		List<String>idpos = new ArrayList<>();
 		
 		for (Comida postre : carta.getPostres()) {
-			idpos.add(postre.getId());
+			idpos.add(postre.getNombre());
 		}
 		
 		
@@ -1506,7 +1509,7 @@ public class Principal extends JFrame {
 																															entranteElegido = entrante;
 																														}
 																													}
-																												
+																												//mikel
 																										    	}
 																											
 																												pb=pb+100;//aumentamos la y de los botones
