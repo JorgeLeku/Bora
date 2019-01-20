@@ -243,7 +243,7 @@ public class BD {
 	}
 	
 	public static boolean borrarAlimento(Statement st,String nombreAlimento, String nombreTabla) {
-		if(BD.delete(st, "nombre= "+nombreAlimento, nombreTabla)) {
+		if(BD.delete(st, "nombre = '"+nombreAlimento+"'", nombreTabla)) {
 			return true;
 		}else {
 			return false;
