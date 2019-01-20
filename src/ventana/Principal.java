@@ -1,5 +1,5 @@
 package ventana;
-
+//5
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -50,18 +50,30 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
 
+	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
+	//Boolean esnomentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-	Boolean esAdmin=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-Boolean esnomentr=false;
-	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
+	//Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	//Boolean esnomentr=false;
+	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
+	//Boolean esAdmin=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	//Boolean esnomentr=false;
+	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-
-	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	@SuppressWarnings("rawtypes")
+ 
 	JComboBox cOrden, cHoraReserva;
-	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
 	Font fuente;
 	int queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
@@ -123,6 +135,9 @@ Boolean esnomentr=false;
        Paneles panelBebidaComida = new Paneles();
        Paneles panelQuitComida = new Paneles(); //En este panel el admin puede quitar platos del menu
        Paneles panelAddBoton = new Paneles (); //En este panel el admin puede añadir platos a la comida
+       
+       //Nko
+       Paneles panelRegistrarse = new Paneles();
       
        Paneles panelReserva = new Paneles();
 
@@ -153,6 +168,9 @@ Boolean esnomentr=false;
        CrearPanel(panelReserva);
        CrearPanel(panelMesa);
        
+       //Nko
+       CrearPanel(panelRegistrarse);
+        
        CrearPanel(panelRecogerDomicilio);
        CrearPanel(panelRecogida);
        CrearPanel(panelDomicilio);
@@ -257,6 +275,20 @@ Boolean esnomentr=false;
        //Objetos PanelRecogerDomicilio
        bPanelRecogida = new BotonesGrandes();
        bPanelDomicilio = new BotonesGrandes();
+       
+       //Nko
+       //Objetos panelRegistrarse
+       lURegistro = new JLabel();
+       lCRegistro = new JLabel();
+       lNRegistro = new JLabel();
+       lARegistro = new JLabel();
+       lTRegistro = new JLabel();
+       tURegistro = new JTextField();
+       tCRegistro = new JTextField();
+       tNRegistro = new JTextField();
+       tARegistro = new JTextField();
+       tTRegistro = new JTextField();
+       bConfirmarRegistro = new JButton();
        
 
        //Objetos panelRecogida
@@ -381,6 +413,41 @@ Boolean esnomentr=false;
        bPanelDomicilio.setFont(newFont);
        bPanelDomicilio.setNombre("Domicilio");
        
+       //Nko
+       //panelRegistrarse
+       lURegistro.setBounds(260, 200, 200, 40);
+       lURegistro.setFont(newFont);
+       lURegistro.setText("Username");
+       tURegistro.setBounds(200, 250, 200, 40);
+       
+       lCRegistro.setBounds(700, 200, 200, 40);
+       lCRegistro.setFont(newFont);
+       lCRegistro.setText("Contraseña");
+       tCRegistro.setBounds(700, 250, 200, 40);
+       
+       lNRegistro.setBounds(260, 325, 200, 40);
+       lNRegistro.setFont(newFont);
+       lNRegistro.setText("Nombre");
+       tNRegistro.setBounds(200, 375, 200, 40);
+       
+       lARegistro.setBounds(760, 325, 200, 40);
+       lARegistro.setFont(newFont);
+       lARegistro.setText("Apellidos");
+       tARegistro.setBounds(700, 375, 200, 40);
+       
+       lTRegistro.setBounds(260, 450, 200, 40);
+       lTRegistro.setFont(newFont);
+       lTRegistro.setText("Telefono");
+       tTRegistro.setBounds(200, 500, 200, 40);
+       
+       //lApellido.setBounds(760, 450, 200, 40);
+       //lApellido.setFont(newFont);
+       //lApellido.setText("Apellido");
+       //tApellido.setBounds(700, 500, 200, 40);
+       
+       bConfirmarRegistro.setBounds(390, 585, 300, 75);
+       bConfirmarRegistro.setFont(newFont);
+       bConfirmarRegistro.setText("Confirmar");
 
      //PANEL RECOGIDA LABEL Y TF
        lHora.setBounds(360, 250, 200, 40);
@@ -666,10 +733,24 @@ Boolean esnomentr=false;
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			CambiarPanel(panelInicioSesion, panelInicio);
+ 
+   			// TODO Auto-generated method stub
+   			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
+ 
+   			//CambiarPanel(panelInicioSesion, panelInicio);
+ 
    		}
        	   
           });
+       
+       bConfirmarRegistro.addActionListener(new ActionListener () {
+    	   @Override
+      		public void actionPerformed(ActionEvent arg0) {
+      			// TODO Auto-generated method stub
+      			CambiarPanel(panelRegistrarse, panelInicio );
+      		}
+       });
+       
        bPanelAdmin.addActionListener(new ActionListener () {
 
 		@Override
@@ -1838,6 +1919,20 @@ Boolean esnomentr=false;
 
        panelRecogerDomicilio.add(bPanelDomicilio);  
        
+       //Nko
+       //panelRecogida
+       panelRegistrarse.add(lURegistro);
+       panelRegistrarse.add(lCRegistro);
+       panelRegistrarse.add(lNRegistro);
+       panelRegistrarse.add(lARegistro);
+       panelRegistrarse.add(lTRegistro);
+       panelRegistrarse.add(tURegistro);
+       panelRegistrarse.add(tCRegistro);
+       panelRegistrarse.add(tNRegistro);
+       panelRegistrarse.add(tARegistro);
+       panelRegistrarse.add(tTRegistro);
+       panelRegistrarse.add(bConfirmarRegistro);
+       
        panelDomicilio.add(lCalle);
        panelDomicilio.add(lEdificio);
        panelDomicilio.add(lPiso);
@@ -1923,6 +2018,9 @@ Boolean esnomentr=false;
        
        frame.getContentPane().add(panelReserva);
        frame.getContentPane().add(panelMesa);
+       
+       //Nko
+       frame.getContentPane().add(panelRegistrarse); //??????????????????????????????????
        
        frame.getContentPane().add(panelRecogerDomicilio);
        frame.getContentPane().add(panelRecogida);
