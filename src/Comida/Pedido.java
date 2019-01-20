@@ -127,20 +127,20 @@ public class Pedido {
 			//unir el pedido a las comidas y bebidas
 			for (Alimentos seleccionado : productos) {
 				if(seleccionado.getClass().equals(Comida.class)) {//es una comida
-					if(BD.Select(st, "Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id, "ContieneC")) {//si ya existia en la BD significa que la cantidad >1
-					ResultSet rs = 	st.executeQuery("select cantidad from ContieneC where Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id );			
+					if(BD.Select(st, "Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre, "ContieneC")) {//si ya existia en la BD significa que la cantidad >1
+					ResultSet rs = 	st.executeQuery("select cantidad from ContieneC where Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre );			
 					String cant = ""+rs.getInt("cantidad");
-					BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and Cod_c = "+ seleccionado.id, "ContieneC");
+					BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre, "ContieneC");
 					}else {
-						 BD.Insert(st, this.cod+", "+seleccionado.id, "ContieneC");//si no hay una fila de esto
+						 BD.Insert(st, this.cod+", "+seleccionado.nombre, "ContieneC");//si no hay una fila de esto
 					}
 				}else if(seleccionado.getClass().equals(Bebida.class)){//es una bebida
-					if(BD.Select(st, "Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id, "ContieneB")) {//si ya existia en la BD significa que la cantidad >1
-						ResultSet rs = 	st.executeQuery("select cantidad from ContieneB where Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id );			
+					if(BD.Select(st, "Cod_p = "+ this.cod+" and nombreBebida = "+ seleccionado.nombre, "ContieneB")) {//si ya existia en la BD significa que la cantidad >1
+						ResultSet rs = 	st.executeQuery("select cantidad from ContieneB where Cod_p = "+ this.cod+" and nombreBebida = "+ seleccionado.nombre );			
 						String cant = ""+rs.getInt("cantidad");
-						BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and Cod_b = "+ seleccionado.id, "ContieneB");
+						BD.Update(st, "cantidad",cant,  "Cod_p = "+ this.cod+" and nombreBebida = "+ seleccionado.nombre, "ContieneB");
 						}else {
-							 BD.Insert(st, this.cod+", "+seleccionado.id, "ContieneB");//si no hay una fila de esto
+							 BD.Insert(st, this.cod+", "+seleccionado.nombre, "ContieneB");//si no hay una fila de esto
 						}
 				}
 				
