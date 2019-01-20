@@ -699,7 +699,7 @@ public class Principal extends JFrame {
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
    			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, panelInicio );
+   			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
    		}
        	   
           });
