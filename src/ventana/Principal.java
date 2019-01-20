@@ -1677,7 +1677,7 @@ Boolean esnomentr=false;
 			Connection conn = BD.initBD();
 			@SuppressWarnings("unused")
 			Statement st=null;
-			
+			System.out.println(nombreentr);
 			if (cOrden.getSelectedIndex()==0) {
 				for (int i = 0; i < nombreentr.size(); i++) {
 					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
