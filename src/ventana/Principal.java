@@ -881,12 +881,22 @@ public class Principal extends JFrame {
      		@Override
      		public void actionPerformed(ActionEvent e) {
      			// TODO Auto-generated method stub
-     			/*if (poner que si existe un plato se haga esto) {
+     			Connection conn = BD.initBD();
+    			
+    			Statement st=null;
+    		
+    			try {
+    				st = conn.createStatement();
+    			} catch (SQLException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+     			if (BD.borrarAlimento(st, tQuitComida.getText(), "bebida")) {
 				JOptionPane.showMessageDialog(null, "Bebida Eliminada");
 				} else {
 				JOptionPane.showMessageDialog(null, "Bebida no eliminada");
-				}*/
-     			JOptionPane.showMessageDialog(null, "Bebida eliminada");
+				}
+     		
      			
      		}
          	   
@@ -896,12 +906,22 @@ public class Principal extends JFrame {
     		@Override
     		public void actionPerformed(ActionEvent e) {
     			// TODO Auto-generated method stub
-    			/*if (poner que si existe una bebida se haga esto) {
+    			Connection conn = BD.initBD();
+    			
+    			Statement st=null;
+    		
+    			try {
+    				st = conn.createStatement();
+    			} catch (SQLException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+    			if (BD.borrarAlimento(st, tQuitComida.getText(), "comida")) {
 				JOptionPane.showMessageDialog(null, "Plato eliminado");
 				} else {
 				JOptionPane.showMessageDialog(null, "Plato no eliminado");
-				}*/
-    			JOptionPane.showMessageDialog(null, "Plato eliminado");
+				}
+    		
     			
     		}
         	   
