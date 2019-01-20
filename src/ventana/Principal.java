@@ -49,7 +49,7 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
+	Boolean esidentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
@@ -59,7 +59,7 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
 
 	Font fuente;
-	int valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 
 	
@@ -160,6 +160,37 @@ public class Principal extends JFrame {
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
+       List<Integer>idbeb = new ArrayList<>();
+		
+		for (Bebida bebida : carta.getBebidas()) {
+			idbeb.add(bebida.getId());
+		}
+		
+		List<Integer>identr = new ArrayList<>();
+		
+		for (Comida entrantes : carta.getEntrantes()) {
+			identr.add(entrantes.getId());
+		}
+		
+		List<Integer>idprim = new ArrayList<>();
+		
+		for (Comida primero : carta.getPrimeros()) {
+			idprim.add(primero.getId());
+		}
+		
+		List<Integer>idseg = new ArrayList<>();
+		
+		for (Comida segundo : carta.getSegundos()) {
+			idseg.add(segundo.getId());
+		}
+		
+		List<Integer>idpos = new ArrayList<>();
+		
+		for (Comida postre : carta.getPostres()) {
+			idpos.add(postre.getId());
+		}
+		
+		
        ImageIcon imagenp1b2 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2.jpg"));
        ImageIcon imagenp1b1 = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b1.jpg"));
        ImageIcon imagenp1b2bn = new ImageIcon(this.getClass().getClassLoader().getResource("p1/p1b2b-n.jpg"));
@@ -693,7 +724,7 @@ public class Principal extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			// 
 			CambiarPanel(panelAdmin, panelBebidaComida);
 			
 			/*if (bpquitboton==false) {
@@ -796,6 +827,7 @@ public class Principal extends JFrame {
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
 		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
+		
 		
 		List<String>nombrebeb = new ArrayList<>();
 		
@@ -1639,7 +1671,27 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.out.println(tNombreProd.getText());
+			if (cOrden.getSelectedItem().equals("1")) {
+				System.out.println("1");
+				for (int i = 0; i <identr.size() ; i++) {
+					if (identr.get(i)-identr.get(i-1)!=0&&identr.get(i)!=0&& esidentr==false) {
+						queidentr=identr.get(i)-1;
+						esidentr = true;
+					}else if (esidentr=false){
+						
+					}
+				}
+				
+			}else if (cOrden.getSelectedItem().equals("2")) {
+				System.out.println("2");
+			}else if (cOrden.getSelectedItem().equals("3")) {
+				System.out.println("3");
+			}else if (cOrden.getSelectedItem().equals("4")) {
+				System.out.println("4");
+			}else if (cOrden.getSelectedItem().equals("5")) {
+				System.out.println("5");
+			}
+			
 			
 		}
 	});
