@@ -292,14 +292,15 @@ public class BD {
 	 * @return devuelve si la contraseña corresponde o no al usuario
 	 */
 	public static boolean verificarPersona(Statement st ,String username, String password, String nombreTabla) {
-		String SentSQL = "select * from "+nombreTabla+ "where username= "+username;
+		String SentSQL = "select * from "+nombreTabla+ " where username = '"+username+"'";
 		try {
 			ResultSet rs = st.executeQuery(SentSQL);
 			log( Level.INFO, "BD\t" + SentSQL, null );
-				String contraseña = rs.getString("password");
-				if(contraseña == password) {
-					return true;
-				}else return false;
+			rs.next();
+			String contraseña = rs.getString("password");
+			if(contraseña.equals(password)) {
+				return true;
+			}else return false;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
