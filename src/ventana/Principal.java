@@ -158,7 +158,7 @@ public class Principal extends JFrame {
        CrearPanel(panelMesa);
        
        //Nko
-       CrearPanel(panelRecogerDomicilio);
+       CrearPanel(panelRegistrarse);
         
        CrearPanel(panelRecogerDomicilio);
        CrearPanel(panelRecogida);
@@ -703,6 +703,15 @@ public class Principal extends JFrame {
    		}
        	   
           });
+       
+       bConfirmarRegistro.addActionListener(new ActionListener () {
+    	   @Override
+      		public void actionPerformed(ActionEvent arg0) {
+      			// TODO Auto-generated method stub
+      			CambiarPanel(panelRegistrarse, panelInicio );
+      		}
+       });
+       
        bPanelAdmin.addActionListener(new ActionListener () {
 
 		@Override
@@ -1935,7 +1944,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelMesa);
        
        //Nko
-       //frame.getContentPane().add(panelRegistrarse); //??????????????????????????????????
+       frame.getContentPane().add(panelRegistrarse); //??????????????????????????????????
        
        frame.getContentPane().add(panelRecogerDomicilio);
        frame.getContentPane().add(panelRecogida);
