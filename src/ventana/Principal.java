@@ -1447,9 +1447,9 @@ public class Principal extends JFrame {
 																															enQuePanel=0;
 																															lgastado.setFont(newFont);
 																															
-																															//pedido.addAlCarrito(pp2e.getNombre(),45);
-																															
-																															
+																															//pedido.addAlCarrito(pp2e.getNombre());
+																															//Comida(501,pp2e.getNombre(),30,0);
+																															//carta.setEntrantes(pp2e.getNombre());
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															lgastado.setLineWrap(true);
 																															
