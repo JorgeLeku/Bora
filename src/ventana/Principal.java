@@ -2379,6 +2379,7 @@ public class Principal extends JFrame {
        panelInicioSesion.add(tPassword);
        panelFactura.add(fl1);
        panelFactura.add(fl2);
+       panelFactura.add(confirmarFactura);
        
        ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
        frame.setIconImage(imagenIcono.getImage());
