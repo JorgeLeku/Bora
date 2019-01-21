@@ -1,5 +1,5 @@
 package ventana;
-//16:04 commit
+//17:04 commit
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -2376,7 +2376,7 @@ public class Principal extends JFrame {
 			    System.out.println(b);
 
 			}
-
+		}
 		}
 	});    
        
@@ -2406,7 +2406,7 @@ public class Principal extends JFrame {
 		}
 	});
      
-  
+    
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);
@@ -2543,6 +2543,7 @@ public class Principal extends JFrame {
    		
    		System.out.println(enQuePanel(frame));
 	}
+	
 	public void CrearBoton(JButton g) {
 
 		g.setOpaque(false);
@@ -2602,6 +2603,7 @@ public class Principal extends JFrame {
 		
 
 	}
+	
 	public int enquepos(List<String> g, String n) {
 		for (int i = 0; i < g.size(); i++) {
 			if (g.get(i).equals(n)) {
@@ -2610,7 +2612,7 @@ public class Principal extends JFrame {
 		}
 		return x;
 		
-	}
+	}	
 	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
