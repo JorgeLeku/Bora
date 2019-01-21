@@ -121,7 +121,6 @@ public class Principal extends JFrame {
 		
 	}
 	public Principal() {
-	
 		fechaentrega=new Date();
 		try {
 			mascarafecha=new MaskFormatter("##/##/####");
@@ -508,6 +507,7 @@ public class Principal extends JFrame {
        bIniciar.setBounds(150, 580,300, 75);
        bRegistrarse.setBounds(600, 580,300, 75);
        tUsuario = new JTextField();
+       tUsuario.setText(getProp());
        tUsuario.setName("texto");
        tPassword = new JTextField();
        tPassword.setName("texto");
@@ -860,6 +860,7 @@ public class Principal extends JFrame {
    			
    			
    			nombreUsuario=tUsuario.getText();
+   			setProp(nombreUsuario);
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
