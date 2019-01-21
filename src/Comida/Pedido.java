@@ -21,7 +21,7 @@ public class Pedido {
 	private Bebida bebida;
 	//Metodos
 	public Pedido() {
-		this.cod =0;
+		this.cod =BD.crearCodigo("pedido");
 		this.fecha = new GregorianCalendar();
 		this.dineroGastado = 0;
 		this.direccion ="";

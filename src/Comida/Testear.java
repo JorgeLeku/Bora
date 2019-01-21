@@ -28,31 +28,34 @@ public class Testear {
 		Statement st;
 		try {
 			st = conn.createStatement();
-			assertTrue(BD.verificarPersona(st, "leku", "eneko", "usuario"));
+			assertTrue(BD.verificarPersona(st, "a", "z", "administrador"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-	@SuppressWarnings("deprecation")
+//	@Test
+//	public void testFechas() {
+//		Time fecha = new Time(System.currentTimeMillis());
+//		Date da = new Date(System.currentTimeMillis());
+//		System.out.println(da.toString());
+//		System.out.println(fecha.toString());
+//		
+//		
+//		//usaremos calendar
+//		Calendar cal = new GregorianCalendar();
+//	System.out.println(cal.get(Calendar.MINUTE));	
+//	System.out.println(cal.getTime());
+//	System.out.println(cal.get(Calendar.HOUR_OF_DAY));
+//	}
+	
 	@Test
-	public void testFechas() {
-		Time fecha = new Time(System.currentTimeMillis());
-		Date da = new Date(System.currentTimeMillis());
-		System.out.println(da.toString());
-		System.out.println(fecha.toString());
-		
-		
-		//usaremos calendar
-		Calendar cal = new GregorianCalendar();
-	System.out.println(cal.get(Calendar.MINUTE));	
-	System.out.println(cal.getTime());
-	System.out.println(cal.get(Calendar.HOUR_OF_DAY));
+	public void testCodigos() {
+		int cod = BD.crearCodigo("pedido");
+		assertNotEquals(0, cod);
 	}
 	
-	
-
 
 	public static boolean comprobarConexion() {
 		

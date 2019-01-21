@@ -54381,3 +54381,188 @@
     </frame>
   </exception>
 </record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:19:11</date>
+  <millis>1548087551757</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:19:12</date>
+  <millis>1548087552135</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:19:12</date>
+  <millis>1548087552239</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from usuario where username = 'leku'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:20:18</date>
+  <millis>1548087618352</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:20:18</date>
+  <millis>1548087618731</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:20:18</date>
+  <millis>1548087618835</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:21:20</date>
+  <millis>1548087680792</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:21:21</date>
+  <millis>1548087681150</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:21:21</date>
+  <millis>1548087681252</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:23:12</date>
+  <millis>1548087792550</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:23:12</date>
+  <millis>1548087792917</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:23:13</date>
+  <millis>1548087793016</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:23:53</date>
+  <millis>1548087833991</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:23:54</date>
+  <millis>1548087834366</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:23:54</date>
+  <millis>1548087834463</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>

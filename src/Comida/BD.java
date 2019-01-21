@@ -404,13 +404,14 @@ public class BD {
 			String sentSQL = "select * from "+nombreTabla;
 			ResultSet rs = st.executeQuery(sentSQL);
 			int cod = 0;
-			if(rs.last()) {
-				cod =rs.getInt("cod");
+			while(rs.next()) {
+				cod =rs.getInt("Cod");
 			}
+			
 			rs.close();
 			st.close();
 			conn.close();
-			return cod;
+			return cod+1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
