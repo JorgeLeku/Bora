@@ -55,7 +55,7 @@ public class Principal extends JFrame {
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-	
+	Botones confirmarFactura;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
@@ -67,7 +67,7 @@ public class Principal extends JFrame {
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
-	String nombreUsuario;
+	String nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
 	
 	
@@ -674,7 +674,8 @@ public class Principal extends JFrame {
        cbb1.setBounds(500, 580, 80, 80);
        bSelImg.setBounds(250, 420, 300, 75);
 
-		
+       confirmarFactura = new Botones();
+       confirmarFactura.setNombre("Confirmar factura");
        //EL MENU 
        menuBar = new JMenuBar();
 
@@ -777,7 +778,6 @@ public class Principal extends JFrame {
 					CambiarPanel(panelRegistrarse,panelInicioSesion); 
 				}
 			});
-   			//CambiarPanel(panelInicioSesion, panelInicio);
    			
    		}
        	   
@@ -786,20 +786,7 @@ public class Principal extends JFrame {
        bConfirmarRegistro.addActionListener(new ActionListener () {
     	   @Override
       		public void actionPerformed(ActionEvent arg0) {
-      			// TODO Auto-generated method stub
-    		   /*panelRegistrarse.add(lURegistro);
-       panelRegistrarse.add(lCRegistro);
-       panelRegistrarse.add(lNRegistro);
-       panelRegistrarse.add(lARegistro);
-       panelRegistrarse.add(lTRegistro);
-       panelRegistrarse.add(tURegistro);
-       panelRegistrarse.add(tCRegistro);
-       panelRegistrarse.add(tNRegistro);
-       panelRegistrarse.add(tARegistro);
-       panelRegistrarse.add(tTRegistro);
-       panelRegistrarse.add(bConfirmarRegistro);*/
-    		   //BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
-    		   Connection conn = BD.initBD();
+    		Connection conn = BD.initBD();
    			
    			Statement st=null;
    		
@@ -1400,6 +1387,7 @@ public class Principal extends JFrame {
 										// TODO Auto-generated method stub
 										//me cago en dioooooooooooooooooooooososososoossos
 										enQuePanel=0;
+										platoEntrantes=pp2e.getNombre();
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
 											for (int j = 0; j < panelesentrantes.size(); j++) {
@@ -1510,6 +1498,7 @@ public class Principal extends JFrame {
 														
 														Botones pp2primero = new Botones(); //Creamos el boton del plato
 														//CrearBoton(pp2);
+														platoPrimero=pp2primero.getNombre();
 														pp2primero.setBounds(spr, ppr,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 														pp2primero.setNombre(nombreprimero.get(contPrimero)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 														contPrimero++;
@@ -1618,6 +1607,7 @@ public class Principal extends JFrame {
 																			
 																			Botones pp2s = new Botones(); //Creamos el boton del plato
 																			//CrearBoton(pp2);
+																			platoSegundo=pp2s.getNombre();
 																			pp2s.setBounds(ss, ps,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																			pp2s.setNombre(nombresegundo.get(contSegundo)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																			contSegundo++;
@@ -1724,6 +1714,7 @@ public class Principal extends JFrame {
 																								
 																								Botones pp2p = new Botones(); //Creamos el boton del plato
 																								//CrearBoton(pp2);
+																								platoPostre=pp2p.getNombre();
 																								pp2p.setBounds(sp, pp,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																								pp2p.setNombre(nombrepostre.get(contPostre)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																								contPostre++;
@@ -1847,6 +1838,7 @@ public class Principal extends JFrame {
 																														public void actionPerformed(ActionEvent arg0) {
 																															// TODO Auto-generated method stub
 																															//me cago en dioooooooooooooooooooooososososoossos
+																															platoBebida=pp2b.getNombre();
 																															for (int j = 0; j < panelesbebida.size(); j++) {
 																																panelesbebida.get(j).setVisible(false);
 																																panelesbebida.get(j).setEnabled(false);
@@ -1995,7 +1987,14 @@ public class Principal extends JFrame {
 			
 		
 		
-       
+       confirmarFactura.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
        bPrimerPlato.addActionListener(new ActionListener () {
     	   @Override
 			public void actionPerformed(ActionEvent e) {
