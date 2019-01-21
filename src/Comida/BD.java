@@ -335,6 +335,10 @@ public class BD {
 		}		
 	}
 	
+	public static boolean insertReserva(Statement()) {
+		
+	}
+	
 	public static LinkedList<Pedido> cargarPedidos(Statement st, Carta c) {
 		String sentSQL = "select * from pedido";
 		LinkedList listaPedidos = new LinkedList<>();
