@@ -1,4 +1,4 @@
-package Comida;
+      package Comida;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,8 +48,25 @@ public class Pedido {
 	}
 	
 	//G&S
+	
 	public int getCod() {
 		return cod;
+	}
+
+	public Time getHora() {
+		return hora;
+	}
+
+	public void setHora(Time hora) {
+		this.hora = hora;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public void setDineroGastado(double dineroGastado) {
+		this.dineroGastado = dineroGastado;
 	}
 
 	public String getDireccion() {
@@ -68,9 +85,7 @@ public class Pedido {
 		return fecha;
 	}
 
-	public void setFecha(Time fechaPedido) {
-		this.fecha = fechaPedido;
-	}
+	
 
 
 
@@ -151,7 +166,11 @@ public class Pedido {
 	public String toString() {
 
 		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
-				;
+
+				+ productos.get(3).getNombre()+"', '" +productos.get(4).getNombre()+"'";
+
+				
+
 
 	}
 

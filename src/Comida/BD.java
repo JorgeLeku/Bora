@@ -6,6 +6,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -329,11 +332,72 @@ public class BD {
 			log( Level.SEVERE, "Error en BD\t" + SentSQL, e );
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
+	}
+	
+	public static boolean insertReserva(Statement()) {
 		
 	}
 	
+	public static LinkedList<Pedido> cargarPedidos(Statement st, Carta c) {
+		String sentSQL = "select * from pedido";
+		LinkedList listaPedidos = new LinkedList<>();
+		try {
+			ResultSet rs = st.executeQuery(sentSQL);
+			log( Level.INFO, "BD\t" + sentSQL, null );
+			while(rs.next()) {
+				Pedido p = new Pedido();
+				p.setCod(rs.getInt("cod"));
+				p.setFecha(rs.getDate("fecha"));
+				p.setHora(rs.getTime("hora"));
+				String entrante = rs.getString("entrante");
+				String primero = rs.getString("primero");
+				String segundo = rs.getString("segundo");
+				String postre = rs.getString("postre");
+				String bebida = rs.getString("bebida");
+				
+				ArrayList<Alimentos> a = new ArrayList<>();
+				//entrante
+				for (Comida com : c.entrantes) {
+					if(com.getNombre().equals(entrante)) {
+						a.add(com);
+					}
+				}
+				for (Comida com : c.primeros) {
+					if(com.getNombre().equals(entrante)) {
+						a.add(com);
+					}
+				}
+				for (Comida com : c.segundos) {
+					if(com.getNombre().equals(entrante)) {
+						a.add(com);
+					}
+				}
+				for (Comida com : c.postres) {
+					if(com.getNombre().equals(entrante)) {
+						a.add(com);
+					}
+				}
+				for (Bebida beb : c.bebidas) {
+					if(beb.getNombre().equals(entrante)) {
+						a.add(beb);
+					}
+				}
+				p.setProductos(a);
+				p.setDireccion(rs.getString("direccion"));
+				p.setDineroGastado();
+				
+				listaPedidos.add(p);
+				
+			}
+			
+			return listaPedidos;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	/////////////////////////////////////////////////////////////////////
 	//                      Logging                                    //
