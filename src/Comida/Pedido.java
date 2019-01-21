@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Pedido {
@@ -115,7 +116,6 @@ public class Pedido {
 	 */
 	public void insertPedido(String Username) {
 		Connection conn = BD.initBD();
-		@SuppressWarnings("unused")
 		String sentSQL = "";
 		try {
 			Statement st = conn.createStatement();
@@ -139,15 +139,12 @@ public class Pedido {
 						}else {
 							 BD.Insert(st, this.cod+", "+seleccionado.nombre, "ContieneB");//si no hay una fila de esto
 						}
-				}
-				
+				}				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-	
+		}	
 	}
 	//to string modificado para subirlo a la BD.
 	@Override
