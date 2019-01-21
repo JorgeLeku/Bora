@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -81,6 +82,7 @@ public class Principal extends JFrame {
 	
 	
 	public Principal() {
+	
 		fechaentrega=new Date();
 		try {
 			mascarafecha=new MaskFormatter("##/##/####");
@@ -2380,6 +2382,8 @@ public class Principal extends JFrame {
 
        frame.getContentPane().add(panelFactura);
        //frame.getContentPane().add(menuBar);
+   		
+   		System.out.println(enQuePanel(frame));
 	}
 	public void CrearBoton(JButton g) {
 
@@ -2406,19 +2410,15 @@ public class Principal extends JFrame {
 		
 		
 	}
-	public void CambiarPanel1(JPanel g, JPanel h) {
-		g.setVisible(false);
-		g.setEnabled(false);
-		h.setVisible(true);
-		h.setEnabled(true);
-		for (Component cp : g.getComponents() ){
-			cp.setEnabled(false);
-			cp.setVisible(false);
+	public String enQuePanel(Frame a) {
+		
+		for (Component cp :a.getComponents()  ){
+			if (a.isEnabled()==true) {
+				
+				cp.getName();
+			}
 		}
-		for (Component sp : h.getComponents() ){
-	        sp.setEnabled(true);
-	        sp.setVisible(true);
-		}
+		return " ";
 		
 			//h.add(bReturn);
 		
