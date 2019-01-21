@@ -1882,17 +1882,45 @@ public class Principal extends JFrame {
 																														
 																													});
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
-																													
-																													String nombreElegido =pp2e.getNombre();
-																													@SuppressWarnings("unused")
-																													Comida entranteElegido = new Comida();
+																													//mikel
+																													//entrantes
+																													String nombreElegido =pp2e.getNombre();																													
 																													for (Comida entrante : carta.entrantes) {
 																														if(entrante.getNombre().equals(nombreElegido)) {
-																															entranteElegido = entrante;
+																															pedido.addAlCarrito(entrante);
+																														}
+																													} 
+																													//primero
+																													nombreElegido = pp2primero.getNombre();
+																													for (Comida primero : carta.primeros) {
+																														if(primero.getNombre().equals(nombreElegido)) {
+																															pedido.addAlCarrito(primero);
 																														}
 																													}
-																												//mikel
+																													//segundo
+																													nombreElegido = pp2s.getNombre();
+																													for (Comida segundo : carta.segundos) {
+																														if(segundo.getNombre().equals(nombreElegido)) {
+																															pedido.addAlCarrito(segundo);
+																														}																																																										
+																													}
+																													//postre
+																													nombreElegido = pp2p.getNombre();
+																													for (Comida postre : carta.postres) {
+																														if(postre.getNombre().equals(nombreElegido)) {
+																															pedido.addAlCarrito(postre);
+																														}
+																													}
+																													//bebida
+																													nombreElegido = pp2b.getNombre();
+																													for (Bebida bebida : carta.bebidas) {
+																														if(bebida.getNombre().equals(nombreElegido)) {
+																															pedido.addAlCarrito(bebida);
+																														}
+																													}
+																											
 																										    	}
+																													
 																											
 																												pb=pb+100;//aumentamos la y de los botones
 																												sb=40;//iniciamos la columna de nuevo

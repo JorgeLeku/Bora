@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
@@ -24,16 +25,16 @@ public class Carta {
 	/* Clase carta,
 	 * objetivo leer y escribir en la BD   */
 	
-	public HashSet<Comida> entrantes;
-	public HashSet<Comida> primeros;
-	public HashSet<Comida> segundos;
-	public HashSet<Comida> postres;
-	public HashSet<Bebida>bebidas;
+	public TreeSet<Comida> entrantes;
+	public TreeSet<Comida> primeros;
+	public TreeSet<Comida> segundos;
+	public TreeSet<Comida> postres;
+	public TreeSet<Bebida>bebidas;
 	
 	
 
-	public Carta(HashSet<Comida> entrantes, HashSet<Comida> primeros, HashSet<Comida> segundos, HashSet<Comida> postres,
-			HashSet<Bebida> bebidas) {
+	public Carta(TreeSet<Comida> entrantes, TreeSet<Comida> primeros, TreeSet<Comida> segundos, TreeSet<Comida> postres,
+			TreeSet<Bebida> bebidas) {
 		super();
 		this.entrantes = entrantes;
 		this.primeros = primeros;
@@ -50,42 +51,42 @@ public class Carta {
 	}
 	public Carta() {
 		super();
-		this.entrantes = new HashSet<>();
-		this.primeros = new HashSet<>();
-		this.segundos = new HashSet<>();
-		this.postres = new HashSet<>();
-		this.bebidas = new HashSet<>();
+		this.entrantes = new TreeSet<>();
+		this.primeros = new TreeSet<>();
+		this.segundos = new TreeSet<>();
+		this.postres = new TreeSet<>();
+		this.bebidas = new TreeSet<>();
 		
 	}
 
-	public HashSet<Comida> getEntrantes() {
+	public TreeSet<Comida> getEntrantes() {
 		return entrantes;
 	}
-	public void setEntrantes(HashSet<Comida> entrantes) {
+	public void setEntrantes(TreeSet<Comida> entrantes) {
 		this.entrantes = entrantes;
 	}
-	public HashSet<Comida> getPrimeros() {
+	public TreeSet<Comida> getPrimeros() {
 		return primeros;
 	}
-	public void setPrimeros(HashSet<Comida> primeros) {
+	public void setPrimeros(TreeSet<Comida> primeros) {
 		this.primeros = primeros;
 	}
-	public HashSet<Comida> getSegundos() {
+	public TreeSet<Comida> getSegundos() {
 		return segundos;
 	}
-	public void setSegundos(HashSet<Comida> segundos) {
+	public void setSegundos(TreeSet<Comida> segundos) {
 		this.segundos = segundos;
 	}
-	public HashSet<Comida> getPostres() {
+	public TreeSet<Comida> getPostres() {
 		return postres;
 	}
-	public void setPostres(HashSet<Comida> postres) {
+	public void setPostres(TreeSet<Comida> postres) {
 		this.postres = postres;
 	}
-	public HashSet<Bebida> getBebidas() {
+	public TreeSet<Bebida> getBebidas() {
 		return bebidas;
 	}
-	public void setBebidas(HashSet<Bebida> bebidas) {
+	public void setBebidas(TreeSet<Bebida> bebidas) {
 		this.bebidas = bebidas;
 	}
 	
