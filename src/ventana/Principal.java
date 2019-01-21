@@ -33,7 +33,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-
+import java.util.Properties;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -54,7 +54,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
 
-import com.sun.xml.internal.fastinfoset.sax.Properties;
 
 import Comida.*;
 
@@ -87,16 +86,39 @@ public class Principal extends JFrame {
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
 
-	public static void getProp(String Username) {
+	/**
+	 * Guarda en un archivo properties el valor del username que ha entrado por ultima vez
+	 * @param Username nombre del usuario a escribir
+	 */
+	public static void setProp(String Username) {
 		File archivo = new File("config.properties");
 		try {
-			FileOutputStream fis = new FileOutputStream(archivo);
-			Properties PropConfig = new Properties();
-			//PropConfig.set
-		} catch (FileNotFoundException e) {
+			FileOutputStream fos = new FileOutputStream(archivo);
+			Properties propConfig = new Properties();
+			
+			propConfig.setProperty("username", Username);
+			propConfig.store(fos, "program Settings");
+			fos.close();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public static String getProp() {
+		File archivo = new File("config.properties");
+		try {
+			FileInputStream fis = new FileInputStream(archivo);
+			Properties propConfig = new Properties();
+			propConfig.load(fis);
+			//cojemos las properties
+			String nombre =propConfig.getProperty("username");
+			return nombre;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 	public Principal() {
 	
