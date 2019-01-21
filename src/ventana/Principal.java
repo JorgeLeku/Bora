@@ -2020,9 +2020,12 @@ public class Principal extends JFrame {
 																															double preciosegundo =precioentr.get(enquepos(nombreentr, platoSegundo));
 																															double preciopostre =precioentr.get(enquepos(nombreentr, platoPostre));
 																															double preciobebida =precioentr.get(enquepos(nombreentr, platoBebida));
-																															JLabel entr =new JLabel();
-																																entr.setFont(newFont);
-																																entr.setText(platoEntrantes+ "=        "+precioentrante);
+																															JLabel nomentr =new JLabel();
+																																nomentr.setFont(newFont);
+																																nomentr.setText(platoEntrantes);
+																																JLabel precentr = new JLabel();
+																																nomentr.setFont(newFont);
+																																nomentr.setText("-"+precioentrante);
 																																//entr.setBounds(x, y, width, height);
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															
