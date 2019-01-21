@@ -707,7 +707,7 @@ public class Principal extends JFrame {
        
        //menuUsuario.setMnemonic(KeyEvent.VK_A);
        menuBar.add(menuUsuario);
-<<<<<<< HEAD
+
        menuBar.add(menuUsuario2);
        
        menuBar.setVisible(false);
@@ -715,12 +715,7 @@ public class Principal extends JFrame {
        frame.setJMenuBar(menuBar);
               
         //Action Listeners
-=======
-    
-     
-       
-       //Action Listeners
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
+
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
