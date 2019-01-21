@@ -27,11 +27,14 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -49,12 +52,13 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-
+	JMenuBar menuBar;
+	JMenu menuUsuario;
 	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-
+	JCheckBox alcoholica;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
@@ -64,11 +68,11 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
 	Font fuente;
-	int numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
-
+	String nombreUsuario;
 	JButton bReturne = null,bReturna=null;
-	int x = 1;
+	
 	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
 		List<JButton>bReturns = new ArrayList<>();
@@ -236,6 +240,11 @@ public class Principal extends JFrame {
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
+       alcoholica = new JCheckBox();
+       alcoholica.setText("Es alcoholica?");
+       alcoholica.setLocation(400, 600);
+       alcoholica.setVisible(true);
+       alcoholica.setEnabled(true);
 
        lTipo = new JLabel();
        cOrden = new JComboBox();
@@ -598,7 +607,20 @@ public class Principal extends JFrame {
        cOrden.addItem("Postre");
        cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
-       
+       cOrden.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if (cOrden.getSelectedIndex()==4) {
+				alcoholica.setVisible(true);
+				alcoholica.setEnabled(true);
+			}else {
+				alcoholica.setVisible(false);
+				alcoholica.setEnabled(false);
+			}
+		}
+	});
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -655,7 +677,16 @@ public class Principal extends JFrame {
        bSelImg.setBounds(250, 420, 300, 75);
 
 		
-       //s
+       //EL MENU 
+       menuBar = new JMenuBar();
+
+    
+       menuUsuario = new JMenu("Ajustes de usuario");
+       menuUsuario.setMnemonic(KeyEvent.VK_A);
+       menuBar.add(menuUsuario);
+       
+       
+       //Action Listeners
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -708,6 +739,7 @@ public class Principal extends JFrame {
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
+				nombreUsuario=tUsuario.getText();
 			}else {
 			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
@@ -1405,9 +1437,9 @@ public class Principal extends JFrame {
 												frame.getContentPane().add(panelesMultprim); //lo añadimos al frame
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												Botones botonSiguientePanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
-												botonSiguientePanelprimero.setBounds(590, 575, 300, 75); //La posicion del boton
+												botonSiguientePanelprimero.setBounds(240,575, 300, 75); //La posicion del boton
 												Botones botonAnteriorPanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
-												botonAnteriorPanelprimero.setBounds(590, 575, 300, 75); //La posicion del boton
+												botonAnteriorPanelprimero.setBounds(640, 575, 300, 75); //La posicion del boton
 												botonAnteriorPanelprimero.setNombre("Anterior panel");
 												
 												
@@ -1418,9 +1450,9 @@ public class Principal extends JFrame {
 													panelesprimero.get(x).add(botonSiguientePanelprimero); //añadimos el boton para cambiar de panel a cada panel
 													panelesprimero.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
 													
-														cambioprimeroa.add(botonAnteriorPanelprimero);  //Lo añadimos al array de botones
-														panelesprimero.get(x+1).add(botonAnteriorPanelprimero); //añadimos el boton para cambiar de panel a cada panel
-														panelesprimero.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+													cambioprimeroa.add(botonAnteriorPanelprimero);  //Lo añadimos al array de botones
+													panelesprimero.get(x+1).add(botonAnteriorPanelprimero); //añadimos el boton para cambiar de panel a cada panel
+													panelesprimero.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
 														
 													
 													
@@ -1969,57 +2001,7 @@ public class Principal extends JFrame {
        });
       
        
-       bReturn.addMouseListener(new MouseListener() {
-		
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			if (panelAddBoton.isEnabled()== true) {
-				CambiarPanelRetorno(panelAddBoton, panelAdmin);
-			} else if (panelQuitComida.isEnabled()== true) {
-				CambiarPanelRetorno(panelQuitComida, panelBebidaComida);
-			} else if (panelQuitBebida.isEnabled()== true) {
-				CambiarPanelRetorno(panelQuitBebida, panelBebidaComida);
-			} else if (panelAdmin.isEnabled()== true) {
-				CambiarPanelRetorno(panelAdmin, panelInicio);
-			} else if (bPanelRecogerDomicilio.isEnabled()== true) {
-				CambiarPanelRetorno(panelRecogerDomicilio, panelInicio);
-			} else if (panelReserva.isEnabled()== true) {
-				CambiarPanelRetorno(panelReserva, panelInicio);
-			} else if (panelRecogida.isEnabled()== true) {
-				CambiarPanelRetorno(panelRecogida, panelRecogerDomicilio);
-			} else if (panelDomicilio.isEnabled()== true) {
-				CambiarPanelRetorno(panelDomicilio, panelRecogerDomicilio);
-			} else  {
-				System.out.println("No funchiona");
-			}
-			
-		}
-	});
+       
       
 //pene
        
@@ -2211,7 +2193,7 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-
+       panelAddBoton.add(alcoholica);
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
@@ -2261,7 +2243,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-
+       frame.getContentPane().add(menuBar);
 	}
 	public void CrearBoton(JButton g) {
 
@@ -2296,21 +2278,7 @@ public class Principal extends JFrame {
 	    }
 	    return true;
 	}
-	public void CambiarPanelRetorno(JPanel g, JPanel h) {
-			g.setVisible(false);
-			g.setEnabled(false);
-			h.setVisible(true);
-			h.setEnabled(true);
-			
-			for (Component cp : g.getComponents() ){
-				cp.setEnabled(false);
-				cp.setVisible(false);
-			}
-			for (Component sp : h.getComponents() ){
-		        sp.setEnabled(true);
-		        sp.setVisible(true);
-			}
-	}
+	
 	
 
 	public void CrearPanel(JPanel g) {
