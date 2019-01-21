@@ -1150,7 +1150,7 @@ public class Principal extends JFrame {
     	   
        });
        bPanelQuitBebida.addActionListener(new ActionListener () {
-
+//
    		@Override
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
@@ -2192,12 +2192,12 @@ public class Principal extends JFrame {
 					}
 									       System.out.println(fechaentrega); 
 				       
-				pedido.setFecha(fechaentrega); 
+				//pedido.setFecha(fechaentrega); 
 
 		    	pedido.insertPedido(nombreUsuario);
 			}else {
 				fechaentregares=calendariores.getTime();
-				reserva.setFecha(fechaentrega);
+				//reserva.setFecha(fechaentrega);
 				reserva.setBebida(platoBebida);
 				reserva.setEntrante(platoEntrantes);
 				reserva.setPrimero(platoPrimero);
