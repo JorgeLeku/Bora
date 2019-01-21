@@ -397,6 +397,28 @@ public class BD {
 		}
 	}
 	
+	public static int crearCodigo(String nombreTabla) {
+		Connection conn = BD.initBD();
+		try {
+			Statement st = conn.createStatement();
+			String sentSQL = "select * from "+nombreTabla;
+			ResultSet rs = st.executeQuery(sentSQL);
+			int cod = 0;
+			if(rs.last()) {
+				cod =rs.getInt("cod");
+			}
+			rs.close();
+			st.close();
+			conn.close();
+			return cod;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			return 0;
+		}
+	}
+	
 	/////////////////////////////////////////////////////////////////////
 	//                      Logging                                    //
 	/////////////////////////////////////////////////////////////////////
