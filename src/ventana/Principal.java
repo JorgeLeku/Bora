@@ -81,7 +81,7 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 	JFormattedTextField tFecha,tHora;
 	Font fuente;
-	int anyo, mes, dia, hora, minuto,x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int anyox=9999, mesx=9999, diax=99999,horax=99999,minutox=99999,anyo, mes, dia, hora, minuto,x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
@@ -1502,9 +1502,12 @@ public class Principal extends JFrame {
 		cambiobebida = new ArrayList<>();
 		cambiobebidaa = new ArrayList<>();
 		panelesbebida = new ArrayList<>();
-		
-		
-		
+ 
+		Calendar calendarioactual = new GregorianCalendar();
+	
+		      
+				
+		     
 			bPanelMesa.addActionListener(new ActionListener () {
 				
 				
@@ -1512,6 +1515,24 @@ public class Principal extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					// TODO Auto-generated method stub
+					/*if (fechaActual.getYear()) {
+						
+					}*/
+					String fechacomx[] = tFecha.getText().split("/"); 
+					
+					   String horacomx[] = tHora.getText().split(":");
+
+					   mesx =Integer.parseInt(fechacomx[1]); 
+
+					   diax =Integer.parseInt(fechacomx[0]); 
+
+					   anyox=Integer.parseInt(fechacomx[2]); 
+
+					   horax =Integer.parseInt(horacomx[0]); 
+
+					   minuto =Integer.parseInt(horacomx[1]); 
+					   Calendar calendario1 = new GregorianCalendar(anyox, mesx, diax, horax, minutox);
+					if (calendario1.compareTo(calendarioactual)>0&&mesx<13&&diax<32&&horax<24&&minutox<60) {
 					Paneles panel1e =  new Paneles();
 					
 					CrearPanel(panel1e);
@@ -2386,7 +2407,9 @@ public class Principal extends JFrame {
 
 											
 											
-						
+				 } else {
+					 JOptionPane.showMessageDialog(null, "Fecha no valida");
+				 }
 				}
 		    	   
 				
@@ -2649,6 +2672,7 @@ public class Principal extends JFrame {
 			String b =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((b != null) && (b.length() > 0)) {
 			    BD.Update(st, " password", "'"+b+"'", "username ='"+nombreUsuario+"'", "usuario");
+			    
 			}
 		
 		}
