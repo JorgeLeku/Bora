@@ -350,6 +350,7 @@ public class Principal extends JFrame {
        bSelImg.setRolloverIcon(imagencbb2bn);
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
+       tNombreProd.setName("texto");
        lTituloPAddBoton = new JLabel();
      
 
@@ -382,16 +383,22 @@ public class Principal extends JFrame {
        lARegistro = new JLabel();
        lTRegistro = new JLabel();
        tURegistro = new JTextField();
+       tURegistro.setName("texto");
        tCRegistro = new JTextField();
+       tCRegistro.setName("texto");
        tNRegistro = new JTextField();
+       tNRegistro.setName("texto");
        tARegistro = new JTextField();
+       tARegistro.setName("texto");
        tTRegistro = new JTextField();
+       tTRegistro.setName("texto");
        bConfirmarRegistro = new JButton();
        
 
        //Objetos panelRecogida
        lHora = new JLabel();
        tHora = new JFormattedTextField(mascaraHora);
+       tTRegistro.setName("texto");
 
        lValidarTlfn = new JLabel();
 
@@ -404,13 +411,16 @@ public class Principal extends JFrame {
        //Objetos panelDomicilio
        lCalle = new JLabel();
        tCalle = new JTextField();
+       tCalle.setName("texto");
        lEdificio = new JLabel();
        tEdificio = new JTextField();
+       tEdificio.setName("texto");
        lPiso = new JLabel();
        tPiso = new JTextField();
+       tPiso.setName("texto");
        lLetra = new JLabel();
        tLetra = new JTextField();
-
+       tLetra.setName("texto");
 
 
        bConfirmarDomicilio = new JButton();
@@ -423,6 +433,7 @@ public class Principal extends JFrame {
        //objetos panelQuitBoton
        lQuitComida = new JLabel();
        tQuitComida = new JTextField();
+       tQuitComida.setName("texto");
       
 
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
@@ -475,7 +486,9 @@ public class Principal extends JFrame {
        bIniciar.setBounds(150, 580,300, 75);
        bRegistrarse.setBounds(600, 580,300, 75);
        tUsuario = new JTextField();
+       tUsuario.setName("texto");
        tPassword = new JTextField();
+       tPassword.setName("texto");
        tUsuario.setBounds(550, 250, 200, 40);
        tPassword.setBounds(550, 400, 200, 40);
        
@@ -580,7 +593,7 @@ public class Principal extends JFrame {
       lfechaEntrega.setBounds(220, 450, 200, 40);
       
       tFecha = new JFormattedTextField(mascarafecha);
-      
+      tFecha.setName("texto");
       tFecha.setBounds(200, 500, 200, 40);
 
       
@@ -631,6 +644,7 @@ public class Principal extends JFrame {
       lQuitBebida.setText("Nombre de la bebida: ");
       
       tQuitBebida = new JTextField();
+      tQuitBebida.setName("texto");
       tQuitBebida.setBounds(500, 310, 350, 60);
       tQuitBebida.setFont(newFont);
       tQuitBebida.setText("");
@@ -660,6 +674,7 @@ public class Principal extends JFrame {
        tNombreProd.setBounds(300, 250, 200, 40);
        
        cbt2 = new JTextField();
+       cbt2.setName("texto");
        cbt2.setBounds(300, 340, 200, 40);
        
       
@@ -768,7 +783,7 @@ public class Principal extends JFrame {
        name = new JMenuItem("Cambiar nombre");
        surname = new JMenuItem("Cambiar apellidos");
        other = new JMenuItem("Otro pedido");
-       cancel = new JMenuItem("Cancelar pedido");
+       cancel = new JMenuItem("Cambiar de usuario");
        
        menuUsuario.add(usern);
        menuUsuario.add(passw);
@@ -2525,10 +2540,10 @@ public class Principal extends JFrame {
 				for (Component sp : todosPaneles.get(i).getComponents() ){
 			        sp.setEnabled(false);
 			        sp.setVisible(false);
-			        
 				}
 			}
-			CambiarPanel(todosPaneles.get(panelsito), panelInicio);
+			CambiarPanel(todosPaneles.get(panelsito), panelInicioSesion);
+			nombreUsuario="";
 		}
 	});
     
