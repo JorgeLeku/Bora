@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -65,10 +66,11 @@ public class Principal extends JFrame {
 	JMenu menuUsuario, menuUsuario2;
 	JMenuItem usern, passw, name, surname, cancel, other;
 	//JMenuBar menuBar;
-	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	Boolean bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
+	Reserva reserva = new Reserva();
 	Botones confirmarFactura;
 	MaskFormatter mascarafecha, mascaraHora;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
@@ -811,7 +813,7 @@ public class Principal extends JFrame {
 				nombreUsuario=tUsuario.getText();
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
-	   			frame.setSize(1080, 740);
+	   			frame.setSize(1080, 740);	
 			}else {
 			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
@@ -976,6 +978,7 @@ public class Principal extends JFrame {
 				lHora.setEnabled(true);
 				tHora.setVisible(true);
 				tHora.setEnabled(true);
+				bpedido=true;
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -1037,6 +1040,7 @@ public class Principal extends JFrame {
 				lHora.setEnabled(true);
 				tHora.setVisible(true);
 				tHora.setEnabled(true);
+				bpedido=true;
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -1090,6 +1094,7 @@ public class Principal extends JFrame {
 				lHora.setEnabled(true);
 				tHora.setVisible(true);
 				tHora.setEnabled(true);
+				bpedido=false;
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -2118,67 +2123,74 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			String nombreElegido =platoEntrantes;																													
-			for (Comida entrante : carta.entrantes) {
-				if(entrante.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(entrante);
-				}
-			} 
-			//primero
-			nombreElegido = platoPrimero;
-			for (Comida primero : carta.primeros) {
-				if(primero.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(primero);
-				}
-			}
-			//segundo
-			nombreElegido = platoSegundo;
-			for (Comida segundo : carta.segundos) {
-				if(segundo.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(segundo);
-				}																																																										
-			}
-			//postre
-			nombreElegido = platoPostre;
-			for (Comida postre : carta.postres) {
-				if(postre.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(postre);
-				}
-			}
-			//bebida
-			nombreElegido = platoBebida;
-			for (Bebida bebida : carta.bebidas) {
-				if(bebida.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(bebida);
-				}
-			}
+			
 			String fechacom[] = tFecha.getText().split("/"); 
 
 
 
 
-		       String horacom[] = tHora.getText().split("/");
+		   String horacom[] = tHora.getText().split("/");
 
-		       mes =Integer.parseInt(fechacom[0]); 
+		   mes =Integer.parseInt(fechacom[0]); 
 
-		       dia =Integer.parseInt(fechacom[1]); 
+		   dia =Integer.parseInt(fechacom[1]); 
 
-		       anyo=Integer.parseInt(fechacom[2]); 
+		   anyo=Integer.parseInt(fechacom[2]); 
 
-		       hora =Integer.parseInt(horacom[0]); 
+		   hora =Integer.parseInt(horacom[0]); 
 
-		       minuto =Integer.parseInt(horacom[1]); 
+		   minuto =Integer.parseInt(horacom[1]); 
 		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
 
 		       fechaentrega= calendario.getTime(); 
 
-		       System.out.println(fechaentrega); 
 
-		       pedido.setFecha(fechaentrega); 
+		       if (bpedido==true) {
+		    	   for (Comida entrante : carta.entrantes) {
+						if(entrante.getNombre().equals(nombreElegido)) {
+							pedido.addAlCarrito(entrante);
+						}
+					} 
+					//primero
+					nombreElegido = platoPrimero;
+					for (Comida primero : carta.primeros) {
+						if(primero.getNombre().equals(nombreElegido)) {
+							pedido.addAlCarrito(primero);
+						}
+					}
+					//segundo
+					nombreElegido = platoSegundo;
+					for (Comida segundo : carta.segundos) {
+						if(segundo.getNombre().equals(nombreElegido)) {
+							pedido.addAlCarrito(segundo);
+						}																																																										
+					}
+					//postre
+					nombreElegido = platoPostre;
+					for (Comida postre : carta.postres) {
+						if(postre.getNombre().equals(nombreElegido)) {
+							pedido.addAlCarrito(postre);
+						}
+					}
+					//bebida
+					nombreElegido = platoBebida;
+					for (Bebida bebida : carta.bebidas) {
+						if(bebida.getNombre().equals(nombreElegido)) {
+							pedido.addAlCarrito(bebida);
+						}
+					}
+									       System.out.println(fechaentrega); 
+				       
+				pedido.setFecha(fechaentrega); 
 
-
-
-
-		       pedido.insertPedido(nombreUsuario);
+		    	   pedido.insertPedido(nombreUsuario);
+			}else {
+				//String username, Date fecha, Time hora, String entrante, String primero, String segundo,
+				//String postre, String bebida
+				// reserva.setFecha(fechaentrega); 
+			}
+		       
+		      
 			//pedido.setFecha()
 		}
 		
