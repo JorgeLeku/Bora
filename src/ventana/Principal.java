@@ -51,6 +51,7 @@ import Comida.*;
 
 
 public class Principal extends JFrame {
+
 	JCheckBox ch;
 	Carta carta = new Carta();
 	JMenu menuUsuario, menuUsuario2;

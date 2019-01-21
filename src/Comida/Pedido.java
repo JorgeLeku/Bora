@@ -85,9 +85,7 @@ public class Pedido {
 		return fecha;
 	}
 
-	public void setFecha(Time fechaPedido) {
-		this.fecha = fechaPedido;
-	}
+	
 
 
 
