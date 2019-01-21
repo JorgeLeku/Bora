@@ -2356,7 +2356,7 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
+
 			Connection conn = BD.initBD();
 			
 			Statement st=null;
@@ -2370,12 +2370,11 @@ public class Principal extends JFrame {
 			String paco =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((paco != null) && (paco.length() > 0)) {
 			    BD.Update(st, " password", "'"+paco+"'", "username ='"+nombreUsuario+"'", "usuario");
-=======
+
 			String b =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((b != null) && (b.length() > 0)) {
 			    System.out.println(b);
-			    
->>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
+
 			}
 
 		}
