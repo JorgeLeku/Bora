@@ -118,11 +118,11 @@ public class Pedido {
 		Connection conn = BD.initBD();
 		String sentSQL = "";
 		try {
+	
 			Statement st = conn.createStatement();
 			BD.Insert(st, this.toString()+ ", "+ Username  , "pedido");//se introduce el pedido con el codigo del usuario
-			
 			//unir el pedido a las comidas y bebidas
-			for (Alimentos seleccionado : productos) {
+			/*for (Alimentos seleccionado : productos) {
 				if(seleccionado.getClass().equals(Comida.class)) {//es una comida
 					if(BD.Select(st, "Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre, "ContieneC")) {//si ya existia en la BD significa que la cantidad >1
 					ResultSet rs = 	st.executeQuery("select cantidad from ContieneC where Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre );			
@@ -140,7 +140,7 @@ public class Pedido {
 							 BD.Insert(st, this.cod+", "+seleccionado.nombre, "ContieneB");//si no hay una fila de esto
 						}
 				}				
-			}
+			}*/
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

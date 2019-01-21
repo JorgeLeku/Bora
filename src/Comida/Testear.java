@@ -41,6 +41,21 @@ public class Testear {
 		System.out.println(fecha.toString());
 	}
 	
+	
+	@Test
+	public void testPedido() {
+		Carta c = new Carta();
+		c.cargarCarta();
+		//se carga el pedido
+		Pedido p = new Pedido();
+		p.addAlCarrito(c.entrantes.first());
+		p.addAlCarrito(c.primeros.first());
+		p.addAlCarrito(c.segundos.first());
+		p.addAlCarrito(c.postres.first());
+		p.addAlCarrito(c.bebidas.first());
+		
+		
+		}
 	public static boolean comprobarConexion() {
 		
 		if(conn == null) {
