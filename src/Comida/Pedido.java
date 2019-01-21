@@ -149,7 +149,10 @@ public class Pedido {
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
-		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"'" ;
+
+		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
+				;
+
 	}
 
 	public static void main(String[] args) {
