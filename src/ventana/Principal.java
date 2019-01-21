@@ -2376,7 +2376,7 @@ public class Principal extends JFrame {
     
     passw.addActionListener(new ActionListener() {
 		
-		@Override
+		@Override//
 		public void actionPerformed(ActionEvent e) {
 
 			Connection conn = BD.initBD();
