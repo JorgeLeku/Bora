@@ -35,6 +35,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -49,8 +50,9 @@ import Comida.*;
 public class Principal extends JFrame {
 	JCheckBox ch;
 	Carta carta = new Carta();
-	JMenuBar menuBar;
-	JMenu menuUsuario;
+	JMenu menuUsuario, menuUsuario2;
+	JMenuItem usern, passw, name, surname, cancel, other;
+	//JMenuBar menuBar;
 	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
@@ -675,15 +677,34 @@ public class Principal extends JFrame {
 
 		
        //EL MENU 
-       menuBar = new JMenuBar();
-
-    
+       JMenuBar menuBar = new JMenuBar();
+       
        menuUsuario = new JMenu("Ajustes de usuario");
-       menuUsuario.setMnemonic(KeyEvent.VK_A);
+       menuUsuario2 = new JMenu("Ajustes de pedido");
+       
+       usern = new JMenuItem("Cambiar nombre de usuario");
+       passw = new JMenuItem("Cambiar contraseña");
+       name = new JMenuItem("Cambiar nombre");
+       surname = new JMenuItem("Cambiar apellidos");
+       other = new JMenuItem("Otro pedido");
+       cancel = new JMenuItem("Cancelar pedido");
+       
+       menuUsuario.add(usern);
+       menuUsuario.add(passw);
+       menuUsuario.add(name);
+       menuUsuario.add(surname);
+       menuUsuario2.add(other);
+       menuUsuario2.add(cancel);
+       
+       //menuUsuario.setMnemonic(KeyEvent.VK_A);
        menuBar.add(menuUsuario);
+       menuBar.add(menuUsuario2);
        
-       
-       //Action Listeners
+       menuBar.setVisible(false);
+       menuBar.setEnabled(false);
+       frame.setJMenuBar(menuBar);
+              
+        //Action Listeners
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -716,6 +737,9 @@ public class Principal extends JFrame {
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
+   			
+   			menuBar.setVisible(true);
+   			menuBar.setEnabled(true);
    			
    			Connection conn = BD.initBD();
    			
@@ -2242,7 +2266,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-       frame.getContentPane().add(menuBar);
+       //frame.getContentPane().add(menuBar);
 	}
 	public void CrearBoton(JButton g) {
 
