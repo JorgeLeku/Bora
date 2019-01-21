@@ -2068,7 +2068,7 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
@@ -2084,7 +2084,7 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
@@ -2099,7 +2099,7 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
@@ -2112,7 +2112,7 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "bebida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
