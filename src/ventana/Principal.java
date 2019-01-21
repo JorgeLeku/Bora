@@ -110,7 +110,7 @@ public class Principal extends JFrame {
 		mascarafecha.setPlaceholderCharacter('_');
 		
 		try {
-			mascaraHora=new MaskFormatter("##/##");
+			mascaraHora=new MaskFormatter("##:##");
 		} catch (ParseException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -2148,7 +2148,7 @@ public class Principal extends JFrame {
 
 
 
-		   String horacom[] = tHora.getText().split("/");
+		   String horacom[] = tHora.getText().split(":");
 
 		   mes =Integer.parseInt(fechacom[0]); 
 
@@ -2343,8 +2343,12 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
-			
+			String paco =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
+			if ((paco != null) && (paco.length() > 0)) {
+			    System.out.println(paco);
+			    
+			}
+
 		}
 	});   
      
