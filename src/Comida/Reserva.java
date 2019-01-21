@@ -86,7 +86,7 @@ public class Reserva {
 	}
 	@Override
 	public String toString() {
-		return  username + ",'" + fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + entrante
+		return  "'"+username + "','" + fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + entrante
 				+ "', '" + primero + "', '" + segundo + "', '" + postre + "', '" + bebida + "'";
 	}
 	
