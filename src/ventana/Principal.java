@@ -1,5 +1,5 @@
 package ventana;
-//5
+// proba
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
