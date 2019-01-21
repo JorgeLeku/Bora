@@ -69,7 +69,7 @@ public class Principal extends JFrame {
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
-	String nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
+	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
 	
 	
@@ -1884,40 +1884,7 @@ public class Principal extends JFrame {
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													//mikel
 																													//entrantes
-																													String nombreElegido =pp2e.getNombre();																													
-																													for (Comida entrante : carta.entrantes) {
-																														if(entrante.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(entrante);
-																														}
-																													} 
-																													//primero
-																													nombreElegido = pp2primero.getNombre();
-																													for (Comida primero : carta.primeros) {
-																														if(primero.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(primero);
-																														}
-																													}
-																													//segundo
-																													nombreElegido = pp2s.getNombre();
-																													for (Comida segundo : carta.segundos) {
-																														if(segundo.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(segundo);
-																														}																																																										
-																													}
-																													//postre
-																													nombreElegido = pp2p.getNombre();
-																													for (Comida postre : carta.postres) {
-																														if(postre.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(postre);
-																														}
-																													}
-																													//bebida
-																													nombreElegido = pp2b.getNombre();
-																													for (Bebida bebida : carta.bebidas) {
-																														if(bebida.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(bebida);
-																														}
-																													}
+																													
 																											
 																										    	}
 																													
@@ -2022,10 +1989,40 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			DateFormat formatoFecha = new SimpleDateFormat("yyyy/MM/dd");
-			Date fechaActual = new Date();
-			
-			pedido.setFechaPedido(fechaActual);
+			String nombreElegido =platoEntrantes;																													
+			for (Comida entrante : carta.entrantes) {
+				if(entrante.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(entrante);
+				}
+			} 
+			//primero
+			nombreElegido = platoPrimero;
+			for (Comida primero : carta.primeros) {
+				if(primero.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(primero);
+				}
+			}
+			//segundo
+			nombreElegido = platoSegundo;
+			for (Comida segundo : carta.segundos) {
+				if(segundo.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(segundo);
+				}																																																										
+			}
+			//postre
+			nombreElegido = platoPostre;
+			for (Comida postre : carta.postres) {
+				if(postre.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(postre);
+				}
+			}
+			//bebida
+			nombreElegido = platoBebida;
+			for (Bebida bebida : carta.bebidas) {
+				if(bebida.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(bebida);
+				}
+			}
 			
 		}
 	});
