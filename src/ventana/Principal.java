@@ -21,6 +21,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,7 +43,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-
+import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
 
 import Comida.*;
@@ -60,11 +61,11 @@ public class Principal extends JFrame {
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
 	Botones confirmarFactura;
-
+	MaskFormatter mascarafecha;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 	Date fechaentrega;
- 
+	
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 	JFormattedTextField tFechaentrega;
@@ -73,10 +74,17 @@ public class Principal extends JFrame {
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
-	DateFormat formatofecha = new SimpleDateFormat("MM/DD/YYYY");
+	
 	
 	public Principal() {
 		fechaentrega=new Date();
+		try {
+			mascarafecha=new MaskFormatter("##/##/####");
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		mascarafecha.setPlaceholderCharacter('_');
 		
 		List<JButton>bReturns = new ArrayList<>();
 		
@@ -506,7 +514,7 @@ public class Principal extends JFrame {
       lfechaEntrega.setText("Fecha entrega");
       lfechaEntrega.setBounds(220, 450, 200, 40);
       
-      tFechaentrega = new JFormattedTextField(formatofecha);
+      tFechaentrega = new JFormattedTextField(mascarafecha);
       
       tFechaentrega.setBounds(200, 500, 200, 40);
 
@@ -749,8 +757,7 @@ public class Principal extends JFrame {
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
    			
-   			menuBar.setVisible(true);
-   			menuBar.setEnabled(true);
+   			
    			
    			Connection conn = BD.initBD();
    			
@@ -767,11 +774,15 @@ public class Principal extends JFrame {
    				CambiarPanel(panelInicioSesion, panelInicio);
    				bPanelAdmin.setEnabled(false);
    				bPanelAdmin.setVisible(false);
+   				menuBar.setVisible(true);
+   	   			menuBar.setEnabled(true);
    				panelInicio.updateUI();
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
 				nombreUsuario=tUsuario.getText();
+				menuBar.setVisible(true);
+	   			menuBar.setEnabled(true);
 			}else {
 			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
