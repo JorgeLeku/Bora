@@ -2129,15 +2129,9 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			String nombreElegido =platoEntrantes;																													
-
-			
-
+			String nombreElegido =platoEntrantes;
 			String fechacom[] = tFecha.getText().split("/"); 
-
-
-
-
+			
 		   String horacom[] = tHora.getText().split("/");
 
 		   mes =Integer.parseInt(fechacom[0]); 
@@ -2150,8 +2144,8 @@ public class Principal extends JFrame {
 
 		   minuto =Integer.parseInt(horacom[1]); 
 		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
-		       Calendar calendariores = new GregorianCalendar(anyo, mes, dia); 
-		       fechaentrega= calendario.getTime(); 
+		       //se colocan las fechas
+		       
 		     //  horaentregares = calendario.getTime();
 
 		       if (bpedido==true) {
@@ -2188,14 +2182,12 @@ public class Principal extends JFrame {
 							pedido.addAlCarrito(bebida);
 						}
 					}
-									       System.out.println(fechaentrega); 
+				 System.out.println(fechaentrega); 
 				       
-				pedido.setFecha(fechaentrega); 
-
+				 pedido.setFecha(calendario);     
 		    	pedido.insertPedido(nombreUsuario);
-			}else {
-				fechaentregares=calendariores.getTime();
-				reserva.setFecha(fechaentrega);
+			}else {//se introducen los valores
+				reserva.setFecha(calendario);				
 				reserva.setBebida(platoBebida);
 				reserva.setEntrante(platoEntrantes);
 				reserva.setPrimero(platoPrimero);
@@ -2204,10 +2196,10 @@ public class Principal extends JFrame {
 				reserva.setUsername(nombreUsuario);
 				Connection conn = BD.initBD();
 				
-				Statement st=null;
 			
 				try {
-					st = conn.createStatement();
+					Statement st = conn.createStatement();
+					BD.Insert(st, reserva.toString(), "reserva");//se sube a la BD
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

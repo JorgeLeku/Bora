@@ -346,8 +346,8 @@ public class BD {
 			while(rs.next()) {
 				Pedido p = new Pedido();
 				p.setCod(rs.getInt("cod"));
-				p.setFecha(rs.getDate("fecha"));
-				p.setHora(rs.getTime("hora"));
+				p.getFecha().setTime(rs.getDate("fecha"));
+				//faltan hora y minuto
 				String entrante = rs.getString("entrante");
 				String primero = rs.getString("primero");
 				String segundo = rs.getString("segundo");
