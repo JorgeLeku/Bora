@@ -596,7 +596,7 @@ public class Principal extends JFrame {
       
       lEdificio.setBounds(700, 200, 200, 40);
       lEdificio.setFont(newFont);
-      lEdificio.setText("Nombre Edificio");
+      lEdificio.setText("Numero Edificio");
       tEdificio.setBounds(700, 250, 200, 40);
       
       lPiso.setBounds(260, 325, 200, 40);
