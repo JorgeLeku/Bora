@@ -2878,6 +2878,8 @@ public class Principal extends JFrame {
 			        sp.setVisible(false);
 				}
 			}
+			menuBar.setVisible(false);
+			menuBar.setEnabled(false);
 			CambiarPanel(todosPaneles.get(panelsito), panelInicioSesion);
 			nombreUsuario="";
 			 botonesentrantes=null; botonesprimero=null; botonessegundo=null; botonespostre=null;botonesbebida=null;
