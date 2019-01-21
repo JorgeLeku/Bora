@@ -162,6 +162,7 @@ public class Principal extends JFrame {
 		       
 		    }
        };
+       
        Paneles panelInicioSesion = new Paneles();
        panelInicioSesion.setNombre("panelInicioSesion");
        panelInicioSesion.setName("panelInicioSesion");
@@ -751,6 +752,7 @@ public class Principal extends JFrame {
 				
 			}
 			CambiarPanel(, panelCambioUsuario);*/
+			
 		}
 	});
        frame.addKeyListener(new KeyListener() {
@@ -904,7 +906,7 @@ public class Principal extends JFrame {
 					CambiarPanel(panelAdmin, panelInicio); 
 				}
 			});
-		}
+		}//
     	   
        });
       
