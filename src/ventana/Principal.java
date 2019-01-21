@@ -163,54 +163,100 @@ public class Principal extends JFrame {
 		       
 		    }
        };
-       
+       ArrayList<Paneles> todosPaneles= new ArrayList<>();
        Paneles panelInicioSesion = new Paneles();
        panelInicioSesion.setNombre("panelInicioSesion");
        panelInicioSesion.setName("panelInicioSesion");
+       todosPaneles.add(panelInicioSesion);
+       
        Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
        panelInicio.setName("panelInicio");
        panelInicio.setNombre("panelInicio");
+       todosPaneles.add(panelInicio);
+       
        Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
+       panelAdmin.setName("panelAdmin");
        panelAdmin.setNombre("panelAdmin");
+       todosPaneles.add(panelAdmin);
+       
        Paneles panelQuitBebida = new Paneles();
+       panelQuitBebida.setName("panelQuitBebida");
        panelQuitBebida.setNombre("panelQuitBebida");
+       todosPaneles.add(panelQuitBebida);
+       
        Paneles panelBebidaComida = new Paneles();
+       panelBebidaComida.setName("panelBebidaComida");
        panelBebidaComida.setNombre("panelBebidaComida");
+       todosPaneles.add(panelBebidaComida);
+       
        Paneles panelQuitComida = new Paneles(); //En este panel el admin puede quitar platos del menu
+       panelQuitComida.setName("panelQuitComida");
        panelQuitComida.setNombre("panelQuitComida");
+       todosPaneles.add(panelQuitComida);
+       
        Paneles panelAddBoton = new Paneles (); //En este panel el admin puede añadir platos a la comida
+       panelAddBoton.setName("panelAddBoton");
        panelAddBoton.setNombre("panelAddBoton");
+       todosPaneles.add(panelAddBoton);
+       
        //Nko
        Paneles panelRegistrarse = new Paneles();
+       panelRegistrarse.setName("panelRegistrarse");
        panelRegistrarse.setNombre("panelRegistrarse");
+       todosPaneles.add(panelRegistrarse);
+       
        Paneles panelReserva = new Paneles();
+       panelReserva.setName("panelReserva");
        panelReserva.setNombre("panelReserva");
+       todosPaneles.add(panelReserva);
+       
        Paneles panelMesa = new Paneles();
+       panelMesa.setName("panelMesa");
        panelMesa.setNombre("panelMesa");
+       todosPaneles.add(panelMesa);
+       
        Paneles panelRecogerDomicilio = new Paneles();
+       panelRecogerDomicilio.setName("panelRecogerDomicilio");
        panelRecogerDomicilio.setNombre("panelRecogerDomicilio");
+       todosPaneles.add(panelRecogerDomicilio);
+       
        Paneles panelRecogida = new Paneles();
+       panelRecogida.setName("panelRecogida");
        panelRecogida.setNombre("panelRecogida");
+       todosPaneles.add(panelRecogida);
+       
        Paneles panelDomicilio = new Paneles ();
+       panelDomicilio.setName("panelDomicilio");
        panelDomicilio.setNombre("panelDomicilio");
-       Paneles panelEntrantes = new Paneles();
-       panelEntrantes.setNombre("panelEntrantes");
-       Paneles panelPrimero = new Paneles();
-       panelPrimero.setNombre("panelPrimero");
-       Paneles panelSegundo = new Paneles();
-       panelSegundo.setNombre("panelSegundo");
-       Paneles panelPostre = new Paneles();
-       panelPostre.setNombre("panelPostre");
+       todosPaneles.add(panelDomicilio);
+       
+       
+       
        Paneles panelCambioContraseña = new Paneles();
+       panelCambioContraseña.setName("panelCambioContraseña");
        panelCambioContraseña.setNombre("panelCambioContraseña");
+       todosPaneles.add(panelCambioContraseña);
+       
        Paneles panelCambioUsuario= new Paneles();
+       panelCambioUsuario.setName("panelCambioUsuario");
        panelCambioUsuario.setNombre("panelCambioUsuario");
+       todosPaneles.add(panelCambioUsuario);
+       
        Paneles panelCambioNombre = new Paneles();
+       panelCambioNombre.setName("panelCambioNombre");
        panelCambioNombre.setNombre("panelCambioNombre");
+       todosPaneles.add(panelCambioNombre);
+       
        Paneles panelCambioApellido = new Paneles();
+       panelCambioApellido.setName("panelCambioApellido");
        panelCambioApellido.setNombre("panelCambioApellido");
+       todosPaneles.add(panelCambioApellido);
+       
        Paneles panelFactura = new Paneles();
+       panelFactura.setName("panelFactura");
        panelFactura.setNombre("panelFactura");
+       todosPaneles.add(panelFactura);
+       
        CrearPanel(panelBienvenida);
        CrearPanel(panelInicioSesion);
        //CrearPanel(panelInicio);
@@ -231,10 +277,7 @@ public class Principal extends JFrame {
        CrearPanel(panelRecogida);
        CrearPanel(panelDomicilio);
        
-       CrearPanel(panelEntrantes);
-       CrearPanel(panelPrimero);
-       CrearPanel(panelSegundo);
-       CrearPanel(panelPostre);
+     
        CrearPanel(panelQuitBebida);
        
        CrearPanel(panelFactura);
@@ -307,6 +350,7 @@ public class Principal extends JFrame {
        bSelImg.setRolloverIcon(imagencbb2bn);
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
+       tNombreProd.setName("texto");
        lTituloPAddBoton = new JLabel();
      
 
@@ -339,16 +383,22 @@ public class Principal extends JFrame {
        lARegistro = new JLabel();
        lTRegistro = new JLabel();
        tURegistro = new JTextField();
+       tURegistro.setName("texto");
        tCRegistro = new JTextField();
+       tCRegistro.setName("texto");
        tNRegistro = new JTextField();
+       tNRegistro.setName("texto");
        tARegistro = new JTextField();
+       tARegistro.setName("texto");
        tTRegistro = new JTextField();
+       tTRegistro.setName("texto");
        bConfirmarRegistro = new JButton();
        
 
        //Objetos panelRecogida
        lHora = new JLabel();
        tHora = new JFormattedTextField(mascaraHora);
+       tTRegistro.setName("texto");
 
        lValidarTlfn = new JLabel();
 
@@ -361,13 +411,16 @@ public class Principal extends JFrame {
        //Objetos panelDomicilio
        lCalle = new JLabel();
        tCalle = new JTextField();
+       tCalle.setName("texto");
        lEdificio = new JLabel();
        tEdificio = new JTextField();
+       tEdificio.setName("texto");
        lPiso = new JLabel();
        tPiso = new JTextField();
+       tPiso.setName("texto");
        lLetra = new JLabel();
        tLetra = new JTextField();
-
+       tLetra.setName("texto");
 
 
        bConfirmarDomicilio = new JButton();
@@ -380,6 +433,7 @@ public class Principal extends JFrame {
        //objetos panelQuitBoton
        lQuitComida = new JLabel();
        tQuitComida = new JTextField();
+       tQuitComida.setName("texto");
       
 
        //Objetos panelMesa, de momento vamos a obviar el panelMesa
@@ -432,7 +486,9 @@ public class Principal extends JFrame {
        bIniciar.setBounds(150, 580,300, 75);
        bRegistrarse.setBounds(600, 580,300, 75);
        tUsuario = new JTextField();
+       tUsuario.setName("texto");
        tPassword = new JTextField();
+       tPassword.setName("texto");
        tUsuario.setBounds(550, 250, 200, 40);
        tPassword.setBounds(550, 400, 200, 40);
        
@@ -537,7 +593,7 @@ public class Principal extends JFrame {
       lfechaEntrega.setBounds(220, 450, 200, 40);
       
       tFecha = new JFormattedTextField(mascarafecha);
-      
+      tFecha.setName("texto");
       tFecha.setBounds(200, 500, 200, 40);
 
       
@@ -588,6 +644,7 @@ public class Principal extends JFrame {
       lQuitBebida.setText("Nombre de la bebida: ");
       
       tQuitBebida = new JTextField();
+      tQuitBebida.setName("texto");
       tQuitBebida.setBounds(500, 310, 350, 60);
       tQuitBebida.setFont(newFont);
       tQuitBebida.setText("");
@@ -617,6 +674,7 @@ public class Principal extends JFrame {
        tNombreProd.setBounds(300, 250, 200, 40);
        
        cbt2 = new JTextField();
+       cbt2.setName("texto");
        cbt2.setBounds(300, 340, 200, 40);
        
       
@@ -725,7 +783,7 @@ public class Principal extends JFrame {
        name = new JMenuItem("Cambiar nombre");
        surname = new JMenuItem("Cambiar apellidos");
        other = new JMenuItem("Otro pedido");
-       cancel = new JMenuItem("Cancelar pedido");
+       cancel = new JMenuItem("Cambiar de usuario");
        
        menuUsuario.add(usern);
        menuUsuario.add(passw);
@@ -1317,7 +1375,7 @@ public class Principal extends JFrame {
 		
        	
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
-		List<JButton> cambioprimeroa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JButton> cambioentrantea, cambioprimeroa,cambiosegundoa,cambiopostrea,cambiobebidaa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
 		
@@ -1396,6 +1454,7 @@ public class Principal extends JFrame {
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
+		cambioentrantea = new ArrayList<>();
 		panelesentrantes= new ArrayList<>();
 		
 		botonesprimero = new ArrayList<>();
@@ -1405,14 +1464,17 @@ public class Principal extends JFrame {
 		
 		botonessegundo = new ArrayList<>();
 		cambiosegundo = new ArrayList<>();
+		cambiosegundoa = new ArrayList<>();
 		panelessegundo = new ArrayList<>();
 		
 		botonespostre = new ArrayList<>();
 		cambiopostre = new ArrayList<>();
+		cambiopostrea = new ArrayList<>();
 		panelespostre = new ArrayList<>();
 		
 		botonesbebida = new ArrayList<>();
 		cambiobebida = new ArrayList<>();
+		cambiobebidaa = new ArrayList<>();
 		panelesbebida = new ArrayList<>();
 		
 		
@@ -1432,7 +1494,7 @@ public class Principal extends JFrame {
 					panelesentrantes.add(panel1e);
 					frame.getContentPane().add(panel1e);
 					panelesentrantes.get(0).updateUI();
-					
+					todosPaneles.add(panel1e);
 					
 					
 					//(int)Math.ceil((double)nombreentr.size()/9)
@@ -1462,15 +1524,24 @@ public class Principal extends JFrame {
 						CrearPanel(panelesMultent);  //Le damoslos datos basicos
 						frame.getContentPane().add(panelesMultent); //lo añadimos al frame
 						panelesentrantes.add(panelesMultent);  //Lo metemos en el array de paneles
+						todosPaneles.add(panelesMultent);
 						panelesentrantes.get(x).add(lentrantes);
 						Botones botonSiguientePanelentrantes = new Botones(); //Creamos el boton para pasar al siguiente panel
-						botonSiguientePanelentrantes.setBounds(390, 575, 300, 75); //La posicion del boton
+						botonSiguientePanelentrantes.setBounds(240,575, 300, 75); //La posicion del boton
 						
 						botonSiguientePanelentrantes.setNombre("siguiente panel");  //Ponemos nombre al boton
+						Botones botonAnteriorPanelEntrantes = new Botones(); //Creamos el boton para pasar al siguiente panel
+						botonAnteriorPanelEntrantes.setBounds(640, 575, 300, 75); //La posicion del boton
+						botonAnteriorPanelEntrantes.setNombre("Anterior panel");
+						
 						if ((int)Math.ceil((double)nombreentr.size()/9)-(x+1)>0) {
 							cambioentrantes.add(botonSiguientePanelentrantes);  //Lo añadimos al array de botones
 							panelesentrantes.get(x).add(cambioentrantes.get(x)); //añadimos el boton para cambiar de panel a cada panel
 							panelesentrantes.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+							cambioentrantea.add(botonAnteriorPanelEntrantes);  //Lo añadimos al array de botones
+							panelesentrantes.get(x+1).add(botonAnteriorPanelEntrantes); //añadimos el boton para cambiar de panel a cada panel
+							panelesentrantes.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+								
 						}
 					
 						
@@ -1483,6 +1554,19 @@ public class Principal extends JFrame {
 								CambiarPanel(panelesentrantes.get(pruebae), panelesentrantes.get(pruebae+1)); //Cambiamos de paneles prueba elige el numero de panel
 								
 								pruebae++; //Incrementamos prueba para que se pueda pasar de panel
+								enQuePanel = pruebae;
+								
+							}
+							
+						});
+						botonAnteriorPanelEntrantes.addActionListener(new ActionListener() {
+							
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								// TODO Auto-generated method stub
+								CambiarPanel(panelesentrantes.get(pruebae), panelesentrantes.get(pruebae-1)); //Cambiamos de paneles prueba elige el numero de panel
+								
+								pruebae--; //Incrementamos prueba para que se pueda pasar de panel
 								enQuePanel = pruebae;
 								
 							}
@@ -1511,12 +1595,13 @@ public class Principal extends JFrame {
 								
 								pp2e.setBounds(se, pe,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 								pp2e.setNombre(nombreentr.get(contEntrantes)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
-								contEntrantes++;
+								
 								botonesentrantes.add(pp2e); //añadimos el boton al arraylist de botones
 								se=320+se; //Incrementamos s para que el boton siguiente este a la izquierda
 								panelesentrantes.get(x).add(pp2e); //añadimos el boton al panel correspondiente
 								panelesentrantes.get(x).updateUI(); //actualizamos el panel para que muestre los botones
 								pp2e.setName(nombreentr.get(contEntrantes));	//nombramos el boton para saber cual es (sacar de la bd)
+								contEntrantes++;
 								panel1e.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
 								pp2e.addActionListener(new ActionListener () {
 
@@ -1546,7 +1631,7 @@ public class Principal extends JFrame {
 											panelesprimero.add(panel1primero);
 											frame.getContentPane().add(panel1primero);
 											panelesprimero.get(0).updateUI();
-										
+											todosPaneles.add(panel1primero);
 						
 											int spr= 40;
 											
@@ -1567,6 +1652,7 @@ public class Principal extends JFrame {
 												CrearPanel(panelesMultprim);  //Le damoslos datos basicos
 												frame.getContentPane().add(panelesMultprim); //lo añadimos al frame
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
+												todosPaneles.add(panelesMultprim);
 												Botones botonSiguientePanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
 												botonSiguientePanelprimero.setBounds(240,575, 300, 75); //La posicion del boton
 												Botones botonAnteriorPanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
@@ -1643,6 +1729,7 @@ public class Principal extends JFrame {
 														pp2primero.setBounds(spr, ppr,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 														pp2primero.setNombre(nombreprimero.get(contPrimero)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 														contPrimero++;
+														
 														botonesprimero.add(pp2primero); //añadimos el boton al arraylist de botones
 														spr=320+spr; //Incrementamos s para que el boton siguiente este a la izquierda
 														panelesprimero.get(x).add(pp2primero); //añadimos el boton al panel correspondiente
@@ -1689,7 +1776,7 @@ public class Principal extends JFrame {
 																panelessegundo.add(panel1s);
 																frame.getContentPane().add(panel1s);
 																panelessegundo.get(0).updateUI();
-																
+																todosPaneles.add(panel1s);
 																int ss= 40;
 																
 																int ps = 185;
@@ -1707,15 +1794,23 @@ public class Principal extends JFrame {
 																	frame.getContentPane().add(panelesMultseg); //lo añadimos al frame
 																	panelessegundo.add(panelesMultseg);  //Lo metemos en el array de paneles
 																	panelessegundo.get(x).add(lsegundo);
+																	todosPaneles.add(panelesMultseg);
 																	Botones botonSiguientePanelsegundo = new Botones(); //Creamos el boton para pasar al siguiente panel
-																	botonSiguientePanelsegundo.setBounds(390, 575, 300, 75); //La posicion del boton
+																	botonSiguientePanelsegundo.setBounds(240,575, 300, 75); //La posicion del boton
+																	Botones botonAnteriorPanelSegundo= new Botones(); //Creamos el boton para pasar al siguiente panel
+																	botonAnteriorPanelSegundo.setBounds(640, 575, 300, 75); //La posicion del boton
+																	botonAnteriorPanelSegundo.setNombre("Anterior panel");
+																	
 																	
 																	botonSiguientePanelsegundo.setNombre("siguiente panel");  //Ponemos nombre al boton
 																	if ((int)Math.ceil((double)nombresegundo.size()/9)-(x+1)>0) {
 																		cambiosegundo.add(botonSiguientePanelsegundo);  //Lo añadimos al array de botones
 																		panelessegundo.get(x).add(botonSiguientePanelsegundo); //añadimos el boton para cambiar de panel a cada panel
 																		panelessegundo.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
-																		
+																		cambiosegundoa.add(botonAnteriorPanelSegundo);  //Lo añadimos al array de botones
+																		panelessegundo.get(x+1).add(botonAnteriorPanelSegundo); //añadimos el boton para cambiar de panel a cada panel
+																		panelessegundo.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+																			
 																	}
 																	
 																	botonSiguientePanelsegundo.addActionListener(new ActionListener() {
@@ -1727,6 +1822,19 @@ public class Principal extends JFrame {
 																			CambiarPanel(panelessegundo.get(pruebas), panelessegundo.get(pruebas+1)); //Cambiamos de paneles prueba elige el numero de panel
 																			
 																			pruebas++; //Incrementamos prueba para que se pueda pasar de panel
+																			enQuePanel = pruebas;
+																			
+																		}
+																		
+																	});
+																	botonAnteriorPanelSegundo.addActionListener(new ActionListener() {
+																		
+																		@Override
+																		public void actionPerformed(ActionEvent arg0) {
+																			// TODO Auto-generated method stub
+																			CambiarPanel(panelessegundo.get(pruebas), panelessegundo.get(pruebas-1)); //Cambiamos de paneles prueba elige el numero de panel
+																			
+																			pruebas--; //Incrementamos prueba para que se pueda pasar de panel
 																			enQuePanel = pruebas;
 																			
 																		}
@@ -1798,6 +1906,7 @@ public class Principal extends JFrame {
 																					panelespostre.add(panel1p);
 																					frame.getContentPane().add(panel1p);
 																					panelespostre.get(0).updateUI();
+																					todosPaneles.add(panel1p);
 																					int sp= 40;
 																					
 																					int pp = 185;
@@ -1817,12 +1926,21 @@ public class Principal extends JFrame {
 																						panelespostre.add(panelesMultpos);  //Lo metemos en el array de paneles
 																						panelespostre.get(x).add(lpostre);
 																						Botones botonSiguientePanelpostre = new Botones(); //Creamos el boton para pasar al siguiente panel
-																						botonSiguientePanelpostre.setBounds(390, 575, 300, 75); //La posicion del boton
+																						botonSiguientePanelpostre.setBounds(240,575, 300, 75); //La posicion del boton
 																						botonSiguientePanelpostre.setNombre("siguiente panel");
+																						Botones botonAnteriorPanelPostre= new Botones(); //Creamos el boton para pasar al siguiente panel
+																						botonAnteriorPanelPostre.setBounds(640, 575, 300, 75); //La posicion del boton
+																						botonAnteriorPanelPostre.setNombre("Anterior panel");
+																						
+																						todosPaneles.add(panelesMultpos);
 																						if ((int)Math.ceil((double)nombrepostre.size()/9)-(x+1)>0) {
 																							cambiopostre.add(botonSiguientePanelpostre);  //Lo añadimos al array de botones
 																							panelespostre.get(x).add(botonSiguientePanelpostre); //añadimos el boton para cambiar de panel a cada panel
 																							panelespostre.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+																							cambiopostrea.add(botonAnteriorPanelPostre);  //Lo añadimos al array de botones
+																							panelespostre.get(x+1).add(botonAnteriorPanelPostre); //añadimos el boton para cambiar de panel a cada panel
+																							panelespostre.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+																								
 																						}
 																						
 																						
@@ -1835,6 +1953,19 @@ public class Principal extends JFrame {
 																								CambiarPanel(panelespostre.get(pruebap), panelespostre.get(pruebap+1)); //Cambiamos de paneles prueba elige el numero de panel
 																								
 																								pruebap++; //Incrementamos prueba para que se pueda pasar de panel
+																								enQuePanel = pruebap;
+																								
+																							}
+																							
+																						});
+																						botonAnteriorPanelPostre.addActionListener(new ActionListener() {
+																							
+																							@Override
+																							public void actionPerformed(ActionEvent arg0) {
+																								// TODO Auto-generated method stub
+																								CambiarPanel(panelespostre.get(pruebap), panelespostre.get(pruebap-1)); //Cambiamos de paneles prueba elige el numero de panel
+																								
+																								pruebap--; //Incrementamos prueba para que se pueda pasar de panel
 																								enQuePanel = pruebap;
 																								
 																							}
@@ -1906,7 +2037,7 @@ public class Principal extends JFrame {
 																										panelesbebida.add(panel1b);
 																										frame.getContentPane().add(panel1b);
 																										panelesbebida.get(0).updateUI();
-																									
+																										todosPaneles.add(panel1b);
 																										int sb= 40;
 																										
 																										int pb = 185;
@@ -1925,14 +2056,22 @@ public class Principal extends JFrame {
 																											frame.getContentPane().add(panelesMultbeb); //lo añadimos al frame
 																											panelesbebida.add(panelesMultbeb);  //Lo metemos en el array de paneles
 																											panelesbebida.get(x).add(lbebida);
+																											todosPaneles.add(panelesMultbeb);
 																											Botones botonSiguientePanelbebida = new Botones(); //Creamos el boton para pasar al siguiente panel
-																											botonSiguientePanelbebida.setBounds(390, 575, 300, 75); //La posicion del boton
+																											botonSiguientePanelbebida.setBounds(240,575, 300, 75); //La posicion del boton
 																											botonSiguientePanelbebida.setNombre("siguiente panel");
+																											Botones botonAnteriorPanelBebida= new Botones(); //Creamos el boton para pasar al siguiente panel
+																											botonAnteriorPanelBebida.setBounds(640, 575, 300, 75); //La posicion del boton
+																											botonAnteriorPanelBebida.setNombre("Anterior panel");
+																											
 																											if ((int)Math.ceil((double)nombrepostre.size()/9)-(x+1)>0) {
 																												cambiobebida.add(botonSiguientePanelbebida);  //Lo añadimos al array de botones
 																												panelesbebida.get(x).add(botonSiguientePanelbebida); //añadimos el boton para cambiar de panel a cada panel
 																												panelesbebida.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
-																												
+																												cambiobebidaa.add(botonAnteriorPanelBebida);  //Lo añadimos al array de botones
+																												panelesbebida.get(x+1).add(botonAnteriorPanelBebida); //añadimos el boton para cambiar de panel a cada panel
+																												panelesbebida.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+																													
 																											}
 																											
 																											botonSiguientePanelbebida.addActionListener(new ActionListener() {
@@ -1943,6 +2082,19 @@ public class Principal extends JFrame {
 																													
 																													CambiarPanel(panelesbebida.get(pruebab), panelesbebida.get(pruebab+1)); //Cambiamos de paneles prueba elige el numero de panel
 																													pruebab++; //Incrementamos prueba para que se pueda pasar de panel
+																													enQuePanel = pruebab;
+																													
+																												}
+																												
+																											});
+																											botonAnteriorPanelBebida.addActionListener(new ActionListener() {
+																												
+																												@Override
+																												public void actionPerformed(ActionEvent arg0) {
+																													// TODO Auto-generated method stub
+																													CambiarPanel(panelespostre.get(pruebab), panelespostre.get(pruebab-1)); //Cambiamos de paneles prueba elige el numero de panel
+																													
+																													pruebab--; //Incrementamos prueba para que se pueda pasar de panel
 																													enQuePanel = pruebab;
 																													
 																												}
@@ -2218,107 +2370,121 @@ public class Principal extends JFrame {
 				
 			
 		
-		
-			confirmarFactura.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			String nombreElegido =platoEntrantes;																													
-
-			
-
-			String fechacom[] = tFecha.getText().split("/"); 
-
-
-
-
-		   String horacom[] = tHora.getText().split(":");
-
-		   mes =Integer.parseInt(fechacom[0]); 
-
-		   dia =Integer.parseInt(fechacom[1]); 
-
-		   anyo=Integer.parseInt(fechacom[2]); 
-
-		   hora =Integer.parseInt(horacom[0]); 
-
-		   minuto =Integer.parseInt(horacom[1]); 
-		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
-		       Calendar calendariores = new GregorianCalendar(anyo, mes, dia); 
-		       fechaentrega= calendario.getTime(); 
-		     //  horaentregares = calendario.getTime();
-
-		       if (bpedido==true) {
-		    	   for (Comida entrante : carta.entrantes) {
-						if(entrante.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(entrante);
-						}
-					} 
-					//primero
-					nombreElegido = platoPrimero;
-					for (Comida primero : carta.primeros) {
-						if(primero.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(primero);
-						}
-					}
-					//segundo
-					nombreElegido = platoSegundo;
-					for (Comida segundo : carta.segundos) {
-						if(segundo.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(segundo);
-						}																																																										
-					}
-					//postre
-					nombreElegido = platoPostre;
-					for (Comida postre : carta.postres) {
-						if(postre.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(postre);
-						}
-					}
-					//bebida
-					nombreElegido = platoBebida;
-					for (Bebida bebida : carta.bebidas) {
-						if(bebida.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(bebida);
-						}
-					}
-									       System.out.println(fechaentrega); 
-				       
-				//pedido.setFecha(fechaentrega); 
-
-		    	pedido.insertPedido(nombreUsuario);
-			}else {
-				fechaentregares=calendariores.getTime();
-				//reserva.setFecha(fechaentrega);
-				reserva.setBebida(platoBebida);
-				reserva.setEntrante(platoEntrantes);
-				reserva.setPrimero(platoPrimero);
-				reserva.setSegundo(platoSegundo);
-				reserva.setPostre(platoPostre);
-				reserva.setUsername(nombreUsuario);
-				Connection conn = BD.initBD();
+		/*	confirmarFactura.addActionListener(new ActionListener() {
 				
-				Statement st=null;
-			
-				try {
-					st = conn.createStatement();
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					String nombreElegido =platoEntrantes;
+					String fechacom[] = tFecha.getText().split("/"); 
+
+
+
+
+				   String horacom[] = tHora.getText().split(":");
+
+
+				   mes =Integer.parseInt(fechacom[0]); 
+
+				   dia =Integer.parseInt(fechacom[1]); 
+
+				   anyo=Integer.parseInt(fechacom[2]); 
+
+				   hora =Integer.parseInt(horacom[0]); 
+
+				   minuto =Integer.parseInt(horacom[1]); 
+				       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
+				       //se colocan las fechas
+				       
+				     //  horaentregares = calendario.getTime();
+
+				       if (bpedido==true) {
+				    	   for (Comida entrante : carta.entrantes) {
+								if(entrante.getNombre().equals(nombreElegido)) {
+									pedido.setEntrante(entrante);
+								}
+							} 
+							//primero
+							nombreElegido = platoPrimero;
+							for (Comida primero : carta.primeros) {
+								if(primero.getNombre().equals(nombreElegido)) {
+									pedido.setPrimero(primero);
+								}
+							}
+							//segundo
+							nombreElegido = platoSegundo;
+							for (Comida segundo : carta.segundos) {
+								if(segundo.getNombre().equals(nombreElegido)) {
+									pedido.setSegundo(segundo);
+								}																																																										
+							}
+							//postre
+							nombreElegido = platoPostre;
+							for (Comida postre : carta.postres) {
+								if(postre.getNombre().equals(nombreElegido)) {
+									pedido.setPostre(postre);
+								}
+							}
+							//bebida
+							nombreElegido = platoBebida;
+							for (Bebida bebida : carta.bebidas) {
+								if(bebida.getNombre().equals(nombreElegido)) {
+									pedido.setBebida(bebida);
+								}
+							}
+						 System.out.println(fechaentrega); 
+						       
+
+						//pedido.setFecha(fechaentrega); 
+
+				    	pedido.insertPedido(nombreUsuario);
+					}else {
+						
+						//reserva.setFecha(fechaentrega);
+
+						 pedido.setFecha(calendario);
+						 //direcciones
+						 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
+						 pedido.setDireccion(dir);
+						 pedido.setDineroGastado();
+						 pedido.insertPedido(nombreUsuario);
+				    
+				    	
+					}else {//se introducen los valores
+						reserva.setFecha(calendario);				
+
+						reserva.setBebida(platoBebida);
+						reserva.setEntrante(platoEntrantes);
+						reserva.setPrimero(platoPrimero);
+						reserva.setSegundo(platoSegundo);
+						reserva.setPostre(platoPostre);
+						reserva.setUsername(nombreUsuario);
+						Connection conn = BD.initBD();
+						
+					
+						try {
+							Statement st = conn.createStatement();
+							BD.Insert(st, reserva.toString(), "reserva");//se sube a la BD
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						System.out.println("'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'");
+						//BD.Insert(st, "'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'", "reserva");
+						//String username, Date fecha, Time hora, String entrante, String primero, String segundo,
+						//String postre, String bebida
+						// reserva.setFecha(fechaentrega); 
+					}
+					
+				      
+					//pedido.setFecha()
 				}
-				System.out.println("'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'");
-				//BD.Insert(st, "'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'", "reserva");
-				//String username, Date fecha, Time hora, String entrante, String primero, String segundo,
-				//String postre, String bebida
-				// reserva.setFecha(fechaentrega); 
-			}
-		       
-		      
-			//pedido.setFecha()
-		}
-		
-	});
+				
+			});*/
+		     
+		       //
+
+			
      
        
        
@@ -2429,9 +2595,18 @@ public class Principal extends JFrame {
    		@Override
    		public void actionPerformed(ActionEvent e) {
    			String a =JOptionPane.showInputDialog(null, "Introduzca nuevo usuario", "Cambiar nombre de usuario", 1);
+   			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
    			if ((a != null) && (a.length() > 0)) {
-   			    System.out.println(a);
-   			    
+   			 BD.Update(st, " username", "'"+a+"'", "username ='"+nombreUsuario+"'", "usuario");
    			}
 
    		}
@@ -2508,9 +2683,40 @@ public class Principal extends JFrame {
 
 		}
 	});
-     
+    other.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			int panelsito =enquepan(todosPaneles);
+			for (int i = 0; i < todosPaneles.size(); i++) {
+				for (Component sp : todosPaneles.get(i).getComponents() ){
+			        sp.setEnabled(false);
+			        sp.setVisible(false);
+			        
+				}
+			}
+			CambiarPanel(todosPaneles.get(panelsito), panelInicio);
+		}
+	});
+     cancel.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			int panelsito =enquepan(todosPaneles);
+			for (int i = 0; i < todosPaneles.size(); i++) {
+				for (Component sp : todosPaneles.get(i).getComponents() ){
+			        sp.setEnabled(false);
+			        sp.setVisible(false);
+				}
+			}
+			CambiarPanel(todosPaneles.get(panelsito), panelInicioSesion);
+			nombreUsuario="";
+		}
+	});
     
-       panelSegundo.updateUI();
+       
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);
        
@@ -2578,7 +2784,7 @@ public class Principal extends JFrame {
        
        panelMesa.add(bPrimerPlato);
        
-       panelPrimero.add(lPrimerPlato);
+    
        
        panelAddBoton.add(cbb1);
        panelAddBoton.add(tNombreProd);
@@ -2635,10 +2841,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelRecogida);
        frame.getContentPane().add(panelDomicilio);
        
-       frame.getContentPane().add(panelEntrantes);
-       frame.getContentPane().add(panelPrimero);
-       frame.getContentPane().add(panelSegundo);
-       frame.getContentPane().add(panelPostre);
+      
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
@@ -2710,6 +2913,15 @@ public class Principal extends JFrame {
 	public int enquepos(List<String> g, String n) {
 		for (int i = 0; i < g.size(); i++) {
 			if (g.get(i).equals(n)) {
+				x=i;
+			}
+		}
+		return x;
+		
+	}	
+	public int enquepan(ArrayList<Paneles> g) {
+		for (int i = 0; i < g.size(); i++) {
+			if (g.get(i).isEnabled()==true) {
 				x=i;
 			}
 		}
