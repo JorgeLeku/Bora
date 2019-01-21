@@ -1375,7 +1375,7 @@ public class Principal extends JFrame {
 		
        	
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
-		List<JButton> cambioprimeroa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JButton> cambioentrantea, cambioprimeroa,cambiosegundoa,cambiopostrea,cambiobebidaa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
 		
@@ -1454,6 +1454,7 @@ public class Principal extends JFrame {
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
+		cambioentrantea = new ArrayList<>();
 		panelesentrantes= new ArrayList<>();
 		
 		botonesprimero = new ArrayList<>();
@@ -1463,14 +1464,17 @@ public class Principal extends JFrame {
 		
 		botonessegundo = new ArrayList<>();
 		cambiosegundo = new ArrayList<>();
+		cambiosegundoa = new ArrayList<>();
 		panelessegundo = new ArrayList<>();
 		
 		botonespostre = new ArrayList<>();
 		cambiopostre = new ArrayList<>();
+		cambiopostrea = new ArrayList<>();
 		panelespostre = new ArrayList<>();
 		
 		botonesbebida = new ArrayList<>();
 		cambiobebida = new ArrayList<>();
+		cambiobebidaa = new ArrayList<>();
 		panelesbebida = new ArrayList<>();
 		
 		
@@ -1526,10 +1530,18 @@ public class Principal extends JFrame {
 						botonSiguientePanelentrantes.setBounds(390, 575, 300, 75); //La posicion del boton
 						
 						botonSiguientePanelentrantes.setNombre("siguiente panel");  //Ponemos nombre al boton
+						Botones botonAnteriorPanelEntrantes = new Botones(); //Creamos el boton para pasar al siguiente panel
+						botonAnteriorPanelEntrantes.setBounds(640, 575, 300, 75); //La posicion del boton
+						botonAnteriorPanelEntrantes.setNombre("Anterior panel");
+						
 						if ((int)Math.ceil((double)nombreentr.size()/9)-(x+1)>0) {
 							cambioentrantes.add(botonSiguientePanelentrantes);  //Lo añadimos al array de botones
 							panelesentrantes.get(x).add(cambioentrantes.get(x)); //añadimos el boton para cambiar de panel a cada panel
 							panelesentrantes.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+							cambioentrantea.add(botonAnteriorPanelEntrantes);  //Lo añadimos al array de botones
+							panelesentrantes.get(x+1).add(botonAnteriorPanelEntrantes); //añadimos el boton para cambiar de panel a cada panel
+							panelesentrantes.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+								
 						}
 					
 						
@@ -1542,6 +1554,19 @@ public class Principal extends JFrame {
 								CambiarPanel(panelesentrantes.get(pruebae), panelesentrantes.get(pruebae+1)); //Cambiamos de paneles prueba elige el numero de panel
 								
 								pruebae++; //Incrementamos prueba para que se pueda pasar de panel
+								enQuePanel = pruebae;
+								
+							}
+							
+						});
+						botonAnteriorPanelEntrantes.addActionListener(new ActionListener() {
+							
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								// TODO Auto-generated method stub
+								CambiarPanel(panelesentrantes.get(pruebae), panelesentrantes.get(pruebae-1)); //Cambiamos de paneles prueba elige el numero de panel
+								
+								pruebae--; //Incrementamos prueba para que se pueda pasar de panel
 								enQuePanel = pruebae;
 								
 							}
@@ -1772,13 +1797,20 @@ public class Principal extends JFrame {
 																	todosPaneles.add(panelesMultseg);
 																	Botones botonSiguientePanelsegundo = new Botones(); //Creamos el boton para pasar al siguiente panel
 																	botonSiguientePanelsegundo.setBounds(390, 575, 300, 75); //La posicion del boton
+																	Botones botonAnteriorPanelSegundo= new Botones(); //Creamos el boton para pasar al siguiente panel
+																	botonAnteriorPanelSegundo.setBounds(640, 575, 300, 75); //La posicion del boton
+																	botonAnteriorPanelSegundo.setNombre("Anterior panel");
+																	
 																	
 																	botonSiguientePanelsegundo.setNombre("siguiente panel");  //Ponemos nombre al boton
 																	if ((int)Math.ceil((double)nombresegundo.size()/9)-(x+1)>0) {
 																		cambiosegundo.add(botonSiguientePanelsegundo);  //Lo añadimos al array de botones
 																		panelessegundo.get(x).add(botonSiguientePanelsegundo); //añadimos el boton para cambiar de panel a cada panel
 																		panelessegundo.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
-																		
+																		cambiosegundoa.add(botonAnteriorPanelprimero);  //Lo añadimos al array de botones
+																		panelessegundo.get(x+1).add(botonAnteriorPanelSegundo); //añadimos el boton para cambiar de panel a cada panel
+																		panelessegundo.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+																			
 																	}
 																	
 																	botonSiguientePanelsegundo.addActionListener(new ActionListener() {
@@ -1790,6 +1822,19 @@ public class Principal extends JFrame {
 																			CambiarPanel(panelessegundo.get(pruebas), panelessegundo.get(pruebas+1)); //Cambiamos de paneles prueba elige el numero de panel
 																			
 																			pruebas++; //Incrementamos prueba para que se pueda pasar de panel
+																			enQuePanel = pruebas;
+																			
+																		}
+																		
+																	});
+																	botonAnteriorPanelSegundo.addActionListener(new ActionListener() {
+																		
+																		@Override
+																		public void actionPerformed(ActionEvent arg0) {
+																			// TODO Auto-generated method stub
+																			CambiarPanel(panelessegundo.get(pruebas), panelessegundo.get(pruebas-1)); //Cambiamos de paneles prueba elige el numero de panel
+																			
+																			pruebas--; //Incrementamos prueba para que se pueda pasar de panel
 																			enQuePanel = pruebas;
 																			
 																		}
