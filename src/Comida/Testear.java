@@ -48,13 +48,13 @@ public class Testear {
 		c.cargarCarta();
 		//se carga el pedido
 		Pedido p = new Pedido();
-		p.addAlCarrito(c.entrantes.first());
+		/*p.addAlCarrito(c.entrantes.first());
 		p.addAlCarrito(c.primeros.first());
 		p.addAlCarrito(c.segundos.first());
 		p.addAlCarrito(c.postres.first());
 		p.addAlCarrito(c.bebidas.first());
 		
-		
+		*/
 		}
 	public static boolean comprobarConexion() {
 		

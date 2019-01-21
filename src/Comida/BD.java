@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -329,11 +330,13 @@ public class BD {
 			log( Level.SEVERE, "Error en BD\t" + SentSQL, e );
 			e.printStackTrace();
 			return false;
-		}
-		
-		
+		}		
 	}
 	
+	public static boolean cargarPedidos(Statement st) {
+		String sentSQL = "";
+		
+	}
 	
 	/////////////////////////////////////////////////////////////////////
 	//                      Logging                                    //
