@@ -28,7 +28,9 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 
@@ -77,11 +79,11 @@ public class Principal extends JFrame {
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 	JFormattedTextField tFecha,tHora;
 	Font fuente;
-	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int anyo, mes, dia, hora, minuto,x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
-	
+
 	public static void getProp(String Username) {
 		File archivo = new File("config.properties");
 		try {
@@ -692,6 +694,8 @@ public class Principal extends JFrame {
 
        confirmarFactura = new Botones();
        confirmarFactura.setNombre("Confirmar factura");
+       CrearBoton(confirmarFactura);
+       confirmarFactura.setBounds(390, 585, 300, 75);
        //EL MENU 
        JMenuBar menuBar = new JMenuBar();
        
@@ -2094,7 +2098,7 @@ public class Principal extends JFrame {
 			
 		
 		
-       confirmarFactura.addActionListener(new ActionListener() {
+			confirmarFactura.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -2133,17 +2137,39 @@ public class Principal extends JFrame {
 					pedido.addAlCarrito(bebida);
 				}
 			}
-			
+			String fechacom[] = tFecha.getText().split("/"); 
+
+
+
+
+		       String horacom[] = tHora.getText().split("/");
+
+		       mes =Integer.parseInt(fechacom[0]); 
+
+		       dia =Integer.parseInt(fechacom[1]); 
+
+		       anyo=Integer.parseInt(fechacom[2]); 
+
+		       hora =Integer.parseInt(horacom[0]); 
+
+		       minuto =Integer.parseInt(horacom[1]); 
+		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
+
+		       fechaentrega= calendario.getTime(); 
+
+		       System.out.println(fechaentrega); 
+
+		       pedido.setFecha(fechaentrega); 
+
+
+
+
+		       pedido.insertPedido(nombreUsuario);
 			//pedido.setFecha()
 		}
+		
 	});
-       bPrimerPlato.addActionListener(new ActionListener () {
-    	   @Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-       });
-      
+     
        
        
       
@@ -2302,6 +2328,7 @@ public class Principal extends JFrame {
        panelFactura.add(precio);
        panelFactura.add(iva);
        panelFactura.add(lgastado);
+       panelFactura.add(confirmarFactura);
        
        panelBebidaComida.add(bPanelQuitComida);
        panelBebidaComida.add(bPanelQuitBebida);
