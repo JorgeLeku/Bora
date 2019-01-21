@@ -3,14 +3,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Pedido {
 
 	//Propiedades
 	private int cod;
-	private Date fechaPedido, fechaEntrega;
+	private Date fecha;
+	private Time hora;
 	private double dineroGastado;
 	private String direccion;
 	private ArrayList<Alimentos> productos;
@@ -18,26 +21,27 @@ public class Pedido {
 	//Metodos
 	public Pedido() {
 		this.cod =0;
-		this.fechaPedido = new Date();
-		this.fechaEntrega =new Date();	
+		this.fecha = new Date(System.currentTimeMillis());
+		this.hora = new Time (System.currentTimeMillis());
 		this.productos = null;
 		this.dineroGastado = 0;
 		this.direccion ="";
 	}
 	
-	public Pedido(int cod, Date fechaPedido, Date fechaEntrega,String direccion ,ArrayList<Alimentos> productos) {
+	public Pedido(int cod, Date fechaPedido,Time hora, String direccion ,ArrayList<Alimentos> productos) {
 		super();
 		this.cod = cod;
-		this.fechaPedido = fechaPedido;
-		this.fechaEntrega = fechaEntrega;
+		this.fecha = fechaPedido;
+		this.hora = hora;
 		this.dineroGastado = getImporte();
 		this.productos = productos;
 		this.direccion = direccion;
 	}
 
 	public Pedido(Pedido p) {
-		this.fechaEntrega = p.fechaEntrega;
 		this.cod = p.cod;
+		this.fecha = p.fecha;
+		this.hora = p.hora;
 		this.productos = p.productos;
 		this.dineroGastado = p.dineroGastado;
 		this.direccion = p.direccion;
@@ -60,21 +64,15 @@ public class Pedido {
 		this.cod = cod;
 	}
 
-	public Date getFechaPedido() {
-		return fechaPedido;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaPedido(Date fechaPedido) {
-		this.fechaPedido = fechaPedido;
+	public void setFecha(Time fechaPedido) {
+		this.fecha = fechaPedido;
 	}
 
-	public Date getFechaEntrega() {
-		return fechaEntrega;
-	}
 
-	public void setFechaEntrega(Date fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
-	}
 
 	public ArrayList<Alimentos> getProductos() {
 		return productos;
@@ -118,14 +116,13 @@ public class Pedido {
 	 */
 	public void insertPedido(String Username) {
 		Connection conn = BD.initBD();
-		@SuppressWarnings("unused")
 		String sentSQL = "";
 		try {
+	
 			Statement st = conn.createStatement();
 			BD.Insert(st, this.toString()+ ", "+ Username  , "pedido");//se introduce el pedido con el codigo del usuario
-			
 			//unir el pedido a las comidas y bebidas
-			for (Alimentos seleccionado : productos) {
+			/*for (Alimentos seleccionado : productos) {
 				if(seleccionado.getClass().equals(Comida.class)) {//es una comida
 					if(BD.Select(st, "Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre, "ContieneC")) {//si ya existia en la BD significa que la cantidad >1
 					ResultSet rs = 	st.executeQuery("select cantidad from ContieneC where Cod_p = "+ this.cod+" and nombreComida = "+ seleccionado.nombre );			
@@ -142,21 +139,18 @@ public class Pedido {
 						}else {
 							 BD.Insert(st, this.cod+", "+seleccionado.nombre, "ContieneB");//si no hay una fila de esto
 						}
-				}
-				
-			}
+				}				
+			}*/
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-	
+		}	
 	}
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
-		return cod + ", '" + fechaPedido + "', '" + fechaEntrega 
-				+ "', '" + direccion +"'" ;
+		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
+				;
 	}
 
 	public static void main(String[] args) {
