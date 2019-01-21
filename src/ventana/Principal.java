@@ -2184,8 +2184,14 @@ public class Principal extends JFrame {
 					}
 				 System.out.println(fechaentrega); 
 				       
-				 pedido.setFecha(calendario);     
+				 pedido.setFecha(calendario);
+				 //direcciones
+				 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
+				 pedido.setDireccion(dir);
+				 pedido.setDineroGastado();
 		    	pedido.insertPedido(nombreUsuario);
+		    
+		    	
 			}else {//se introducen los valores
 				reserva.setFecha(calendario);				
 				reserva.setBebida(platoBebida);
