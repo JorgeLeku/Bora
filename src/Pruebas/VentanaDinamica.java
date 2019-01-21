@@ -1,6 +1,7 @@
 package Pruebas;
 
 
+import java.awt.Checkbox;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -29,11 +31,14 @@ public class VentanaDinamica extends JFrame{
 	String nombrebotoncambio = " " + 0;
 	private List<JButton> botones, cambio;
 	private List<JPanel> paneles;
-	
+	JCheckBox ch;
 	private JButton botonAgre;
 	private JPanel panel, panel1;
-	public VentanaDinamica() {
 	
+	
+	public VentanaDinamica() {
+			ch= new JCheckBox("pene");
+			ch.setBounds(200, 200, 100, 50);
 		    NumberFormat format = NumberFormat.getInstance();
 		    NumberFormatter formatter = new NumberFormatter(format);
 		    formatter.setValueClass(Integer.class);
@@ -168,6 +173,7 @@ public class VentanaDinamica extends JFrame{
 	    	   
 			
 		});
+		panel.add(ch);
 		panel.add(botonAgre);
 		panel.add(field);
 		//panel.add(scroll);

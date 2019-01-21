@@ -47,10 +47,7 @@ import Comida.*;
 
 
 public class Principal extends JFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	JCheckBox ch;
 	Carta carta = new Carta();
 	JMenuBar menuBar;
 	JMenu menuUsuario;
@@ -58,11 +55,11 @@ public class Principal extends JFrame {
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-	JCheckBox alcoholica;
+	
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
-	@SuppressWarnings("rawtypes")
+	
  
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
@@ -73,8 +70,9 @@ public class Principal extends JFrame {
 	String nombreUsuario;
 	JButton bReturne = null,bReturna=null;
 	
-	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
+	
 	public Principal() {
+		
 		List<JButton>bReturns = new ArrayList<>();
 		
 		carta.cargarCarta();
@@ -105,7 +103,10 @@ public class Principal extends JFrame {
 	        }
        Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
        Font titulos = fuente.deriveFont(fuente.getSize()*30F);
-       
+       ch= new JCheckBox();
+       ch.setFont(newFont);
+       ch.setText("Es alcoholica?");
+       ch.setBounds(100, 400, 200, 50);
        JFrame frame = new JFrame();
        
        ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
@@ -240,11 +241,7 @@ public class Principal extends JFrame {
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
-       alcoholica = new JCheckBox();
-       alcoholica.setText("Es alcoholica?");
-       alcoholica.setLocation(400, 600);
-       alcoholica.setVisible(true);
-       alcoholica.setEnabled(true);
+     
 
        lTipo = new JLabel();
        cOrden = new JComboBox();
@@ -599,7 +596,7 @@ public class Principal extends JFrame {
        lTipo.setBounds(700, 250, 300, 40);
        lTipo.setFont(newFont);
        lTipo.setText("Posicion del plato");
-       
+     
        cOrden.setFont(newFont);
        cOrden.addItem("Entrantes");
        cOrden.addItem("Primero");
@@ -607,20 +604,20 @@ public class Principal extends JFrame {
        cOrden.addItem("Postre");
        cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
-       cOrden.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			if (cOrden.getSelectedIndex()==4) {
-				alcoholica.setVisible(true);
-				alcoholica.setEnabled(true);
-			}else {
-				alcoholica.setVisible(false);
-				alcoholica.setEnabled(false);
-			}
-		}
-	});
+    /*   cOrden.addActionListener(new ActionListener() {
+   		
+   		@Override
+   		public void actionPerformed(ActionEvent e) {
+   			// TODO Auto-generated method stub
+   			if (cOrden.getSelectedIndex()==4) {
+   				alcoholica.setVisible(true);
+   				alcoholica.setEnabled(true);
+   			}else {
+   				alcoholica.setVisible(false);
+   				alcoholica.setEnabled(false);
+   			}
+   		}
+   	});*/
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -2193,10 +2190,12 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-       panelAddBoton.add(alcoholica);
+       panelAddBoton.add(ch);
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
+       
+       panelAddBoton.updateUI();
        
        panelInicioSesion.add(lUsuario);
        panelInicioSesion.add(lContraseña);
