@@ -1448,9 +1448,7 @@ public class Principal extends JFrame {
 		
 		creafilasbeb =(double) nombrebeb.size();
 		creacolbeb =(double) nombrebeb.size();
-		System.out.println(creafilasseg);
-		System.out.println(creacolseg);
-		System.out.println(nombresegundo.size());
+		
 		List<Double>preciobeb = new ArrayList<>();
 		
 		for (Bebida bebida : carta.getBebidas()) {
@@ -2480,7 +2478,7 @@ public class Principal extends JFrame {
 									pedido.setBebida(bebida);
 								}
 							}
-						 System.out.println(fechaentrega); 
+						  
 						       
 						 pedido.setFecha(calendario);
 						 //direcciones
@@ -2508,11 +2506,7 @@ public class Principal extends JFrame {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-						System.out.println("'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'");
-						//BD.Insert(st, "'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'", "reserva");
-						//String username, Date fecha, Time hora, String entrante, String primero, String segundo,
-						//String postre, String bebida
-						// reserva.setFecha(fechaentrega); 
+					
 					}
 				       
 				      
@@ -2891,9 +2885,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-       //frame.getContentPane().add(menuBar);
-   		
-   		System.out.println(enQuePanel(frame));
+       
 	}
 	
 	public void CrearBoton(JButton g) {
