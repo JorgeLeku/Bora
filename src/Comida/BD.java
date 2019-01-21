@@ -1,9 +1,6 @@
 package Comida;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,7 +10,6 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.sun.jndi.toolkit.url.Uri;
 
 
 
@@ -139,6 +135,32 @@ public class BD {
 			}		
 	}
 
+	/** Busca un valor de la tabla abierta de BD, usando la sentencia SELECT de SQL
+	 * (Atención: esta operación es síncrona, no devuelve el control hasta que se ejecuta completamente en base de datos)
+	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)
+	 * @param condicion condicion completa desde el where
+	 * @param nombre Tabla
+	 * @return Contador de filas(-1 si no se encuentra)
+	 */
+	public static boolean SelectAll( Statement st, String nombreTabla) {
+		String sentSQL = "";
+		ResultSet rs = null;
+		try {
+			sentSQL = "select * from "+ nombreTabla;//coje el valor de la BD
+			log( Level.INFO, "BD\t" + sentSQL, null );
+			rs = st.executeQuery( sentSQL );
+			if(rs.next()){
+				return true;
+			}else{
+				return false;
+			}			
+		} catch (Exception e) {
+			log( Level.SEVERE, "Error en BD\t" + sentSQL, e );
+			lastError = e;
+			e.printStackTrace();
+			return false;
+		}		
+	}
 	/** Busca un valor de la tabla abierta de BD, usando la sentencia SELECT de SQL
 	 * (Atención: esta operación es síncrona, no devuelve el control hasta que se ejecuta completamente en base de datos)
 	 * @param st	Sentencia ya abierta de Base de Datos (con la estructura de tabla correspondiente)

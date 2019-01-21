@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
 public class Pedido {
@@ -116,6 +115,7 @@ public class Pedido {
 	 */
 	public void insertPedido(String Username) {
 		Connection conn = BD.initBD();
+		@SuppressWarnings("unused")
 		String sentSQL = "";
 		try {
 			Statement st = conn.createStatement();

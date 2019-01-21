@@ -1,5 +1,5 @@
 package ventana;
-
+// proba
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -8,12 +8,12 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -21,27 +21,30 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import javax.swing.plaf.PanelUI;
+
 import javax.swing.text.NumberFormatter;
 
 import Comida.*;
 
-import sun.applet.AppletPanel;
+
 
 public class Principal extends JFrame {
 	/**
@@ -49,25 +52,31 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
-
+	JMenuBar menuBar;
+	JMenu menuUsuario;
+	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
-	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-Boolean esnomentr=false;
-	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
+	Usuario usuario = new Usuario();
+	JCheckBox alcoholica;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-
-	JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
+	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	@SuppressWarnings("rawtypes")
+ 
 	JComboBox cOrden, cHoraReserva;
-	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2;
+	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
 	Font fuente;
-	int queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
-
+	String nombreUsuario;
+	JButton bReturne = null,bReturna=null;
 	
-	int x = 1;
+	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
+		List<JButton>bReturns = new ArrayList<>();
+		
 		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
 		 bReturn = new JButton (imagenbAtr);
@@ -118,6 +127,9 @@ Boolean esnomentr=false;
        Paneles panelBebidaComida = new Paneles();
        Paneles panelQuitComida = new Paneles(); //En este panel el admin puede quitar platos del menu
        Paneles panelAddBoton = new Paneles (); //En este panel el admin puede añadir platos a la comida
+       
+       //Nko
+       Paneles panelRegistrarse = new Paneles();
       
        Paneles panelReserva = new Paneles();
 
@@ -148,6 +160,9 @@ Boolean esnomentr=false;
        CrearPanel(panelReserva);
        CrearPanel(panelMesa);
        
+       //Nko
+       CrearPanel(panelRegistrarse);
+        
        CrearPanel(panelRecogerDomicilio);
        CrearPanel(panelRecogida);
        CrearPanel(panelDomicilio);
@@ -225,6 +240,11 @@ Boolean esnomentr=false;
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
+       alcoholica = new JCheckBox();
+       alcoholica.setText("Es alcoholica?");
+       alcoholica.setLocation(400, 600);
+       alcoholica.setVisible(true);
+       alcoholica.setEnabled(true);
 
        lTipo = new JLabel();
        cOrden = new JComboBox();
@@ -252,6 +272,20 @@ Boolean esnomentr=false;
        //Objetos PanelRecogerDomicilio
        bPanelRecogida = new BotonesGrandes();
        bPanelDomicilio = new BotonesGrandes();
+       
+       //Nko
+       //Objetos panelRegistrarse
+       lURegistro = new JLabel();
+       lCRegistro = new JLabel();
+       lNRegistro = new JLabel();
+       lARegistro = new JLabel();
+       lTRegistro = new JLabel();
+       tURegistro = new JTextField();
+       tCRegistro = new JTextField();
+       tNRegistro = new JTextField();
+       tARegistro = new JTextField();
+       tTRegistro = new JTextField();
+       bConfirmarRegistro = new JButton();
        
 
        //Objetos panelRecogida
@@ -376,6 +410,41 @@ Boolean esnomentr=false;
        bPanelDomicilio.setFont(newFont);
        bPanelDomicilio.setNombre("Domicilio");
        
+       //Nko
+       //panelRegistrarse
+       lURegistro.setBounds(260, 200, 200, 40);
+       lURegistro.setFont(newFont);
+       lURegistro.setText("Username");
+       tURegistro.setBounds(200, 250, 200, 40);
+       
+       lCRegistro.setBounds(700, 200, 200, 40);
+       lCRegistro.setFont(newFont);
+       lCRegistro.setText("Contraseña");
+       tCRegistro.setBounds(700, 250, 200, 40);
+       
+       lNRegistro.setBounds(260, 325, 200, 40);
+       lNRegistro.setFont(newFont);
+       lNRegistro.setText("Nombre");
+       tNRegistro.setBounds(200, 375, 200, 40);
+       
+       lARegistro.setBounds(760, 325, 200, 40);
+       lARegistro.setFont(newFont);
+       lARegistro.setText("Apellidos");
+       tARegistro.setBounds(700, 375, 200, 40);
+       
+       lTRegistro.setBounds(260, 450, 200, 40);
+       lTRegistro.setFont(newFont);
+       lTRegistro.setText("Telefono");
+       tTRegistro.setBounds(200, 500, 200, 40);
+       
+       //lApellido.setBounds(760, 450, 200, 40);
+       //lApellido.setFont(newFont);
+       //lApellido.setText("Apellido");
+       //tApellido.setBounds(700, 500, 200, 40);
+       
+       bConfirmarRegistro.setBounds(390, 585, 300, 75);
+       bConfirmarRegistro.setFont(newFont);
+       bConfirmarRegistro.setText("Confirmar");
 
      //PANEL RECOGIDA LABEL Y TF
        lHora.setBounds(360, 250, 200, 40);
@@ -538,7 +607,20 @@ Boolean esnomentr=false;
        cOrden.addItem("Postre");
        cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
-       
+       cOrden.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if (cOrden.getSelectedIndex()==4) {
+				alcoholica.setVisible(true);
+				alcoholica.setEnabled(true);
+			}else {
+				alcoholica.setVisible(false);
+				alcoholica.setEnabled(false);
+			}
+		}
+	});
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -595,25 +677,36 @@ Boolean esnomentr=false;
        bSelImg.setBounds(250, 420, 300, 75);
 
 		
+       //EL MENU 
+       menuBar = new JMenuBar();
+
+    
+       menuUsuario = new JMenu("Ajustes de usuario");
+       menuUsuario.setMnemonic(KeyEvent.VK_A);
+       menuBar.add(menuUsuario);
        
+       
+       //Action Listeners
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			CambiarPanel(panelBienvenida, panelInicioSesion);
+			if (panelBienvenida.isEnabled()) {
+				CambiarPanel(panelBienvenida, panelInicioSesion);
+			}
+			
 			
 		}
 		
 		@Override
 		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
+	
 			
 		}
 	});
@@ -626,8 +719,31 @@ Boolean esnomentr=false;
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
-   			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, panelInicio);
+   			
+   			Connection conn = BD.initBD();
+   			
+   			Statement st=null;
+   			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch bl	ock
+				e1.printStackTrace();
+			}
+   			
+   			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
+   				//aha
+   				CambiarPanel(panelInicioSesion, panelInicio);
+   				bPanelAdmin.setEnabled(false);
+   				bPanelAdmin.setVisible(false);
+   				panelInicio.updateUI();
+			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
+				CambiarPanel(panelInicioSesion, panelInicio);
+				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
+				nombreUsuario=tUsuario.getText();
+			}else {
+			
+				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+			}
    			
    			
    		}
@@ -637,22 +753,97 @@ Boolean esnomentr=false;
 
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
+ 
    			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, panelInicio);
+   			CambiarPanel(panelInicioSesion, panelRegistrarse );
+
+   			if (bpregistro==false) {
+				
+   				bpregistro=true;
+				bReturne = new JButton("bpRegistrarse");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelRegistrarse.add(bReturne);
+				
+				
+			}
+   		
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelRegistrarse,panelInicioSesion); 
+				}
+			});
+   			//CambiarPanel(panelInicioSesion, panelInicio);
+   			
    		}
        	   
           });
+       
+       bConfirmarRegistro.addActionListener(new ActionListener () {
+    	   @Override
+      		public void actionPerformed(ActionEvent arg0) {
+      			// TODO Auto-generated method stub
+    		   /*panelRegistrarse.add(lURegistro);
+       panelRegistrarse.add(lCRegistro);
+       panelRegistrarse.add(lNRegistro);
+       panelRegistrarse.add(lARegistro);
+       panelRegistrarse.add(lTRegistro);
+       panelRegistrarse.add(tURegistro);
+       panelRegistrarse.add(tCRegistro);
+       panelRegistrarse.add(tNRegistro);
+       panelRegistrarse.add(tARegistro);
+       panelRegistrarse.add(tTRegistro);
+       panelRegistrarse.add(bConfirmarRegistro);*/
+    		   //BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+    		   Connection conn = BD.initBD();
+   			
+   			Statement st=null;
+   		
+   			try {
+   				st = conn.createStatement();
+   			} catch (SQLException e1) {
+   				// TODO Auto-generated catch block
+   				e1.printStackTrace();
+   			}
+   				numeroTF=Integer.parseInt(tTRegistro.getText());
+    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
+      			
+    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
+      		}
+       });
+       
        bPanelAdmin.addActionListener(new ActionListener () {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			CambiarPanel(panelInicio, panelAdmin); 
+			CambiarPanel(panelInicio, panelAdmin);
+		
 			if (bpAdmin == false) {
-				panelAdmin.add(bReturn);
 				bpAdmin=true;
+				bReturne = new JButton("bpAdmin");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelAdmin.add(bReturne);
+				
 			}
-			
+
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelAdmin, panelInicio); 
+				}
+			});
 		}
     	   
        });
@@ -661,12 +852,28 @@ Boolean esnomentr=false;
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Base de datos
-				CambiarPanel(panelInicio, panelRecogerDomicilio); 
+				CambiarPanel(panelInicio, panelRecogerDomicilio);
+				
 				if (bprecogerdomicilio==false) {
-					panelRecogerDomicilio.add(bReturn);
 					bprecogerdomicilio=true;
+					bReturna = new JButton("bprecogerdomicilio");
+					CrearBoton(bReturna);
+					bReturna.setIcon(imagenbAtr);
+					bReturna.setRolloverIcon(imagenbAtrbn);
+					bReturna.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturna);
+					panelRecogerDomicilio.add(bReturna);
+					
+					
 				}
+				bReturna.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelRecogerDomicilio,panelInicio); 
+					}
+				});
 				
 			}
 
@@ -678,12 +885,31 @@ Boolean esnomentr=false;
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
+				panelRecogida.add(bPanelMesa);
 				if (bprecogida==false) {
-					panelRecogida.add(bPanelMesa);
-					panelRecogida.add(bReturn);
+					
 					bprecogida=true;
+					
+					bReturne = new JButton("bprecogida");
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					panelRecogida.add(bReturne);
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelRecogida, panelRecogerDomicilio); 
+					}
+				});	
 			}
 
       });
@@ -694,12 +920,32 @@ Boolean esnomentr=false;
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
+			
+				panelDomicilio.add(bPanelMesa);
 				if (bpdomicilio==false) {
-					panelDomicilio.add(bPanelMesa);
-					panelDomicilio.add(bReturn);
+					
 					bpdomicilio=true;
+					
+					 bReturne = new JButton("bpdomicilio");
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					panelDomicilio.add(bReturne);
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelDomicilio,panelRecogerDomicilio); 
+					}
+				});
 			}
 
      }); 
@@ -710,12 +956,33 @@ Boolean esnomentr=false;
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
+				panelReserva.add(bPanelMesa);
 				if (bpreserva==false) {
-					panelReserva.add(bPanelMesa);
-					panelReserva.add(bReturn);
+					
+					
 					bpreserva=true;
+					
+					bReturne = new JButton("bpReserva");
+					panelReserva.add(bReturne);
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelReserva,panelInicio); 
+					}
+				});
 				
 			}
 
@@ -728,11 +995,34 @@ Boolean esnomentr=false;
 			// 
 			CambiarPanel(panelAdmin, panelBebidaComida);
 			
-			/*if (bpquitboton==false) {
-				panelQuitBoton.add(bReturn);
-				bpquitboton=true;
-			}*/
-			//carta.getEntrantes()
+			
+			
+
+			if (bpbebidacomida==false) {
+				
+				
+				bpbebidacomida=true;
+			
+				
+				bReturne = new JButton("bpBebidaComida");
+				
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelBebidaComida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelBebidaComida,panelAdmin); 
+				}
+			});
 			
 		}
     	   
@@ -744,11 +1034,29 @@ Boolean esnomentr=false;
    			// TODO Auto-generated method stub
    			CambiarPanel(panelBebidaComida, panelQuitBebida);
    			
-   			/*if (bpquitboton==false) {
-   				panelQuitBoton.add(bReturn);
-   				bpquitboton=true;
-   			}*/
-   		
+   			
+   			if (bpBebida==false) {
+				
+				bpBebida=true;
+				bReturne = new JButton("bpBebida");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelQuitBebida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelQuitBebida, panelBebidaComida); 
+				}
+			});
+   			
    			
    		}
        	   
@@ -760,12 +1068,29 @@ Boolean esnomentr=false;
       			// TODO Auto-generated method stub
       			CambiarPanel(panelBebidaComida, panelQuitComida);
       			
-      			if (bpquitbotonComida==false) {
-      				
-      				panelQuitComida.add(bReturn);
-      				bpquitbotonComida=true;
-      			}
       			
+      			if (bpquitbotonComida==false) {
+    				
+      				bpquitbotonComida=true;
+    				
+    				bReturne = new JButton("bpQuitComida");
+    				CrearBoton(bReturne);
+    				bReturne.setIcon(imagenbAtr);
+    				bReturne.setRolloverIcon(imagenbAtrbn);
+    				bReturne.setBounds(30, 30, 80, 80);
+    				bReturns.add(bReturne);
+    				panelQuitComida.add(bReturne);
+    				
+    				
+    			}
+    			bReturne.addActionListener(new ActionListener() {
+    				
+    				@Override
+    				public void actionPerformed(ActionEvent e) {
+    					// TODO Auto-generated method stub
+    					CambiarPanel(panelQuitComida,panelBebidaComida); 
+    				}
+    			});
       		}
           	   
          });
@@ -774,12 +1099,22 @@ Boolean esnomentr=false;
      		@Override
      		public void actionPerformed(ActionEvent e) {
      			// TODO Auto-generated method stub
-     			/*if (poner que si existe un plato se haga esto) {
+     			Connection conn = BD.initBD();
+    			
+    			Statement st=null;
+    		
+    			try {
+    				st = conn.createStatement();
+    			} catch (SQLException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+     			if (BD.borrarAlimento(st, tQuitComida.getText(), "bebida")) {
 				JOptionPane.showMessageDialog(null, "Bebida Eliminada");
 				} else {
 				JOptionPane.showMessageDialog(null, "Bebida no eliminada");
-				}*/
-     			JOptionPane.showMessageDialog(null, "Bebida eliminada");
+				}
+     		
      			
      		}
          	   
@@ -789,12 +1124,22 @@ Boolean esnomentr=false;
     		@Override
     		public void actionPerformed(ActionEvent e) {
     			// TODO Auto-generated method stub
-    			/*if (poner que si existe una bebida se haga esto) {
+    			Connection conn = BD.initBD();
+    			
+    			Statement st=null;
+    		
+    			try {
+    				st = conn.createStatement();
+    			} catch (SQLException e1) {
+    				// TODO Auto-generated catch block
+    				e1.printStackTrace();
+    			}
+    			if (BD.borrarAlimento(st, tQuitComida.getText(), "comida")) {
 				JOptionPane.showMessageDialog(null, "Plato eliminado");
 				} else {
 				JOptionPane.showMessageDialog(null, "Plato no eliminado");
-				}*/
-    			JOptionPane.showMessageDialog(null, "Plato eliminado");
+				}
+    		
     			
     		}
         	   
@@ -805,11 +1150,29 @@ Boolean esnomentr=false;
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
+   			
    			if (bpaddboton==false) {
-   				panelAddBoton.add(bReturn);
-   				
-   				bpaddboton=true;
+				
+				bpaddboton=true;
+				
+				bReturne = new JButton("bpAddBoton");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelAddBoton.add(bReturne);
+				
+				
 			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelAddBoton,panelAdmin); 
+				}
+			});
    			
    		}
        	   
@@ -826,7 +1189,7 @@ Boolean esnomentr=false;
 		
        	
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
-		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JButton> cambioprimeroa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
 		
@@ -900,7 +1263,7 @@ Boolean esnomentr=false;
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
-		int pene=3;
+		
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -908,6 +1271,7 @@ Boolean esnomentr=false;
 		
 		botonesprimero = new ArrayList<>();
 		cambioprimero = new ArrayList<>();
+		cambioprimeroa = new ArrayList<>();
 		panelesprimero = new ArrayList<>();
 		
 		botonessegundo = new ArrayList<>();
@@ -1073,16 +1437,24 @@ Boolean esnomentr=false;
 												frame.getContentPane().add(panelesMultprim); //lo añadimos al frame
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												Botones botonSiguientePanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
-												botonSiguientePanelprimero.setBounds(390, 575, 300, 75); //La posicion del boton
-
+												botonSiguientePanelprimero.setBounds(240,575, 300, 75); //La posicion del boton
+												Botones botonAnteriorPanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
+												botonAnteriorPanelprimero.setBounds(640, 575, 300, 75); //La posicion del boton
+												botonAnteriorPanelprimero.setNombre("Anterior panel");
 												
 												
-												botonSiguientePanelprimero.setNombre("siguiente panel");  //Ponemos nombre al boton
+												botonSiguientePanelprimero.setNombre("Siguiente panel");  //Ponemos nombre al boton
 												panelesprimero.get(x).add(lprimero);
 												if ((int)Math.ceil((double)nombreprimero.size()/9)-(x+1)>0) {
 													cambioprimero.add(botonSiguientePanelprimero);  //Lo añadimos al array de botones
 													panelesprimero.get(x).add(botonSiguientePanelprimero); //añadimos el boton para cambiar de panel a cada panel
 													panelesprimero.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+													
+													cambioprimeroa.add(botonAnteriorPanelprimero);  //Lo añadimos al array de botones
+													panelesprimero.get(x+1).add(botonAnteriorPanelprimero); //añadimos el boton para cambiar de panel a cada panel
+													panelesprimero.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+														
+													
 													
 												}
 												
@@ -1094,6 +1466,19 @@ Boolean esnomentr=false;
 														CambiarPanel(panelesprimero.get(prueba), panelesprimero.get(prueba+1)); //Cambiamos de paneles prueba elige el numero de panel
 														
 														prueba++; //Incrementamos prueba para que se pueda pasar de panel
+														enQuePanel = prueba;
+														
+													}
+													
+												});
+												botonAnteriorPanelprimero.addActionListener(new ActionListener() {
+													
+													@Override
+													public void actionPerformed(ActionEvent arg0) {
+														// TODO Auto-generated method stub
+														CambiarPanel(panelesprimero.get(prueba), panelesprimero.get(prueba-1)); //Cambiamos de paneles prueba elige el numero de panel
+														
+														prueba--; //Incrementamos prueba para que se pueda pasar de panel
 														enQuePanel = prueba;
 														
 													}
@@ -1502,6 +1887,7 @@ Boolean esnomentr=false;
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													
 																													String nombreElegido =pp2e.getNombre();
+																													@SuppressWarnings("unused")
 																													Comida entranteElegido = new Comida();
 																													for (Comida entrante : carta.entrantes) {
 																														if(entrante.getNombre().equals(nombreElegido)) {
@@ -1615,55 +2001,7 @@ Boolean esnomentr=false;
        });
       
        
-       bReturn.addMouseListener(new MouseListener() {
-		
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			if (panelAddBoton.isEnabled()== true) {
-				CambiarPanelRetorno(panelAddBoton, panelAdmin);
-			} else if (panelQuitComida.isEnabled()== true) {
-				CambiarPanelRetorno(panelQuitComida, panelAdmin);
-			} else if (panelAdmin.isEnabled()== true) {
-				CambiarPanelRetorno(panelAdmin, panelInicio);
-			} else if (bPanelRecogerDomicilio.isEnabled()== true) {
-				CambiarPanelRetorno(panelRecogerDomicilio, panelInicio);
-			} else if (panelReserva.isEnabled()== true) {
-				CambiarPanelRetorno(panelReserva, panelInicio);
-			} else if (panelRecogida.isEnabled()== true) {
-				CambiarPanelRetorno(panelRecogida, panelRecogerDomicilio);
-			} else if (panelDomicilio.isEnabled()== true) {
-				CambiarPanelRetorno(panelDomicilio, panelRecogerDomicilio);
-			} else  {
-				System.out.println("No funchiona");
-			}
-			
-		}
-	});
+       
       
 //pene
        
@@ -1673,33 +2011,47 @@ Boolean esnomentr=false;
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			Connection conn = BD.initBD();
-			Statement st=null;
 			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			
+			//System.out.println(nombreentr);
+			//System.out.println(tNombreProd.getText());
 			if (cOrden.getSelectedIndex()==0) {
 				for (int i = 0; i < nombreentr.size(); i++) {
-					if (nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreentr.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
-				
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					
+					System.out.println("'Alubias', 13, 1");
+					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
-					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
+					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre o el formato del precio no es valido");
 				}
 				
 				
 			}else if (cOrden.getSelectedIndex()==1) {
 				
 				for (int i = 0; i < nombreprimero.size(); i++) {
-					if (nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombreprimero.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1707,13 +2059,15 @@ Boolean esnomentr=false;
 				
 			}else if (cOrden.getSelectedIndex()==2) {
 				for (int i = 0; i < nombresegundo.size(); i++) {
-					if (nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {	
+						esnomentr=true;
+						System.out.println("que son igualesssss");
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
@@ -1721,34 +2075,36 @@ Boolean esnomentr=false;
 				
 			}else if (cOrden.getSelectedIndex()==3) {
 				for (int i = 0; i < nombrepostre.size(); i++) {
-					if (nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrepostre.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "comida");
-					esnomentr=true;
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}else if (cOrden.getSelectedIndex()==4) {
 				for (int i = 0; i < nombrebeb.size(); i++) {
-					if (nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())) {	
+					if (tNombreProd.getText().isEmpty()==true||nombrebeb.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {
+						esnomentr=true;
 					}
 				}
 				if (esnomentr==false) {
 					System.out.println(cbt2.getText());
-					//BD.Insert(st, "'"+ tNombreProd+"'"+cbt2+cOrden.getSelectedItem(), "bebida");
-					esnomentr=true;
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "bebida");
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
 				}
 			}
-			
-			
+			tNombreProd.setText("");
+			esnomentr=false;
 		}
 	});
-      
+     
   
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
@@ -1772,6 +2128,20 @@ Boolean esnomentr=false;
        panelRecogerDomicilio.add(bPanelDomicilio);       
 
        panelRecogerDomicilio.add(bPanelDomicilio);  
+       
+       //Nko
+       //panelRecogida
+       panelRegistrarse.add(lURegistro);
+       panelRegistrarse.add(lCRegistro);
+       panelRegistrarse.add(lNRegistro);
+       panelRegistrarse.add(lARegistro);
+       panelRegistrarse.add(lTRegistro);
+       panelRegistrarse.add(tURegistro);
+       panelRegistrarse.add(tCRegistro);
+       panelRegistrarse.add(tNRegistro);
+       panelRegistrarse.add(tARegistro);
+       panelRegistrarse.add(tTRegistro);
+       panelRegistrarse.add(bConfirmarRegistro);
        
        panelDomicilio.add(lCalle);
        panelDomicilio.add(lEdificio);
@@ -1823,7 +2193,7 @@ Boolean esnomentr=false;
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-
+       panelAddBoton.add(alcoholica);
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
@@ -1859,6 +2229,9 @@ Boolean esnomentr=false;
        frame.getContentPane().add(panelReserva);
        frame.getContentPane().add(panelMesa);
        
+       //Nko
+       frame.getContentPane().add(panelRegistrarse); //??????????????????????????????????
+       
        frame.getContentPane().add(panelRecogerDomicilio);
        frame.getContentPane().add(panelRecogida);
        frame.getContentPane().add(panelDomicilio);
@@ -1870,7 +2243,7 @@ Boolean esnomentr=false;
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-
+       frame.getContentPane().add(menuBar);
 	}
 	public void CrearBoton(JButton g) {
 
@@ -1884,27 +2257,28 @@ Boolean esnomentr=false;
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		
+		for (Component cp : g.getComponents() ){
+			cp.setEnabled(false);
+			cp.setVisible(false);
+		}
+		for (Component sp : h.getComponents() ){
+	        sp.setEnabled(true);
+	        sp.setVisible(true);
+		}
 		
 			//h.add(bReturn);
 		
 		
 	}
-	public void CambiarPanelRetorno(JPanel g, JPanel h) {
-			g.setVisible(false);
-			g.setEnabled(false);
-			h.setVisible(true);
-			h.setEnabled(true);
-			
-			for (Component cp : g.getComponents() ){
-				cp.setEnabled(false);
-				cp.setVisible(false);
-			}
-			for (Component sp : h.getComponents() ){
-		        sp.setEnabled(true);
-		        sp.setVisible(true);
-			}
+	public static boolean esNumerico(String str)
+	{
+	    for (char c : str.toCharArray())
+	    {
+	        if (!Character.isDigit(c)&&c!='.') return false;
+	    }
+	    return true;
 	}
+	
 	
 
 	public void CrearPanel(JPanel g) {
