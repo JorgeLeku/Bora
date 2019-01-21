@@ -2328,6 +2328,15 @@ public class Principal extends JFrame {
 			esnomentr=false;
 		}
 	});
+       
+    passw.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
+			
+		}
+	});   
      
   
        panelSegundo.updateUI();
