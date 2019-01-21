@@ -1522,17 +1522,20 @@ public class Principal extends JFrame {
 					
 					   String horacomx[] = tHora.getText().split(":");
 
-					   mesx =Integer.parseInt(fechacomx[1]); 
+					   mesx =Integer.parseInt(fechacomx[0]); 
 
-					   diax =Integer.parseInt(fechacomx[0]); 
+					   diax =Integer.parseInt(fechacomx[1]); 
 
 					   anyox=Integer.parseInt(fechacomx[2]); 
 
 					   horax =Integer.parseInt(horacomx[0]); 
 
-					   minuto =Integer.parseInt(horacomx[1]); 
-					   Calendar calendario1 = new GregorianCalendar(anyox, mesx, diax, horax, minutox);
-					if (calendario1.compareTo(calendarioactual)>0&&mesx<13&&diax<32&&horax<24&&minutox<60) {
+					   minutox =Integer.parseInt(horacomx[1]); 
+					  
+					   GregorianCalendar calendario1 = new GregorianCalendar(anyox, mesx, diax, horax, minutox);
+					 
+					   
+					if (calendario1.compareTo(calendarioactual)>0&&mesx<32&&diax<13&&horax<24&&minutox<60) {
 					Paneles panel1e =  new Paneles();
 					
 					CrearPanel(panel1e);
