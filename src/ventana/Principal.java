@@ -50,40 +50,28 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Carta carta = new Carta();
 
-	Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
-	//Boolean esnomentr=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-
-	//Boolean bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-	//Boolean esnomentr=false;
-	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
-
-	//Boolean esAdmin=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false;
-	//Boolean esnomentr=false;
-	//JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida;
 
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
-	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
-	//JLabel  lgastado, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal;
 	@SuppressWarnings("rawtypes")
  
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
 	Font fuente;
-	int queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 
-	
+	JButton bReturne = null,bReturna=null;
 	int x = 1;
 	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
 	public Principal() {
-		
+		List<JButton>bReturns = new ArrayList<>();
 		
 		carta.cargarCarta();
 		 ImageIcon imagenbAtr = new ImageIcon(this.getClass().getClassLoader().getResource("bg/bAtr.png"));
@@ -735,10 +723,32 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
  
    			// TODO Auto-generated method stub
-   			CambiarPanel(panelInicioSesion, /*panelInicio*/ panelRegistrarse );
- 
+   			CambiarPanel(panelInicioSesion, panelRegistrarse );
+
+   			if (bpregistro==false) {
+				
+   				bpregistro=true;
+				bReturne = new JButton("bpRegistrarse");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelRegistrarse.add(bReturne);
+				
+				
+			}
+   		
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelRegistrarse,panelInicioSesion); 
+				}
+			});
    			//CambiarPanel(panelInicioSesion, panelInicio);
- 
+   			
    		}
        	   
           });
@@ -747,7 +757,32 @@ public class Principal extends JFrame {
     	   @Override
       		public void actionPerformed(ActionEvent arg0) {
       			// TODO Auto-generated method stub
-      			CambiarPanel(panelRegistrarse, panelInicio );
+    		   /*panelRegistrarse.add(lURegistro);
+       panelRegistrarse.add(lCRegistro);
+       panelRegistrarse.add(lNRegistro);
+       panelRegistrarse.add(lARegistro);
+       panelRegistrarse.add(lTRegistro);
+       panelRegistrarse.add(tURegistro);
+       panelRegistrarse.add(tCRegistro);
+       panelRegistrarse.add(tNRegistro);
+       panelRegistrarse.add(tARegistro);
+       panelRegistrarse.add(tTRegistro);
+       panelRegistrarse.add(bConfirmarRegistro);*/
+    		   //BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
+    		   Connection conn = BD.initBD();
+   			
+   			Statement st=null;
+   		
+   			try {
+   				st = conn.createStatement();
+   			} catch (SQLException e1) {
+   				// TODO Auto-generated catch block
+   				e1.printStackTrace();
+   			}
+   				numeroTF=Integer.parseInt(tTRegistro.getText());
+    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
+      			
+    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
       		}
        });
        
@@ -755,12 +790,28 @@ public class Principal extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			CambiarPanel(panelInicio, panelAdmin); 
+			CambiarPanel(panelInicio, panelAdmin);
+		
 			if (bpAdmin == false) {
-				panelAdmin.add(bReturn);
 				bpAdmin=true;
+				bReturne = new JButton("bpAdmin");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelAdmin.add(bReturne);
+				
 			}
-			
+
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelAdmin, panelInicio); 
+				}
+			});
 		}
     	   
        });
@@ -769,11 +820,28 @@ public class Principal extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				CambiarPanel(panelInicio, panelRecogerDomicilio); 
+				CambiarPanel(panelInicio, panelRecogerDomicilio);
+				
 				if (bprecogerdomicilio==false) {
-					panelRecogerDomicilio.add(bReturn);
 					bprecogerdomicilio=true;
+					bReturna = new JButton("bprecogerdomicilio");
+					CrearBoton(bReturna);
+					bReturna.setIcon(imagenbAtr);
+					bReturna.setRolloverIcon(imagenbAtrbn);
+					bReturna.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturna);
+					panelRecogerDomicilio.add(bReturna);
+					
+					
 				}
+				bReturna.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelRecogerDomicilio,panelInicio); 
+					}
+				});
 				
 			}
 
@@ -785,12 +853,31 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
+				panelRecogida.add(bPanelMesa);
 				if (bprecogida==false) {
-					panelRecogida.add(bPanelMesa);
-					panelRecogida.add(bReturn);
+					
 					bprecogida=true;
+					
+					bReturne = new JButton("bprecogida");
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					panelRecogida.add(bReturne);
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelRecogida, panelRecogerDomicilio); 
+					}
+				});	
 			}
 
       });
@@ -801,12 +888,32 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
+			
+				panelDomicilio.add(bPanelMesa);
 				if (bpdomicilio==false) {
-					panelDomicilio.add(bPanelMesa);
-					panelDomicilio.add(bReturn);
+					
 					bpdomicilio=true;
+					
+					 bReturne = new JButton("bpdomicilio");
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					panelDomicilio.add(bReturne);
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelDomicilio,panelRecogerDomicilio); 
+					}
+				});
 			}
 
      }); 
@@ -817,12 +924,33 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
+				panelReserva.add(bPanelMesa);
 				if (bpreserva==false) {
-					panelReserva.add(bPanelMesa);
-					panelReserva.add(bReturn);
+					
+					
 					bpreserva=true;
+					
+					bReturne = new JButton("bpReserva");
+					panelReserva.add(bReturne);
+					CrearBoton(bReturne);
+					bReturne.setIcon(imagenbAtr);
+					bReturne.setRolloverIcon(imagenbAtrbn);
+					bReturne.setBounds(30, 30, 80, 80);
+					bReturns.add(bReturne);
+					
+					
+					
 				}
-				
+				bPanelMesa.setVisible(true);
+				bPanelMesa.setEnabled(true);
+				bReturne.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						CambiarPanel(panelReserva,panelInicio); 
+					}
+				});
 				
 			}
 
@@ -835,11 +963,34 @@ public class Principal extends JFrame {
 			// 
 			CambiarPanel(panelAdmin, panelBebidaComida);
 			
-			/*if (bpquitboton==false) {
-				panelQuitBoton.add(bReturn);
-				bpquitboton=true;
-			}*/
-			//carta.getEntrantes()
+			
+			
+
+			if (bpbebidacomida==false) {
+				
+				
+				bpbebidacomida=true;
+			
+				
+				bReturne = new JButton("bpBebidaComida");
+				
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelBebidaComida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelBebidaComida,panelAdmin); 
+				}
+			});
 			
 		}
     	   
@@ -851,11 +1002,29 @@ public class Principal extends JFrame {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelBebidaComida, panelQuitBebida);
    			
-   			/*if (bpquitboton==false) {
-   				panelQuitBoton.add(bReturn);
-   				bpquitboton=true;
-   			}*/
-   		
+   			
+   			if (bpBebida==false) {
+				
+				bpBebida=true;
+				bReturne = new JButton("bpBebida");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelQuitBebida.add(bReturne);
+				
+				
+			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelQuitBebida, panelBebidaComida); 
+				}
+			});
+   			
    			
    		}
        	   
@@ -867,12 +1036,29 @@ public class Principal extends JFrame {
       			// TODO Auto-generated method stub
       			CambiarPanel(panelBebidaComida, panelQuitComida);
       			
-      			if (bpquitbotonComida==false) {
-      				
-      				panelQuitComida.add(bReturn);
-      				bpquitbotonComida=true;
-      			}
       			
+      			if (bpquitbotonComida==false) {
+    				
+      				bpquitbotonComida=true;
+    				
+    				bReturne = new JButton("bpQuitComida");
+    				CrearBoton(bReturne);
+    				bReturne.setIcon(imagenbAtr);
+    				bReturne.setRolloverIcon(imagenbAtrbn);
+    				bReturne.setBounds(30, 30, 80, 80);
+    				bReturns.add(bReturne);
+    				panelQuitComida.add(bReturne);
+    				
+    				
+    			}
+    			bReturne.addActionListener(new ActionListener() {
+    				
+    				@Override
+    				public void actionPerformed(ActionEvent e) {
+    					// TODO Auto-generated method stub
+    					CambiarPanel(panelQuitComida,panelBebidaComida); 
+    				}
+    			});
       		}
           	   
          });
@@ -932,11 +1118,29 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			CambiarPanel(panelAdmin, panelAddBoton);
+   			
    			if (bpaddboton==false) {
-   				panelAddBoton.add(bReturn);
-   				
-   				bpaddboton=true;
+				
+				bpaddboton=true;
+				
+				bReturne = new JButton("bpAddBoton");
+				CrearBoton(bReturne);
+				bReturne.setIcon(imagenbAtr);
+				bReturne.setRolloverIcon(imagenbAtrbn);
+				bReturne.setBounds(30, 30, 80, 80);
+				bReturns.add(bReturne);
+				panelAddBoton.add(bReturne);
+				
+				
 			}
+			bReturne.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					CambiarPanel(panelAddBoton,panelAdmin); 
+				}
+			});
    			
    		}
        	   
@@ -953,7 +1157,7 @@ public class Principal extends JFrame {
 		
        	
 		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
-		List<JButton> cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JButton> cambioprimeroa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
 		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
 		
 		
@@ -1035,6 +1239,7 @@ public class Principal extends JFrame {
 		
 		botonesprimero = new ArrayList<>();
 		cambioprimero = new ArrayList<>();
+		cambioprimeroa = new ArrayList<>();
 		panelesprimero = new ArrayList<>();
 		
 		botonessegundo = new ArrayList<>();
@@ -1200,16 +1405,24 @@ public class Principal extends JFrame {
 												frame.getContentPane().add(panelesMultprim); //lo añadimos al frame
 												panelesprimero.add(panelesMultprim);  //Lo metemos en el array de paneles
 												Botones botonSiguientePanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
-												botonSiguientePanelprimero.setBounds(390, 575, 300, 75); //La posicion del boton
-
+												botonSiguientePanelprimero.setBounds(590, 575, 300, 75); //La posicion del boton
+												Botones botonAnteriorPanelprimero = new Botones(); //Creamos el boton para pasar al siguiente panel
+												botonAnteriorPanelprimero.setBounds(590, 575, 300, 75); //La posicion del boton
+												botonAnteriorPanelprimero.setNombre("Anterior panel");
 												
 												
-												botonSiguientePanelprimero.setNombre("siguiente panel");  //Ponemos nombre al boton
+												botonSiguientePanelprimero.setNombre("Siguiente panel");  //Ponemos nombre al boton
 												panelesprimero.get(x).add(lprimero);
 												if ((int)Math.ceil((double)nombreprimero.size()/9)-(x+1)>0) {
 													cambioprimero.add(botonSiguientePanelprimero);  //Lo añadimos al array de botones
 													panelesprimero.get(x).add(botonSiguientePanelprimero); //añadimos el boton para cambiar de panel a cada panel
 													panelesprimero.get(x).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+													
+														cambioprimeroa.add(botonAnteriorPanelprimero);  //Lo añadimos al array de botones
+														panelesprimero.get(x+1).add(botonAnteriorPanelprimero); //añadimos el boton para cambiar de panel a cada panel
+														panelesprimero.get(x+1).updateUI(); //Actualizamos el panel para que se visualize el boton para cambiar de panel
+														
+													
 													
 												}
 												
@@ -1221,6 +1434,19 @@ public class Principal extends JFrame {
 														CambiarPanel(panelesprimero.get(prueba), panelesprimero.get(prueba+1)); //Cambiamos de paneles prueba elige el numero de panel
 														
 														prueba++; //Incrementamos prueba para que se pueda pasar de panel
+														enQuePanel = prueba;
+														
+													}
+													
+												});
+												botonAnteriorPanelprimero.addActionListener(new ActionListener() {
+													
+													@Override
+													public void actionPerformed(ActionEvent arg0) {
+														// TODO Auto-generated method stub
+														CambiarPanel(panelesprimero.get(prueba), panelesprimero.get(prueba-1)); //Cambiamos de paneles prueba elige el numero de panel
+														
+														prueba--; //Incrementamos prueba para que se pueda pasar de panel
 														enQuePanel = prueba;
 														
 													}
@@ -1775,7 +2001,9 @@ public class Principal extends JFrame {
 			if (panelAddBoton.isEnabled()== true) {
 				CambiarPanelRetorno(panelAddBoton, panelAdmin);
 			} else if (panelQuitComida.isEnabled()== true) {
-				CambiarPanelRetorno(panelQuitComida, panelAdmin);
+				CambiarPanelRetorno(panelQuitComida, panelBebidaComida);
+			} else if (panelQuitBebida.isEnabled()== true) {
+				CambiarPanelRetorno(panelQuitBebida, panelBebidaComida);
 			} else if (panelAdmin.isEnabled()== true) {
 				CambiarPanelRetorno(panelAdmin, panelInicio);
 			} else if (bPanelRecogerDomicilio.isEnabled()== true) {
@@ -1894,7 +2122,7 @@ public class Principal extends JFrame {
 			esnomentr=false;
 		}
 	});
-      
+     
   
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
@@ -2047,7 +2275,14 @@ public class Principal extends JFrame {
 		g.setEnabled(false);
 		h.setVisible(true);
 		h.setEnabled(true);
-		
+		for (Component cp : g.getComponents() ){
+			cp.setEnabled(false);
+			cp.setVisible(false);
+		}
+		for (Component sp : h.getComponents() ){
+	        sp.setEnabled(true);
+	        sp.setVisible(true);
+		}
 		
 			//h.add(bReturn);
 		
