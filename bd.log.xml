@@ -59927,6 +59927,28 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
+  <date>2019-01-21T17:06:18</date>
+  <millis>1548086778580</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:06:18</date>
+  <millis>1548086778692</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+=======
   <date>2019-01-21T17:11:30</date>
   <millis>1548087090973</millis>
   <sequence>0</sequence>
@@ -60255,6 +60277,7 @@
   <method>log</method>
   <thread>15</thread>
   <message>BD modificada 1 fila	update usuario set apellidos = 'De Las Nieves' where username ='leku'</message>
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
@@ -60503,58 +60526,103 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:38:00</date>
   <millis>1548088680446</millis>
+=======
+  <date>2019-01-21T17:53:09</date>
+  <millis>1548089589889</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:38:00</date>
   <millis>1548088680561</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:53:10</date>
+  <millis>1548089590015</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T17:38:06</date>
   <millis>1548088686713</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T17:53:18</date>
+  <millis>1548089598356</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:38:06</date>
   <millis>1548088686762</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:53:18</date>
+  <millis>1548089598401</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T17:38:06</date>
   <millis>1548088686766</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T17:53:18</date>
+  <millis>1548089598404</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -60730,14 +60798,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:38:06</date>
   <millis>1548088686815</millis>
+=======
+  <date>2019-01-21T17:53:18</date>
+  <millis>1548089598451</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -60745,58 +60822,285 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:46:19</date>
   <millis>1548089179778</millis>
+=======
+  <date>2019-01-21T17:55:24</date>
+  <millis>1548089724029</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:46:19</date>
   <millis>1548089179892</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:55:24</date>
+  <millis>1548089724162</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T17:46:27</date>
   <millis>1548089187893</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:58:31</date>
+  <millis>1548089911106</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:58:31</date>
+  <millis>1548089911224</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:59:23</date>
+  <millis>1548089963027</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:59:23</date>
+  <millis>1548089963147</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T17:59:54</date>
+  <millis>1548089994476</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T17:59:54</date>
+  <millis>1548089994597</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:00:16</date>
+  <millis>1548090016743</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:00:16</date>
+  <millis>1548090016863</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:01:12</date>
+  <millis>1548090072208</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:01:12</date>
+  <millis>1548090072316</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:01:57</date>
+  <millis>1548090117311</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:01:57</date>
+  <millis>1548090117430</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:03:02</date>
+  <millis>1548090182010</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:03:02</date>
+  <millis>1548090182127</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:03:08</date>
+  <millis>1548090188159</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:46:27</date>
   <millis>1548089187942</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:03:08</date>
+  <millis>1548090188204</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T17:46:27</date>
   <millis>1548089187945</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:03:08</date>
+  <millis>1548090188209</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -60823,7 +61127,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>847</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -60972,14 +61280,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:46:27</date>
   <millis>1548089187993</millis>
+=======
+  <date>2019-01-21T18:03:08</date>
+  <millis>1548090188256</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -60987,58 +61304,103 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:02:07</date>
   <millis>1548090127461</millis>
+=======
+  <date>2019-01-21T18:04:18</date>
+  <millis>1548090258860</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:02:07</date>
   <millis>1548090127578</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:04:18</date>
+  <millis>1548090258971</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:02:15</date>
   <millis>1548090135957</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:04:37</date>
+  <millis>1548090277594</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:02:16</date>
   <millis>1548090136006</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:04:37</date>
+  <millis>1548090277642</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:02:16</date>
   <millis>1548090136009</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:04:37</date>
+  <millis>1548090277646</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -61065,7 +61427,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>847</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -61214,14 +61580,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:02:16</date>
   <millis>1548090136059</millis>
+=======
+  <date>2019-01-21T18:04:37</date>
+  <millis>1548090277695</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -61229,6 +61604,7 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:09:08</date>
   <millis>1548090548525</millis>
   <sequence>0</sequence>
@@ -61257,56 +61633,100 @@
 <record>
   <date>2019-01-21T18:09:15</date>
   <millis>1548090555968</millis>
+=======
+  <date>2019-01-21T18:07:03</date>
+  <millis>1548090423658</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:09:16</date>
   <millis>1548090556081</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:07:03</date>
+  <millis>1548090423785</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:09:23</date>
   <millis>1548090563380</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:07:09</date>
+  <millis>1548090429710</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:09:23</date>
   <millis>1548090563427</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:07:09</date>
+  <millis>1548090429756</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:09:23</date>
   <millis>1548090563430</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:07:09</date>
+  <millis>1548090429760</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -61333,7 +61753,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>847</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -61482,14 +61906,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:09:23</date>
   <millis>1548090563478</millis>
+=======
+  <date>2019-01-21T18:07:09</date>
+  <millis>1548090429806</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -61497,6 +61930,7 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:22:51</date>
   <millis>1548091371492</millis>
   <sequence>0</sequence>
@@ -61525,56 +61959,100 @@
 <record>
   <date>2019-01-21T18:23:08</date>
   <millis>1548091388601</millis>
+=======
+  <date>2019-01-21T18:08:42</date>
+  <millis>1548090522665</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:23:08</date>
   <millis>1548091388716</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:08:42</date>
+  <millis>1548090522782</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:23:15</date>
   <millis>1548091395140</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:08:49</date>
+  <millis>1548090529691</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:23:15</date>
   <millis>1548091395191</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:08:49</date>
+  <millis>1548090529735</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:23:15</date>
   <millis>1548091395194</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:08:49</date>
+  <millis>1548090529740</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -61601,7 +62079,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -61750,14 +62232,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:23:15</date>
   <millis>1548091395245</millis>
+=======
+  <date>2019-01-21T18:08:49</date>
+  <millis>1548090529792</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -61765,6 +62256,7 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:27:23</date>
   <millis>1548091643800</millis>
   <sequence>0</sequence>
@@ -61841,56 +62333,100 @@
 <record>
   <date>2019-01-21T18:34:29</date>
   <millis>1548092069496</millis>
+=======
+  <date>2019-01-21T18:09:39</date>
+  <millis>1548090579965</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:34:29</date>
   <millis>1548092069619</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:09:40</date>
+  <millis>1548090580085</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:34:36</date>
   <millis>1548092076224</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:09:49</date>
+  <millis>1548090589091</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:34:36</date>
   <millis>1548092076272</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:09:49</date>
+  <millis>1548090589138</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:34:36</date>
   <millis>1548092076275</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:09:49</date>
+  <millis>1548090589142</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -61917,7 +62453,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -62066,14 +62606,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:34:36</date>
   <millis>1548092076323</millis>
+=======
+  <date>2019-01-21T18:09:49</date>
+  <millis>1548090589204</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -62081,58 +62630,103 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:35:56</date>
   <millis>1548092156463</millis>
+=======
+  <date>2019-01-21T18:11:10</date>
+  <millis>1548090670640</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:35:56</date>
   <millis>1548092156576</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:11:10</date>
+  <millis>1548090670756</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:36:03</date>
   <millis>1548092163976</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:11:17</date>
+  <millis>1548090677765</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:36:04</date>
   <millis>1548092164025</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:11:17</date>
+  <millis>1548090677813</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:36:04</date>
   <millis>1548092164027</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:11:17</date>
+  <millis>1548090677824</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -62159,7 +62753,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -62308,14 +62906,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:36:04</date>
   <millis>1548092164076</millis>
+=======
+  <date>2019-01-21T18:11:17</date>
+  <millis>1548090677874</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -62323,58 +62930,103 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:36:48</date>
   <millis>1548092208225</millis>
+=======
+  <date>2019-01-21T18:16:04</date>
+  <millis>1548090964823</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:36:48</date>
   <millis>1548092208338</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:16:04</date>
+  <millis>1548090964946</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:36:54</date>
   <millis>1548092214105</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:16:11</date>
+  <millis>1548090971465</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:36:54</date>
   <millis>1548092214154</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:16:11</date>
+  <millis>1548090971512</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:36:54</date>
   <millis>1548092214159</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:16:11</date>
+  <millis>1548090971517</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -62401,7 +63053,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -62550,14 +63206,23 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:36:54</date>
   <millis>1548092214209</millis>
+=======
+  <date>2019-01-21T18:16:11</date>
+  <millis>1548090971566</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -62565,58 +63230,103 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:44:54</date>
   <millis>1548092694825</millis>
+=======
+  <date>2019-01-21T18:20:36</date>
+  <millis>1548091236246</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:44:54</date>
   <millis>1548092694937</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:20:36</date>
+  <millis>1548091236365</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:45:05</date>
   <millis>1548092705922</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:20:46</date>
+  <millis>1548091246620</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:45:05</date>
   <millis>1548092705972</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:20:46</date>
+  <millis>1548091246671</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T18:45:05</date>
   <millis>1548092705976</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:20:46</date>
+  <millis>1548091246678</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -62643,7 +63353,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -62792,13 +63506,19 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:45:06</date>
   <millis>1548092706025</millis>
+=======
+  <date>2019-01-21T18:20:46</date>
+  <millis>1548091246728</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 =======
@@ -62822,64 +63542,113 @@
   <method>log</method>
   <thread>1</thread>
   <message>BD	select * from usuario where username = 'leku'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:27:33</date>
   <millis>1548084453299</millis>
+=======
+  <date>2019-01-21T18:21:53</date>
+  <millis>1548091313667</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:27:33</date>
   <millis>1548084453401</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:21:53</date>
+  <millis>1548091313808</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T16:27:42</date>
   <millis>1548084462999</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:01</date>
+  <millis>1548091321107</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:27:43</date>
   <millis>1548084463046</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:01</date>
+  <millis>1548091321162</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T16:27:43</date>
   <millis>1548084463049</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:01</date>
+  <millis>1548091321166</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -62906,7 +63675,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -63055,72 +63828,129 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:27:43</date>
   <millis>1548084463094</millis>
+=======
+  <date>2019-01-21T18:22:01</date>
+  <millis>1548091321223</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:50:05</date>
   <millis>1548085805549</millis>
+=======
+  <date>2019-01-21T18:22:34</date>
+  <millis>1548091354723</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:50:05</date>
   <millis>1548085805652</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:34</date>
+  <millis>1548091354832</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T16:50:14</date>
   <millis>1548085814486</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:41</date>
+  <millis>1548091361649</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:50:14</date>
   <millis>1548085814530</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:41</date>
+  <millis>1548091361698</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T16:50:14</date>
   <millis>1548085814533</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:22:41</date>
+  <millis>1548091361701</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -63147,7 +63977,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -63296,13 +64130,19 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:50:14</date>
   <millis>1548085814579</millis>
+=======
+  <date>2019-01-21T18:22:41</date>
+  <millis>1548091361747</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
@@ -63310,10 +64150,46 @@
   <date>2019-01-21T16:50:40</date>
   <millis>1548085840016</millis>
   <sequence>6</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:23:29</date>
+  <millis>1548091409550</millis>
+  <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:23:29</date>
+  <millis>1548091409666</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:23:42</date>
+  <millis>1548091422480</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -63321,10 +64197,31 @@
   <date>2019-01-21T16:50:40</date>
   <millis>1548085840059</millis>
   <sequence>7</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:23:42</date>
+  <millis>1548091422526</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:23:42</date>
+  <millis>1548091422530</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Error en BD	insert into pedido values(0, '11-0-2020', '17:30', '', 'Antxoas', 'Canelones de pollo', 'Gambas frescas', 'Canutillos de hojaldre', 'Cerveza', a)</message>
   <exception>
@@ -63389,210 +64286,8 @@
       <class>ventana.Principal$21</class>
       <method>actionPerformed</method>
       <line>2188</line>
-    </frame>
-    <frame>
-      <class>javax.swing.AbstractButton</class>
-      <method>fireActionPerformed</method>
-    </frame>
-    <frame>
-      <class>javax.swing.AbstractButton$Handler</class>
-      <method>actionPerformed</method>
-    </frame>
-    <frame>
-      <class>javax.swing.DefaultButtonModel</class>
-      <method>fireActionPerformed</method>
-    </frame>
-    <frame>
-      <class>javax.swing.DefaultButtonModel</class>
-      <method>setPressed</method>
-    </frame>
-    <frame>
-      <class>javax.swing.plaf.basic.BasicButtonListener</class>
-      <method>mouseReleased</method>
-    </frame>
-    <frame>
-      <class>java.awt.Component</class>
-      <method>processMouseEvent</method>
-    </frame>
-    <frame>
-      <class>javax.swing.JComponent</class>
-      <method>processMouseEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.Component</class>
-      <method>processEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.Container</class>
-      <method>processEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.Component</class>
-      <method>dispatchEventImpl</method>
-    </frame>
-    <frame>
-      <class>java.awt.Container</class>
-      <method>dispatchEventImpl</method>
-    </frame>
-    <frame>
-      <class>java.awt.Component</class>
-      <method>dispatchEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.LightweightDispatcher</class>
-      <method>retargetMouseEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.LightweightDispatcher</class>
-      <method>processMouseEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.LightweightDispatcher</class>
-      <method>dispatchEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.Container</class>
-      <method>dispatchEventImpl</method>
-    </frame>
-    <frame>
-      <class>java.awt.Window</class>
-      <method>dispatchEventImpl</method>
-    </frame>
-    <frame>
-      <class>java.awt.Component</class>
-      <method>dispatchEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue</class>
-      <method>dispatchEventImpl</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue</class>
-      <method>access$500</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue$3</class>
-      <method>run</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue$3</class>
-      <method>run</method>
-    </frame>
-    <frame>
-      <class>java.security.AccessController</class>
-      <method>doPrivileged</method>
-    </frame>
-    <frame>
-      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
-      <method>doIntersectionPrivilege</method>
-    </frame>
-    <frame>
-      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
-      <method>doIntersectionPrivilege</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue$4</class>
-      <method>run</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue$4</class>
-      <method>run</method>
-    </frame>
-    <frame>
-      <class>java.security.AccessController</class>
-      <method>doPrivileged</method>
-    </frame>
-    <frame>
-      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
-      <method>doIntersectionPrivilege</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventQueue</class>
-      <method>dispatchEvent</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>pumpOneEventForFilters</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>pumpEventsForFilter</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>pumpEventsForHierarchy</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>pumpEvents</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>pumpEvents</method>
-    </frame>
-    <frame>
-      <class>java.awt.EventDispatchThread</class>
-      <method>run</method>
-    </frame>
-  </exception>
-</record>
-</log>
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2019-01-21T16:55:07</date>
-  <millis>1548086107139</millis>
-  <sequence>0</sequence>
-  <logger>Comida.BD</logger>
-  <level>INFO</level>
-  <class>Comida.BD</class>
-  <method>log</method>
-  <thread>15</thread>
-  <message>base de datos conectada</message>
-</record>
-<record>
-  <date>2019-01-21T16:55:07</date>
-  <millis>1548086107245</millis>
-  <sequence>1</sequence>
-  <logger>Comida.BD</logger>
-  <level>INFO</level>
-  <class>Comida.BD</class>
-  <method>log</method>
-  <thread>15</thread>
-  <message>Cierre de base de datos</message>
-</record>
-<record>
-  <date>2019-01-21T16:55:14</date>
-  <millis>1548086114516</millis>
-  <sequence>2</sequence>
-  <logger>Comida.BD</logger>
-  <level>INFO</level>
-  <class>Comida.BD</class>
-  <method>log</method>
-  <thread>15</thread>
-  <message>base de datos conectada</message>
-</record>
-<record>
-  <date>2019-01-21T16:55:14</date>
-  <millis>1548086114562</millis>
-  <sequence>3</sequence>
-  <logger>Comida.BD</logger>
-  <level>INFO</level>
-  <class>Comida.BD</class>
-  <method>log</method>
-  <thread>15</thread>
-  <message>BD	select * from usuario  where username = 'a'</message>
-</record>
-<record>
-  <date>2019-01-21T16:55:14</date>
-  <millis>1548086114565</millis>
-  <sequence>4</sequence>
-  <logger>Comida.BD</logger>
-  <level>SEVERE</level>
-  <class>Comida.BD</class>
-  <method>log</method>
-  <thread>15</thread>
+=======
+  <thread>14</thread>
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -63619,7 +64314,302 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<<<<<<< HEAD
+=======
+<record>
+  <date>2019-01-21T18:23:42</date>
+  <millis>1548091422581</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+<<<<<<< HEAD
+  <date>2019-01-21T16:55:07</date>
+  <millis>1548086107139</millis>
+=======
+  <date>2019-01-21T18:24:25</date>
+  <millis>1548091465250</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T16:55:07</date>
+  <millis>1548086107245</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:24:25</date>
+  <millis>1548091465373</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T16:55:14</date>
+  <millis>1548086114516</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:24:34</date>
+  <millis>1548091474258</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T16:55:14</date>
+  <millis>1548086114562</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:24:34</date>
+  <millis>1548091474304</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T16:55:14</date>
+  <millis>1548086114565</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:24:34</date>
+  <millis>1548091474310</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
+  <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$6</class>
+      <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -63768,13 +64758,19 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:55:14</date>
   <millis>1548086114610</millis>
+=======
+  <date>2019-01-21T18:24:34</date>
+  <millis>1548091474355</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
@@ -63800,63 +64796,113 @@
   <thread>15</thread>
   <message>BD añadida 1 fila	insert into pedido values(0, '10-3-2020', '17:30', '', 'Antxoas', 'Ajoblanco malagueno', 'Paletilla de cordero', 'Dulce de patata', 'Vino de mi huerta', 'a')</message>
 </record>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:56:39</date>
   <millis>1548086199185</millis>
+=======
+  <date>2019-01-21T18:25:07</date>
+  <millis>1548091507589</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:56:39</date>
   <millis>1548086199291</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:07</date>
+  <millis>1548091507712</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T16:56:45</date>
   <millis>1548086205160</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:14</date>
+  <millis>1548091514856</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T16:56:45</date>
   <millis>1548086205204</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:14</date>
+  <millis>1548091514901</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
 <record>
   <date>2019-01-21T16:56:45</date>
   <millis>1548086205207</millis>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:14</date>
+  <millis>1548091514909</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>4</sequence>
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -63883,7 +64929,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -64032,13 +65082,19 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:56:45</date>
   <millis>1548086205253</millis>
+=======
+  <date>2019-01-21T18:25:14</date>
+  <millis>1548091514955</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
@@ -64046,10 +65102,46 @@
   <date>2019-01-21T16:57:19</date>
   <millis>1548086239595</millis>
   <sequence>6</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:25:44</date>
+  <millis>1548091544492</millis>
+  <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:44</date>
+  <millis>1548091544603</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:51</date>
+  <millis>1548091551249</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -64057,10 +65149,31 @@
   <date>2019-01-21T16:57:19</date>
   <millis>1548086239641</millis>
   <sequence>7</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:51</date>
+  <millis>1548091551300</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:25:51</date>
+  <millis>1548091551305</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Error en BD	insert into pedido values(0, '9-2-2020', '17:0', '', 'Antxoas', 'Ajoblanco malagueno', 'Carne asada', 'Arroz con leche', 'Vino sefue', 'a')</message>
   <exception>
@@ -64125,6 +65238,36 @@
       <class>ventana.Principal$21</class>
       <method>actionPerformed</method>
       <line>2188</line>
+=======
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$6</class>
+      <method>actionPerformed</method>
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -64273,13 +65416,57 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T16:57:29</date>
   <millis>1548086249527</millis>
   <sequence>8</sequence>
+=======
+  <date>2019-01-21T18:25:51</date>
+  <millis>1548091551368</millis>
+  <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:28:39</date>
+  <millis>1548091719840</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:28:39</date>
+  <millis>1548091719973</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:28:47</date>
+  <millis>1548091727831</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -64287,10 +65474,31 @@
   <date>2019-01-21T16:57:29</date>
   <millis>1548086249572</millis>
   <sequence>9</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:28:47</date>
+  <millis>1548091727887</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:28:47</date>
+  <millis>1548091727892</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Error en BD	insert into pedido values(0, '9-2-2020', '17:0', '', 'Antxoas', 'Ajoblanco malagueno', 'Carne asada', 'Arroz con leche', 'Vino sefue', 'a')</message>
   <exception>
@@ -64355,6 +65563,36 @@
       <class>ventana.Principal$21</class>
       <method>actionPerformed</method>
       <line>2188</line>
+=======
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$6</class>
+      <method>actionPerformed</method>
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -64502,6 +65740,7 @@
     </frame>
   </exception>
 </record>
+<<<<<<< HEAD
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
@@ -64531,47 +65770,82 @@
   <date>2019-01-21T17:19:12</date>
   <millis>1548087552239</millis>
   <sequence>2</sequence>
+=======
+<record>
+  <date>2019-01-21T18:28:47</date>
+  <millis>1548091727955</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>1</thread>
   <message>BD	select * from usuario where username = 'leku'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:20:18</date>
   <millis>1548087618352</millis>
+=======
+  <date>2019-01-21T18:29:59</date>
+  <millis>1548091799167</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>1</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:20:18</date>
   <millis>1548087618731</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:29:59</date>
+  <millis>1548091799286</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>1</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:20:18</date>
   <millis>1548087618835</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:06</date>
+  <millis>1548091806718</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>1</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
@@ -64594,10 +65868,20 @@
   <date>2019-01-21T17:21:21</date>
   <millis>1548087681150</millis>
   <sequence>1</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:06</date>
+  <millis>1548091806767</millis>
+  <sequence>3</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>1</thread>
   <message>base de datos conectada</message>
 </record>
@@ -64754,6 +66038,20 @@
   <class>Comida.BD</class>
   <method>log</method>
   <thread>15</thread>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:06</date>
+  <millis>1548091806772</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -64780,7 +66078,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -64929,14 +66231,24 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:41:45</date>
   <millis>1548088905177</millis>
   <sequence>6</sequence>
+=======
+  <date>2019-01-21T18:30:06</date>
+  <millis>1548091806820</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -64944,24 +66256,39 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:57:23</date>
   <millis>1548089843827</millis>
+=======
+  <date>2019-01-21T18:30:49</date>
+  <millis>1548091849282</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T17:57:24</date>
   <millis>1548089844238</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:49</date>
+  <millis>1548091849396</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -64980,10 +66307,20 @@
   <date>2019-01-21T17:59:32</date>
   <millis>1548089972909</millis>
   <sequence>3</sequence>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:56</date>
+  <millis>1548091856347</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -64991,10 +66328,20 @@
   <date>2019-01-21T17:59:32</date>
   <millis>1548089972954</millis>
   <sequence>4</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:56</date>
+  <millis>1548091856396</millis>
+  <sequence>3</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
@@ -65002,11 +66349,24 @@
   <date>2019-01-21T17:59:32</date>
   <millis>1548089972956</millis>
   <sequence>5</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:30:56</date>
+  <millis>1548091856400</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -65033,7 +66393,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -65182,14 +66546,24 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T17:59:33</date>
   <millis>1548089973001</millis>
   <sequence>6</sequence>
+=======
+  <date>2019-01-21T18:30:56</date>
+  <millis>1548091856449</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -65197,46 +66571,79 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:12:19</date>
   <millis>1548090739669</millis>
+=======
+  <date>2019-01-21T18:33:50</date>
+  <millis>1548092030958</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:12:20</date>
   <millis>1548090740084</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:33:51</date>
+  <millis>1548092031077</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:12:20</date>
   <millis>1548090740173</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:34:28</date>
+  <millis>1548092068718</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:12:32</date>
   <millis>1548090752362</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:34:28</date>
+  <millis>1548092068767</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65261,6 +66668,21 @@
   <method>log</method>
   <thread>15</thread>
   <message>Error en BD	select * from usuario  where username = 'asbsdfjkh'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:34:28</date>
+  <millis>1548092068775</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
     <frame>
@@ -65286,7 +66708,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>801</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -65435,13 +66861,57 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:12:32</date>
   <millis>1548090752457</millis>
   <sequence>6</sequence>
+=======
+  <date>2019-01-21T18:34:28</date>
+  <millis>1548092068825</millis>
+  <sequence>5</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:35:47</date>
+  <millis>1548092147976</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:35:48</date>
+  <millis>1548092148093</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:35:54</date>
+  <millis>1548092154163</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'asbsdfjkh'</message>
 </record>
@@ -65449,12 +66919,37 @@
   <date>2019-01-21T18:12:32</date>
   <millis>1548090752458</millis>
   <sequence>7</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:35:54</date>
+  <millis>1548092154210</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:35:54</date>
+  <millis>1548092154214</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Error en BD	select * from administrador where username = 'asbsdfjkh'</message>
+=======
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
     <frame>
@@ -65480,7 +66975,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>810</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -65629,13 +67128,20 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:19:52</date>
   <millis>1548091192639</millis>
   <sequence>8</sequence>
+=======
+  <date>2019-01-21T18:35:54</date>
+  <millis>1548092154262</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65643,10 +67149,24 @@
   <date>2019-01-21T18:20:06</date>
   <millis>1548091206499</millis>
   <sequence>9</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:36:55</date>
+  <millis>1548092215375</millis>
+  <sequence>0</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65654,10 +67174,20 @@
   <date>2019-01-21T18:20:11</date>
   <millis>1548091211500</millis>
   <sequence>10</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:36:55</date>
+  <millis>1548092215492</millis>
+  <sequence>1</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65665,10 +67195,24 @@
   <date>2019-01-21T18:26:32</date>
   <millis>1548091592276</millis>
   <sequence>11</sequence>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T18:41:09</date>
+  <millis>1548092469818</millis>
+  <sequence>0</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65676,10 +67220,20 @@
   <date>2019-01-21T18:26:32</date>
   <millis>1548091592321</millis>
   <sequence>12</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:41:09</date>
+  <millis>1548092469932</millis>
+  <sequence>1</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD añadida 1 fila	insert into usuario values('m3m' , 'more' , 'mikel' , 'moreno' , 788542123)</message>
 </record>
@@ -65687,10 +67241,20 @@
   <date>2019-01-21T18:26:42</date>
   <millis>1548091602851</millis>
   <sequence>13</sequence>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:41:16</date>
+  <millis>1548092476305</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65709,10 +67273,20 @@
   <date>2019-01-21T18:26:42</date>
   <millis>1548091602941</millis>
   <sequence>15</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:41:16</date>
+  <millis>1548092476351</millis>
+  <sequence>3</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'm3m'</message>
 </record>
@@ -65720,12 +67294,26 @@
   <date>2019-01-21T18:26:42</date>
   <millis>1548091602941</millis>
   <sequence>16</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:41:16</date>
+  <millis>1548092476358</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Error en BD	select * from administrador where username = 'm3m'</message>
+=======
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
     <frame>
@@ -65751,7 +67339,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>810</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -65900,6 +67492,7 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:27:10</date>
   <millis>1548091630491</millis>
   <sequence>17</sequence>
@@ -65914,36 +67507,61 @@
   <date>2019-01-21T18:27:10</date>
   <millis>1548091630538</millis>
   <sequence>18</sequence>
+=======
+  <date>2019-01-21T18:41:16</date>
+  <millis>1548092476408</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'm3m'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:28:34</date>
   <millis>1548091714638</millis>
+=======
+  <date>2019-01-21T18:49:39</date>
+  <millis>1548092979048</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:28:35</date>
   <millis>1548091715072</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:49:39</date>
+  <millis>1548092979162</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -65980,51 +67598,89 @@
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'm3m'</message>
 </record>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:31:26</date>
   <millis>1548091886370</millis>
+=======
+  <date>2019-01-21T18:52:03</date>
+  <millis>1548093123010</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:31:26</date>
   <millis>1548091886788</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:52:03</date>
+  <millis>1548093123124</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:31:26</date>
   <millis>1548091886881</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:52:09</date>
+  <millis>1548093129440</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
 <record>
   <date>2019-01-21T18:32:06</date>
   <millis>1548091926106</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:52:09</date>
+  <millis>1548093129484</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -66060,6 +67716,21 @@
   <method>log</method>
   <thread>15</thread>
   <message>Error en BD	select * from administrador where username = 'm3m'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:52:09</date>
+  <millis>1548093129488</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
     <frame>
@@ -66085,7 +67756,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>810</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -66234,6 +67909,7 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:32:12</date>
   <millis>1548091932238</millis>
   <sequence>7</sequence>
@@ -66248,36 +67924,61 @@
   <date>2019-01-21T18:32:12</date>
   <millis>1548091932282</millis>
   <sequence>8</sequence>
+=======
+  <date>2019-01-21T18:52:09</date>
+  <millis>1548093129551</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'm3m'</message>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
 </record>
 </log>
 <?xml version="1.0" encoding="windows-1252" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:32:48</date>
   <millis>1548091968738</millis>
+=======
+  <date>2019-01-21T18:53:22</date>
+  <millis>1548093202734</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T18:32:49</date>
   <millis>1548091969163</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:53:22</date>
+  <millis>1548093202848</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -66343,11 +68044,20 @@
 <record>
   <date>2019-01-21T18:34:27</date>
   <millis>1548092067307</millis>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:53:32</date>
+  <millis>1548093212083</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>2</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>Cierre de base de datos</message>
 </record>
@@ -66414,11 +68124,20 @@
 <record>
   <date>2019-01-21T18:55:34</date>
   <millis>1548093334593</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:53:32</date>
+  <millis>1548093212133</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>3</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -66437,11 +68156,24 @@
   <date>2019-01-21T18:55:34</date>
   <millis>1548093334645</millis>
   <sequence>5</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:53:32</date>
+  <millis>1548093212143</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -66468,7 +68200,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -66617,14 +68353,24 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T18:55:34</date>
   <millis>1548093334696</millis>
   <sequence>6</sequence>
+=======
+  <date>2019-01-21T18:53:32</date>
+  <millis>1548093212191</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
@@ -66632,24 +68378,39 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T19:04:28</date>
   <millis>1548093868894</millis>
+=======
+  <date>2019-01-21T18:55:56</date>
+  <millis>1548093356246</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>0</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
 <record>
   <date>2019-01-21T19:04:29</date>
   <millis>1548093869360</millis>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:55:56</date>
+  <millis>1548093356374</millis>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <sequence>1</sequence>
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -66668,10 +68429,20 @@
   <date>2019-01-21T19:04:36</date>
   <millis>1548093876525</millis>
   <sequence>3</sequence>
+=======
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T18:56:05</date>
+  <millis>1548093365197</millis>
+  <sequence>2</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>base de datos conectada</message>
 </record>
@@ -66679,10 +68450,20 @@
   <date>2019-01-21T19:04:36</date>
   <millis>1548093876575</millis>
   <sequence>4</sequence>
+=======
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T18:56:05</date>
+  <millis>1548093365244</millis>
+  <sequence>3</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from usuario  where username = 'a'</message>
 </record>
@@ -66690,11 +68471,24 @@
   <date>2019-01-21T19:04:36</date>
   <millis>1548093876579</millis>
   <sequence>5</sequence>
+=======
+  <thread>14</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T18:56:05</date>
+  <millis>1548093365247</millis>
+  <sequence>4</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>SEVERE</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
+=======
+  <thread>14</thread>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <message>Error en BD	select * from usuario  where username = 'a'</message>
   <exception>
     <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
@@ -66721,7 +68515,11 @@
     <frame>
       <class>ventana.Principal$6</class>
       <method>actionPerformed</method>
+<<<<<<< HEAD
       <line>862</line>
+=======
+      <line>804</line>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
     </frame>
     <frame>
       <class>javax.swing.AbstractButton</class>
@@ -66870,14 +68668,53 @@
   </exception>
 </record>
 <record>
+<<<<<<< HEAD
   <date>2019-01-21T19:04:36</date>
   <millis>1548093876629</millis>
   <sequence>6</sequence>
+=======
+  <date>2019-01-21T18:56:05</date>
+  <millis>1548093365293</millis>
+  <sequence>5</sequence>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf
   <logger>Comida.BD</logger>
   <level>INFO</level>
   <class>Comida.BD</class>
   <method>log</method>
+<<<<<<< HEAD
   <thread>15</thread>
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
+=======
+  <thread>14</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T19:05:02</date>
+  <millis>1548093902088</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T19:05:02</date>
+  <millis>1548093902199</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>14</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+>>>>>>> 51689ec86c97dee78c42541f1a956d4f00cd17bf

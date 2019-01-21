@@ -1,5 +1,5 @@
 package ventana;
-//17:04 commit
+//17:27 commit
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -819,7 +819,7 @@ public class Principal extends JFrame {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			if (panelBienvenida.isEnabled()) {
-				CambiarPanel(panelBienvenida, panelInicioSesion);
+				CambiarPanel(panelBienvenida, panelInicioSesion); //OJO AL HACKEO
 			}
 			
 			
@@ -2168,28 +2168,97 @@ public class Principal extends JFrame {
 																															}*/
 																															
 																															double precioentrante =precioentr.get(enquepos(nombreentr, platoEntrantes));
-																															double precioprimero =precioentr.get(enquepos(nombreentr, platoPrimero));
-																															double preciosegundo =precioentr.get(enquepos(nombreentr, platoSegundo));
-																															double preciopostre =precioentr.get(enquepos(nombreentr, platoPostre));
-																															double preciobebida =precioentr.get(enquepos(nombreentr, platoBebida));
-																															JLabel nomentr =new JLabel();
-																																nomentr.setFont(newFont);
-																																nomentr.setText(platoEntrantes);
+																															double precioprimerox =precioprimero.get(enquepos(nombreprimero, platoPrimero));
+																															double preciosegundox =preciosegundo.get(enquepos(nombresegundo, platoSegundo));
+																															double preciopostrex =preciopostre.get(enquepos(nombrepostre, platoPostre));
+																															double preciobebidax =preciobeb.get(enquepos(nombrebeb, platoBebida));
+																															double totalx = precioentrante + precioprimerox + preciosegundox + preciopostrex + preciobebidax;
+																															double coniva = totalx *1.21;
+																																
+																															
+																																JLabel entr =new JLabel();
+																																entr.setFont(newFont);
+																																entr.setText(platoEntrantes);
+																																entr.setBounds(350, 200, 300, 50);
+																																panelFactura.add(entr);
+																																JLabel entra = new JLabel();
+																																entra.setFont(newFont);
+																																entra.setText(""+precioentrante);
+																																entra.setBounds(700, 200, 300, 50);
+																																panelFactura.add(entra);
+																																
+																																JLabel prim =new JLabel();
+																																prim.setFont(newFont);
+																																prim.setText(platoPrimero);
+																																prim.setBounds(350, 250, 300, 50);
+																																panelFactura.add(prim);
+																																JLabel prime = new JLabel();
+																																prime.setFont(newFont);
+																																prime.setText(""+precioprimerox);
+																																prime.setBounds(700, 250, 300, 50);
+																																panelFactura.add(prime);
+																																
+																																JLabel segu =new JLabel();
+																																segu.setFont(newFont);
+																																segu.setText(platoSegundo);
+																																segu.setBounds(350, 300, 300, 50);
+																																panelFactura.add(segu);
+																																JLabel segun = new JLabel();
+																																segun.setFont(newFont);
+																																segun.setText(""+preciosegundox);
+																																segun.setBounds(700, 300, 300, 50);
+																																panelFactura.add(segun);
+																																
+																																JLabel post =new JLabel();
+																																post.setFont(newFont);
+																																post.setText(platoPostre);
+																																post.setBounds(350, 350, 300, 50);
+																																panelFactura.add(post);
+																																JLabel postr = new JLabel();
+																																postr.setFont(newFont);
+																																postr.setText(""+preciopostrex);
+																																postr.setBounds(700, 350, 300, 50);
+																																panelFactura.add(postr);
+																																
+																																JLabel bebi =new JLabel();
+																																bebi.setFont(newFont);
+																																bebi.setText(platoBebida);
+																																bebi.setBounds(350, 400, 300, 50);
+																																panelFactura.add(bebi);
+																																JLabel bebid = new JLabel();
+																																bebid.setFont(newFont);
+																																bebid.setText(""+preciobebidax);
+																																bebid.setBounds(700, 400, 300, 50);
+																																panelFactura.add(bebid);
+																																
+																																JLabel totalxxx =new JLabel();
+																																totalxxx.setFont(newFont);
+																																totalxxx.setText(""+totalx);
+																																totalxxx.setBounds(700, 450, 300, 50);
+																																panelFactura.add(totalxxx);
+																																JLabel conivaxxx = new JLabel();
+																																conivaxxx.setFont(newFont);
+																																conivaxxx.setText(""+coniva);
+																																conivaxxx.setBounds(700, 500, 300, 50);
+																																panelFactura.add(conivaxxx);
+																																
+																																/*
 																																//nomentr.setBounds(,,,);
 																																panelFactura.add(nomentr);
-																															JLabel precentr = new JLabel();
+																																JLabel precentr = new JLabel();
 																																precentr.setFont(newFont);
 																																precentr.setText("-"+precioentrante);
 																																//precentr.setBounds(,,,);
 																																panelFactura.add(nomentr);
 																																
-																															JLabel nomprim = new JLabel();
+																																JLabel nomprim = new JLabel();
 																																nomprim.setFont(newFont);
 																																nomprim.setText(platoPrimero);
 																																//nomprim.setBounds(,,,);
-																																panelFactura.add(nomprim);
+																																panelFactura.add(nomprim); */
+
 																																//entr.setBounds(x, y, width, height);
-																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
+																															//lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															//
 																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");a
 																															panelFactura.updateUI();
