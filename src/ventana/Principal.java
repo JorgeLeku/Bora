@@ -1,5 +1,5 @@
 package ventana;
-//13:54 commit
+//16:04 commit
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -2338,6 +2338,15 @@ public class Principal extends JFrame {
 			esnomentr=false;
 		}
 	});
+       
+    passw.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
+			
+		}
+	});   
      
   
        panelSegundo.updateUI();
