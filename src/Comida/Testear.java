@@ -7,6 +7,8 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import org.junit.After;
 import org.junit.Before;
@@ -33,12 +35,20 @@ public class Testear {
 		}
 		
 	}
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testFechas() {
 		Time fecha = new Time(System.currentTimeMillis());
 		Date da = new Date(System.currentTimeMillis());
 		System.out.println(da.toString());
 		System.out.println(fecha.toString());
+		
+		
+		//usaremos calendar
+		Calendar cal = new GregorianCalendar();
+	System.out.println(cal.get(Calendar.MINUTE));	
+	System.out.println(cal.getTime());
+	System.out.println(cal.get(Calendar.HOUR_OF_DAY));
 	}
 	
 	

@@ -6,14 +6,15 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Pedido {
 
 	//Propiedades
 	private int cod;
-	private Date fecha;
-	private Time hora;
+	private Calendar fecha;
 	private double dineroGastado;
 	private String direccion;
 	private ArrayList<Alimentos> productos;
@@ -21,18 +22,16 @@ public class Pedido {
 	//Metodos
 	public Pedido() {
 		this.cod =0;
-		this.fecha = new Date(System.currentTimeMillis());
-		this.hora = new Time (System.currentTimeMillis());
+		this.fecha = new GregorianCalendar();
 		this.productos = null;
 		this.dineroGastado = 0;
 		this.direccion ="";
 	}
 	
-	public Pedido(int cod, Date fechaPedido,Time hora, String direccion ,ArrayList<Alimentos> productos) {
+	public Pedido(int cod, Calendar fechaPedido, String direccion ,ArrayList<Alimentos> productos) {
 		super();
 		this.cod = cod;
 		this.fecha = fechaPedido;
-		this.hora = hora;
 		this.dineroGastado = getImporte();
 		this.productos = productos;
 		this.direccion = direccion;
@@ -41,7 +40,6 @@ public class Pedido {
 	public Pedido(Pedido p) {
 		this.cod = p.cod;
 		this.fecha = p.fecha;
-		this.hora = p.hora;
 		this.productos = p.productos;
 		this.dineroGastado = p.dineroGastado;
 		this.direccion = p.direccion;
@@ -53,15 +51,8 @@ public class Pedido {
 		return cod;
 	}
 
-	public Time getHora() {
-		return hora;
-	}
 
-	public void setHora(Time hora) {
-		this.hora = hora;
-	}
-
-	public void setFecha(Date fecha) {
+	public void setFecha(Calendar fecha) {
 		this.fecha = fecha;
 	}
 
@@ -81,13 +72,9 @@ public class Pedido {
 		this.cod = cod;
 	}
 
-	public Date getFecha() {
+	public Calendar getFecha() {
 		return fecha;
 	}
-
-	
-
-
 
 	public ArrayList<Alimentos> getProductos() {
 		return productos;
@@ -165,7 +152,7 @@ public class Pedido {
 	@Override
 	public String toString() {
 
-		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
+		return cod + ", '" +  fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
 
 				+ productos.get(3).getNombre()+"', '" +productos.get(4).getNombre()+"'";
 

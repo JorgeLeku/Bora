@@ -2230,7 +2230,7 @@ public class Principal extends JFrame {
        
        
       
-//pene
+
        
        cbb1.addActionListener(new ActionListener() {
 		
