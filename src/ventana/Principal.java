@@ -2126,8 +2126,8 @@ public class Principal extends JFrame {
        Calendar calendario = new GregorianCalendar(año, mes, dia, hora, minuto);
        fechaentrega= calendario.getTime();
 		System.out.println(fechaentrega);
-       //pedido.setFecha(fechaentrega);
-  
+       pedido.setFecha(fechaentrega);
+       pedido.insertPedido(nombreUsuario);
        
       
 //pene
