@@ -35048,3 +35048,1723 @@
   <message>BD	select * from administrador where username = 'a'</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:18:05</date>
+  <millis>1548062285610</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:18:05</date>
+  <millis>1548062285722</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:18:09</date>
+  <millis>1548062289651</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:18:09</date>
+  <millis>1548062289699</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:18:09</date>
+  <millis>1548062289702</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>732</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:18:09</date>
+  <millis>1548062289752</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:23:31</date>
+  <millis>1548062611267</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:23:31</date>
+  <millis>1548062611379</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:26:56</date>
+  <millis>1548062816964</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:26:57</date>
+  <millis>1548062817075</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:27:01</date>
+  <millis>1548062821378</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:27:01</date>
+  <millis>1548062821426</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:27:01</date>
+  <millis>1548062821430</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:27:01</date>
+  <millis>1548062821483</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:28:04</date>
+  <millis>1548062884616</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:28:04</date>
+  <millis>1548062884729</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:28:09</date>
+  <millis>1548062889233</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:28:09</date>
+  <millis>1548062889283</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:28:09</date>
+  <millis>1548062889287</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>745</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:28:09</date>
+  <millis>1548062889339</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:29:04</date>
+  <millis>1548062944381</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:04</date>
+  <millis>1548062944578</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:08</date>
+  <millis>1548062948306</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:08</date>
+  <millis>1548062948356</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:08</date>
+  <millis>1548062948359</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>738</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:29:08</date>
+  <millis>1548062948409</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:29:48</date>
+  <millis>1548062988593</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:48</date>
+  <millis>1548062988705</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:52</date>
+  <millis>1548062992819</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:52</date>
+  <millis>1548062992868</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:29:52</date>
+  <millis>1548062992871</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>737</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:29:52</date>
+  <millis>1548062992921</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:30:49</date>
+  <millis>1548063049016</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:30:49</date>
+  <millis>1548063049135</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:30:53</date>
+  <millis>1548063053240</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:30:53</date>
+  <millis>1548063053289</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:30:53</date>
+  <millis>1548063053294</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>737</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:30:53</date>
+  <millis>1548063053343</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T10:31:31</date>
+  <millis>1548063091670</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:31:31</date>
+  <millis>1548063091782</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T10:31:37</date>
+  <millis>1548063097205</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T10:31:37</date>
+  <millis>1548063097254</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T10:31:37</date>
+  <millis>1548063097257</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>322</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>737</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T10:31:37</date>
+  <millis>1548063097307</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+</log>

@@ -60,20 +60,21 @@ public class Principal extends JFrame {
 	Botones confirmarFactura;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
-	
+	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	Date fechaentrega;
  
-	JComboBox cOrden, cHoraReserva,cHoraDomicilio;
+	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
-
+	JFormattedTextField tFechaentrega;
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
-	
+	DateFormat formatofecha = new SimpleDateFormat("MM/DD/YYYY");
 	
 	public Principal() {
+		fechaentrega=new Date();
 		
 		List<JButton>bReturns = new ArrayList<>();
 		
@@ -498,7 +499,14 @@ public class Principal extends JFrame {
       lLetra.setText("Letra");
       tLetra.setBounds(700, 375, 200, 40);
       
-
+      lfechaEntrega = new JLabel();
+      lfechaEntrega.setFont(newFont);
+      lfechaEntrega.setText("Fecha entrega");
+      lfechaEntrega.setBounds(220, 450, 200, 40);
+      
+      tFechaentrega = new JFormattedTextField(formatofecha);
+      
+      tFechaentrega.setBounds(200, 500, 200, 40);
 
       
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
@@ -589,8 +597,8 @@ public class Principal extends JFrame {
        lTituloPAddBoton.setForeground(Color.white);
        lTituloPAddBoton.setText("Crear boton");
        
-       
-
+    
+     
        
        lTipo.setBounds(700, 250, 300, 40);
        lTipo.setFont(newFont);
@@ -682,7 +690,7 @@ public class Principal extends JFrame {
        menuUsuario = new JMenu("Ajustes de usuario");
        menuUsuario.setMnemonic(KeyEvent.VK_A);
        menuBar.add(menuUsuario);
-       cHoraDomicilio = new JComboBox();
+    
      
        
        //Action Listeners
@@ -2021,7 +2029,8 @@ public class Principal extends JFrame {
 					pedido.addAlCarrito(bebida);
 				}
 			}
-			
+		
+			//pedido.setFecha()
 		}
 	});
        bPrimerPlato.addActionListener(new ActionListener () {
@@ -2177,7 +2186,8 @@ public class Principal extends JFrame {
        panelDomicilio.add(lEdificio);
        panelDomicilio.add(lPiso);
        panelDomicilio.add(lLetra);
-
+       panelDomicilio.add(tFechaentrega);
+       panelDomicilio.add(lfechaEntrega);
 
        panelDomicilio.add(tCalle);
        panelDomicilio.add(tEdificio);
