@@ -33,7 +33,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-
+import java.util.Properties;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -54,7 +54,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
 
-import com.sun.xml.internal.fastinfoset.sax.Properties;
 
 import Comida.*;
 
@@ -67,7 +66,7 @@ public class Principal extends JFrame {
 	JMenu menuUsuario, menuUsuario2;
 	JMenuItem usern, passw, name, surname, cancel, other;
 	//JMenuBar menuBar;
-	Boolean bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	Boolean esAdmin=false, bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
@@ -87,19 +86,41 @@ public class Principal extends JFrame {
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
 
-	public static void getProp(String Username) {
+	/**
+	 * Guarda en un archivo properties el valor del username que ha entrado por ultima vez
+	 * @param Username nombre del usuario a escribir
+	 */
+	public static void setProp(String Username) {
 		File archivo = new File("config.properties");
 		try {
-			FileOutputStream fis = new FileOutputStream(archivo);
-			Properties PropConfig = new Properties();
-			//PropConfig.set
-		} catch (FileNotFoundException e) {
+			FileOutputStream fos = new FileOutputStream(archivo);
+			Properties propConfig = new Properties();
+			
+			propConfig.setProperty("username", Username);
+			propConfig.store(fos, "program Settings");
+			fos.close();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	public static String getProp() {
+		File archivo = new File("config.properties");
+		try {
+			FileInputStream fis = new FileInputStream(archivo);
+			Properties propConfig = new Properties();
+			propConfig.load(fis);
+			//cojemos las properties
+			String nombre =propConfig.getProperty("username");
+			return nombre;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 	public Principal() {
-	
 		fechaentrega=new Date();
 		try {
 			mascarafecha=new MaskFormatter("##/##/####");
@@ -486,6 +507,7 @@ public class Principal extends JFrame {
        bIniciar.setBounds(150, 580,300, 75);
        bRegistrarse.setBounds(600, 580,300, 75);
        tUsuario = new JTextField();
+       tUsuario.setText(getProp());
        tUsuario.setName("texto");
        tPassword = new JTextField();
        tPassword.setName("texto");
@@ -802,18 +824,7 @@ public class Principal extends JFrame {
        frame.setJMenuBar(menuBar);
               
         //Action Listeners
-       usern.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			/*for (int i = 0; i < frame.getCom; i++) {
-				
-			}
-			CambiarPanel(, panelCambioUsuario);*/
-			
-		}
-	});
+     
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -849,6 +860,7 @@ public class Principal extends JFrame {
    			
    			
    			nombreUsuario=tUsuario.getText();
+   			setProp(nombreUsuario);
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
@@ -871,7 +883,7 @@ public class Principal extends JFrame {
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
-				
+				esAdmin=true;
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
 	   			frame.setSize(1080, 740);	
@@ -922,20 +934,25 @@ public class Principal extends JFrame {
        bConfirmarRegistro.addActionListener(new ActionListener () {
     	   @Override
       		public void actionPerformed(ActionEvent arg0) {
-    		Connection conn = BD.initBD();
-   			
-   			Statement st=null;
-   		
-   			try {
-   				st = conn.createStatement();
-   			} catch (SQLException e1) {
-   				// TODO Auto-generated catch block
-   				e1.printStackTrace();
-   			}
-   				numeroTF=Integer.parseInt(tTRegistro.getText());
-    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
-      			
-    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
+    		   if (esNumerico(tTRegistro.getText())==true) {
+    			   Connection conn = BD.initBD();
+    	   			
+    	   			Statement st=null;
+    	   		
+    	   			try {
+    	   				st = conn.createStatement();
+    	   			} catch (SQLException e1) {
+    	   				// TODO Auto-generated catch block
+    	   				e1.printStackTrace();
+    	   			}
+    	   				numeroTF=Integer.parseInt(tTRegistro.getText());
+    	    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
+    	      			
+    	    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
+			}else {
+				JOptionPane.showMessageDialog(null, "Numero de telefono no valido");
+			}
+    		
       		}
        });
        
@@ -963,6 +980,7 @@ public class Principal extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					CambiarPanel(panelAdmin, panelInicio); 
+					
 				}
 			});
 		}//
@@ -993,6 +1011,10 @@ public class Principal extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						CambiarPanel(panelRecogerDomicilio,panelInicio); 
+						if (esAdmin==false) {
+							bPanelAdmin.setVisible(false);
+							bPanelAdmin.setEnabled(false);
+						}
 					}
 				});
 				
@@ -1162,6 +1184,10 @@ public class Principal extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						CambiarPanel(panelReserva,panelInicio); 
+						if (esAdmin==false) {
+							bPanelAdmin.setVisible(false);
+							bPanelAdmin.setEnabled(false);
+						}
 					}
 				});
 				
@@ -2370,19 +2396,15 @@ public class Principal extends JFrame {
 				
 			
 		
-		/*	confirmarFactura.addActionListener(new ActionListener() {
+			confirmarFactura.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					String nombreElegido =platoEntrantes;
 					String fechacom[] = tFecha.getText().split("/"); 
-
-
-
-
+					
 				   String horacom[] = tHora.getText().split(":");
-
 
 				   mes =Integer.parseInt(fechacom[0]); 
 
@@ -2434,14 +2456,6 @@ public class Principal extends JFrame {
 							}
 						 System.out.println(fechaentrega); 
 						       
-
-						//pedido.setFecha(fechaentrega); 
-
-				    	pedido.insertPedido(nombreUsuario);
-					}else {
-						
-						//reserva.setFecha(fechaentrega);
-
 						 pedido.setFecha(calendario);
 						 //direcciones
 						 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
@@ -2452,7 +2466,6 @@ public class Principal extends JFrame {
 				    	
 					}else {//se introducen los valores
 						reserva.setFecha(calendario);				
-
 						reserva.setBebida(platoBebida);
 						reserva.setEntrante(platoEntrantes);
 						reserva.setPrimero(platoPrimero);
@@ -2475,14 +2488,16 @@ public class Principal extends JFrame {
 						//String postre, String bebida
 						// reserva.setFecha(fechaentrega); 
 					}
-					
+				       
 				      
 					//pedido.setFecha()
 				}
 				
-			});*/
+			});
 		     
-		       //
+		       
+		       
+		      
 
 			
      
@@ -2697,6 +2712,10 @@ public class Principal extends JFrame {
 				}
 			}
 			CambiarPanel(todosPaneles.get(panelsito), panelInicio);
+			if (esAdmin==false) {
+				bPanelAdmin.setVisible(false);
+				bPanelAdmin.setEnabled(false);
+			}
 		}
 	});
      cancel.addActionListener(new ActionListener() {
