@@ -542,7 +542,7 @@ public class Principal extends JFrame {
       tQuitComida.setBounds(500, 310, 350, 60);
       tQuitComida.setFont(newFont);
       tQuitComida.setText("");
-      
+      //
       Botones bQuitComida = new Botones();
       CrearBoton(bQuitComida);
       bQuitComida.setNombre("Aceptar");
