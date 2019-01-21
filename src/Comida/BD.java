@@ -354,34 +354,34 @@ public class BD {
 				String postre = rs.getString("postre");
 				String bebida = rs.getString("bebida");
 				
-				ArrayList<Alimentos> a = new ArrayList<>();
+				
 				//entrante
 				for (Comida com : c.entrantes) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setEntrante(com);
 					}
 				}
 				for (Comida com : c.primeros) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setPrimero(com);
 					}
 				}
 				for (Comida com : c.segundos) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setSegundo(com);
 					}
 				}
 				for (Comida com : c.postres) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setPostre(com);
 					}
 				}
 				for (Bebida beb : c.bebidas) {
 					if(beb.getNombre().equals(entrante)) {
-						a.add(beb);
+						p.setBebida(beb);
 					}
 				}
-				p.setProductos(a);
+				
 				p.setDireccion(rs.getString("direccion"));
 				p.setDineroGastado();
 				

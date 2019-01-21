@@ -2151,35 +2151,35 @@ public class Principal extends JFrame {
 		       if (bpedido==true) {
 		    	   for (Comida entrante : carta.entrantes) {
 						if(entrante.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(entrante);
+							pedido.setEntrante(entrante);
 						}
 					} 
 					//primero
 					nombreElegido = platoPrimero;
 					for (Comida primero : carta.primeros) {
 						if(primero.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(primero);
+							pedido.setPrimero(primero);
 						}
 					}
 					//segundo
 					nombreElegido = platoSegundo;
 					for (Comida segundo : carta.segundos) {
 						if(segundo.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(segundo);
+							pedido.setSegundo(segundo);
 						}																																																										
 					}
 					//postre
 					nombreElegido = platoPostre;
 					for (Comida postre : carta.postres) {
 						if(postre.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(postre);
+							pedido.setPostre(postre);
 						}
 					}
 					//bebida
 					nombreElegido = platoBebida;
 					for (Bebida bebida : carta.bebidas) {
 						if(bebida.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(bebida);
+							pedido.setBebida(bebida);
 						}
 					}
 				 System.out.println(fechaentrega); 
