@@ -24,7 +24,9 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 
@@ -67,11 +69,12 @@ public class Principal extends JFrame {
 	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora,precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 	Date fechaentrega;
 	
+	
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 	JFormattedTextField tFecha,tHora;
 	Font fuente;
-	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
+	int año=0, mes=0,dia=0,hora=0,minuto=0, x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
@@ -87,8 +90,9 @@ public class Principal extends JFrame {
 		}
 		mascarafecha.setPlaceholderCharacter('_');
 		
+		
 		try {
-			mascaraHora=new MaskFormatter("##:##");
+			mascaraHora=new MaskFormatter("##/##");
 		} catch (ParseException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -518,6 +522,8 @@ public class Principal extends JFrame {
       iva.setFont(newFont);
       iva.setText("IVA: ");
       lgastado = new JLabel();
+     
+      
       //PanelBebidaComida
       bPanelQuitBebida = new BotonesGrandes();
       CrearBoton(bPanelQuitBebida);
@@ -675,6 +681,8 @@ public class Principal extends JFrame {
 
        confirmarFactura = new Botones();
        confirmarFactura.setNombre("Confirmar factura");
+       confirmarFactura.setBounds(390, 585, 300, 75);
+       CrearBoton(confirmarFactura);
        //EL MENU 
        JMenuBar menuBar = new JMenuBar();
        
@@ -2069,9 +2077,11 @@ public class Principal extends JFrame {
 		
        confirmarFactura.addActionListener(new ActionListener() {
 		
+		@SuppressWarnings("deprecation")
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			System.out.println(platoEntrantes);
 			String nombreElegido =platoEntrantes;																													
 			for (Comida entrante : carta.entrantes) {
 				if(entrante.getNombre().equals(nombreElegido)) {
@@ -2108,15 +2118,21 @@ public class Principal extends JFrame {
 			}
 			
 			//pedido.setFecha()
+			String fechacom[] = tFecha.getText().split("/");
+		       String horacom[] = tHora.getText().split("/");
+		       mes =Integer.parseInt(fechacom[0]);
+		       dia =Integer.parseInt(fechacom[1]);
+		       año =Integer.parseInt(fechacom[2]);
+		       hora =Integer.parseInt(horacom[0]);
+		       minuto =Integer.parseInt(horacom[1]);
+		       
+		       Calendar calendario = new GregorianCalendar(año, mes, dia, hora, minuto);
+		       fechaentrega= calendario.getTime();
+				System.out.println(fechaentrega);
+		       pedido.setFecha(fechaentrega);
+		       pedido.insertPedido(nombreUsuario);
 		}
 	});
-       bPrimerPlato.addActionListener(new ActionListener () {
-    	   @Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-       });
-      
        
        
       
@@ -2311,6 +2327,7 @@ public class Principal extends JFrame {
        panelInicioSesion.add(tPassword);
        panelFactura.add(fl1);
        panelFactura.add(fl2);
+       panelFactura.add(confirmarFactura);
        
        ImageIcon imagenIcono = new ImageIcon(this.getClass().getClassLoader().getResource("frame/Captura de pantalla (43).png"));
        frame.setIconImage(imagenIcono.getImage());
