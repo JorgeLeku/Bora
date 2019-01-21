@@ -2023,6 +2023,7 @@ public class Principal extends JFrame {
 																															double totalx = precioentrante + precioprimerox + preciosegundox + preciopostrex + preciobebidax;
 																															double coniva = totalx *1.21;
 																																
+																															
 																																JLabel entr =new JLabel();
 																																entr.setFont(newFont);
 																																entr.setText(platoEntrantes);
