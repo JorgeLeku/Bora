@@ -1,5 +1,5 @@
 package ventana;
-//17:04 commit
+//17:27 commit
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
