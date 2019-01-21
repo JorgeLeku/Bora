@@ -522,6 +522,8 @@ public class Principal extends JFrame {
       iva.setFont(newFont);
       iva.setText("IVA: ");
       lgastado = new JLabel();
+     
+      
       //PanelBebidaComida
       bPanelQuitBebida = new BotonesGrandes();
       CrearBoton(bPanelQuitBebida);
@@ -679,6 +681,8 @@ public class Principal extends JFrame {
 
        confirmarFactura = new Botones();
        confirmarFactura.setNombre("Confirmar factura");
+       confirmarFactura.setBounds(390, 585, 300, 75);
+       CrearBoton(confirmarFactura);
        //EL MENU 
        JMenuBar menuBar = new JMenuBar();
        
@@ -2077,6 +2081,7 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			System.out.println(platoEntrantes);
 			String nombreElegido =platoEntrantes;																													
 			for (Comida entrante : carta.entrantes) {
 				if(entrante.getNombre().equals(nombreElegido)) {
@@ -2113,21 +2118,22 @@ public class Principal extends JFrame {
 			}
 			
 			//pedido.setFecha()
+			String fechacom[] = tFecha.getText().split("/");
+		       String horacom[] = tHora.getText().split("/");
+		       mes =Integer.parseInt(fechacom[0]);
+		       dia =Integer.parseInt(fechacom[1]);
+		       año =Integer.parseInt(fechacom[2]);
+		       hora =Integer.parseInt(horacom[0]);
+		       minuto =Integer.parseInt(horacom[1]);
+		       
+		       Calendar calendario = new GregorianCalendar(año, mes, dia, hora, minuto);
+		       fechaentrega= calendario.getTime();
+				System.out.println(fechaentrega);
+		       pedido.setFecha(fechaentrega);
+		       pedido.insertPedido(nombreUsuario);
 		}
 	});
-       String fechacom[] = tFecha.getText().split("/");
-       String horacom[] = tHora.getText().split("/");
-       mes =Integer.parseInt(fechacom[0]);
-       dia =Integer.parseInt(fechacom[1]);
-       año =Integer.parseInt(fechacom[2]);
-       hora =Integer.parseInt(horacom[0]);
-       minuto =Integer.parseInt(horacom[1]);
        
-       Calendar calendario = new GregorianCalendar(año, mes, dia, hora, minuto);
-       fechaentrega= calendario.getTime();
-		System.out.println(fechaentrega);
-       pedido.setFecha(fechaentrega);
-       pedido.insertPedido(nombreUsuario);
        
       
 //pene
