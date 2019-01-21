@@ -2189,7 +2189,7 @@ public class Principal extends JFrame {
 				 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
 				 pedido.setDireccion(dir);
 				 pedido.setDineroGastado();
-		    	pedido.insertPedido(nombreUsuario);
+				 pedido.insertPedido(nombreUsuario);
 		    
 		    	
 			}else {//se introducen los valores
