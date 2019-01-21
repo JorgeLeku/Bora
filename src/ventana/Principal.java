@@ -713,7 +713,17 @@ public class Principal extends JFrame {
        frame.setJMenuBar(menuBar);
               
         //Action Listeners
-
+       usern.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			/*for (int i = 0; i < frame.getCom; i++) {
+				
+			}
+			CambiarPanel(, panelCambioUsuario);*/
+		}
+	});
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -2379,6 +2389,24 @@ public class Principal extends JFrame {
 	}
 	
 	public void CambiarPanel(JPanel g, JPanel h) {
+		g.setVisible(false);
+		g.setEnabled(false);
+		h.setVisible(true);
+		h.setEnabled(true);
+		for (Component cp : g.getComponents() ){
+			cp.setEnabled(false);
+			cp.setVisible(false);
+		}
+		for (Component sp : h.getComponents() ){
+	        sp.setEnabled(true);
+	        sp.setVisible(true);
+		}
+		
+			//h.add(bReturn);
+		
+		
+	}
+	public void CambiarPanel1(JPanel g, JPanel h) {
 		g.setVisible(false);
 		g.setEnabled(false);
 		h.setVisible(true);
