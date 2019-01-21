@@ -2262,7 +2262,11 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelBienvenida);
        frame.getContentPane().add(panelInicio);
        frame.getContentPane().add(panelAdmin);
-       
+       frame.getContentPane().add(panelCambioContraseña);
+       frame.getContentPane().add(panelCambioUsuario);
+       frame.getContentPane().add(panelCambioNombre);
+       frame.getContentPane().add(panelCambioApellido);
+  
        frame.getContentPane().add(panelQuitComida);
        frame.getContentPane().add(panelQuitBebida);
        frame.getContentPane().add(panelBebidaComida);
