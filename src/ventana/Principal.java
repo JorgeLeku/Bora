@@ -19,9 +19,12 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
+import java.util.Date;
 import java.util.List;
 
 
@@ -35,11 +38,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-
+import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
 
 import Comida.*;
@@ -47,34 +51,49 @@ import Comida.*;
 
 
 public class Principal extends JFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	JCheckBox ch;
 	Carta carta = new Carta();
-	JMenuBar menuBar;
-	JMenu menuUsuario;
+	JMenu menuUsuario, menuUsuario2;
+	JMenuItem usern, passw, name, surname, cancel, other;
+	//JMenuBar menuBar;
 	Boolean bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
-	JCheckBox alcoholica;
-
+	Botones confirmarFactura;
+	MaskFormatter mascarafecha, mascaraHora;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
-	@SuppressWarnings("rawtypes")
- 
+	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora,precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	Date fechaentrega;
+	
 	JComboBox cOrden, cHoraReserva;
-	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
-
+	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
+	JFormattedTextField tFecha,tHora;
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
-	String nombreUsuario;
+	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
 	
-	@SuppressWarnings({ "serial", "rawtypes", "unchecked" })
+	
 	public Principal() {
+		fechaentrega=new Date();
+		try {
+			mascarafecha=new MaskFormatter("##/##/####");
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		mascarafecha.setPlaceholderCharacter('_');
+		
+		try {
+			mascaraHora=new MaskFormatter("##:##");
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		mascaraHora.setPlaceholderCharacter('_');
+		
 		List<JButton>bReturns = new ArrayList<>();
 		
 		carta.cargarCarta();
@@ -105,7 +124,10 @@ public class Principal extends JFrame {
 	        }
        Font newFont = fuente.deriveFont(fuente.getSize() * 15F);
        Font titulos = fuente.deriveFont(fuente.getSize()*30F);
-       
+       ch= new JCheckBox();
+       ch.setFont(newFont);
+       ch.setText("Es alcoholica?");
+       ch.setBounds(100, 400, 200, 50);
        JFrame frame = new JFrame();
        
        ImageIcon imagenInicio = new ImageIcon(this.getClass().getClassLoader().getResource("frame/fondoBienvenida.jpg"));
@@ -144,6 +166,10 @@ public class Principal extends JFrame {
        Paneles panelSegundo = new Paneles();
        Paneles panelPostre = new Paneles();
        
+       Paneles panelCambioContraseña = new Paneles();
+       Paneles panelCambioUsuario= new Paneles();
+       Paneles panelCambioNombre = new Paneles();
+       Paneles panelCambioApellido = new Paneles();
        
        Paneles panelFactura = new Paneles();
        
@@ -175,6 +201,10 @@ public class Principal extends JFrame {
        
        CrearPanel(panelFactura);
 
+       CrearPanel(panelCambioContraseña);
+       CrearPanel(panelCambioUsuario);
+       CrearPanel(panelCambioNombre);
+       CrearPanel(panelCambioApellido);
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
@@ -240,11 +270,7 @@ public class Principal extends JFrame {
        lNombrarProd = new JLabel();
        tNombreProd = new JTextField();
        lTituloPAddBoton = new JLabel();
-       alcoholica = new JCheckBox();
-       alcoholica.setText("Es alcoholica?");
-       alcoholica.setLocation(400, 600);
-       alcoholica.setVisible(true);
-       alcoholica.setEnabled(true);
+     
 
        lTipo = new JLabel();
        cOrden = new JComboBox();
@@ -253,18 +279,12 @@ public class Principal extends JFrame {
        bQuitBoton = new JButton();
 
        //Objetos panelReserva
-       lNombreC = new JLabel ();
-       lNombreC.setFont(newFont);
-       lNombreC.setText("Nombre");
-       lApellidoC = new JLabel ();
-       lApellidoC.setFont(newFont);
-       lApellidoC.setText("Apellidos");
+
        lHoraR = new JLabel();
        lHoraR = new JLabel();
        lHoraR.setFont(newFont);
        lHoraR.setText("Hora de la reserva");
-       tApellidosReserva = new JTextField();
-       tNombreReserva = new JTextField();
+
        cHoraReserva=new JComboBox();
        
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
@@ -290,17 +310,14 @@ public class Principal extends JFrame {
 
        //Objetos panelRecogida
        lHora = new JLabel();
-       tHora = new JTextField();
-       lTlfn = new JLabel();
+       tHora = new JFormattedTextField(mascaraHora);
+
        lValidarTlfn = new JLabel();
-       tTlfn = new JFormattedTextField(formatter);
+
      
        
        
-       lNombre2 = new JLabel();
-       tNombre2 = new JTextField();
-       lApellido2 = new JLabel();
-       tApellido2 = new JTextField();
+
        bConfirmarRecogida = new JButton();
        
        //Objetos panelDomicilio
@@ -312,10 +329,9 @@ public class Principal extends JFrame {
        tPiso = new JTextField();
        lLetra = new JLabel();
        tLetra = new JTextField();
-       lNombre = new JLabel();
-       tNombre = new JTextField();
-       lApellido = new JLabel();
-       tApellido = new JTextField();
+
+
+
        bConfirmarDomicilio = new JButton();
        
 
@@ -437,10 +453,7 @@ public class Principal extends JFrame {
        lTRegistro.setText("Telefono");
        tTRegistro.setBounds(200, 500, 200, 40);
        
-       //lApellido.setBounds(760, 450, 200, 40);
-       //lApellido.setFont(newFont);
-       //lApellido.setText("Apellido");
-       //tApellido.setBounds(700, 500, 200, 40);
+
        
        bConfirmarRegistro.setBounds(390, 585, 300, 75);
        bConfirmarRegistro.setFont(newFont);
@@ -452,22 +465,7 @@ public class Principal extends JFrame {
        lHora.setText("Hora");
        tHora.setBounds(300, 300, 200, 40);
        
-       lTlfn.setBounds(660, 250, 200, 40);
-       lTlfn.setFont(newFont);
-       lTlfn.setText("Telefono");
-       tTlfn.setBounds(600, 300, 200, 40);
-       lValidarTlfn.setBounds(600, 350, 150, 20);
-       lValidarTlfn.setForeground(Color.red);
-       
-       lNombre2.setBounds(360, 400, 200, 40);
-       lNombre2.setFont(newFont);
-       lNombre2.setText("Nombre");
-       tNombre2.setBounds(300, 450, 200, 40);
-       
-       lApellido2.setBounds(660, 400, 200, 40);
-       lApellido2.setFont(newFont);
-       lApellido2.setText("Apellido");
-       tApellido2.setBounds(600, 450, 200, 40);
+
        
        bConfirmarRecogida.setBounds(390, 585, 300, 75);
        bConfirmarRecogida.setFont(newFont);
@@ -495,15 +493,15 @@ public class Principal extends JFrame {
       lLetra.setText("Letra");
       tLetra.setBounds(700, 375, 200, 40);
       
-      lNombre.setBounds(260, 450, 200, 40);
-      lNombre.setFont(newFont);
-      lNombre.setText("Nombre");
-      tNombre.setBounds(200, 500, 200, 40);
+      lfechaEntrega = new JLabel();
+      lfechaEntrega.setFont(newFont);
+      lfechaEntrega.setText("Fecha entrega");
+      lfechaEntrega.setBounds(220, 450, 200, 40);
       
-      lApellido.setBounds(760, 450, 200, 40);
-      lApellido.setFont(newFont);
-      lApellido.setText("Apellido");
-      tApellido.setBounds(700, 500, 200, 40);
+      tFecha = new JFormattedTextField(mascarafecha);
+      
+      tFecha.setBounds(200, 500, 200, 40);
+
       
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
       bConfirmarDomicilio.setFont(newFont);
@@ -538,7 +536,7 @@ public class Principal extends JFrame {
       tQuitComida.setBounds(500, 310, 350, 60);
       tQuitComida.setFont(newFont);
       tQuitComida.setText("");
-      
+      //
       Botones bQuitComida = new Botones();
       CrearBoton(bQuitComida);
       bQuitComida.setNombre("Aceptar");
@@ -593,13 +591,13 @@ public class Principal extends JFrame {
        lTituloPAddBoton.setForeground(Color.white);
        lTituloPAddBoton.setText("Crear boton");
        
-       
-
+    
+     
        
        lTipo.setBounds(700, 250, 300, 40);
        lTipo.setFont(newFont);
        lTipo.setText("Posicion del plato");
-       
+     
        cOrden.setFont(newFont);
        cOrden.addItem("Entrantes");
        cOrden.addItem("Primero");
@@ -607,27 +605,25 @@ public class Principal extends JFrame {
        cOrden.addItem("Postre");
        cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
+       
        cOrden.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			if (cOrden.getSelectedIndex()==4) {
-				alcoholica.setVisible(true);
-				alcoholica.setEnabled(true);
-			}else {
-				alcoholica.setVisible(false);
-				alcoholica.setEnabled(false);
-			}
-		}
-	});
+   		
+   		@Override
+   		public void actionPerformed(ActionEvent e) {
+   			// TODO Auto-generated method stub
+   			if (cOrden.getSelectedIndex()==4) {
+   				ch.setVisible(true);
+   				ch.setEnabled(true);
+   			}else {
+   				ch.setVisible(false);
+   				ch.setEnabled(false);
+   			}
+   		}
+   	});
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
-       lNombreC.setBounds(240, 200, 400, 40);
-       lApellidoC.setBounds(710, 200, 400, 40);    
-       tNombreReserva.setBounds(130, 250, 300, 40);
-       tApellidosReserva.setBounds(620, 250, 300, 40);
+
        lHoraR.setBounds(420, 350, 300, 40);
        cHoraReserva.setBounds(380,400, 300, 40);
        //Esto es para crear el combo box de la reserva
@@ -676,17 +672,39 @@ public class Principal extends JFrame {
        cbb1.setBounds(500, 580, 80, 80);
        bSelImg.setBounds(250, 420, 300, 75);
 
-		
+       confirmarFactura = new Botones();
+       confirmarFactura.setNombre("Confirmar factura");
        //EL MENU 
-       menuBar = new JMenuBar();
-
-    
+       JMenuBar menuBar = new JMenuBar();
+       
        menuUsuario = new JMenu("Ajustes de usuario");
-       menuUsuario.setMnemonic(KeyEvent.VK_A);
+       menuUsuario2 = new JMenu("Ajustes de pedido");
+       
+       usern = new JMenuItem("Cambiar nombre de usuario");
+       passw = new JMenuItem("Cambiar contraseña");
+       name = new JMenuItem("Cambiar nombre");
+       surname = new JMenuItem("Cambiar apellidos");
+       other = new JMenuItem("Otro pedido");
+       cancel = new JMenuItem("Cancelar pedido");
+       
+       menuUsuario.add(usern);
+       menuUsuario.add(passw);
+       menuUsuario.add(name);
+       menuUsuario.add(surname);
+       menuUsuario2.add(other);
+       menuUsuario2.add(cancel);
+       
+       //menuUsuario.setMnemonic(KeyEvent.VK_A);
        menuBar.add(menuUsuario);
+
+       menuBar.add(menuUsuario2);
        
-       
-       //Action Listeners
+       menuBar.setVisible(false);
+       menuBar.setEnabled(false);
+       frame.setJMenuBar(menuBar);
+              
+        //Action Listeners
+
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -720,6 +738,8 @@ public class Principal extends JFrame {
    		@Override
    		public void actionPerformed(ActionEvent arg0) {
    			
+   			
+   			
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
@@ -732,14 +752,20 @@ public class Principal extends JFrame {
    			
    			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
    				//aha
+   				frame.setSize(1080, 740);
    				CambiarPanel(panelInicioSesion, panelInicio);
    				bPanelAdmin.setEnabled(false);
    				bPanelAdmin.setVisible(false);
+   				menuBar.setVisible(true);
+   	   			menuBar.setEnabled(true);
    				panelInicio.updateUI();
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
 				nombreUsuario=tUsuario.getText();
+				menuBar.setVisible(true);
+	   			menuBar.setEnabled(true);
+	   			frame.setSize(1080, 740);
 			}else {
 			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
@@ -779,7 +805,6 @@ public class Principal extends JFrame {
 					CambiarPanel(panelRegistrarse,panelInicioSesion); 
 				}
 			});
-   			//CambiarPanel(panelInicioSesion, panelInicio);
    			
    		}
        	   
@@ -788,20 +813,7 @@ public class Principal extends JFrame {
        bConfirmarRegistro.addActionListener(new ActionListener () {
     	   @Override
       		public void actionPerformed(ActionEvent arg0) {
-      			// TODO Auto-generated method stub
-    		   /*panelRegistrarse.add(lURegistro);
-       panelRegistrarse.add(lCRegistro);
-       panelRegistrarse.add(lNRegistro);
-       panelRegistrarse.add(lARegistro);
-       panelRegistrarse.add(lTRegistro);
-       panelRegistrarse.add(tURegistro);
-       panelRegistrarse.add(tCRegistro);
-       panelRegistrarse.add(tNRegistro);
-       panelRegistrarse.add(tARegistro);
-       panelRegistrarse.add(tTRegistro);
-       panelRegistrarse.add(bConfirmarRegistro);*/
-    		   //BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
-    		   Connection conn = BD.initBD();
+    		Connection conn = BD.initBD();
    			
    			Statement st=null;
    		
@@ -886,6 +898,10 @@ public class Principal extends JFrame {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
 				panelRecogida.add(bPanelMesa);
+				panelRecogida.add(tFecha);
+				panelRecogida.add(lfechaEntrega);
+				panelRecogida.add(lHora);
+				panelRecogida.add(tHora);
 				if (bprecogida==false) {
 					
 					bprecogida=true;
@@ -902,6 +918,18 @@ public class Principal extends JFrame {
 				}
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lfechaEntrega.setLocation(260, 300);
+				tFecha.setLocation(200, 350);
+				lHora.setLocation(760, 300);
+				tHora.setLocation(700, 350);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -920,8 +948,11 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-			
+				panelDomicilio.add(tFecha);
 				panelDomicilio.add(bPanelMesa);
+				panelDomicilio.add(lfechaEntrega);
+				panelDomicilio.add(lHora);
+				panelDomicilio.add(tHora);
 				if (bpdomicilio==false) {
 					
 					bpdomicilio=true;
@@ -936,8 +967,30 @@ public class Principal extends JFrame {
 					
 					
 				}
+				/*
+      
+      lfechaEntrega = new JLabel();
+      lfechaEntrega.setFont(newFont);
+      lfechaEntrega.setText("Fecha entrega");
+      lfechaEntrega.setBounds(220, 450, 200, 40);
+      
+      tFecha = new JFormattedTextField(mascarafecha);
+      
+      tFecha.setBounds(200, 500, 200, 40);*/
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lHora.setLocation(760, 450); //260, , 200, 40
+				tHora.setLocation(700, 500);
+				lfechaEntrega.setLocation(220, 450);
+				tFecha.setLocation(200, 500);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -957,6 +1010,10 @@ public class Principal extends JFrame {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
 				panelReserva.add(bPanelMesa);
+				panelReserva.add(tFecha);
+				panelReserva.add(lfechaEntrega);
+				panelReserva.add(lHora);
+				panelReserva.add(tHora);
 				if (bpreserva==false) {
 					
 					
@@ -975,6 +1032,18 @@ public class Principal extends JFrame {
 				}
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lfechaEntrega.setLocation(260, 300);
+				tFecha.setLocation(200, 350);
+				lHora.setLocation(760, 300);
+				tHora.setLocation(700, 350);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -1109,7 +1178,8 @@ public class Principal extends JFrame {
     				// TODO Auto-generated catch block
     				e1.printStackTrace();
     			}
-     			if (BD.borrarAlimento(st, tQuitComida.getText(), "bebida")) {
+     			if (BD.borrarAlimento(st, tQuitBebida.getText(), "bebida")) {
+     				
 				JOptionPane.showMessageDialog(null, "Bebida Eliminada");
 				} else {
 				JOptionPane.showMessageDialog(null, "Bebida no eliminada");
@@ -1173,7 +1243,11 @@ public class Principal extends JFrame {
 					CambiarPanel(panelAddBoton,panelAdmin); 
 				}
 			});
-   			
+			if (cOrden.getSelectedIndex()!=4) {
+				ch.setVisible(false);
+			    ch.setEnabled(false);
+			}
+			
    		}
        	   
         });
@@ -1397,6 +1471,7 @@ public class Principal extends JFrame {
 										// TODO Auto-generated method stub
 										//me cago en dioooooooooooooooooooooososososoossos
 										enQuePanel=0;
+										platoEntrantes=pp2e.getNombre();
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
 											for (int j = 0; j < panelesentrantes.size(); j++) {
@@ -1507,6 +1582,7 @@ public class Principal extends JFrame {
 														
 														Botones pp2primero = new Botones(); //Creamos el boton del plato
 														//CrearBoton(pp2);
+														platoPrimero=pp2primero.getNombre();
 														pp2primero.setBounds(spr, ppr,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 														pp2primero.setNombre(nombreprimero.get(contPrimero)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 														contPrimero++;
@@ -1615,6 +1691,7 @@ public class Principal extends JFrame {
 																			
 																			Botones pp2s = new Botones(); //Creamos el boton del plato
 																			//CrearBoton(pp2);
+																			platoSegundo=pp2s.getNombre();
 																			pp2s.setBounds(ss, ps,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																			pp2s.setNombre(nombresegundo.get(contSegundo)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																			contSegundo++;
@@ -1721,6 +1798,7 @@ public class Principal extends JFrame {
 																								
 																								Botones pp2p = new Botones(); //Creamos el boton del plato
 																								//CrearBoton(pp2);
+																								platoPostre=pp2p.getNombre();
 																								pp2p.setBounds(sp, pp,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																								pp2p.setNombre(nombrepostre.get(contPostre)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																								contPostre++;
@@ -1844,6 +1922,7 @@ public class Principal extends JFrame {
 																														public void actionPerformed(ActionEvent arg0) {
 																															// TODO Auto-generated method stub
 																															//me cago en dioooooooooooooooooooooososososoossos
+																															platoBebida=pp2b.getNombre();
 																															for (int j = 0; j < panelesbebida.size(); j++) {
 																																panelesbebida.get(j).setVisible(false);
 																																panelesbebida.get(j).setEnabled(false);
@@ -1887,40 +1966,7 @@ public class Principal extends JFrame {
 																													//pp2.setActionCommand(pp2.getText());	//Aqui hay que coger de la base de datos el nombre
 																													//mikel
 																													//entrantes
-																													String nombreElegido =pp2e.getNombre();																													
-																													for (Comida entrante : carta.entrantes) {
-																														if(entrante.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(entrante);
-																														}
-																													} 
-																													//primero
-																													nombreElegido = pp2primero.getNombre();
-																													for (Comida primero : carta.primeros) {
-																														if(primero.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(primero);
-																														}
-																													}
-																													//segundo
-																													nombreElegido = pp2s.getNombre();
-																													for (Comida segundo : carta.segundos) {
-																														if(segundo.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(segundo);
-																														}																																																										
-																													}
-																													//postre
-																													nombreElegido = pp2p.getNombre();
-																													for (Comida postre : carta.postres) {
-																														if(postre.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(postre);
-																														}
-																													}
-																													//bebida
-																													nombreElegido = pp2b.getNombre();
-																													for (Bebida bebida : carta.bebidas) {
-																														if(bebida.getNombre().equals(nombreElegido)) {
-																															pedido.addAlCarrito(bebida);
-																														}
-																													}
+																													
 																											
 																										    	}
 																													
@@ -2020,7 +2066,49 @@ public class Principal extends JFrame {
 			
 		
 		
-       
+       confirmarFactura.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			String nombreElegido =platoEntrantes;																													
+			for (Comida entrante : carta.entrantes) {
+				if(entrante.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(entrante);
+				}
+			} 
+			//primero
+			nombreElegido = platoPrimero;
+			for (Comida primero : carta.primeros) {
+				if(primero.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(primero);
+				}
+			}
+			//segundo
+			nombreElegido = platoSegundo;
+			for (Comida segundo : carta.segundos) {
+				if(segundo.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(segundo);
+				}																																																										
+			}
+			//postre
+			nombreElegido = platoPostre;
+			for (Comida postre : carta.postres) {
+				if(postre.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(postre);
+				}
+			}
+			//bebida
+			nombreElegido = platoBebida;
+			for (Bebida bebida : carta.bebidas) {
+				if(bebida.getNombre().equals(nombreElegido)) {
+					pedido.addAlCarrito(bebida);
+				}
+			}
+			
+			//pedido.setFecha()
+		}
+	});
        bPrimerPlato.addActionListener(new ActionListener () {
     	   @Override
 			public void actionPerformed(ActionEvent e) {
@@ -2060,8 +2148,6 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					
-					System.out.println("'Alubias', 13, 1");
-					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2077,7 +2163,6 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2089,11 +2174,10 @@ public class Principal extends JFrame {
 				for (int i = 0; i < nombresegundo.size(); i++) {
 					if (tNombreProd.getText().isEmpty()==true||nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {	
 						esnomentr=true;
-						System.out.println("que son igualesssss");
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
+					
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2108,7 +2192,7 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
+					;
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2121,8 +2205,11 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
-					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "bebida");
+					
+					if (rootPaneCheckingEnabled) {
+						
+					}
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+ch.isSelected(), "bebida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
@@ -2144,12 +2231,8 @@ public class Principal extends JFrame {
        panelAdmin.add(bPanelAddBoton);
        
       
-       panelReserva.add(lApellidoC);
-       panelReserva.add(lNombreC);
-       panelReserva.add(lHoraR);
-       panelReserva.add(tApellidosReserva);
-       panelReserva.add(tNombreReserva);
-       panelReserva.add(cHoraReserva);
+       
+      
        panelReserva.updateUI();
        panelRecogerDomicilio.add(bPanelRecogida);
 
@@ -2175,26 +2258,17 @@ public class Principal extends JFrame {
        panelDomicilio.add(lEdificio);
        panelDomicilio.add(lPiso);
        panelDomicilio.add(lLetra);
-       panelDomicilio.add(lNombre);
-       panelDomicilio.add(lApellido);
+      
+       panelDomicilio.add(lfechaEntrega);
+
        panelDomicilio.add(tCalle);
        panelDomicilio.add(tEdificio);
        panelDomicilio.add(tPiso);
        panelDomicilio.add(tLetra);
-       panelDomicilio.add(tNombre);
-       panelDomicilio.add(tApellido);
+   
        panelDomicilio.updateUI();
        
-       panelRecogida.add(lHora);
-       panelRecogida.add(tHora);
-       panelRecogida.add(lTlfn);
-       panelRecogida.add(tTlfn);
-       panelRecogida.add(lNombre2);
-       panelRecogida.add(tNombre2);
-       panelRecogida.add(lApellido2);
-       panelRecogida.add(tApellido2);
-       panelRecogida.add(lValidarTlfn);
-       
+      
        panelRecogida.updateUI();
        
        panelFactura.add(precio);
@@ -2221,10 +2295,12 @@ public class Principal extends JFrame {
        panelAddBoton.add(cbt2);
        panelAddBoton.add(lNombrarProd);
        panelAddBoton.add(lTituloPAddBoton);
-       panelAddBoton.add(alcoholica);
+       panelAddBoton.add(ch);
        panelAddBoton.add(cbl5);
        panelAddBoton.add(lTipo);
        panelAddBoton.add(cOrden);
+       
+       panelAddBoton.updateUI();
        
        panelInicioSesion.add(lUsuario);
        panelInicioSesion.add(lContraseña);
@@ -2248,7 +2324,11 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelBienvenida);
        frame.getContentPane().add(panelInicio);
        frame.getContentPane().add(panelAdmin);
-       
+       frame.getContentPane().add(panelCambioContraseña);
+       frame.getContentPane().add(panelCambioUsuario);
+       frame.getContentPane().add(panelCambioNombre);
+       frame.getContentPane().add(panelCambioApellido);
+  
        frame.getContentPane().add(panelQuitComida);
        frame.getContentPane().add(panelQuitBebida);
        frame.getContentPane().add(panelBebidaComida);
@@ -2271,7 +2351,7 @@ public class Principal extends JFrame {
        frame.getContentPane().add(panelQuitBebida);
 
        frame.getContentPane().add(panelFactura);
-       frame.getContentPane().add(menuBar);
+       //frame.getContentPane().add(menuBar);
 	}
 	public void CrearBoton(JButton g) {
 

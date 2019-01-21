@@ -42,7 +42,8 @@ public class Testear {
 	}
 	
 	
-	
+
+
 	public static boolean comprobarConexion() {
 		
 		if(conn == null) {

@@ -1,4 +1,4 @@
-package Comida;
+      package Comida;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -166,8 +166,14 @@ public class Pedido {
 	//to string modificado para subirlo a la BD.
 	@Override
 	public String toString() {
+
 		return cod + ", '" + fecha.toString() + "', '"+hora.toString()+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
+
 				+ productos.get(3).getNombre()+"', '" +productos.get(4).getNombre()+"'";
+
+				
+
+
 	}
 
 	public static void main(String[] args) {
