@@ -161,38 +161,52 @@ public class Principal extends JFrame {
 		    }
        };
        Paneles panelInicioSesion = new Paneles();
+       panelInicioSesion.setNombre("panelInicioSesion");
        panelInicioSesion.setName("panelInicioSesion");
        Paneles panelInicio = new Paneles();//primer panel (el panel que pone bora)
        panelInicio.setName("panelInicio");
+       panelInicio.setNombre("panelInicio");
        Paneles panelAdmin = new Paneles();//En este panel eliges si comer en el restaurante o pedir la comida para llevar (tambien esta el boton admin)
+       panelAdmin.setNombre("panelAdmin");
        Paneles panelQuitBebida = new Paneles();
+       panelQuitBebida.setNombre("panelQuitBebida");
        Paneles panelBebidaComida = new Paneles();
+       panelBebidaComida.setNombre("panelBebidaComida");
        Paneles panelQuitComida = new Paneles(); //En este panel el admin puede quitar platos del menu
+       panelQuitComida.setNombre("panelQuitComida");
        Paneles panelAddBoton = new Paneles (); //En este panel el admin puede añadir platos a la comida
-       
+       panelAddBoton.setNombre("panelAddBoton");
        //Nko
        Paneles panelRegistrarse = new Paneles();
-      
+       panelRegistrarse.setNombre("panelRegistrarse");
        Paneles panelReserva = new Paneles();
-
+       panelReserva.setNombre("panelReserva");
        Paneles panelMesa = new Paneles();
-       
+       panelMesa.setNombre("panelMesa");
        Paneles panelRecogerDomicilio = new Paneles();
+       panelRecogerDomicilio.setNombre("panelRecogerDomicilio");
        Paneles panelRecogida = new Paneles();
+       panelRecogida.setNombre("panelRecogida");
        Paneles panelDomicilio = new Paneles ();
-    
+       panelDomicilio.setNombre("panelDomicilio");
        Paneles panelEntrantes = new Paneles();
+       panelEntrantes.setNombre("panelEntrantes");
        Paneles panelPrimero = new Paneles();
+       panelPrimero.setNombre("panelPrimero");
        Paneles panelSegundo = new Paneles();
+       panelSegundo.setNombre("panelSegundo");
        Paneles panelPostre = new Paneles();
-       
+       panelPostre.setNombre("panelPostre");
        Paneles panelCambioContraseña = new Paneles();
+       panelCambioContraseña.setNombre("panelCambioContraseña");
        Paneles panelCambioUsuario= new Paneles();
+       panelCambioUsuario.setNombre("panelCambioUsuario");
        Paneles panelCambioNombre = new Paneles();
+       panelCambioNombre.setNombre("panelCambioNombre");
        Paneles panelCambioApellido = new Paneles();
-       
+       panelCambioApellido.setNombre("panelCambioApellido");
        Paneles panelFactura = new Paneles();
-       
+       panelFactura.setNombre("panelFactura");
        CrearPanel(panelBienvenida);
        CrearPanel(panelInicioSesion);
        //CrearPanel(panelInicio);
