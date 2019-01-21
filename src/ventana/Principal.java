@@ -147,6 +147,10 @@ public class Principal extends JFrame {
        Paneles panelSegundo = new Paneles();
        Paneles panelPostre = new Paneles();
        
+       Paneles panelCambioContraseña = new Paneles();
+       Paneles panelCambioUsuario= new Paneles();
+       Paneles panelCambioNombre = new Paneles();
+       Paneles panelCambioApellido = new Paneles();
        
        Paneles panelFactura = new Paneles();
        
@@ -178,6 +182,10 @@ public class Principal extends JFrame {
        
        CrearPanel(panelFactura);
 
+       CrearPanel(panelCambioContraseña);
+       CrearPanel(panelCambioUsuario);
+       CrearPanel(panelCambioNombre);
+       CrearPanel(panelCambioApellido);
        panelBienvenida.setVisible(true);
        panelBienvenida.setEnabled(true);
 
