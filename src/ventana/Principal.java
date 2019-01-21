@@ -2023,9 +2023,25 @@ public class Principal extends JFrame {
 																															JLabel nomentr =new JLabel();
 																																nomentr.setFont(newFont);
 																																nomentr.setText(platoEntrantes);
+
 																																JLabel precentr = new JLabel();
 																																nomentr.setFont(newFont);
 																																precentr.setText("-"+precioentrante);
+
+																																//nomentr.setBounds(,,,);
+																																panelFactura.add(nomentr);
+																															JLabel precentr = new JLabel();
+																																precentr.setFont(newFont);
+																																precentr.setText("-"+precioentrante);
+																																//precentr.setBounds(,,,);
+																																panelFactura.add(nomentr);
+																																
+																															JLabel nomprim = new JLabel();
+																																nomprim.setFont(newFont);
+																																nomprim.setText(platoPrimero);
+																																//nomprim.setBounds(,,,);
+																																panelFactura.add(nomprim);
+
 																																//entr.setBounds(x, y, width, height);
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															//
