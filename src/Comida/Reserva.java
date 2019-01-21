@@ -5,8 +5,8 @@ import java.sql.Time;
 
 public class Reserva {
 	private String username;
-	private Date fecha;
-	private Time hora;
+	protected Date fecha;
+	protected Time hora;
 	private String entrante,primero,segundo,postre,bebida;
 	public Reserva() {
 		this.username ="";
@@ -50,9 +50,11 @@ public class Reserva {
 	public Date getFecha() {
 		return fecha;
 	}
+	
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+	
 	public Time getHora() {
 		return hora;
 	}

@@ -2120,7 +2120,7 @@ public class Principal extends JFrame {
 			String nombreElegido =platoEntrantes;																													
 			for (Comida entrante : carta.entrantes) {
 				if(entrante.getNombre().equals(nombreElegido)) {
-					pedido.addAlCarrito(entrante);
+					//pedido.addAlCarrito(entrante);
 				}
 			} 
 			//primero
