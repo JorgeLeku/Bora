@@ -43,6 +43,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -1150,7 +1151,7 @@ public class Principal extends JFrame {
     	   
        });
        bPanelQuitBebida.addActionListener(new ActionListener () {
-//
+
    		@Override
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
@@ -1348,6 +1349,7 @@ public class Principal extends JFrame {
 			nombrepostre.add(postre.getNombre());
 		}
 		
+		
 		crafilasentr =(double) nombreentr.size();
 		creacolentr =(double) nombreentr.size();
 		
@@ -1390,7 +1392,7 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
-		
+
 		
 		botonesentrantes = new ArrayList<>();
 		cambioentrantes = new ArrayList<>();
@@ -2013,11 +2015,17 @@ public class Principal extends JFrame {
 																																e.printStackTrace();
 																															}*/
 																															
+																															double precioentrante =precioentr.get(enquepos(nombreentr, platoEntrantes));
+																															double precioprimero =precioentr.get(enquepos(nombreentr, platoPrimero));
+																															double preciosegundo =precioentr.get(enquepos(nombreentr, platoSegundo));
+																															double preciopostre =precioentr.get(enquepos(nombreentr, platoPostre));
+																															double preciobebida =precioentr.get(enquepos(nombreentr, platoBebida));
+																															
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															
 																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
 																															panelFactura.updateUI();
-
+																															
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
 																															
 																														}
@@ -2527,7 +2535,15 @@ public class Principal extends JFrame {
 		
 
 	}
-
+	public int enquepos(List<String> g, String n) {
+		for (int i = 0; i < g.size(); i++) {
+			if (g.get(i).equals(n)) {
+				x=i;
+			}
+		}
+		return x;
+		
+	}
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 
