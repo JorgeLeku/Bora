@@ -790,7 +790,7 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
    			
    			
-   			
+   			nombreUsuario=tUsuario.getText();
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
@@ -813,7 +813,7 @@ public class Principal extends JFrame {
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
-				nombreUsuario=tUsuario.getText();
+				
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
 	   			frame.setSize(1080, 740);	
@@ -2343,10 +2343,19 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			String paco =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((paco != null) && (paco.length() > 0)) {
-			    System.out.println(paco);
-			    
+			    BD.Update(st, " password", "'"+paco+"'", "username ='"+nombreUsuario+"'", "usuario");
 			}
 
 		}
