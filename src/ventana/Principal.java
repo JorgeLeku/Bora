@@ -802,18 +802,7 @@ public class Principal extends JFrame {
        frame.setJMenuBar(menuBar);
               
         //Action Listeners
-       usern.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			/*for (int i = 0; i < frame.getCom; i++) {
-				
-			}
-			CambiarPanel(, panelCambioUsuario);*/
-			
-		}
-	});
+     
        frame.addKeyListener(new KeyListener() {
 		
 		@Override
@@ -871,7 +860,7 @@ public class Principal extends JFrame {
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
-				
+				esAdmin=true;
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
 	   			frame.setSize(1080, 740);	
@@ -922,20 +911,25 @@ public class Principal extends JFrame {
        bConfirmarRegistro.addActionListener(new ActionListener () {
     	   @Override
       		public void actionPerformed(ActionEvent arg0) {
-    		Connection conn = BD.initBD();
-   			
-   			Statement st=null;
-   		
-   			try {
-   				st = conn.createStatement();
-   			} catch (SQLException e1) {
-   				// TODO Auto-generated catch block
-   				e1.printStackTrace();
-   			}
-   				numeroTF=Integer.parseInt(tTRegistro.getText());
-    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
-      			
-    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
+    		   if (esNumerico(tTRegistro.getText())==true) {
+    			   Connection conn = BD.initBD();
+    	   			
+    	   			Statement st=null;
+    	   		
+    	   			try {
+    	   				st = conn.createStatement();
+    	   			} catch (SQLException e1) {
+    	   				// TODO Auto-generated catch block
+    	   				e1.printStackTrace();
+    	   			}
+    	   				numeroTF=Integer.parseInt(tTRegistro.getText());
+    	    		   	BD.Insert(st, "'"+ tURegistro.getText()+"'"+" , "+"'"+ tCRegistro.getText()+"'"+" , "+"'"+ tNRegistro.getText()+"'"+" , "+"'"+ tARegistro.getText()+"'"+" , "+numeroTF, "usuario");
+    	      			
+    	    		   	CambiarPanel(panelRegistrarse, panelInicioSesion );
+			}else {
+				JOptionPane.showMessageDialog(null, "Numero de telefono no valido");
+			}
+    		
       		}
        });
        
@@ -963,6 +957,7 @@ public class Principal extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					CambiarPanel(panelAdmin, panelInicio); 
+					
 				}
 			});
 		}//
@@ -993,6 +988,10 @@ public class Principal extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						CambiarPanel(panelRecogerDomicilio,panelInicio); 
+						if (esAdmin==false) {
+							bPanelAdmin.setVisible(false);
+							bPanelAdmin.setEnabled(false);
+						}
 					}
 				});
 				
@@ -1162,6 +1161,10 @@ public class Principal extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						CambiarPanel(panelReserva,panelInicio); 
+						if (esAdmin==false) {
+							bPanelAdmin.setVisible(false);
+							bPanelAdmin.setEnabled(false);
+						}
 					}
 				});
 				
@@ -2686,6 +2689,10 @@ public class Principal extends JFrame {
 				}
 			}
 			CambiarPanel(todosPaneles.get(panelsito), panelInicio);
+			if (esAdmin==false) {
+				bPanelAdmin.setVisible(false);
+				bPanelAdmin.setEnabled(false);
+			}
 		}
 	});
      cancel.addActionListener(new ActionListener() {
