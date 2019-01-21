@@ -2338,11 +2338,25 @@ public class Principal extends JFrame {
 			esnomentr=false;
 		}
 	});
-       
+    
+    usern.addActionListener(new ActionListener() {
+   		
+   		@Override
+   		public void actionPerformed(ActionEvent e) {
+   			String a =JOptionPane.showInputDialog(null, "Introduzca nuevo usuario", "Cambiar nombre de usuario", 1);
+   			if ((a != null) && (a.length() > 0)) {
+   			    System.out.println(a);
+   			    
+   			}
+
+   		}
+   	});   
+    
     passw.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 			Connection conn = BD.initBD();
 			
 			Statement st=null;
@@ -2356,10 +2370,42 @@ public class Principal extends JFrame {
 			String paco =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((paco != null) && (paco.length() > 0)) {
 			    BD.Update(st, " password", "'"+paco+"'", "username ='"+nombreUsuario+"'", "usuario");
+=======
+			String b =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
+			if ((b != null) && (b.length() > 0)) {
+			    System.out.println(b);
+			    
+>>>>>>> branch 'master' of https://github.com/JorgeLeku/Bora.git
 			}
 
 		}
-	});   
+	});    
+       
+    name.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String c =JOptionPane.showInputDialog(null, "Introduzca nuevo nombre", "Cambiar nombre", 1);
+			if ((c != null) && (c.length() > 0)) {
+			    System.out.println(c);
+			    
+			}
+
+		}
+	}); 
+    
+    surname.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String d =JOptionPane.showInputDialog(null, "Introduzca nuevos apellidos", "Cambiar apellidos", 1);
+			if ((d != null) && (d.length() > 0)) {
+			    System.out.println(d);
+			    
+			}
+
+		}
+	});
      
   
        panelSegundo.updateUI();
