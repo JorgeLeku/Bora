@@ -2029,7 +2029,7 @@ public class Principal extends JFrame {
 																																//entr.setBounds(x, y, width, height);
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
 																															
-																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
+																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");a
 																															panelFactura.updateUI();
 																															
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
