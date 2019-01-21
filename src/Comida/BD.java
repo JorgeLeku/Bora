@@ -202,7 +202,7 @@ public class BD {
 		
 			String sentSQL = "";
 			try {
-				sentSQL = "update "+ nombreTabla+" set" +
+				sentSQL = "update "+ nombreTabla+" set " +
 						secu(nombreCol) + " = " + i + 
 						" where " + condicion ;
 				int val = st.executeUpdate( sentSQL );

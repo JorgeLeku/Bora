@@ -790,7 +790,7 @@ public class Principal extends JFrame {
    		public void actionPerformed(ActionEvent arg0) {
    			
    			
-   			
+   			nombreUsuario=tUsuario.getText();
    			Connection conn = BD.initBD();
    			
    			Statement st=null;
@@ -813,7 +813,7 @@ public class Principal extends JFrame {
 			}else if(BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "administrador")==true){
 				CambiarPanel(panelInicioSesion, panelInicio);
 				JOptionPane.showMessageDialog(null, "Bienvenido administrador <3");
-				nombreUsuario=tUsuario.getText();
+				
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
 	   			frame.setSize(1080, 740);	
@@ -2020,10 +2020,16 @@ public class Principal extends JFrame {
 																															double preciosegundo =precioentr.get(enquepos(nombreentr, platoSegundo));
 																															double preciopostre =precioentr.get(enquepos(nombreentr, platoPostre));
 																															double preciobebida =precioentr.get(enquepos(nombreentr, platoBebida));
-																															
+																															JLabel nomentr =new JLabel();
+																																nomentr.setFont(newFont);
+																																nomentr.setText(platoEntrantes);
+																																JLabel precentr = new JLabel();
+																																nomentr.setFont(newFont);
+																																precentr.setText("-"+precioentrante);
+																																//entr.setBounds(x, y, width, height);
 																															lgastado.setText(pp2e.getNombre()+ "\n"+ pp2primero.getNombre() + "\n"+pp2s.getNombre()+"\n"+pp2p.getNombre()+"\n"+pp2b.getNombre());
-																															
-																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");
+																															//
+																															//BD.Insert(st, "109, 'Alubias', 13, 1", "comida");a
 																															panelFactura.updateUI();
 																															
 																															CambiarPanel(panelesbebida.get(enQuePanel), panelFactura);
@@ -2356,12 +2362,26 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			
+			   
+
 			String b =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((b != null) && (b.length() > 0)) {
-			    System.out.println(b);
-			    
+			    BD.Update(st, " password", "'"+b+"'", "username ='"+nombreUsuario+"'", "usuario");
 			}
-
+		
 		}
 	});    
        
@@ -2369,9 +2389,19 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			String c =JOptionPane.showInputDialog(null, "Introduzca nuevo nombre", "Cambiar nombre", 1);
 			if ((c != null) && (c.length() > 0)) {
-			    System.out.println(c);
+				 BD.Update(st, "nombre", "'"+c+"'", "username ='"+nombreUsuario+"'", "usuario");
 			    
 			}
 
@@ -2382,16 +2412,25 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			String d =JOptionPane.showInputDialog(null, "Introduzca nuevos apellidos", "Cambiar apellidos", 1);
 			if ((d != null) && (d.length() > 0)) {
-			    System.out.println(d);
-			    
+				 BD.Update(st, "apellidos", "'"+d+"'", "username ='"+nombreUsuario+"'", "usuario");
 			}
 
 		}
 	});
      
-  
+    
        panelSegundo.updateUI();
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);
@@ -2528,6 +2567,7 @@ public class Principal extends JFrame {
    		
    		System.out.println(enQuePanel(frame));
 	}
+	
 	public void CrearBoton(JButton g) {
 
 		g.setOpaque(false);
@@ -2587,6 +2627,7 @@ public class Principal extends JFrame {
 		
 
 	}
+	
 	public int enquepos(List<String> g, String n) {
 		for (int i = 0; i < g.size(); i++) {
 			if (g.get(i).equals(n)) {
@@ -2595,7 +2636,7 @@ public class Principal extends JFrame {
 		}
 		return x;
 		
-	}
+	}	
 	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
