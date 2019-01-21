@@ -19,9 +19,11 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
+import java.util.Date;
 import java.util.List;
 
 
@@ -1992,6 +1994,10 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			DateFormat formatoFecha = new SimpleDateFormat("yyyy/MM/dd");
+			Date fechaActual = new Date();
+			
+			pedido.setFechaPedido(fechaActual);
 			
 		}
 	});
