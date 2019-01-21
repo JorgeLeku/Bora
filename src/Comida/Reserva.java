@@ -5,7 +5,7 @@ import java.sql.Time;
 
 public class Reserva {
 	private String username;
-	protected Date fecha;
+	protected java.util.Date fecha;
 	protected Time hora;
 	private String entrante,primero,segundo,postre,bebida;
 	public Reserva() {
@@ -47,11 +47,11 @@ public class Reserva {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public Date getFecha() {
+	public java.util.Date getFecha() {
 		return fecha;
 	}
 	
-	public void setFecha(Date fecha) {
+	public void setFecha(java.util.Date fecha) {
 		this.fecha = fecha;
 	}
 	

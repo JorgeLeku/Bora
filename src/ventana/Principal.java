@@ -75,8 +75,8 @@ public class Principal extends JFrame {
 	MaskFormatter mascarafecha, mascaraHora;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
 	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora,precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
-	Date fechaentrega;
-	
+	Date fechaentrega,fechaentregares;
+	Time horaentregares;
 	JComboBox cOrden, cHoraReserva;
 	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 	JFormattedTextField tFecha,tHora;
@@ -109,7 +109,7 @@ public class Principal extends JFrame {
 		mascarafecha.setPlaceholderCharacter('_');
 		
 		try {
-			mascaraHora=new MaskFormatter("##:##");
+			mascaraHora=new MaskFormatter("##/##");
 		} catch (ParseException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -1512,7 +1512,7 @@ public class Principal extends JFrame {
 								se=320+se; //Incrementamos s para que el boton siguiente este a la izquierda
 								panelesentrantes.get(x).add(pp2e); //añadimos el boton al panel correspondiente
 								panelesentrantes.get(x).updateUI(); //actualizamos el panel para que muestre los botones
-								pp2e.setName("prueba"+x+i+o);	//nombramos el boton para saber cual es (sacar de la bd)
+								pp2e.setName(nombreentr.get(contEntrantes));	//nombramos el boton para saber cual es (sacar de la bd)
 								panel1e.updateUI(); //actualizamos el panel1 a parte creo que esto sobra pero soy gilipollas y no tengo tiempo para mirarlo
 								pp2e.addActionListener(new ActionListener () {
 
@@ -1523,6 +1523,7 @@ public class Principal extends JFrame {
 										//me cago en dioooooooooooooooooooooososososoossos
 										enQuePanel=0;
 										platoEntrantes=pp2e.getNombre();
+										
 											Paneles panel1primero =  new Paneles();
 											CrearPanel(panel1primero);
 											for (int j = 0; j < panelesentrantes.size(); j++) {
@@ -1633,7 +1634,8 @@ public class Principal extends JFrame {
 														
 														Botones pp2primero = new Botones(); //Creamos el boton del plato
 														//CrearBoton(pp2);
-														platoPrimero=pp2primero.getNombre();
+														
+														
 														pp2primero.setBounds(spr, ppr,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 														pp2primero.setNombre(nombreprimero.get(contPrimero)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 														contPrimero++;
@@ -1651,6 +1653,9 @@ public class Principal extends JFrame {
 																// TODO Auto-generated method stub
 																//me cago en dioooooooooooooooooooooososososoossos
 																//CambiarPanel(panelesprimero.get(enQuePanel), panelSegundo);
+																platoPrimero=pp2primero.getNombre();
+																
+															
 																for (int j = 0; j < panelesprimero.size(); j++) {
 																	panelesprimero.get(j).setVisible(false);
 																	panelesprimero.get(j).setEnabled(false);
@@ -1742,7 +1747,7 @@ public class Principal extends JFrame {
 																			
 																			Botones pp2s = new Botones(); //Creamos el boton del plato
 																			//CrearBoton(pp2);
-																			platoSegundo=pp2s.getNombre();
+																			
 																			pp2s.setBounds(ss, ps,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																			pp2s.setNombre(nombresegundo.get(contSegundo)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																			contSegundo++;
@@ -1760,6 +1765,7 @@ public class Principal extends JFrame {
 																					// TODO Auto-generated method stub
 																					//me cago en dioooooooooooooooooooooososososoossos
 																					enQuePanel=0;
+																					platoSegundo=pp2s.getNombre();
 																					for (int j = 0; j < panelessegundo.size(); j++) {
 																						panelessegundo.get(j).setVisible(false);
 																						panelessegundo.get(j).setEnabled(false);
@@ -1849,7 +1855,7 @@ public class Principal extends JFrame {
 																								
 																								Botones pp2p = new Botones(); //Creamos el boton del plato
 																								//CrearBoton(pp2);
-																								platoPostre=pp2p.getNombre();
+																								
 																								pp2p.setBounds(sp, pp,300, 75); // con s y p vamos cambiando la posicion del siguiente boton
 																								pp2p.setNombre(nombrepostre.get(contPostre)); // Nombramos los botones para diferenciarlos (Aqui hay que ponerlo con la bd
 																								contPostre++;
@@ -1867,6 +1873,7 @@ public class Principal extends JFrame {
 																										// TODO Auto-generated method stub
 																										//me cago en dioooooooooooooooooooooososososoossos
 																										enQuePanel=0;
+																										platoPostre=pp2p.getNombre();
 																										for (int j = 0; j < panelespostre.size(); j++) {
 																											panelespostre.get(j).setEnabled(false);
 																											panelespostre.get(j).setVisible(false);
@@ -2143,9 +2150,9 @@ public class Principal extends JFrame {
 
 		   minuto =Integer.parseInt(horacom[1]); 
 		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
-
+		       Calendar calendariores = new GregorianCalendar(anyo, mes, dia); 
 		       fechaentrega= calendario.getTime(); 
-
+		     //  horaentregares = calendario.getTime();
 
 		       if (bpedido==true) {
 		    	   for (Comida entrante : carta.entrantes) {
@@ -2185,8 +2192,28 @@ public class Principal extends JFrame {
 				       
 				pedido.setFecha(fechaentrega); 
 
-		    	   pedido.insertPedido(nombreUsuario);
+		    	pedido.insertPedido(nombreUsuario);
 			}else {
+				fechaentregares=calendariores.getTime();
+				reserva.setFecha(fechaentrega);
+				reserva.setBebida(platoBebida);
+				reserva.setEntrante(platoEntrantes);
+				reserva.setPrimero(platoPrimero);
+				reserva.setSegundo(platoSegundo);
+				reserva.setPostre(platoPostre);
+				reserva.setUsername(nombreUsuario);
+				Connection conn = BD.initBD();
+				
+				Statement st=null;
+			
+				try {
+					st = conn.createStatement();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.out.println("'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'");
+				//BD.Insert(st, "'"+nombreUsuario+"','"+fechaentregares+"',"+null+",'"+platoEntrantes+"','"+platoPrimero+"','"+platoSegundo+"','"+platoPostre+"','"+platoBebida+"'", "reserva");
 				//String username, Date fecha, Time hora, String entrante, String primero, String segundo,
 				//String postre, String bebida
 				// reserva.setFecha(fechaentrega); 
