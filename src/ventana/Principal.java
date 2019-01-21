@@ -67,7 +67,7 @@ public class Principal extends JFrame {
 	JMenu menuUsuario, menuUsuario2;
 	JMenuItem usern, passw, name, surname, cancel, other;
 	//JMenuBar menuBar;
-	Boolean bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
+	Boolean esAdmin=false, bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
@@ -2370,19 +2370,15 @@ public class Principal extends JFrame {
 				
 			
 		
-		/*	confirmarFactura.addActionListener(new ActionListener() {
+			confirmarFactura.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					String nombreElegido =platoEntrantes;
 					String fechacom[] = tFecha.getText().split("/"); 
-
-
-
-
-				   String horacom[] = tHora.getText().split(":");
-
+					
+				   String horacom[] = tHora.getText().split("/");
 
 				   mes =Integer.parseInt(fechacom[0]); 
 
@@ -2434,14 +2430,6 @@ public class Principal extends JFrame {
 							}
 						 System.out.println(fechaentrega); 
 						       
-
-						//pedido.setFecha(fechaentrega); 
-
-				    	pedido.insertPedido(nombreUsuario);
-					}else {
-						
-						//reserva.setFecha(fechaentrega);
-
 						 pedido.setFecha(calendario);
 						 //direcciones
 						 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
@@ -2452,7 +2440,6 @@ public class Principal extends JFrame {
 				    	
 					}else {//se introducen los valores
 						reserva.setFecha(calendario);				
-
 						reserva.setBebida(platoBebida);
 						reserva.setEntrante(platoEntrantes);
 						reserva.setPrimero(platoPrimero);
@@ -2475,14 +2462,16 @@ public class Principal extends JFrame {
 						//String postre, String bebida
 						// reserva.setFecha(fechaentrega); 
 					}
-					
+				       
 				      
 					//pedido.setFecha()
 				}
 				
-			});*/
+			});
 		     
-		       //
+		       
+		       
+		      
 
 			
      
