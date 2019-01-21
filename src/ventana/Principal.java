@@ -2381,7 +2381,7 @@ public class Principal extends JFrame {
 					String nombreElegido =platoEntrantes;
 					String fechacom[] = tFecha.getText().split("/"); 
 					
-				   String horacom[] = tHora.getText().split("/");
+				   String horacom[] = tHora.getText().split(":");
 
 				   mes =Integer.parseInt(fechacom[0]); 
 
