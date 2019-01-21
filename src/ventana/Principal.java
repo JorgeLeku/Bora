@@ -61,14 +61,14 @@ public class Principal extends JFrame {
 	Pedido pedido = new Pedido();
 	Usuario usuario = new Usuario();
 	Botones confirmarFactura;
-	MaskFormatter mascarafecha;
+	MaskFormatter mascarafecha, mascaraHora;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	JLabel  lfechaEntrega, lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora,precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 	Date fechaentrega;
 	
 	JComboBox cOrden, cHoraReserva;
-	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
-	JFormattedTextField tFechaentrega;
+	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tCalle, tEdificio, tPiso, tLetra, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
+	JFormattedTextField tFecha,tHora;
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
@@ -85,6 +85,14 @@ public class Principal extends JFrame {
 			e2.printStackTrace();
 		}
 		mascarafecha.setPlaceholderCharacter('_');
+		
+		try {
+			mascaraHora=new MaskFormatter("##:##");
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		mascaraHora.setPlaceholderCharacter('_');
 		
 		List<JButton>bReturns = new ArrayList<>();
 		
@@ -271,18 +279,12 @@ public class Principal extends JFrame {
        bQuitBoton = new JButton();
 
        //Objetos panelReserva
-       lNombreC = new JLabel ();
-       lNombreC.setFont(newFont);
-       lNombreC.setText("Nombre");
-       lApellidoC = new JLabel ();
-       lApellidoC.setFont(newFont);
-       lApellidoC.setText("Apellidos");
+
        lHoraR = new JLabel();
        lHoraR = new JLabel();
        lHoraR.setFont(newFont);
        lHoraR.setText("Hora de la reserva");
-       tApellidosReserva = new JTextField();
-       tNombreReserva = new JTextField();
+
        cHoraReserva=new JComboBox();
        
        ImageIcon imagenBotonBlancoPeq = new ImageIcon(this.getClass().getClassLoader().getResource("p4/boton.jpg"));
@@ -308,17 +310,14 @@ public class Principal extends JFrame {
 
        //Objetos panelRecogida
        lHora = new JLabel();
-       tHora = new JTextField();
-       lTlfn = new JLabel();
+       tHora = new JFormattedTextField(mascaraHora);
+
        lValidarTlfn = new JLabel();
-       tTlfn = new JFormattedTextField(formatter);
+
      
        
        
-       lNombre2 = new JLabel();
-       tNombre2 = new JTextField();
-       lApellido2 = new JLabel();
-       tApellido2 = new JTextField();
+
        bConfirmarRecogida = new JButton();
        
        //Objetos panelDomicilio
@@ -466,22 +465,7 @@ public class Principal extends JFrame {
        lHora.setText("Hora");
        tHora.setBounds(300, 300, 200, 40);
        
-       lTlfn.setBounds(660, 250, 200, 40);
-       lTlfn.setFont(newFont);
-       lTlfn.setText("Telefono");
-       tTlfn.setBounds(600, 300, 200, 40);
-       lValidarTlfn.setBounds(600, 350, 150, 20);
-       lValidarTlfn.setForeground(Color.red);
-       
-       lNombre2.setBounds(360, 400, 200, 40);
-       lNombre2.setFont(newFont);
-       lNombre2.setText("Nombre");
-       tNombre2.setBounds(300, 450, 200, 40);
-       
-       lApellido2.setBounds(660, 400, 200, 40);
-       lApellido2.setFont(newFont);
-       lApellido2.setText("Apellido");
-       tApellido2.setBounds(600, 450, 200, 40);
+
        
        bConfirmarRecogida.setBounds(390, 585, 300, 75);
        bConfirmarRecogida.setFont(newFont);
@@ -514,9 +498,9 @@ public class Principal extends JFrame {
       lfechaEntrega.setText("Fecha entrega");
       lfechaEntrega.setBounds(220, 450, 200, 40);
       
-      tFechaentrega = new JFormattedTextField(mascarafecha);
+      tFecha = new JFormattedTextField(mascarafecha);
       
-      tFechaentrega.setBounds(200, 500, 200, 40);
+      tFecha.setBounds(200, 500, 200, 40);
 
       
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
@@ -639,10 +623,7 @@ public class Principal extends JFrame {
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
-       lNombreC.setBounds(240, 200, 400, 40);
-       lApellidoC.setBounds(710, 200, 400, 40);    
-       tNombreReserva.setBounds(130, 250, 300, 40);
-       tApellidosReserva.setBounds(620, 250, 300, 40);
+
        lHoraR.setBounds(420, 350, 300, 40);
        cHoraReserva.setBounds(380,400, 300, 40);
        //Esto es para crear el combo box de la reserva
@@ -771,6 +752,7 @@ public class Principal extends JFrame {
    			
    			if (BD.verificarPersona(st, tUsuario.getText(), tPassword.getText(), "usuario ")==true) {
    				//aha
+   				frame.setSize(1080, 740);
    				CambiarPanel(panelInicioSesion, panelInicio);
    				bPanelAdmin.setEnabled(false);
    				bPanelAdmin.setVisible(false);
@@ -783,6 +765,7 @@ public class Principal extends JFrame {
 				nombreUsuario=tUsuario.getText();
 				menuBar.setVisible(true);
 	   			menuBar.setEnabled(true);
+	   			frame.setSize(1080, 740);
 			}else {
 			
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
@@ -915,6 +898,10 @@ public class Principal extends JFrame {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelRecogida);
 				panelRecogida.add(bPanelMesa);
+				panelRecogida.add(tFecha);
+				panelRecogida.add(lfechaEntrega);
+				panelRecogida.add(lHora);
+				panelRecogida.add(tHora);
 				if (bprecogida==false) {
 					
 					bprecogida=true;
@@ -931,6 +918,18 @@ public class Principal extends JFrame {
 				}
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lfechaEntrega.setLocation(260, 300);
+				tFecha.setLocation(200, 350);
+				lHora.setLocation(760, 300);
+				tHora.setLocation(700, 350);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -949,8 +948,11 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Base de datos
 				CambiarPanel(panelRecogerDomicilio, panelDomicilio);
-			
+				panelDomicilio.add(tFecha);
 				panelDomicilio.add(bPanelMesa);
+				panelDomicilio.add(lfechaEntrega);
+				panelDomicilio.add(lHora);
+				panelDomicilio.add(tHora);
 				if (bpdomicilio==false) {
 					
 					bpdomicilio=true;
@@ -965,8 +967,30 @@ public class Principal extends JFrame {
 					
 					
 				}
+				/*
+      
+      lfechaEntrega = new JLabel();
+      lfechaEntrega.setFont(newFont);
+      lfechaEntrega.setText("Fecha entrega");
+      lfechaEntrega.setBounds(220, 450, 200, 40);
+      
+      tFecha = new JFormattedTextField(mascarafecha);
+      
+      tFecha.setBounds(200, 500, 200, 40);*/
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lHora.setLocation(760, 450); //260, , 200, 40
+				tHora.setLocation(700, 500);
+				lfechaEntrega.setLocation(220, 450);
+				tFecha.setLocation(200, 500);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -986,6 +1010,10 @@ public class Principal extends JFrame {
 				// Base de datos
 				CambiarPanel(panelInicio, panelReserva);
 				panelReserva.add(bPanelMesa);
+				panelReserva.add(tFecha);
+				panelReserva.add(lfechaEntrega);
+				panelReserva.add(lHora);
+				panelReserva.add(tHora);
 				if (bpreserva==false) {
 					
 					
@@ -1004,6 +1032,18 @@ public class Principal extends JFrame {
 				}
 				bPanelMesa.setVisible(true);
 				bPanelMesa.setEnabled(true);
+				tFecha.setVisible(true);
+				tFecha.setEnabled(true);
+				lfechaEntrega.setVisible(true);
+				lfechaEntrega.setEnabled(true);
+				lfechaEntrega.setLocation(260, 300);
+				tFecha.setLocation(200, 350);
+				lHora.setLocation(760, 300);
+				tHora.setLocation(700, 350);
+				lHora.setVisible(true);
+				lHora.setEnabled(true);
+				tHora.setVisible(true);
+				tHora.setEnabled(true);
 				bReturne.addActionListener(new ActionListener() {
 					
 					@Override
@@ -2065,7 +2105,7 @@ public class Principal extends JFrame {
 					pedido.addAlCarrito(bebida);
 				}
 			}
-		
+			
 			//pedido.setFecha()
 		}
 	});
@@ -2191,12 +2231,8 @@ public class Principal extends JFrame {
        panelAdmin.add(bPanelAddBoton);
        
       
-       panelReserva.add(lApellidoC);
-       panelReserva.add(lNombreC);
-       panelReserva.add(lHoraR);
-       panelReserva.add(tApellidosReserva);
-       panelReserva.add(tNombreReserva);
-       panelReserva.add(cHoraReserva);
+       
+      
        panelReserva.updateUI();
        panelRecogerDomicilio.add(bPanelRecogida);
 
@@ -2222,7 +2258,7 @@ public class Principal extends JFrame {
        panelDomicilio.add(lEdificio);
        panelDomicilio.add(lPiso);
        panelDomicilio.add(lLetra);
-       panelDomicilio.add(tFechaentrega);
+      
        panelDomicilio.add(lfechaEntrega);
 
        panelDomicilio.add(tCalle);
@@ -2232,16 +2268,7 @@ public class Principal extends JFrame {
    
        panelDomicilio.updateUI();
        
-       panelRecogida.add(lHora);
-       panelRecogida.add(tHora);
-       panelRecogida.add(lTlfn);
-       panelRecogida.add(tTlfn);
-       panelRecogida.add(lNombre2);
-       panelRecogida.add(tNombre2);
-       panelRecogida.add(lApellido2);
-       panelRecogida.add(tApellido2);
-       panelRecogida.add(lValidarTlfn);
-       
+      
        panelRecogida.updateUI();
        
        panelFactura.add(precio);
