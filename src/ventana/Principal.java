@@ -1892,7 +1892,7 @@ public class Principal extends JFrame {
 																														if(entrante.getNombre().equals(nombreElegido)) {
 																															pedido.addAlCarrito(entrante);
 																														}
-																													}
+																													} 
 																													//primero
 																													nombreElegido = pp2primero.getNombre();
 																													for (Comida primero : carta.primeros) {
