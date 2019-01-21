@@ -2266,16 +2266,14 @@ public class Principal extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			String nombreElegido =platoEntrantes;																													
-
-			
-
+			String nombreElegido =platoEntrantes;
 			String fechacom[] = tFecha.getText().split("/"); 
 
 
 
 
 		   String horacom[] = tHora.getText().split(":");
+
 
 		   mes =Integer.parseInt(fechacom[0]); 
 
@@ -2287,52 +2285,65 @@ public class Principal extends JFrame {
 
 		   minuto =Integer.parseInt(horacom[1]); 
 		       Calendar calendario = new GregorianCalendar(anyo, mes, dia, hora, minuto); 
-		       Calendar calendariores = new GregorianCalendar(anyo, mes, dia); 
-		       fechaentrega= calendario.getTime(); 
+		       //se colocan las fechas
+		       
 		     //  horaentregares = calendario.getTime();
 
 		       if (bpedido==true) {
 		    	   for (Comida entrante : carta.entrantes) {
 						if(entrante.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(entrante);
+							pedido.setEntrante(entrante);
 						}
 					} 
 					//primero
 					nombreElegido = platoPrimero;
 					for (Comida primero : carta.primeros) {
 						if(primero.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(primero);
+							pedido.setPrimero(primero);
 						}
 					}
 					//segundo
 					nombreElegido = platoSegundo;
 					for (Comida segundo : carta.segundos) {
 						if(segundo.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(segundo);
+							pedido.setSegundo(segundo);
 						}																																																										
 					}
 					//postre
 					nombreElegido = platoPostre;
 					for (Comida postre : carta.postres) {
 						if(postre.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(postre);
+							pedido.setPostre(postre);
 						}
 					}
 					//bebida
 					nombreElegido = platoBebida;
 					for (Bebida bebida : carta.bebidas) {
 						if(bebida.getNombre().equals(nombreElegido)) {
-							pedido.addAlCarrito(bebida);
+							pedido.setBebida(bebida);
 						}
 					}
-									       System.out.println(fechaentrega); 
+				 System.out.println(fechaentrega); 
 				       
+
 				//pedido.setFecha(fechaentrega); 
 
 		    	pedido.insertPedido(nombreUsuario);
 			}else {
-				fechaentregares=calendariores.getTime();
+				
 				//reserva.setFecha(fechaentrega);
+
+				 pedido.setFecha(calendario);
+				 //direcciones
+				 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
+				 pedido.setDireccion(dir);
+				 pedido.setDineroGastado();
+				 pedido.insertPedido(nombreUsuario);
+		    
+		    	
+			}else {//se introducen los valores
+				reserva.setFecha(calendario);				
+
 				reserva.setBebida(platoBebida);
 				reserva.setEntrante(platoEntrantes);
 				reserva.setPrimero(platoPrimero);
@@ -2341,10 +2352,10 @@ public class Principal extends JFrame {
 				reserva.setUsername(nombreUsuario);
 				Connection conn = BD.initBD();
 				
-				Statement st=null;
 			
 				try {
-					st = conn.createStatement();
+					Statement st = conn.createStatement();
+					BD.Insert(st, reserva.toString(), "reserva");//se sube a la BD
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -2355,7 +2366,7 @@ public class Principal extends JFrame {
 				//String postre, String bebida
 				// reserva.setFecha(fechaentrega); 
 			}
-		       
+			
 		      
 			//pedido.setFecha()
 		}

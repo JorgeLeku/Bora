@@ -346,42 +346,42 @@ public class BD {
 			while(rs.next()) {
 				Pedido p = new Pedido();
 				p.setCod(rs.getInt("cod"));
-				p.setFecha(rs.getDate("fecha"));
-				p.setHora(rs.getTime("hora"));
+				p.getFecha().setTime(rs.getDate("fecha"));
+				//faltan hora y minuto
 				String entrante = rs.getString("entrante");
 				String primero = rs.getString("primero");
 				String segundo = rs.getString("segundo");
 				String postre = rs.getString("postre");
 				String bebida = rs.getString("bebida");
 				
-				ArrayList<Alimentos> a = new ArrayList<>();
+				
 				//entrante
 				for (Comida com : c.entrantes) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setEntrante(com);
 					}
 				}
 				for (Comida com : c.primeros) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setPrimero(com);
 					}
 				}
 				for (Comida com : c.segundos) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setSegundo(com);
 					}
 				}
 				for (Comida com : c.postres) {
 					if(com.getNombre().equals(entrante)) {
-						a.add(com);
+						p.setPostre(com);
 					}
 				}
 				for (Bebida beb : c.bebidas) {
 					if(beb.getNombre().equals(entrante)) {
-						a.add(beb);
+						p.setBebida(beb);
 					}
 				}
-				p.setProductos(a);
+				
 				p.setDireccion(rs.getString("direccion"));
 				p.setDineroGastado();
 				
@@ -394,6 +394,29 @@ public class BD {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	public static int crearCodigo(String nombreTabla) {
+		Connection conn = BD.initBD();
+		try {
+			Statement st = conn.createStatement();
+			String sentSQL = "select * from "+nombreTabla;
+			ResultSet rs = st.executeQuery(sentSQL);
+			int cod = 0;
+			while(rs.next()) {
+				cod =rs.getInt("Cod");
+			}
+			
+			rs.close();
+			st.close();
+			conn.close();
+			return cod+1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			return 0;
 		}
 	}
 	

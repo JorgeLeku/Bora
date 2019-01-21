@@ -17,13 +17,12 @@ public class Pedido {
 	private Calendar fecha;
 	private double dineroGastado;
 	private String direccion;
-	private ArrayList<Alimentos> productos;
-	
+	private Comida entrante, primero, segundo, postre;
+	private Bebida bebida;
 	//Metodos
 	public Pedido() {
-		this.cod =0;
+		this.cod =BD.crearCodigo("pedido");
 		this.fecha = new GregorianCalendar();
-		this.productos = null;
 		this.dineroGastado = 0;
 		this.direccion ="";
 	}
@@ -33,16 +32,25 @@ public class Pedido {
 		this.cod = cod;
 		this.fecha = fechaPedido;
 		this.dineroGastado = getImporte();
-		this.productos = productos;
 		this.direccion = direccion;
+		this.entrante= new Comida();
+		this.primero= new Comida();
+		this.segundo= new Comida();
+		this.postre= new Comida();
+		this.bebida= new Bebida();
 	}
 
 	public Pedido(Pedido p) {
 		this.cod = p.cod;
 		this.fecha = p.fecha;
-		this.productos = p.productos;
 		this.dineroGastado = p.dineroGastado;
 		this.direccion = p.direccion;
+		this.entrante = p.entrante;
+		this.primero = p.primero;
+		this.segundo = p.segundo;
+		this.postre = p.postre;
+		this.bebida = p.bebida;
+		
 	}
 	
 	//G&S
@@ -76,12 +84,46 @@ public class Pedido {
 		return fecha;
 	}
 
-	public ArrayList<Alimentos> getProductos() {
-		return productos;
+	
+
+	public Comida getEntrante() {
+		return entrante;
 	}
 
-	public void setProductos(ArrayList<Alimentos> productos) {
-		this.productos = productos;
+	public void setEntrante(Comida entrante) {
+		this.entrante = entrante;
+	}
+
+	public Comida getPrimero() {
+		return primero;
+	}
+
+	public void setPrimero(Comida primero) {
+		this.primero = primero;
+	}
+
+	public Comida getSegundo() {
+		return segundo;
+	}
+
+	public void setSegundo(Comida segundo) {
+		this.segundo = segundo;
+	}
+
+	public Comida getPostre() {
+		return postre;
+	}
+
+	public void setPostre(Comida postre) {
+		this.postre = postre;
+	}
+
+	public Bebida getBebida() {
+		return bebida;
+	}
+
+	public void setBebida(Bebida bebida) {
+		this.bebida = bebida;
 	}
 
 	public double getDineroGastado() {
@@ -98,18 +140,13 @@ public class Pedido {
 	 */
 	public double getImporte() {
 		double importe = 0;
-		for (Alimentos seleccionado : productos) {
-			importe = importe + seleccionado.getPrecio();
-		}
-		return importe;
-	}
-	
-	/**
-	 * Metodo para anyadir comida o bebida al carrito
-	 * @param c Comida que queremos añadir
-	 */
-	public void addAlCarrito(Alimentos c) {
-		this.productos.add(c); //se añade el producto
+		double p1 = this.entrante.getPrecio();
+		double p2 = this.primero.getPrecio();
+		double p3 = this.segundo.getPrecio();
+		double p4 = this.postre.getPrecio();
+		double p5 = this.bebida.getPrecio();
+		
+		return p1+p2+p3+p4+p5;
 	}
 	
 	/**
@@ -122,7 +159,7 @@ public class Pedido {
 		try {
 	
 			Statement st = conn.createStatement();
-			BD.Insert(st, this.toString()+ ", "+ Username  , "pedido");//se introduce el pedido con el codigo del usuario
+			BD.Insert(st, this.toString()+ ", '"+ Username+"'"  , "pedido");//se introduce el pedido con el codigo del usuario
 			//unir el pedido a las comidas y bebidas
 			/*for (Alimentos seleccionado : productos) {
 				if(seleccionado.getClass().equals(Comida.class)) {//es una comida
@@ -152,9 +189,8 @@ public class Pedido {
 	@Override
 	public String toString() {
 
-		return cod + ", '" +  fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + direccion +"', '" + productos.get(0).getNombre()+"', '"+productos.get(1).getNombre()+"', '"+productos.get(2).getNombre()+"', '"
-
-				+ productos.get(3).getNombre()+"', '" +productos.get(4).getNombre()+"'";
+		return cod + ", '" +  fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + direccion +"', '" + entrante.getNombre() +"', '"+
+				primero.getNombre() +"', '"+segundo.getNombre() + "', '"+ postre.getNombre() + "', '"+ bebida.getNombre() +"'";
 
 				
 
