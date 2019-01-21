@@ -604,20 +604,21 @@ public class Principal extends JFrame {
        cOrden.addItem("Postre");
        cOrden.addItem("Bebida");
        cOrden.setBounds(705, 300, 200, 50);
-    /*   cOrden.addActionListener(new ActionListener() {
+       
+       cOrden.addActionListener(new ActionListener() {
    		
    		@Override
    		public void actionPerformed(ActionEvent e) {
    			// TODO Auto-generated method stub
    			if (cOrden.getSelectedIndex()==4) {
-   				alcoholica.setVisible(true);
-   				alcoholica.setEnabled(true);
+   				ch.setVisible(true);
+   				ch.setEnabled(true);
    			}else {
-   				alcoholica.setVisible(false);
-   				alcoholica.setEnabled(false);
+   				ch.setVisible(false);
+   				ch.setEnabled(false);
    			}
    		}
-   	});*/
+   	});
        
        //Panel Reserva
        bPanelMesa.setBounds(390, 585, 300, 75);
@@ -1106,7 +1107,8 @@ public class Principal extends JFrame {
     				// TODO Auto-generated catch block
     				e1.printStackTrace();
     			}
-     			if (BD.borrarAlimento(st, tQuitComida.getText(), "bebida")) {
+     			if (BD.borrarAlimento(st, tQuitBebida.getText(), "bebida")) {
+     				
 				JOptionPane.showMessageDialog(null, "Bebida Eliminada");
 				} else {
 				JOptionPane.showMessageDialog(null, "Bebida no eliminada");
@@ -1170,7 +1172,11 @@ public class Principal extends JFrame {
 					CambiarPanel(panelAddBoton,panelAdmin); 
 				}
 			});
-   			
+			if (cOrden.getSelectedIndex()!=4) {
+				ch.setVisible(false);
+			    ch.setEnabled(false);
+			}
+			
    		}
        	   
         });
@@ -2029,8 +2035,6 @@ public class Principal extends JFrame {
 				}
 				if (esnomentr==false) {
 					
-					System.out.println("'Alubias', 13, 1");
-					System.out.println( "'"+ tNombreProd.getText()+"'"+","+cbt2.getText()+","+(cOrden.getSelectedIndex()+1));
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2046,7 +2050,6 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2058,11 +2061,10 @@ public class Principal extends JFrame {
 				for (int i = 0; i < nombresegundo.size(); i++) {
 					if (tNombreProd.getText().isEmpty()==true||nombresegundo.get(i).toUpperCase().equals(tNombreProd.getText().toUpperCase())||esNumerico(cbt2.getText())==false) {	
 						esnomentr=true;
-						System.out.println("que son igualesssss");
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
+					
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2077,7 +2079,7 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
+					;
 					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "comida");
 					
 				}else {
@@ -2090,8 +2092,11 @@ public class Principal extends JFrame {
 					}
 				}
 				if (esnomentr==false) {
-					System.out.println(cbt2.getText());
-					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+(cOrden.getSelectedIndex()+1), "bebida");
+					
+					if (rootPaneCheckingEnabled) {
+						
+					}
+					BD.Insert(st, "'"+ tNombreProd.getText()+"'"+" , "+cbt2.getText()+" , "+ch.isSelected(), "bebida");
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya existe un producto con ese nombre");
