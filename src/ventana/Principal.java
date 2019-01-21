@@ -2123,7 +2123,9 @@ public class Principal extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			String nombreElegido =platoEntrantes;																													
+
 			
+
 			String fechacom[] = tFecha.getText().split("/"); 
 
 
