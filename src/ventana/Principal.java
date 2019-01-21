@@ -68,9 +68,9 @@ public class Principal extends JFrame {
 	//JMenuBar menuBar;
 	Boolean esAdmin=false, bpedido=false, bpregistro=false, bpbebidacomida=false, bpBebida = false, bpComida=false, bpAdmin = false,bpquitbotonComida=false,bpaddboton=false,bprecogerdomicilio=false, bprecogida=false, bpdomicilio=false,bpreserva=false, esnomentr=false;
 	JButton  bPanelReserva, bPanelAdmin, bAddBoton, bQuitBoton, bPanelMesa, bPrimerPlato,  botonPruebas, bPanelRecogerDomicilio, bReturn, cbb1, bSelImg, bConfirmarDomicilio, bConfirmarRecogida, bConfirmarRegistro;
-	Pedido pedido = new Pedido();
+	
 	Usuario usuario = new Usuario();
-	Reserva reserva = new Reserva();
+	
 	Botones confirmarFactura;
 	MaskFormatter mascarafecha, mascaraHora;
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
@@ -85,7 +85,11 @@ public class Principal extends JFrame {
 	double crafilasentr =0, creacolentr =0,creafilasprim =0, creafilasseg=0,creafilaspos=0, creafilasbeb=0, creacolprim=0,creacolseg=0,creacolpos=0,creacolbeb=0;
 	String direccion,nombreUsuario, platoEntrantes, platoPrimero, platoSegundo, platoPostre, platoBebida;
 	JButton bReturne = null,bReturna=null;
-
+ 	
+		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
+		List<JButton> cambioentrantea, cambioprimeroa,cambiosegundoa,cambiopostrea,cambiobebidaa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
+		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
+		
 	/**
 	 * Guarda en un archivo properties el valor del username que ha entrado por ultima vez
 	 * @param Username nombre del usuario a escribir
@@ -1396,16 +1400,7 @@ public class Principal extends JFrame {
 		
 			
 			
-			
-			
-		
-       	
-		List<JButton> botonesentrantes, botonesprimero, botonessegundo, botonespostre, botonesbebida;//Arraylist de botones para guardar todos los botones creados
-		List<JButton> cambioentrantea, cambioprimeroa,cambiosegundoa,cambiopostrea,cambiobebidaa,cambioentrantes, cambioprimero, cambiosegundo, cambiopostre, cambiobebida;//Arraylist de botones para guardar todos los botones de cambio de panel
-		List<JPanel> panelesentrantes, panelesprimero, panelessegundo, panelespostre, panelesbebida;//Arraylist de paneles para guardar todos los paneles creados
-		
-		
-		List<String>nombrebeb = new ArrayList<>();
+       List<String>nombrebeb = new ArrayList<>();
 		
 		for (Bebida bebida : carta.getBebidas()) {
 			nombrebeb.add(bebida.getNombre());
@@ -1474,6 +1469,22 @@ public class Principal extends JFrame {
 		for (Comida postre : carta.getPostres()) {
 			preciopostre.add(postre.getPrecio());
 		}
+			
+		
+      
+		JLabel entr =new JLabel();
+		JLabel entra = new JLabel();
+		JLabel prim =new JLabel();
+		JLabel prime = new JLabel();
+		JLabel segu =new JLabel();
+		JLabel segun = new JLabel();
+		JLabel post =new JLabel();
+		JLabel postr = new JLabel();
+		JLabel bebi =new JLabel();
+		JLabel bebid = new JLabel();
+		JLabel totalxxx =new JLabel();
+		JLabel conivaxxx = new JLabel();
+		
 
 		
 		botonesentrantes = new ArrayList<>();
@@ -1532,13 +1543,105 @@ public class Principal extends JFrame {
 					  
 					   GregorianCalendar calendario1 = new GregorianCalendar(anyox, mesx, diax, horax, minutox);
 					 
-					   
-					if (calendario1.compareTo(calendarioactual)>0&&mesx<32&&diax<13&&horax<24&&minutox<60) {
+					   System.out.println(calendario1.getTime());
+					if (calendario1.compareTo(calendarioactual)>0&&mesx<32&&mesx>0&&diax<13&&diax>0&&horax<24&&horax>0&&minutox<60&&minutox>0) {
 					Paneles panel1e =  new Paneles();
 					
 					CrearPanel(panel1e);
 					
+					List<String>nombrebeb = new ArrayList<>();
 					
+					for (Bebida bebida : carta.getBebidas()) {
+						nombrebeb.add(bebida.getNombre());
+					}
+					
+					
+					List<String>nombreentr = new ArrayList<>();
+					
+					for (Comida entrantes : carta.getEntrantes()) {
+						nombreentr.add(entrantes.getNombre());
+					}
+					List<String>nombreprimero = new ArrayList<>();
+					
+					for (Comida primero : carta.getPrimeros()) {
+						nombreprimero.add(primero.getNombre());
+					}
+					List<String>nombresegundo = new ArrayList<>();
+					
+					for (Comida segundo : carta.getSegundos()) {
+						nombresegundo.add(segundo.getNombre());
+					}
+					List<String>nombrepostre = new ArrayList<>();
+					
+					for (Comida postre : carta.getPostres()) {
+						nombrepostre.add(postre.getNombre());
+					}
+					
+					
+					crafilasentr =(double) nombreentr.size();
+					creacolentr =(double) nombreentr.size();
+					
+					creafilasprim =(double) nombreprimero.size();
+					creacolprim =(double) nombreprimero.size();
+					
+					creafilasseg =(double) nombresegundo.size();
+					creacolseg =(double) nombresegundo.size();
+					
+					creafilaspos =(double) nombrepostre.size();
+					creacolpos =(double) nombrepostre.size();
+					
+					creafilasbeb =(double) nombrebeb.size();
+					creacolbeb =(double) nombrebeb.size();
+					
+					List<Double>preciobeb = new ArrayList<>();
+					
+					for (Bebida bebida : carta.getBebidas()) {
+						preciobeb.add(bebida.getPrecio());
+					}
+					List<Double>precioentr = new ArrayList<>();
+					
+					for (Comida entrantes : carta.getEntrantes()) {
+						precioentr.add(entrantes.getPrecio());
+					}
+					List<Double>precioprimero = new ArrayList<>();
+					
+					for (Comida primero : carta.getPrimeros()) {
+						precioprimero.add(primero.getPrecio());
+					}
+					List<Double>preciosegundo = new ArrayList<>();
+					
+					for (Comida segundo : carta.getSegundos()) {
+						preciosegundo.add(segundo.getPrecio());
+					}
+					List<Double>preciopostre = new ArrayList<>();
+					
+					for (Comida postre : carta.getPostres()) {
+						preciopostre.add(postre.getPrecio());
+					}
+					botonesentrantes = new ArrayList<>();
+					cambioentrantes = new ArrayList<>();
+					cambioentrantea = new ArrayList<>();
+					panelesentrantes= new ArrayList<>();
+					
+					botonesprimero = new ArrayList<>();
+					cambioprimero = new ArrayList<>();
+					cambioprimeroa = new ArrayList<>();
+					panelesprimero = new ArrayList<>();
+					
+					botonessegundo = new ArrayList<>();
+					cambiosegundo = new ArrayList<>();
+					cambiosegundoa = new ArrayList<>();
+					panelessegundo = new ArrayList<>();
+					
+					botonespostre = new ArrayList<>();
+					cambiopostre = new ArrayList<>();
+					cambiopostrea = new ArrayList<>();
+					panelespostre = new ArrayList<>();
+					
+					botonesbebida = new ArrayList<>();
+					cambiobebida = new ArrayList<>();
+					cambiobebidaa = new ArrayList<>();
+					panelesbebida = new ArrayList<>();
 					panelesentrantes.add(panel1e);
 					frame.getContentPane().add(panel1e);
 					panelesentrantes.get(0).updateUI();
@@ -2224,67 +2327,66 @@ public class Principal extends JFrame {
 																															double coniva = totalx *1.21;
 																																
 																															
-																																JLabel entr =new JLabel();
+																																
 																																entr.setFont(newFont);
 																																entr.setText(platoEntrantes);
 																																entr.setBounds(350, 200, 300, 50);
 																																panelFactura.add(entr);
-																																JLabel entra = new JLabel();
+																																
 																																entra.setFont(newFont);
 																																entra.setText(""+precioentrante);
 																																entra.setBounds(700, 200, 300, 50);
 																																panelFactura.add(entra);
 																																
-																																JLabel prim =new JLabel();
 																																prim.setFont(newFont);
 																																prim.setText(platoPrimero);
 																																prim.setBounds(350, 250, 300, 50);
 																																panelFactura.add(prim);
-																																JLabel prime = new JLabel();
+																																
 																																prime.setFont(newFont);
 																																prime.setText(""+precioprimerox);
 																																prime.setBounds(700, 250, 300, 50);
 																																panelFactura.add(prime);
 																																
-																																JLabel segu =new JLabel();
+																																
 																																segu.setFont(newFont);
 																																segu.setText(platoSegundo);
 																																segu.setBounds(350, 300, 300, 50);
 																																panelFactura.add(segu);
-																																JLabel segun = new JLabel();
+																																
 																																segun.setFont(newFont);
 																																segun.setText(""+preciosegundox);
 																																segun.setBounds(700, 300, 300, 50);
 																																panelFactura.add(segun);
 																																
-																																JLabel post =new JLabel();
+																																
 																																post.setFont(newFont);
 																																post.setText(platoPostre);
 																																post.setBounds(350, 350, 300, 50);
 																																panelFactura.add(post);
-																																JLabel postr = new JLabel();
+																																
 																																postr.setFont(newFont);
 																																postr.setText(""+preciopostrex);
 																																postr.setBounds(700, 350, 300, 50);
 																																panelFactura.add(postr);
 																																
-																																JLabel bebi =new JLabel();
+																																
 																																bebi.setFont(newFont);
 																																bebi.setText(platoBebida);
 																																bebi.setBounds(350, 400, 300, 50);
 																																panelFactura.add(bebi);
-																																JLabel bebid = new JLabel();
+																																
 																																bebid.setFont(newFont);
 																																bebid.setText(""+preciobebidax);
 																																bebid.setBounds(700, 400, 300, 50);
 																																panelFactura.add(bebid);
 																																
-																																JLabel totalxxx =new JLabel();
+																																
 																																totalxxx.setFont(newFont);
 																																totalxxx.setText(""+totalx);
 																																totalxxx.setBounds(700, 450, 300, 50);
 																																panelFactura.add(totalxxx);
-																																JLabel conivaxxx = new JLabel();
+																																
 																																conivaxxx.setFont(newFont);
 																																conivaxxx.setText(""+coniva);
 																																conivaxxx.setBounds(700, 500, 300, 50);
@@ -2425,6 +2527,8 @@ public class Principal extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
+					Pedido pedido = new Pedido();
+					Reserva reserva = new Reserva();
 					String nombreElegido =platoEntrantes;
 					String fechacom[] = tFecha.getText().split("/"); 
 					
@@ -2482,7 +2586,7 @@ public class Principal extends JFrame {
 						       
 						 pedido.setFecha(calendario);
 						 //direcciones
-						 String dir = tCalle.getText() +" "+ tEdificio+" "+tPiso+" "+ tLetra;
+						 String dir = tCalle.getText() +" "+ tEdificio.getText()+" "+tPiso.getText()+" "+ tLetra.getText();
 						 pedido.setDireccion(dir);
 						 pedido.setDineroGastado();
 						 pedido.insertPedido(nombreUsuario);
@@ -2737,7 +2841,30 @@ public class Principal extends JFrame {
 				bPanelAdmin.setVisible(false);
 				bPanelAdmin.setEnabled(false);
 			}
+			
+			  botonesentrantes=null; botonesprimero=null; botonessegundo=null; botonespostre=null;botonesbebida=null;
+			     cambioentrantea=null; cambioprimeroa=null;cambiosegundoa=null;cambiopostrea=null;cambiobebidaa=null;cambioentrantes=null;
+			     cambioprimero=null;cambiosegundo=null;cambiopostre=null;cambiobebida=null;
+			     panelesentrantes=null;panelesprimero=null;panelessegundo=null;panelespostre=null;panelesbebida=null;
+			     prueba=0;pruebae=0;pruebap=0;pruebas=0;pruebab=0;enQuePanel=0;
+			     contcontbebida=0; contEntrantes=0;contPostre=0;contPrimero=0;contSegundo=0;
+			     prueba=0;pruebae=0;pruebap=0;pruebas=0;pruebab=0;enQuePanel=0;
+			 	valorAmeterfe=3; valorAmeterce=3; valorAmeterfp=3; valorAmetercp=3;valorAmeterfs=3;valorAmetercs=3;valorAmeterfpo=3;valorAmetercpo=3;valorAmeterfb=3;valorAmetercb=3;contEntrantes= 0;contPrimero=0;contSegundo = 0; contPostre = 0; contcontbebida=0;enQuePlato= 0; pruebae =0; prueba = 0; pruebas =0; pruebap =0;pruebab =0; borrarbi = 0; borrarbo = 0; enQuePanel =0;
+				crafilasentr =0; creacolentr =0;creafilasprim =0; creafilasseg=0;creafilaspos=0; creafilasbeb=0; creacolprim=0;creacolseg=0;creacolpos=0;creacolbeb=0;
+				entr.setText(null);
+				prim.setText(null);
+				prime.setText(null);
+				segu.setText(null);
+				segun.setText(null);
+				post.setText(null);
+				postr.setText(null);
+				bebi.setText(null);
+				bebid.setText(null);
+				totalxxx.setText(null);
+				conivaxxx.setText(null);
+				tCalle.setText(null);tEdificio.setText(null);tPiso.setText(null);tLetra.setText(null);
 		}
+		
 	});
      cancel.addActionListener(new ActionListener() {
 		
@@ -2753,10 +2880,32 @@ public class Principal extends JFrame {
 			}
 			CambiarPanel(todosPaneles.get(panelsito), panelInicioSesion);
 			nombreUsuario="";
+			 botonesentrantes=null; botonesprimero=null; botonessegundo=null; botonespostre=null;botonesbebida=null;
+			     cambioentrantea=null; cambioprimeroa=null;cambiosegundoa=null;cambiopostrea=null;cambiobebidaa=null;cambioentrantes=null;
+			     cambioprimero=null;cambiosegundo=null;cambiopostre=null;cambiobebida=null;
+			     panelesentrantes=null;panelesprimero=null;panelessegundo=null;panelespostre=null;panelesbebida=null;
+			contcontbebida=0; contEntrantes=0;contPostre=0;contPrimero=0;contSegundo=0;
+			     prueba=0;pruebae=0;pruebap=0;pruebas=0;pruebab=0;enQuePanel=0;
+			     
+			 	valorAmeterfe=3; valorAmeterce=3; valorAmeterfp=3; valorAmetercp=3;valorAmeterfs=3;valorAmetercs=3;valorAmeterfpo=3;valorAmetercpo=3;valorAmeterfb=3;valorAmetercb=3;contEntrantes= 0;contPrimero=0;contSegundo = 0; contPostre = 0; contcontbebida=0;enQuePlato= 0; pruebae =0; prueba = 0; pruebas =0; pruebap =0;pruebab =0; borrarbi = 0; borrarbo = 0; enQuePanel =0;
+				crafilasentr =0; creacolentr =0;creafilasprim =0; creafilasseg=0;creafilaspos=0; creafilasbeb=0; creacolprim=0;creacolseg=0;creacolpos=0;creacolbeb=0;
+				
+				entr.setText(null);
+				prim.setText(null);
+				prime.setText(null);
+				segu.setText(null);
+				segun.setText(null);
+				post.setText(null);
+				postr.setText(null);
+				bebi.setText(null);
+				bebid.setText(null);
+				totalxxx.setText(null);
+				conivaxxx.setText(null);
+				tCalle.setText(null);tEdificio.setText(null);tPiso.setText(null);tLetra.setText(null);
 		}
 	});
+   
     
-       
        panelInicio.add(bPanelRecogerDomicilio);
        panelInicio.add(bPanelReserva);
        

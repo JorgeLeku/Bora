@@ -99563,3 +99563,2134 @@
   <message>BD añadida 1 fila	insert into pedido values(1, '12-10-2019', '14:56', 'Joaquin collar javax.swing.JTextField[texto,700,250,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@b2d5ace,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,200,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@b2d5ace,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,700,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@b2d5ace,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]', 'Jamon iberico', 'Sopa fria de manzana', 'Conejo con caracoles', 'Canutillos de hojaldre', 'Zumo de piña', 'leku2020')</message>
 </record>
 </log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:35:31</date>
+  <millis>1548099331854</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:32</date>
+  <millis>1548099332321</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:32</date>
+  <millis>1548099332420</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:37</date>
+  <millis>1548099337410</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:37</date>
+  <millis>1548099337458</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:54</date>
+  <millis>1548099354689</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:35:54</date>
+  <millis>1548099354743</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	insert into pedido values(2, '4-0-2020', '21:35', ' javax.swing.JTextField[texto,700,250,200x40,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5d44912e,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,200,375,200x40,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5d44912e,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,700,375,200x40,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5d44912e,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]', 'Macarrones a la carbonara', 'Esparragos al salmon', 'Carne asada', 'Dulce de patata', 'Agua', 'leku2020')</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ERROR: date/time field value out of range: "4-0-2020"
+  Hint: Perhaps you need a different "datestyle" setting.
+  Position: 30</message>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>receiveErrorResponse</method>
+      <line>2440</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>processResults</method>
+      <line>2183</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>execute</method>
+      <line>308</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeInternal</method>
+      <line>441</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>execute</method>
+      <line>365</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeCachedSql</method>
+      <line>293</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>270</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeUpdate</method>
+      <line>244</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>Insert</method>
+      <line>127</line>
+    </frame>
+    <frame>
+      <class>Comida.Pedido</class>
+      <method>insertPedido</method>
+      <line>162</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$20</class>
+      <method>actionPerformed</method>
+      <line>2488</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:36:13</date>
+  <millis>1548099373237</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:36:13</date>
+  <millis>1548099373695</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:36:13</date>
+  <millis>1548099373794</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:37:42</date>
+  <millis>1548099462823</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:37:43</date>
+  <millis>1548099463283</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:37:43</date>
+  <millis>1548099463381</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:37:48</date>
+  <millis>1548099468419</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:37:48</date>
+  <millis>1548099468469</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:38:56</date>
+  <millis>1548099536702</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:38:57</date>
+  <millis>1548099537179</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:38:57</date>
+  <millis>1548099537275</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:39:03</date>
+  <millis>1548099543734</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:39:03</date>
+  <millis>1548099543783</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:39:57</date>
+  <millis>1548099597922</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:39:58</date>
+  <millis>1548099598374</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:39:58</date>
+  <millis>1548099598472</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:40:11</date>
+  <millis>1548099611243</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:40:11</date>
+  <millis>1548099611294</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:47:29</date>
+  <millis>1548100049153</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:47:29</date>
+  <millis>1548100049619</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:47:29</date>
+  <millis>1548100049716</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:47:34</date>
+  <millis>1548100054821</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:47:34</date>
+  <millis>1548100054870</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T20:48:06</date>
+  <millis>1548100086281</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:48:06</date>
+  <millis>1548100086330</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:48:53</date>
+  <millis>1548100133784</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:48:54</date>
+  <millis>1548100134240</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:48:54</date>
+  <millis>1548100134339</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:49:03</date>
+  <millis>1548100143569</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:49:04</date>
+  <millis>1548100144050</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:49:04</date>
+  <millis>1548100144152</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:49:10</date>
+  <millis>1548100150709</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:49:10</date>
+  <millis>1548100150760</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:50:28</date>
+  <millis>1548100228432</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:50:28</date>
+  <millis>1548100228898</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:50:29</date>
+  <millis>1548100229000</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:50:35</date>
+  <millis>1548100235092</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:50:35</date>
+  <millis>1548100235140</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:52:16</date>
+  <millis>1548100336482</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:52:16</date>
+  <millis>1548100336988</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:52:17</date>
+  <millis>1548100337090</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:52:21</date>
+  <millis>1548100341828</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:52:21</date>
+  <millis>1548100341878</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:54:02</date>
+  <millis>1548100442047</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:54:02</date>
+  <millis>1548100442502</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:54:02</date>
+  <millis>1548100442603</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:54:09</date>
+  <millis>1548100449256</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:54:09</date>
+  <millis>1548100449305</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T20:55:12</date>
+  <millis>1548100512949</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:55:13</date>
+  <millis>1548100513420</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:55:13</date>
+  <millis>1548100513520</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T20:55:17</date>
+  <millis>1548100517568</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T20:55:17</date>
+  <millis>1548100517616</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:01:02</date>
+  <millis>1548100862680</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:01:03</date>
+  <millis>1548100863134</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:01:03</date>
+  <millis>1548100863233</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:01:10</date>
+  <millis>1548100870341</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:01:10</date>
+  <millis>1548100870390</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:02:10</date>
+  <millis>1548100930670</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:02:11</date>
+  <millis>1548100931158</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:02:11</date>
+  <millis>1548100931259</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:02:15</date>
+  <millis>1548100935837</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:02:15</date>
+  <millis>1548100935886</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:04:53</date>
+  <millis>1548101093239</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:04:53</date>
+  <millis>1548101093706</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:04:53</date>
+  <millis>1548101093827</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:04:58</date>
+  <millis>1548101098322</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:04:58</date>
+  <millis>1548101098371</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:08:18</date>
+  <millis>1548101298749</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:08:19</date>
+  <millis>1548101299219</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:08:19</date>
+  <millis>1548101299322</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:08:24</date>
+  <millis>1548101304868</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:08:24</date>
+  <millis>1548101304917</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:10:41</date>
+  <millis>1548101441492</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:10:41</date>
+  <millis>1548101441956</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:10:42</date>
+  <millis>1548101442052</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:10:47</date>
+  <millis>1548101447479</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:10:47</date>
+  <millis>1548101447529</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T21:11:13</date>
+  <millis>1548101473518</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:11:13</date>
+  <millis>1548101473567</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(2, '10-10-2020', '10:10', ' javax.swing.JTextField[texto,700,250,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5267fba0,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,200,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5267fba0,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,700,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@5267fba0,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]', 'Cecina de vaca', 'Huevos de codorniz', 'Paletilla de cordero', 'Tarta de chocolate', 'Cerveza', '')</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:18:22</date>
+  <millis>1548101902345</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:22</date>
+  <millis>1548101902461</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:27</date>
+  <millis>1548101907396</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:27</date>
+  <millis>1548101907445</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:54</date>
+  <millis>1548101934881</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:55</date>
+  <millis>1548101935353</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:18:55</date>
+  <millis>1548101935406</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(4, '10-10-2020', '20:20', 'Julian javax.swing.JTextField[texto,700,250,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,200,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,700,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]', 'Cecina de vaca', 'Patatas con arroz', 'Calamares en mi tinta', 'Tarta de chocolate', 'Zumo de piña', 'leku2020')</message>
+</record>
+<record>
+  <date>2019-01-21T21:19:14</date>
+  <millis>1548101954074</millis>
+  <sequence>7</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:19:14</date>
+  <millis>1548101954526</millis>
+  <sequence>8</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:19:14</date>
+  <millis>1548101954577</millis>
+  <sequence>9</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(5, '10-10-2020', '20:20', 'Sancho javax.swing.JTextField[texto,700,250,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,200,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING] javax.swing.JTextField[texto,700,375,200x40,hidden,disabled,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@1fa16006,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],disabledTextColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=sun.swing.PrintColorUIResource[r=51,g=51,b=51],selectionColor=javax.swing.plaf.ColorUIResource[r=184,g=207,b=229],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]', 'Empanadillas', 'Patatas con arroz', 'Calamares en mi tinta', 'Tarta de chocolate', 'Zumo de piña', '')</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:21:27</date>
+  <millis>1548102087691</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:21:27</date>
+  <millis>1548102087806</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:21:38</date>
+  <millis>1548102098318</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:21:38</date>
+  <millis>1548102098368</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T21:22:00</date>
+  <millis>1548102120467</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:22:00</date>
+  <millis>1548102120909</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:22:00</date>
+  <millis>1548102120962</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	insert into reserva values('leku2020','10-10-2020', '10:20', 'Arroz cremoso', 'Vichyssoise', 'Cabra al natural', 'Ningun postre', 'Agua')</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "reserva_pkey"
+  Detail: Key (username, fecha)=(leku2020, 2020-10-10) already exists.</message>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>receiveErrorResponse</method>
+      <line>2440</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>processResults</method>
+      <line>2183</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.core.v3.QueryExecutorImpl</class>
+      <method>execute</method>
+      <line>308</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeInternal</method>
+      <line>441</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>execute</method>
+      <line>365</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeCachedSql</method>
+      <line>293</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeWithFlags</method>
+      <line>270</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgStatement</class>
+      <method>executeUpdate</method>
+      <line>244</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>Insert</method>
+      <line>127</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$20</class>
+      <method>actionPerformed</method>
+      <line>2608</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T21:24:10</date>
+  <millis>1548102250043</millis>
+  <sequence>7</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:24:10</date>
+  <millis>1548102250486</millis>
+  <sequence>8</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:24:10</date>
+  <millis>1548102250534</millis>
+  <sequence>9</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into reserva values('','11-10-2020', '10:20', 'Patatas variadas', 'Plato estrella', 'Pastel de carne', 'Tarta con nata', 'Zumo de piña')</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:27:59</date>
+  <millis>1548102479825</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:27:59</date>
+  <millis>1548102479941</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:06</date>
+  <millis>1548102486358</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:06</date>
+  <millis>1548102486409</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:24</date>
+  <millis>1548102504703</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:25</date>
+  <millis>1548102505158</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:25</date>
+  <millis>1548102505208</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(8, '7-10-2020', '21:9', '   ', 'Jamon iberico', 'Arroz con chmpinones', 'Paletilla de cordero', 'Dulce de patata', 'Vino sefue', 'leku2020')</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:49</date>
+  <millis>1548102529115</millis>
+  <sequence>7</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:49</date>
+  <millis>1548102529571</millis>
+  <sequence>8</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:28:49</date>
+  <millis>1548102529623</millis>
+  <sequence>9</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(9, '7-10-2020', '21:9', 'Psa 5 4 F', 'Pulpo a la gallega', 'Huevos de codorniz', 'Solomillo', 'Arroz con leche', 'Vino sefue', 'leku2020')</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:04</date>
+  <millis>1548102544627</millis>
+  <sequence>10</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:05</date>
+  <millis>1548102545079</millis>
+  <sequence>11</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:05</date>
+  <millis>1548102545129</millis>
+  <sequence>12</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(10, '7-9-2021', '21:9', '   ', 'Pulpo a la gallega', 'Cabracho con guisantes', 'Manitas de cerdo', 'Canutillos de hojaldre', 'Vino sefue', 'leku2020')</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:30</date>
+  <millis>1548102570969</millis>
+  <sequence>13</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:31</date>
+  <millis>1548102571430</millis>
+  <sequence>14</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:31</date>
+  <millis>1548102571484</millis>
+  <sequence>15</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD añadida 1 fila	insert into pedido values(11, '7-9-2021', '21:9', 'San agustin 3 4 G', 'Pulpo a la gallega', 'Vichyssoise', 'Manitas de cerdo', 'Trufas caseras', 'Vino sefue', 'leku2020')</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-01-21T21:29:40</date>
+  <millis>1548102580884</millis>
+  <sequence>0</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:41</date>
+  <millis>1548102581007</millis>
+  <sequence>1</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Cierre de base de datos</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:48</date>
+  <millis>1548102588240</millis>
+  <sequence>2</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:29:48</date>
+  <millis>1548102588290</millis>
+  <sequence>3</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+<record>
+  <date>2019-01-21T21:30:14</date>
+  <millis>1548102614746</millis>
+  <sequence>4</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:30:14</date>
+  <millis>1548102614797</millis>
+  <sequence>5</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T21:30:14</date>
+  <millis>1548102614801</millis>
+  <sequence>6</sequence>
+  <logger>Comida.BD</logger>
+  <level>SEVERE</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en BD	select * from usuario  where username = 'a'</message>
+  <exception>
+    <message>org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.</message>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>checkResultSet</method>
+      <line>2772</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>1894</line>
+    </frame>
+    <frame>
+      <class>org.postgresql.jdbc.PgResultSet</class>
+      <method>getString</method>
+      <line>2467</line>
+    </frame>
+    <frame>
+      <class>Comida.BD</class>
+      <method>verificarPersona</method>
+      <line>325</line>
+    </frame>
+    <frame>
+      <class>ventana.Principal$5</class>
+      <method>actionPerformed</method>
+      <line>878</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2019-01-21T21:30:14</date>
+  <millis>1548102614852</millis>
+  <sequence>7</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from administrador where username = 'a'</message>
+</record>
+<record>
+  <date>2019-01-21T21:30:32</date>
+  <millis>1548102632677</millis>
+  <sequence>8</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>base de datos conectada</message>
+</record>
+<record>
+  <date>2019-01-21T21:30:32</date>
+  <millis>1548102632729</millis>
+  <sequence>9</sequence>
+  <logger>Comida.BD</logger>
+  <level>INFO</level>
+  <class>Comida.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD	select * from usuario  where username = 'leku2020'</message>
+</record>
+</log>
