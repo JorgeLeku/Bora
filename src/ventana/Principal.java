@@ -1515,7 +1515,7 @@ public class Principal extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					// TODO Auto-generated method stub
-					/*if (fechaActual.getYear()) {
+					/* if (fechaActual.getYear()) {
 						
 					}*/
 					String fechacomx[] = tFecha.getText().split("/"); 
