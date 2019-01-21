@@ -60,11 +60,11 @@ public class Principal extends JFrame {
 	Botones confirmarFactura;
 
 	BotonesGrandes bPanelRecogida,bPanelDomicilio,bPanelQuitBebida, bPanelQuitComida, bPanelBebidaComida, bPanelAddBoton;
-	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lNombre, lApellido, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
+	JLabel  lQuitBebida, lQuitComida, lValidarTlfn,lUsuario, lContraseña, lNombrarProd, lTituloPAddBoton, lSelImagen, cbl5, fl1, fl2, facTotal, lTipo, lNombreC, lApellidoC, lHoraR, lPrimerPlato, lCalle, lEdificio, lPiso, lLetra, lHora, lTlfn, lNombre2, lApellido2, precio,iva, precioTotal, lURegistro, lCRegistro, lNRegistro, lARegistro, lTRegistro, lgastado;
 	
  
-	JComboBox cOrden, cHoraReserva;
-	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tNombre, tApellido, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
+	JComboBox cOrden, cHoraReserva,cHoraDomicilio;
+	JTextField tQuitBebida, tQuitComida, tUsuario, tPassword, tNombreProd, cbt2, tNombreReserva, tApellidosReserva, tCalle, tEdificio, tPiso, tLetra, tHora, tTlfn, tNombre2, tApellido2, tURegistro, tCRegistro, tNRegistro, tARegistro, tTRegistro;
 
 	Font fuente;
 	int x = 1,numeroTF=0,queidentr=0,valorAmeterfe=3, valorAmeterce=3, valorAmeterfp=3,valorAmetercp=3,valorAmeterfs=3,valorAmetercs=3,valorAmeterfpo=3,valorAmetercpo=3,valorAmeterfb=3,valorAmetercb=3,contEntrantes= 0, contPrimero=0,contSegundo = 0, contPostre = 0, contcontbebida=0,enQuePlato= 0, pruebae =0, prueba = 0, pruebas =0, pruebap =0,pruebab =0, borrarbi = 0, borrarbo = 0, enQuePanel =0;
@@ -319,10 +319,9 @@ public class Principal extends JFrame {
        tPiso = new JTextField();
        lLetra = new JLabel();
        tLetra = new JTextField();
-       lNombre = new JLabel();
-       tNombre = new JTextField();
-       lApellido = new JLabel();
-       tApellido = new JTextField();
+
+
+
        bConfirmarDomicilio = new JButton();
        
 
@@ -444,10 +443,7 @@ public class Principal extends JFrame {
        lTRegistro.setText("Telefono");
        tTRegistro.setBounds(200, 500, 200, 40);
        
-       //lApellido.setBounds(760, 450, 200, 40);
-       //lApellido.setFont(newFont);
-       //lApellido.setText("Apellido");
-       //tApellido.setBounds(700, 500, 200, 40);
+
        
        bConfirmarRegistro.setBounds(390, 585, 300, 75);
        bConfirmarRegistro.setFont(newFont);
@@ -502,15 +498,8 @@ public class Principal extends JFrame {
       lLetra.setText("Letra");
       tLetra.setBounds(700, 375, 200, 40);
       
-      lNombre.setBounds(260, 450, 200, 40);
-      lNombre.setFont(newFont);
-      lNombre.setText("Nombre");
-      tNombre.setBounds(200, 500, 200, 40);
-      
-      lApellido.setBounds(760, 450, 200, 40);
-      lApellido.setFont(newFont);
-      lApellido.setText("Apellido");
-      tApellido.setBounds(700, 500, 200, 40);
+
+
       
       bConfirmarDomicilio.setBounds(390, 585, 300, 75);
       bConfirmarDomicilio.setFont(newFont);
@@ -693,7 +682,8 @@ public class Principal extends JFrame {
        menuUsuario = new JMenu("Ajustes de usuario");
        menuUsuario.setMnemonic(KeyEvent.VK_A);
        menuBar.add(menuUsuario);
-       
+       cHoraDomicilio = new JComboBox();
+     
        
        //Action Listeners
        frame.addKeyListener(new KeyListener() {
@@ -2187,14 +2177,13 @@ public class Principal extends JFrame {
        panelDomicilio.add(lEdificio);
        panelDomicilio.add(lPiso);
        panelDomicilio.add(lLetra);
-       panelDomicilio.add(lNombre);
-       panelDomicilio.add(lApellido);
+
+
        panelDomicilio.add(tCalle);
        panelDomicilio.add(tEdificio);
        panelDomicilio.add(tPiso);
        panelDomicilio.add(tLetra);
-       panelDomicilio.add(tNombre);
-       panelDomicilio.add(tApellido);
+   
        panelDomicilio.updateUI();
        
        panelRecogida.add(lHora);
