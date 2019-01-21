@@ -2,28 +2,27 @@ package Comida;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Reserva {
 	private String username;
-	protected java.util.Date fecha;
-	protected Time hora;
+	Calendar fecha;
 	private String entrante,primero,segundo,postre,bebida;
 	public Reserva() {
 		this.username ="";
-		this.fecha = new Date(System.currentTimeMillis());
-		this.hora = new Time(System.currentTimeMillis());
+		this.fecha = new GregorianCalendar();
 		this.entrante = "";
 		this.primero  = "";
 		this.segundo  = "";
 		this.postre   = "";
 		this.bebida   = "";
 	}
-	public Reserva(String username, Date fecha, Time hora, String entrante, String primero, String segundo,
+	public Reserva(String username, Calendar fecha, Time hora, String entrante, String primero, String segundo,
 			String postre, String bebida) {
 		super();
 		this.username = username;
 		this.fecha = fecha;
-		this.hora = hora;
 		this.entrante = entrante;
 		this.primero = primero;
 		this.segundo = segundo;
@@ -34,7 +33,6 @@ public class Reserva {
 		super();
 		this.username = r.username;
 		this.fecha = r.fecha;
-		this.hora = r.hora;
 		this.entrante = r.entrante;
 		this.primero = r.primero;
 		this.segundo = r.segundo;
@@ -47,20 +45,15 @@ public class Reserva {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public java.util.Date getFecha() {
+	public Calendar getFecha() {
 		return fecha;
 	}
 	
-	public void setFecha(java.util.Date fecha) {
+	public void setFecha(Calendar fecha) {
 		this.fecha = fecha;
 	}
 	
-	public Time getHora() {
-		return hora;
-	}
-	public void setHora(Time hora) {
-		this.hora = hora;
-	}
+	
 	public String getEntrante() {
 		return entrante;
 	}
@@ -93,7 +86,7 @@ public class Reserva {
 	}
 	@Override
 	public String toString() {
-		return  username + ",'" + fecha + "', '" + hora + "', '" + entrante
+		return  username + ",'" + fecha.get(Calendar.DAY_OF_MONTH)+"-"+fecha.get(Calendar.MONTH)+"-"+fecha.get(Calendar.YEAR)+ "', '"+fecha.get(Calendar.HOUR_OF_DAY)+":"+fecha.get(Calendar.MINUTE)+"', '" + entrante
 				+ "', '" + primero + "', '" + segundo + "', '" + postre + "', '" + bebida + "'";
 	}
 	
