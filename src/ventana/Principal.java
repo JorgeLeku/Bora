@@ -2367,16 +2367,15 @@ public class Principal extends JFrame {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			String paco =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
-			if ((paco != null) && (paco.length() > 0)) {
-			    BD.Update(st, " password", "'"+paco+"'", "username ='"+nombreUsuario+"'", "usuario");
+			
+			
+			   
 
 			String b =JOptionPane.showInputDialog(null, "Introduzca nueva contraseña", "Cambiar contraseña", 1);
 			if ((b != null) && (b.length() > 0)) {
-			    System.out.println(b);
-
+			    BD.Update(st, " password", "'"+b+"'", "username ='"+nombreUsuario+"'", "usuario");
 			}
-		}
+		
 		}
 	});    
        
@@ -2384,9 +2383,19 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			String c =JOptionPane.showInputDialog(null, "Introduzca nuevo nombre", "Cambiar nombre", 1);
 			if ((c != null) && (c.length() > 0)) {
-			    System.out.println(c);
+				 BD.Update(st, "nombre", "'"+c+"'", "username ='"+nombreUsuario+"'", "usuario");
 			    
 			}
 
@@ -2397,10 +2406,19 @@ public class Principal extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Connection conn = BD.initBD();
+			
+			Statement st=null;
+		
+			try {
+				st = conn.createStatement();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			String d =JOptionPane.showInputDialog(null, "Introduzca nuevos apellidos", "Cambiar apellidos", 1);
 			if ((d != null) && (d.length() > 0)) {
-			    System.out.println(d);
-			    
+				 BD.Update(st, "apellidos", "'"+d+"'", "username ='"+nombreUsuario+"'", "usuario");
 			}
 
 		}
